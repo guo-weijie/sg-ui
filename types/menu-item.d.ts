@@ -1,10 +1,10 @@
-import { ElementUIComponent } from './component'
+import { SgementUIComponent } from "./component";
 
 /** Menu Item Component */
-export declare class ElMenuItem extends ElementUIComponent {
+export declare class SgMenuItem extends SgementUIComponent {
   /** Unique identification */
-  index: string
+  index: string;
 
   /** Vue Router object */
-  route: object
+  route: object;
 }

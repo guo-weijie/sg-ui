@@ -1,50 +1,39 @@
 <template>
   <transition name="viewer-fade">
-    <div tabindex="-1" ref="el-image-viewer__wrapper" class="el-image-viewer__wrapper" :style="{ 'z-index': viewerZIndex }">
-      <div class="el-image-viewer__mask" @click.self="handleMaskClick"></div>
+    <div tabindex="-1" ref="sg-image-viewer__wrapper" class="sg-image-viewer__wrapper"
+      :style="{ 'z-index': viewerZIndex }">
+      <div class="sg-image-viewer__mask" @click.self="handleMaskClick"></div>
       <!-- CLOSE -->
-      <span class="el-image-viewer__btn el-image-viewer__close" @click="hide">
-        <i class="el-icon-close"></i>
+      <span class="sg-image-viewer__btn sg-image-viewer__close" @click="hide">
+        <i class="sg-icon-close"></i>
       </span>
       <!-- ARROW -->
       <template v-if="!isSingle">
-        <span
-          class="el-image-viewer__btn el-image-viewer__prev"
-          :class="{ 'is-disabled': !infinite && isFirst }"
+        <span class="sg-image-viewer__btn sg-image-viewer__prev" :class="{ 'is-disabled': !infinite && isFirst }"
           @click="prev">
-          <i class="el-icon-arrow-left"/>
+          <i class="sg-icon-arrow-left" />
         </span>
-        <span
-          class="el-image-viewer__btn el-image-viewer__next"
-          :class="{ 'is-disabled': !infinite && isLast }"
+        <span class="sg-image-viewer__btn sg-image-viewer__next" :class="{ 'is-disabled': !infinite && isLast }"
           @click="next">
-          <i class="el-icon-arrow-right"/>
+          <i class="sg-icon-arrow-right" />
         </span>
       </template>
       <!-- ACTIONS -->
-      <div class="el-image-viewer__btn el-image-viewer__actions">
-        <div class="el-image-viewer__actions__inner">
-          <i class="el-icon-zoom-out" @click="handleActions('zoomOut')"></i>
-          <i class="el-icon-zoom-in" @click="handleActions('zoomIn')"></i>
-          <i class="el-image-viewer__actions__divider"></i>
+      <div class="sg-image-viewer__btn sg-image-viewer__actions">
+        <div class="sg-image-viewer__actions__inner">
+          <i class="sg-icon-zoom-out" @click="handleActions('zoomOut')"></i>
+          <i class="sg-icon-zoom-in" @click="handleActions('zoomIn')"></i>
+          <i class="sg-image-viewer__actions__divider"></i>
           <i :class="mode.icon" @click="toggleMode"></i>
-          <i class="el-image-viewer__actions__divider"></i>
-          <i class="el-icon-refresh-left" @click="handleActions('anticlocelise')"></i>
-          <i class="el-icon-refresh-right" @click="handleActions('clocelise')"></i>
+          <i class="sg-image-viewer__actions__divider"></i>
+          <i class="sg-icon-refresh-left" @click="handleActions('anticlocelise')"></i>
+          <i class="sg-icon-refresh-right" @click="handleActions('clocelise')"></i>
         </div>
       </div>
       <!-- CANVAS -->
-      <div class="el-image-viewer__canvas">
-        <img
-          v-for="(url, i) in urlList"
-          v-if="i === index"
-          ref="img"
-          class="el-image-viewer__img"
-          :key="url"
-          :src="currentImg"
-          :style="imgStyle"
-          @load="handleImgLoad"
-          @error="handleImgError"
+      <div class="sg-image-viewer__canvas">
+        <img v-for="(url, i) in urlList" v-if="i === index" ref="img" class="sg-image-viewer__img" :key="url"
+          :src="currentImg" :style="imgStyle" @load="handleImgLoad" @error="handleImgError"
           @mousedown="handleMouseDown">
       </div>
     </div>
@@ -52,18 +41,18 @@
 </template>
 
 <script>
-import { on, off } from 'element-ui/src/utils/dom';
-import { rafThrottle, isFirefox } from 'element-ui/src/utils/util';
-import { PopupManager } from 'element-ui/src/utils/popup';
+import { on, off } from 'sg-ui/src/utils/dom';
+import { rafThrottle, isFirefox } from 'sg-ui/src/utils/util';
+import { PopupManager } from 'sg-ui/src/utils/popup';
 
 const Mode = {
   CONTAIN: {
     name: 'contain',
-    icon: 'el-icon-full-screen'
+    icon: 'sg-icon-full-screen'
   },
   ORIGINAL: {
     name: 'original',
-    icon: 'el-icon-c-scale-to-original'
+    icon: 'sg-icon-c-scale-to-original'
   }
 };
 
@@ -83,11 +72,11 @@ export default {
     },
     onSwitch: {
       type: Function,
-      default: () => {}
+      default: () => { }
     },
     onClose: {
       type: Function,
-      default: () => {}
+      default: () => { }
     },
     initialIndex: {
       type: Number,
@@ -152,7 +141,7 @@ export default {
   },
   watch: {
     index: {
-      handler: function(val) {
+      handler: function (val) {
         this.reset();
         this.onSwitch(val);
       }
@@ -318,7 +307,7 @@ export default {
     }
     // add tabindex then wrapper can be focusable via Javascript
     // focus wrapper so arrow key can't cause inner scroll behavior underneath
-    this.$refs['el-image-viewer__wrapper'].focus();
+    this.$refs['sg-image-viewer__wrapper'].focus();
   },
   destroyed() {
     // if appendToBody is true, remove DOM node after destroy

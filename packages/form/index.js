@@ -1,8 +1,8 @@
-import ElForm from './src/form';
+import SgForm from './src/form';
 
 /* istanbul ignore next */
-ElForm.install = function(Vue) {
-  Vue.component(ElForm.name, ElForm);
+SgForm.install = function (Vue) {
+  Vue.component(SgForm.name, SgForm);
 };
 
-export default ElForm;
+export default SgForm;

@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import {
   PopupManager
-} from 'element-ui/src/utils/popup';
+} from 'sg-ui/src/utils/popup';
 
-const PopperJS = Vue.prototype.$isServer ? function() {} : require('./popper');
+const PopperJS = Vue.prototype.$isServer ? function () { } : require('./popper');
 const stop = e => e.stopPropagation();
 
 /**
@@ -154,7 +154,7 @@ export default {
       let origin = placementMap[placement];
       this.popperJS._popper.style.transformOrigin = typeof this.transformOrigin === 'string'
         ? this.transformOrigin
-        : ['top', 'bottom'].indexOf(placement) > -1 ? `center ${ origin }` : `${ origin } center`;
+        : ['top', 'bottom'].indexOf(placement) > -1 ? `center ${origin}` : `${origin} center`;
     },
 
     appendArrow(element) {

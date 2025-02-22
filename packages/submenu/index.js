@@ -1,8 +1,8 @@
-import ElSubmenu from '../menu/src/submenu';
+import SgSubmenu from '../menu/src/submenu';
 
 /* istanbul ignore next */
-ElSubmenu.install = function(Vue) {
-  Vue.component(ElSubmenu.name, ElSubmenu);
+SgSubmenu.install = function (Vue) {
+  Vue.component(SgSubmenu.name, SgSubmenu);
 };
 
-export default ElSubmenu;
+export default SgSubmenu;

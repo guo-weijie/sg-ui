@@ -88,7 +88,7 @@ export default function calcTextareaHeight(
       minHeight = minHeight + paddingSize + borderSize;
     }
     height = Math.max(minHeight, height);
-    result.minHeight = `${ minHeight }px`;
+    result.minHeight = `${minHeight}px`;
   }
   if (maxRows !== null) {
     let maxHeight = singleRowHeight * maxRows;
@@ -97,7 +97,7 @@ export default function calcTextareaHeight(
     }
     height = Math.min(maxHeight, height);
   }
-  result.height = `${ height }px`;
+  result.height = `${height}px`;
   hiddenTextarea.parentNode && hiddenTextarea.parentNode.removeChild(hiddenTextarea);
   hiddenTextarea = null;
   return result;

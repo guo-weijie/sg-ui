@@ -10,49 +10,49 @@ Tooltip tiene 9 colocaciones.
 ```html
 <div class="box">
   <div class="top">
-    <el-tooltip class="item" effect="dark" content="Top Left prompts info" placement="top-start">
-      <el-button>top-start</el-button>
-    </el-tooltip>
-    <el-tooltip class="item" effect="dark" content="Top Center prompts info" placement="top">
-      <el-button>top</el-button>
-    </el-tooltip>
-    <el-tooltip class="item" effect="dark" content="Top Right prompts info" placement="top-end">
-      <el-button>top-end</el-button>
-    </el-tooltip>
+    <sg-tooltip class="item" effect="dark" content="Top Left prompts info" placement="top-start">
+      <sg-button>top-start</sg-button>
+    </sg-tooltip>
+    <sg-tooltip class="item" effect="dark" content="Top Center prompts info" placement="top">
+      <sg-button>top</sg-button>
+    </sg-tooltip>
+    <sg-tooltip class="item" effect="dark" content="Top Right prompts info" placement="top-end">
+      <sg-button>top-end</sg-button>
+    </sg-tooltip>
   </div>
   <div class="left">
-    <el-tooltip class="item" effect="dark" content="Left Top prompts info" placement="left-start">
-      <el-button>left-start</el-button>
-    </el-tooltip>
-    <el-tooltip class="item" effect="dark" content="Left Center prompts info" placement="left">
-      <el-button>left</el-button>
-    </el-tooltip>
-    <el-tooltip class="item" effect="dark" content="Left Bottom prompts info" placement="left-end">
-      <el-button>left-end</el-button>
-    </el-tooltip>
+    <sg-tooltip class="item" effect="dark" content="Left Top prompts info" placement="left-start">
+      <sg-button>left-start</sg-button>
+    </sg-tooltip>
+    <sg-tooltip class="item" effect="dark" content="Left Center prompts info" placement="left">
+      <sg-button>left</sg-button>
+    </sg-tooltip>
+    <sg-tooltip class="item" effect="dark" content="Left Bottom prompts info" placement="left-end">
+      <sg-button>left-end</sg-button>
+    </sg-tooltip>
   </div>
 
   <div class="right">
-    <el-tooltip class="item" effect="dark" content="Right Top prompts info" placement="right-start">
-      <el-button>right-start</el-button>
-    </el-tooltip>
-    <el-tooltip class="item" effect="dark" content="Right Center prompts info" placement="right">
-      <el-button>right</el-button>
-    </el-tooltip>
-    <el-tooltip class="item" effect="dark" content="Right Bottom prompts info" placement="right-end">
-      <el-button>right-end</el-button>
-    </el-tooltip>
+    <sg-tooltip class="item" effect="dark" content="Right Top prompts info" placement="right-start">
+      <sg-button>right-start</sg-button>
+    </sg-tooltip>
+    <sg-tooltip class="item" effect="dark" content="Right Center prompts info" placement="right">
+      <sg-button>right</sg-button>
+    </sg-tooltip>
+    <sg-tooltip class="item" effect="dark" content="Right Bottom prompts info" placement="right-end">
+      <sg-button>right-end</sg-button>
+    </sg-tooltip>
   </div>
   <div class="bottom">
-    <el-tooltip class="item" effect="dark" content="Bottom Left prompts info" placement="bottom-start">
-      <el-button>bottom-start</el-button>
-    </el-tooltip>
-    <el-tooltip class="item" effect="dark" content="Bottom Center prompts info" placement="bottom">
-      <el-button>bottom</el-button>
-    </el-tooltip>
-    <el-tooltip class="item" effect="dark" content="Bottom Right prompts info" placement="bottom-end">
-      <el-button>bottom-end</el-button>
-    </el-tooltip>
+    <sg-tooltip class="item" effect="dark" content="Bottom Left prompts info" placement="bottom-start">
+      <sg-button>bottom-start</sg-button>
+    </sg-tooltip>
+    <sg-tooltip class="item" effect="dark" content="Bottom Center prompts info" placement="bottom">
+      <sg-button>bottom</sg-button>
+    </sg-tooltip>
+    <sg-tooltip class="item" effect="dark" content="Bottom Right prompts info" placement="bottom-end">
+      <sg-button>bottom-end</sg-button>
+    </sg-tooltip>
   </div>
 </div>
 
@@ -83,12 +83,12 @@ Tooltip tiene 9 colocaciones.
       margin: 4px;
     }
 
-    .left .el-tooltip__popper,
-    .right .el-tooltip__popper {
+    .left .sg-tooltip__popper,
+    .right .sg-tooltip__popper {
       padding: 8px 10px;
     }
 
-    .el-button {
+    .sg-button {
       width: 110px;
     }
   }
@@ -103,12 +103,12 @@ Tooltip tiene dos temas: `dark` y `light`.
 
 :::demo Establecer `effect` para modificar el tema, el valor por defecto es `dark`.
 ```html
-<el-tooltip content="Top center" placement="top">
-  <el-button>Dark</el-button>
-</el-tooltip>
-<el-tooltip content="Bottom center" placement="bottom" effect="light">
-  <el-button>Light</el-button>
-</el-tooltip>
+<sg-tooltip content="Top center" placement="top">
+  <sg-button>Dark</sg-button>
+</sg-tooltip>
+<sg-tooltip content="Bottom center" placement="bottom" effect="light">
+  <sg-button>Light</sg-button>
+</sg-tooltip>
 ```
 :::
 
@@ -116,12 +116,12 @@ Tooltip tiene dos temas: `dark` y `light`.
 
 Despliegue múltiples líneas de texto y establezca su formato.
 
-:::demo Sobrescriba el atributo `content` del `el-tooltip` añadiendo un slot llamado `content`.
+:::demo Sobrescriba el atributo `content` del `sg-tooltip` añadiendo un slot llamado `content`.
 ```html
-<el-tooltip placement="top">
+<sg-tooltip placement="top">
   <div slot="content">multiple lines<br/>second line</div>
-  <el-button>Top center</el-button>
-</el-tooltip>
+  <sg-button>Top center</sg-button>
+</sg-tooltip>
 ```
 :::
 
@@ -129,7 +129,7 @@ Despliegue múltiples líneas de texto y establezca su formato.
 
 Adicional a los usos básicos, existen algunos atributos que permiten la personalización: 
 
-el atributo `transition` permite personalizar la animación con la que el Tooltip se muestra o se esconda, el valor por defecto es `el-fade-in-linear`.
+el atributo `transition` permite personalizar la animación con la que el Tooltip se muestra o se esconda, el valor por defecto es `sg-fade-in-linear`.
 
 el atributo `disabled` permite deshabilitar `tooltip`. Solo es necesario definirlo como `true`.
 
@@ -138,9 +138,9 @@ De hecho, Tooltip es una extensión basada en [Vue-popper](https://github.com/el
 :::demo
 ```html
 <template>
-  <el-tooltip :disabled="disabled" content="click to close tooltip function" placement="bottom" effect="light">
-    <el-button @click="disabled = !disabled">click to {{disabled ? 'active' : 'close'}} tooltip function</el-button>
-  </el-tooltip>
+  <sg-tooltip :disabled="disabled" content="click to close tooltip function" placement="bottom" effect="light">
+    <sg-button @click="disabled = !disabled">click to {{disabled ? 'active' : 'close'}} tooltip function</sg-button>
+  </sg-tooltip>
 </template>
 
 <script>
@@ -185,7 +185,7 @@ Es necesario envolver los elementos de forma deshabilitados en un elemento conte
 | value / v-model | visibilidad del Tooltip                  | boolean | —                                        | false                                    |
 | disabled       | saber si el Tooltip se encuentra deshabilitado | boolean | —                                        | false                                    |
 | offset         | offset del Tooltip                       | number  | —                                        | 0                                        |
-| transition     | nombre de animación                      | string  | —                                        | el-fade-in-linear                        |
+| transition     | nombre de animación                      | string  | —                                        | sg-fade-in-linear                        |
 | visible-arrow  | si una flecha es mostrada. Para mayor información, revisar la página de [Vue-popper](https://github.com/element-component/vue-popper) | boolean | —                                        | true                                     |
 | popper-options | parámetros de [popper.js](https://popper.js.org/docs/v2/) | Object  | referirse a la documentación de [popper.js](https://popper.js.org/docs/v2/) | `{ boundariesElement: 'body', gpuAcceleration: false }` |
 | open-delay     | retraso de la apariencia, en mili segundos | number  | —                                        | 0                                        |

@@ -1,22 +1,22 @@
-import { ElementUIComponent, ElementUIComponentSize } from './component'
+import { SgementUIComponent, SgementUIComponentSize } from "./component";
 
 /** Checkbox Group Component */
-export declare class ElCheckboxGroup extends ElementUIComponent {
+export declare class SgCheckboxGroup extends SgementUIComponent {
   /** Size of checkbox buttons or bordered checkboxes */
-  size: ElementUIComponentSize
+  size: SgementUIComponentSize;
 
   /** Whether the nesting checkboxes are disabled */
-  disabled: boolean
+  disabled: boolean;
 
   /** Minimum number of checkbox checked */
-  min: number
+  min: number;
 
   /** Maximum number of checkbox checked */
-  max: number
+  max: number;
 
   /** Font color when button is active */
-  textColor: string
+  textColor: string;
 
   /** Border and background color when button is active */
-  fill: string
+  fill: string;
 }

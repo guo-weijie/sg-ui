@@ -1,29 +1,29 @@
-import { ElementUIComponent } from './component'
-import { ElPopover } from './popover'
+import { SgementUIComponent } from "./component";
+import { SgPopover } from "./popover";
 
 /** Popconfirm Component */
-export declare class ElPopconfirm extends ElPopover {
+export declare class SgPopconfirm extends SgPopover {
   /** Popconfirm title */
-  title: string
+  title: string;
 
   /** Popconfirm ok text */
-  confirmButtonText: string
-  
+  confirmButtonText: string;
+
   /** Popconfirm cancel text */
-  cancelButtonText: string
+  cancelButtonText: string;
 
   /** Popconfirm ok type */
-  confirmButtonType: string
+  confirmButtonType: string;
 
   /** Popconfirm cancal type */
-  cancelButtonType: string
+  cancelButtonType: string;
 
   /** Popconfirm icon */
-  icon: string
+  icon: string;
 
   /** Popconfirm icon color */
-  iconColor: string
+  iconColor: string;
 
   /** Popconfirm hide icon */
-  hideIcon: boolean
+  hideIcon: boolean;
 }

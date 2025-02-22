@@ -7,36 +7,36 @@ Used to give feedback on the result of user's operation or access exception.
 :::demo
 
 ```html
-<el-row>
-  <el-col :sm="12" :lg="6">
-    <el-result icon="success" title="Success Tip" subTitle="Please follow the instructions">
+<sg-row>
+  <sg-col :sm="12" :lg="6">
+    <sg-result icon="success" title="Success Tip" subTitle="Please follow the instructions">
       <template slot="extra">
-        <el-button type="primary" size="medium">Back</el-button>
+        <sg-button type="primary" size="medium">Back</sg-button>
       </template>
-    </el-result>
-  </el-col>
-  <el-col :sm="12" :lg="6">
-    <el-result icon="warning" title="Warning Tip" subTitle="Please follow the instructions">
+    </sg-result>
+  </sg-col>
+  <sg-col :sm="12" :lg="6">
+    <sg-result icon="warning" title="Warning Tip" subTitle="Please follow the instructions">
       <template slot="extra">
-        <el-button type="primary" size="medium">Back</el-button>
+        <sg-button type="primary" size="medium">Back</sg-button>
       </template>
-    </el-result>
-  </el-col>
-  <el-col :sm="12" :lg="6">
-    <el-result icon="error" title="Error Tip" subTitle="Please follow the instructions">
+    </sg-result>
+  </sg-col>
+  <sg-col :sm="12" :lg="6">
+    <sg-result icon="error" title="Error Tip" subTitle="Please follow the instructions">
       <template slot="extra">
-        <el-button type="primary" size="medium">Back</el-button>
+        <sg-button type="primary" size="medium">Back</sg-button>
       </template>
-    </el-result>
-  </el-col>
-  <el-col :sm="12" :lg="6">
-    <el-result icon="info" title="Info Tip" subTitle="Please follow the instructions">
+    </sg-result>
+  </sg-col>
+  <sg-col :sm="12" :lg="6">
+    <sg-result icon="info" title="Info Tip" subTitle="Please follow the instructions">
       <template slot="extra">
-        <el-button type="primary" size="medium">Back</el-button>
+        <sg-button type="primary" size="medium">Back</sg-button>
       </template>
-    </el-result>
-  </el-col>
-</el-row>
+    </sg-result>
+  </sg-col>
+</sg-row>
 ```
 
 :::
@@ -46,14 +46,14 @@ Used to give feedback on the result of user's operation or access exception.
 :::demo
 
 ```html
-<el-result title="404" subTitle="Sorry, request error">
+<sg-result title="404" subTitle="Sorry, request error">
   <template slot="icon">
-    <el-image src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"></el-image>
+    <sg-image src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"></sg-image>
   </template>
   <template slot="extra">
-    <el-button type="primary" size="medium">Back</el-button>
+    <sg-button type="primary" size="medium">Back</sg-button>
   </template>
-</el-result>
+</sg-result>
 ```
 
 :::

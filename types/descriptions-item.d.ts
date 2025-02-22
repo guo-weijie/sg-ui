@@ -1,37 +1,35 @@
-import { ElementUIComponent } from './component'
-import { VNode } from 'vue'
+import { SgementUIComponent } from "./component";
+import { VNode } from "vue";
 
-interface ElDescriptionsItemSlots {
+interface SgDescriptionsItemSlots {
   /* label slot: custom label */
-  label: VNode[]
+  label: VNode[];
 
   /* default slot: custom content */
-  default: VNode[]
+  default: VNode[];
 
-  [key: string]: VNode[]
+  [key: string]: VNode[];
 }
 
 /** description item. **/
-export declare class ElDescriptionsItem extends ElementUIComponent {
-
+export declare class SgDescriptionsItem extends SgementUIComponent {
   /* label text */
-  label: string
+  label: string;
 
   /*  the number of columns included */
-  span: number 
+  span: number;
 
   /* custom label class name */
-  labelClassName: string
+  labelClassName: string;
 
   /* custom content class name */
-  contentClassName: string
+  contentClassName: string;
 
   /* custom label style */
-  labelStyle: object
+  labelStyle: object;
 
   /* custom content style */
-  contentStyle: object
+  contentStyle: object;
 
-  $slots: ElDescriptionsItemSlots
-
+  $slots: SgDescriptionsItemSlots;
 }

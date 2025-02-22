@@ -1,6 +1,6 @@
-import { ElementUIComponent } from './component'
+import { SgementUIComponent } from "./component";
 
 /** Timeline Component */
-export declare class ElTimeline extends ElementUIComponent {
-  reverse: boolean
+export declare class SgTimeline extends SgementUIComponent {
+  reverse: boolean;
 }

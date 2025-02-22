@@ -1,176 +1,185 @@
-import Vue, { VNode } from 'vue'
-import { MessageType } from './message'
+import Vue, { VNode } from "vue";
+import { MessageType } from "./message";
 
-export type MessageBoxCloseAction = 'confirm' | 'cancel' | 'close'
-export type MessageBoxData = MessageBoxInputData | MessageBoxCloseAction
+export type MessageBoxCloseAction = "confirm" | "cancel" | "close";
+export type MessageBoxData = MessageBoxInputData | MessageBoxCloseAction;
 
 export interface MessageBoxInputData {
-  value: string,
-  action: MessageBoxCloseAction
+  value: string;
+  action: MessageBoxCloseAction;
 }
 
 export interface MessageBoxInputValidator {
-  (value: string): boolean | string
+  (value: string): boolean | string;
 }
 
-export declare class ElMessageBoxComponent extends Vue {
-  title: string
-  message: string
-  type: MessageType
-  iconClass: string
-  customClass: string
-  showInput: boolean
-  showClose: boolean
-  inputValue: string
-  inputPlaceholder: string
-  inputType: string
-  inputPattern: RegExp
-  inputValidator: MessageBoxInputValidator
-  inputErrorMessage: string
-  showConfirmButton: boolean
-  showCancelButton: boolean
-  action: MessageBoxCloseAction
-  dangerouslyUseHTMLString: boolean
-  confirmButtonText: string
-  cancelButtonText: string
-  confirmButtonLoading: boolean
-  cancelButtonLoading: boolean
-  confirmButtonClass: string
-  confirmButtonDisabled: boolean
-  cancelButtonClass: string
-  editorErrorMessage: string
+export declare class SgMessageBoxComponent extends Vue {
+  title: string;
+  message: string;
+  type: MessageType;
+  iconClass: string;
+  customClass: string;
+  showInput: boolean;
+  showClose: boolean;
+  inputValue: string;
+  inputPlaceholder: string;
+  inputType: string;
+  inputPattern: RegExp;
+  inputValidator: MessageBoxInputValidator;
+  inputErrorMessage: string;
+  showConfirmButton: boolean;
+  showCancelButton: boolean;
+  action: MessageBoxCloseAction;
+  dangerouslyUseHTMLString: boolean;
+  confirmButtonText: string;
+  cancelButtonText: string;
+  confirmButtonLoading: boolean;
+  cancelButtonLoading: boolean;
+  confirmButtonClass: string;
+  confirmButtonDisabled: boolean;
+  cancelButtonClass: string;
+  editorErrorMessage: string;
 }
 
 /** Options used in MessageBox */
-export interface ElMessageBoxOptions {
+export interface SgMessageBoxOptions {
   /** Title of the MessageBox */
-  title?: string
+  title?: string;
 
   /** Content of the MessageBox */
-  message?: string | VNode
+  message?: string | VNode;
 
   /** Message type, used for icon display */
-  type?: MessageType
+  type?: MessageType;
 
   /** Custom icon's class */
-  iconClass?: string
+  iconClass?: string;
 
   /** Custom class name for MessageBox */
-  customClass?: string
+  customClass?: string;
 
   /** MessageBox closing callback if you don't prefer Promise */
-  callback?: (action: MessageBoxCloseAction, instance: ElMessageBoxComponent) => void
+  callback?: (
+    action: MessageBoxCloseAction,
+    instance: SgMessageBoxComponent
+  ) => void;
 
   /** Callback before MessageBox closes, and it will prevent MessageBox from closing */
-  beforeClose?: (action: MessageBoxCloseAction, instance: ElMessageBoxComponent, done: (() => void)) => void
+  beforeClose?: (
+    action: MessageBoxCloseAction,
+    instance: SgMessageBoxComponent,
+    done: () => void
+  ) => void;
 
   /** Whether to lock body scroll when MessageBox prompts */
-  lockScroll?: boolean
+  lockScroll?: boolean;
 
   /** Whether to show a cancel button */
-  showCancelButton?: boolean
+  showCancelButton?: boolean;
 
   /** Whether to show a confirm button */
-  showConfirmButton?: boolean
+  showConfirmButton?: boolean;
 
   /** Whether to show a close button */
-  showClose?: boolean
+  showClose?: boolean;
 
   /** Text content of cancel button */
-  cancelButtonText?: string
+  cancelButtonText?: string;
 
   /** Text content of confirm button */
-  confirmButtonText?: string
+  confirmButtonText?: string;
 
   /** Custom class name of cancel button */
-  cancelButtonClass?: string
+  cancelButtonClass?: string;
 
   /** Custom class name of confirm button */
-  confirmButtonClass?: string
+  confirmButtonClass?: string;
 
   /** Whether to align the content in center */
-  center?: boolean
+  center?: boolean;
 
   /** Whether message is treated as HTML string */
-  dangerouslyUseHTMLString?: boolean
+  dangerouslyUseHTMLString?: boolean;
 
   /** Whether to use round button */
-  roundButton?: boolean
+  roundButton?: boolean;
 
   /** Whether MessageBox can be closed by clicking the mask */
-  closeOnClickModal?: boolean
+  closeOnClickModal?: boolean;
 
   /** Whether MessageBox can be closed by pressing the ESC */
-  closeOnPressEscape?: boolean
+  closeOnPressEscape?: boolean;
 
   /** Whether to close MessageBox when hash changes */
-  closeOnHashChange?: boolean
+  closeOnHashChange?: boolean;
 
   /** Whether to show an input */
-  showInput?: boolean
+  showInput?: boolean;
 
   /** Placeholder of input */
-  inputPlaceholder?: string
+  inputPlaceholder?: string;
 
   /** Initial value of input */
-  inputValue?: string
+  inputValue?: string;
 
   /** Regexp for the input */
-  inputPattern?: RegExp
+  inputPattern?: RegExp;
 
   /** Input Type: text, textArea, password or number */
-  inputType?: string
+  inputType?: string;
 
   /** Validation function for the input. Should returns a boolean or string. If a string is returned, it will be assigned to inputErrorMessage */
-  inputValidator?: MessageBoxInputValidator
+  inputValidator?: MessageBoxInputValidator;
 
   /** Error message when validation fails */
-  inputErrorMessage?: string
+  inputErrorMessage?: string;
 
   /** Whether to distinguish canceling and closing */
-  distinguishCancelAndClose?: boolean
+  distinguishCancelAndClose?: boolean;
 }
 
-export interface ElMessageBoxShortcutMethod {
-  (message: string, title: string, options?: ElMessageBoxOptions): Promise<MessageBoxData>
-  (message: string, options?: ElMessageBoxOptions): Promise<MessageBoxData>
+export interface SgMessageBoxShortcutMethod {
+  (message: string, title: string, options?: SgMessageBoxOptions): Promise<
+    MessageBoxData
+  >;
+  (message: string, options?: SgMessageBoxOptions): Promise<MessageBoxData>;
 }
 
-export interface ElMessageBox {
+export interface SgMessageBox {
   /** Show a message box */
-  (message: string, title?: string, type?: string): Promise<MessageBoxData>
+  (message: string, title?: string, type?: string): Promise<MessageBoxData>;
 
   /** Show a message box */
-  (options: ElMessageBoxOptions): Promise<MessageBoxData>
+  (options: SgMessageBoxOptions): Promise<MessageBoxData>;
 
   /** Show an alert message box */
-  alert: ElMessageBoxShortcutMethod
+  alert: SgMessageBoxShortcutMethod;
 
   /** Show a confirm message box */
-  confirm: ElMessageBoxShortcutMethod
+  confirm: SgMessageBoxShortcutMethod;
 
   /** Show a prompt message box */
-  prompt: ElMessageBoxShortcutMethod
+  prompt: SgMessageBoxShortcutMethod;
 
   /** Set default options of message boxes */
-  setDefaults (defaults: ElMessageBoxOptions): void
+  setDefaults(defaults: SgMessageBoxOptions): void;
 
   /** Close current message box */
-  close (): void
+  close(): void;
 }
 
-declare module 'vue/types/vue' {
+declare module "vue/types/vue" {
   interface Vue {
     /** Show a message box */
-    $msgbox: ElMessageBox
+    $msgbox: SgMessageBox;
 
     /** Show an alert message box */
-    $alert: ElMessageBoxShortcutMethod
+    $alert: SgMessageBoxShortcutMethod;
 
     /** Show a confirm message box */
-    $confirm: ElMessageBoxShortcutMethod
+    $confirm: SgMessageBoxShortcutMethod;
 
     /** Show a prompt message box */
-    $prompt: ElMessageBoxShortcutMethod
+    $prompt: SgMessageBoxShortcutMethod;
   }
 }

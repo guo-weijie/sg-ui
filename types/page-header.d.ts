@@ -1,10 +1,10 @@
-import { ElementUIComponent } from './component'
+import { SgementUIComponent } from "./component";
 
 /** PageHeader Component */
-export declare class ElPageHeader extends ElementUIComponent {
+export declare class SgPageHeader extends SgementUIComponent {
   /** title */
-  title: String
+  title: String;
 
   /** content */
-  content: String
+  content: String;
 }

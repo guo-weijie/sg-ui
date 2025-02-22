@@ -8,7 +8,7 @@ We provide an [Element plugin](https://github.com/ElementUI/vue-cli-plugin-eleme
 
 ### Use Starter Kit
 
-We provide a general [project template](https://github.com/ElementUI/element-starter) for you. For Laravel users, we also have a [template](https://github.com/ElementUI/element-in-laravel-starter). You can download and use them directly.
+We provide a general [project template](https://github.com/ElementUI/element-starter) for you. For Laravel users, we also have a [template](https://github.com/ElementUI/element-in-laravsg-starter). You can download and use them directly.
 
 If you prefer not to use them, please read the following.
 
@@ -22,8 +22,8 @@ In main.js:
 
 ```javascript
 import Vue from 'vue';
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
+import ElementUI from 'sg-ui';
+import 'sg-ui/lib/theme-chalk/index.css';
 import App from './App.vue';
 
 Vue.use(ElementUI);
@@ -38,12 +38,12 @@ The above imports Element entirely. Note that CSS file needs to be imported sepa
 
 #### On demand
 
-With the help of [babel-plugin-component](https://github.com/QingWei-Li/babel-plugin-component), we can import components we actually need, making the project smaller than otherwise.
+With the help of [babsg-plugin-component](https://github.com/QingWei-Li/babsg-plugin-component), we can import components we actually need, making the project smaller than otherwise.
 
-First, install babel-plugin-component:
+First, install babsg-plugin-component:
 
 ```bash
-npm install babel-plugin-component -D
+npm install babsg-plugin-component -D
 ```
 
 Then edit .babelrc:
@@ -55,7 +55,7 @@ Then edit .babelrc:
     [
       "component",
       {
-        "libraryName": "element-ui",
+        "libraryName": "sg-ui",
         "styleLibraryName": "theme-chalk"
       }
     ]
@@ -67,7 +67,7 @@ Next, if you need Button and Select, edit main.js:
 
 ```javascript
 import Vue from 'vue';
-import { Button, Select } from 'element-ui';
+import { Button, Select } from 'sg-ui';
 import App from './App.vue';
 
 Vue.component(Button.name, Button);
@@ -165,7 +165,7 @@ import {
   MessageBox,
   Message,
   Notification
-} from 'element-ui';
+} from 'sg-ui';
 
 Vue.use(Pagination);
 Vue.use(Dialog);
@@ -260,7 +260,7 @@ Fully import Element：
 
 ```js
 import Vue from 'vue';
-import Element from 'element-ui';
+import Element from 'sg-ui';
 Vue.use(Element, { size: 'small', zIndex: 3000 });
 ```
 
@@ -268,7 +268,7 @@ Partial import Element：
 
 ```js
 import Vue from 'vue';
-import { Button } from 'element-ui';
+import { Button } from 'sg-ui';
 
 Vue.prototype.$ELEMENT = { size: 'small', zIndex: 3000 };
 Vue.use(Button);

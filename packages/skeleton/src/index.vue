@@ -1,14 +1,14 @@
 <template>
   <div>
     <template v-if="uiLoading">
-      <div :class="['el-skeleton', animated ? 'is-animated' : '', ]" v-bind="$attrs">
+      <div :class="['sg-skeleton', animated ? 'is-animated' : '', ]" v-bind="$attrs">
         <template v-for="i in count">
           <slot v-if="loading" name="template">
-            <el-skeleton-item
+            <sg-skeleton-item
               v-for="item in rows"
               :key="`${i}-${item}`"
               :class="{
-                'el-skeleton__paragraph': item !== 1,
+                'sg-skeleton__paragraph': item !== 1,
                 'is-first': item === 1,
                 'is-last': item === rows && rows > 1,
               }"
@@ -25,7 +25,7 @@
 </template>
 <script>
 export default {
-  name: 'ElSkeleton',
+  name: 'SgSkeleton',
   props: {
     animated: {
       type: Boolean,

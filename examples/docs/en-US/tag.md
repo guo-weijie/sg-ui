@@ -7,11 +7,11 @@ Used for marking and selection.
 :::demo Use the `type` attribute to define Tag's type. In addition, the `color` attribute can be used to set the background color of the Tag.
 
 ```html
-<el-tag>Tag 1</el-tag>
-<el-tag type="success">Tag 2</el-tag>
-<el-tag type="info">Tag 3</el-tag>
-<el-tag type="warning">Tag 4</el-tag>
-<el-tag type="danger">Tag 5</el-tag>
+<sg-tag>Tag 1</sg-tag>
+<sg-tag type="success">Tag 2</sg-tag>
+<sg-tag type="info">Tag 3</sg-tag>
+<sg-tag type="warning">Tag 4</sg-tag>
+<sg-tag type="danger">Tag 5</sg-tag>
 ```
 :::
 
@@ -20,13 +20,13 @@ Used for marking and selection.
 :::demo `closable` attribute can be used to define a removable tag. It accepts a `Boolean`. By default the removal of Tag has a fading animation. If you don't want to use it, you can set the `disable-transitions` attribute, which accepts a `Boolean`, to `true`. `close` event triggers when Tag is removed.
 
 ```html
-<el-tag
+<sg-tag
   v-for="tag in tags"
   :key="tag.name"
   closable
   :type="tag.type">
   {{tag.name}}
-</el-tag>
+</sg-tag>
 
 <script>
   export default {
@@ -52,15 +52,15 @@ You can use the `close` event to add and remove tag dynamically.
 
 :::demo
 ```html
-<el-tag
+<sg-tag
   :key="tag"
   v-for="tag in dynamicTags"
   closable
   :disable-transitions="false"
   @close="handleClose(tag)">
   {{tag}}
-</el-tag>
-<el-input
+</sg-tag>
+<sg-input
   class="input-new-tag"
   v-if="inputVisible"
   v-model="inputValue"
@@ -69,11 +69,11 @@ You can use the `close` event to add and remove tag dynamically.
   @keyup.enter.native="handleInputConfirm"
   @blur="handleInputConfirm"
 >
-</el-input>
-<el-button v-else class="button-new-tag" size="small" @click="showInput">+ New Tag</el-button>
+</sg-input>
+<sg-button v-else class="button-new-tag" size="small" @click="showInput">+ New Tag</sg-button>
 
 <style>
-  .el-tag + .el-tag {
+  .sg-tag + .sg-tag {
     margin-left: 10px;
   }
   .button-new-tag {
@@ -132,10 +132,10 @@ Besides default size, Tag component provides three additional sizes for you to c
 :::demo Use attribute `size` to set additional sizes with `medium`, `small` or `mini`.
 
 ```html
-<el-tag>Default</el-tag>
-<el-tag size="medium">Medium</el-tag>
-<el-tag size="small">Small</el-tag>
-<el-tag size="mini">Mini</el-tag>
+<sg-tag>Default</sg-tag>
+<sg-tag size="medium">Medium</sg-tag>
+<sg-tag size="small">Small</sg-tag>
+<sg-tag size="mini">Mini</sg-tag>
 ```
 :::
 
@@ -148,23 +148,23 @@ Tag provide three different themes: `dark`、`light` and `plain`
 ```html
 <div class="tag-group">
   <span class="tag-group__title">Dark</span>
-  <el-tag
+  <sg-tag
     v-for="item in items"
     :key="item.label"
     :type="item.type"
     effect="dark">
     {{ item.label }}
-  </el-tag>
+  </sg-tag>
 </div>
 <div class="tag-group">
   <span class="tag-group__title">Plain</span>
-  <el-tag
+  <sg-tag
     v-for="item in items"
     :key="item.label"
     :type="item.type"
     effect="plain">
     {{ item.label }}
-  </el-tag>
+  </sg-tag>
 </div>
 
 <script>

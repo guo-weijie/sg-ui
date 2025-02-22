@@ -1,9 +1,9 @@
 <template>
   <section class="config" :key="displayName">
     <div class="config-label">
-      <el-tooltip :content="displayName" placement="top">
+      <sg-tooltip :content="displayName" placement="top">
         <span>{{displayKeyName}}</span>
-      </el-tooltip>
+      </sg-tooltip>
     </div>
     <div class="config-content">
       <theme-input 
@@ -11,20 +11,20 @@
         :val="value"
         @change="onChange"
       ></theme-input>
-      <el-select 
+      <sg-select 
         size="medium"
         v-if="!isGlobal"
         v-model="value" 
         class="select"
         @change="onSelectChange"
       >
-        <el-option
+        <sg-option
           v-for="item in options"
           :key="item.value"
           :label="item.label"
           :value="item.value">
-        </el-option>
-      </el-select>
+        </sg-option>
+      </sg-select>
     </div>
   </section>
 </template>

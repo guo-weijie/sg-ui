@@ -1,84 +1,88 @@
-import Vue, { VNode } from 'vue'
-import { MessageType } from './message'
+import Vue, { VNode } from "vue";
+import { MessageType } from "./message";
 
-export type NotificationPosition = 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left'
+export type NotificationPosition =
+  | "top-right"
+  | "top-left"
+  | "bottom-right"
+  | "bottom-left";
 
 /** Notification Component */
-export declare class ElNotificationComponent extends Vue {
+export declare class SgNotificationComponent extends Vue {
   /** Close the Notification instance */
-  close (): void
+  close(): void;
 }
 
-export interface ElNotificationOptions {
+export interface SgNotificationOptions {
   /** Title */
-  title: string
+  title: string;
 
   /** Description text */
-  message: string | VNode
+  message: string | VNode;
 
   /** Notification type */
-  type?: MessageType
+  type?: MessageType;
 
   /** Custom icon's class. It will be overridden by type */
-  iconClass?: string
+  iconClass?: string;
 
   /** Custom class name for Notification */
-  customClass?: string
+  customClass?: string;
 
   /** Duration before close. It will not automatically close if set 0 */
-  duration?: number
+  duration?: number;
 
   /** Whether to show a close button */
-  showClose?: boolean
+  showClose?: boolean;
 
   /** Whether message is treated as HTML string */
-  dangerouslyUseHTMLString?: boolean
+  dangerouslyUseHTMLString?: boolean;
 
   /** Callback function when closed */
-  onClose?: () => void
+  onClose?: () => void;
 
   /** Callback function when notification clicked */
-  onClick?: () => void
+  onClick?: () => void;
 
   /** Offset from the top edge of the screen. Every Notification instance of the same moment should have the same offset */
-  offset?: number
+  offset?: number;
 
   /** custom position */
-  position?: NotificationPosition
+  position?: NotificationPosition;
 }
 
-export interface ElNotification {
+export interface SgNotification {
   /** Show a notification */
-  (options: ElNotificationOptions): ElNotificationComponent
+  (options: SgNotificationOptions): SgNotificationComponent;
 
   /** Show a success notification */
-  success (message: string | VNode): ElNotificationComponent
+  success(message: string | VNode): SgNotificationComponent;
 
   /** Show a success notification */
-  success (options: ElNotificationOptions): ElNotificationComponent
+  success(options: SgNotificationOptions): SgNotificationComponent;
 
   /** Show a warning notification */
-  warning (message: string | VNode): ElNotificationComponent
+  warning(message: string | VNode): SgNotificationComponent;
 
   /** Show a warning notification */
-  warning (options: ElNotificationOptions): ElNotificationComponent
+  warning(options: SgNotificationOptions): SgNotificationComponent;
 
   /** Show an info notification */
-  info (message: string | VNode): ElNotificationComponent
+  info(message: string | VNode): SgNotificationComponent;
 
   /** Show an info notification */
-  info (options: ElNotificationOptions): ElNotificationComponent
+  info(options: SgNotificationOptions): SgNotificationComponent;
 
   /** Show an error notification */
-  error (message: string | VNode): ElNotificationComponent
+  error(message: string | VNode): SgNotificationComponent;
 
   /** Show an error notification */
-  error (options: ElNotificationOptions): ElNotificationComponent
+  error(options: SgNotificationOptions): SgNotificationComponent;
 }
 
-declare module 'vue/types/vue' {
+declare module "vue/types/vue" {
   interface Vue {
     /** Displays a global notification message at the upper right corner of the page */
-    $notify: ElNotification
+    $notify: SgNotification;
   }
 }

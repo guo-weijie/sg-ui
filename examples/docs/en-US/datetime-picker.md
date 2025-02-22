@@ -14,29 +14,29 @@ DateTimePicker is derived from DatePicker and TimePicker. For a more detailed ex
 <template>
   <div class="block">
     <span class="demonstration">Default</span>
-    <el-date-picker
+    <sg-date-picker
       v-model="value1"
       type="datetime"
       placeholder="Select date and time">
-    </el-date-picker>
+    </sg-date-picker>
   </div>
   <div class="block">
     <span class="demonstration">With shortcuts</span>
-    <el-date-picker
+    <sg-date-picker
       v-model="value2"
       type="datetime"
       placeholder="Select date and time"
       :picker-options="pickerOptions">
-    </el-date-picker>
+    </sg-date-picker>
   </div>
   <div class="block">
     <span class="demonstration">With default time</span>
-    <el-date-picker
+    <sg-date-picker
       v-model="value3"
       type="datetime"
       placeholder="Select date and time"
       default-time="12:00:00">
-    </el-date-picker>
+    </sg-date-picker>
   </div>
 </template>
 
@@ -84,17 +84,17 @@ DateTimePicker is derived from DatePicker and TimePicker. For a more detailed ex
 <template>
   <div class="block">
     <span class="demonstration">Default</span>
-    <el-date-picker
+    <sg-date-picker
       v-model="value1"
       type="datetimerange"
       range-separator="To"
       start-placeholder="Start date"
       end-placeholder="End date">
-    </el-date-picker>
+    </sg-date-picker>
   </div>
   <div class="block">
     <span class="demonstration">With shortcuts</span>
-    <el-date-picker
+    <sg-date-picker
       v-model="value2"
       type="datetimerange"
       :picker-options="pickerOptions"
@@ -102,7 +102,7 @@ DateTimePicker is derived from DatePicker and TimePicker. For a more detailed ex
       start-placeholder="Start date"
       end-placeholder="End date"
       align="right">
-    </el-date-picker>
+    </sg-date-picker>
   </div>
 </template>
 
@@ -153,24 +153,24 @@ DateTimePicker is derived from DatePicker and TimePicker. For a more detailed ex
 <template>
   <div class="block">
     <span class="demonstration">Start date time 12:00:00</span>
-    <el-date-picker
+    <sg-date-picker
       v-model="value1"
       type="datetimerange"
       start-placeholder="Start Date"
       end-placeholder="End Date"
       :default-time="['12:00:00']">
-    </el-date-picker>
+    </sg-date-picker>
   </div>
   <div class="block">
     <span class="demonstration">Start date time 12:00:00, end date time 08:00:00</span>
-    <el-date-picker
+    <sg-date-picker
       v-model="value2"
       type="datetimerange"
       align="right"
       start-placeholder="Start Date"
       end-placeholder="End Date"
       :default-time="['12:00:00', '08:00:00']">
-    </el-date-picker>
+    </sg-date-picker>
   </div>
 </template>
 
@@ -211,8 +211,8 @@ DateTimePicker is derived from DatePicker and TimePicker. For a more detailed ex
 | value-format | optional, format of binding value. If not specified, the binding value will be a Date object | string | see [date formats](#/en-US/component/date-picker#date-formats) | — |
 | name | same as `name` in native input | string | — | — |
 | unlink-panels | unlink two date-panels in range-picker | boolean | — | false |
-| prefix-icon | Custom prefix icon class | string | — | el-icon-date |
-| clear-icon | Custom clear icon class | string | — | el-icon-circle-close |
+| prefix-icon | Custom prefix icon class | string | — | sg-icon-date |
+| clear-icon | Custom clear icon class | string | — | sg-icon-circle-close |
 
 ### Picker Options
 | Attribute      | Description          | Type      | Accepted Values       | Default  |

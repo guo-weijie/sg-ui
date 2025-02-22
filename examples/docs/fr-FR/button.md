@@ -7,41 +7,41 @@ Bouton communément utilisé.
 :::demo Utilisez `type`, `plain`, `round` et `circle` pour définir le style du bouton.
 
 ```html
-<el-row>
-  <el-button>Défaut</el-button>
-  <el-button type="primary">Primary</el-button>
-  <el-button type="success">Success</el-button>
-  <el-button type="info">Info</el-button>
-  <el-button type="warning">Warning</el-button>
-  <el-button type="danger">Danger</el-button>
-</el-row>
+<sg-row>
+  <sg-button>Défaut</sg-button>
+  <sg-button type="primary">Primary</sg-button>
+  <sg-button type="success">Success</sg-button>
+  <sg-button type="info">Info</sg-button>
+  <sg-button type="warning">Warning</sg-button>
+  <sg-button type="danger">Danger</sg-button>
+</sg-row>
 
-<el-row>
-  <el-button plain>Plein</el-button>
-  <el-button type="primary" plain>Primary</el-button>
-  <el-button type="success" plain>Success</el-button>
-  <el-button type="info" plain>Info</el-button>
-  <el-button type="warning" plain>Warning</el-button>
-  <el-button type="danger" plain>Danger</el-button>
-</el-row>
+<sg-row>
+  <sg-button plain>Plein</sg-button>
+  <sg-button type="primary" plain>Primary</sg-button>
+  <sg-button type="success" plain>Success</sg-button>
+  <sg-button type="info" plain>Info</sg-button>
+  <sg-button type="warning" plain>Warning</sg-button>
+  <sg-button type="danger" plain>Danger</sg-button>
+</sg-row>
 
-<el-row>
-  <el-button round>Arrondi</el-button>
-  <el-button type="primary" round>Primary</el-button>
-  <el-button type="success" round>Success</el-button>
-  <el-button type="info" round>Info</el-button>
-  <el-button type="warning" round>Warning</el-button>
-  <el-button type="danger" round>Danger</el-button>
-</el-row>
+<sg-row>
+  <sg-button round>Arrondi</sg-button>
+  <sg-button type="primary" round>Primary</sg-button>
+  <sg-button type="success" round>Success</sg-button>
+  <sg-button type="info" round>Info</sg-button>
+  <sg-button type="warning" round>Warning</sg-button>
+  <sg-button type="danger" round>Danger</sg-button>
+</sg-row>
 
-<el-row>
-  <el-button icon="el-icon-search" circle></el-button>
-  <el-button type="primary" icon="el-icon-edit" circle></el-button>
-  <el-button type="success" icon="el-icon-check" circle></el-button>
-  <el-button type="info" icon="el-icon-message" circle></el-button>
-  <el-button type="warning" icon="el-icon-star-off" circle></el-button>
-  <el-button type="danger" icon="el-icon-delete" circle></el-button>
-</el-row>
+<sg-row>
+  <sg-button icon="sg-icon-search" circle></sg-button>
+  <sg-button type="primary" icon="sg-icon-edit" circle></sg-button>
+  <sg-button type="success" icon="sg-icon-check" circle></sg-button>
+  <sg-button type="info" icon="sg-icon-message" circle></sg-button>
+  <sg-button type="warning" icon="sg-icon-star-off" circle></sg-button>
+  <sg-button type="danger" icon="sg-icon-delete" circle></sg-button>
+</sg-row>
 ```
 :::
 
@@ -52,23 +52,23 @@ L'attribut `disabled` détermine si le bouton est désactivé.
 :::demo Utilisez l'attribut `disabled` pour déterminer si un bouton est désactivé ou non. Il accepte un `Boolean`.
 
 ```html
-<el-row>
-  <el-button disabled>Défaut</el-button>
-  <el-button type="primary" disabled>Principal</el-button>
-  <el-button type="success" disabled>Succès</el-button>
-  <el-button type="info" disabled>Info</el-button>
-  <el-button type="warning" disabled>Attention</el-button>
-  <el-button type="danger" disabled>Danger</el-button>
-</el-row>
+<sg-row>
+  <sg-button disabled>Défaut</sg-button>
+  <sg-button type="primary" disabled>Principal</sg-button>
+  <sg-button type="success" disabled>Succès</sg-button>
+  <sg-button type="info" disabled>Info</sg-button>
+  <sg-button type="warning" disabled>Attention</sg-button>
+  <sg-button type="danger" disabled>Danger</sg-button>
+</sg-row>
 
-<el-row>
-  <el-button plain disabled>Plein</el-button>
-  <el-button type="primary" plain disabled>Principal</el-button>
-  <el-button type="success" plain disabled>Succès</el-button>
-  <el-button type="info" plain disabled>Info</el-button>
-  <el-button type="warning" plain disabled>Attention</el-button>
-  <el-button type="danger" plain disabled>Danger</el-button>
-</el-row>
+<sg-row>
+  <sg-button plain disabled>Plein</sg-button>
+  <sg-button type="primary" plain disabled>Principal</sg-button>
+  <sg-button type="success" plain disabled>Succès</sg-button>
+  <sg-button type="info" plain disabled>Info</sg-button>
+  <sg-button type="warning" plain disabled>Attention</sg-button>
+  <sg-button type="danger" plain disabled>Danger</sg-button>
+</sg-row>
 ```
 :::
 
@@ -78,8 +78,8 @@ Bouton sans bordure ni fond.
 
 :::demo
 ```html
-<el-button type="text">Bouton texte</el-button>
-<el-button type="text" disabled>Bouton texte</el-button>
+<sg-button type="text">Bouton texte</sg-button>
+<sg-button type="text" disabled>Bouton texte</sg-button>
 ```
 :::
 
@@ -90,11 +90,11 @@ Utilisez des icônes pour ajouter plus de sens aux boutons. Vous pouvez utiliser
 :::demo Utilisez l'attribut `icon` pour ajouter une icône. Vous pourrez trouver la liste des icônes dans le composant Icon d'Element. Ajouter des icônes sur le coté droit du texte est possible grâce à la balise `<i>`. Des icônes personnalisées peuvent également être utilisées.
 
 ```html
-<el-button type="primary" icon="el-icon-edit"></el-button>
-<el-button type="primary" icon="el-icon-share"></el-button>
-<el-button type="primary" icon="el-icon-delete"></el-button>
-<el-button type="primary" icon="el-icon-search">Recherche</el-button>
-<el-button type="primary">Upload<i class="el-icon-upload el-icon-right"></i></el-button>
+<sg-button type="primary" icon="sg-icon-edit"></sg-button>
+<sg-button type="primary" icon="sg-icon-share"></sg-button>
+<sg-button type="primary" icon="sg-icon-delete"></sg-button>
+<sg-button type="primary" icon="sg-icon-search">Recherche</sg-button>
+<sg-button type="primary">Upload<i class="sg-icon-upload sg-icon-right"></i></sg-button>
 ```
 :::
 
@@ -102,18 +102,18 @@ Utilisez des icônes pour ajouter plus de sens aux boutons. Vous pouvez utiliser
 
 Affiche un groupe de bouton. Peut être utilisé pour grouper un ensemble d'opérations similaires.
 
-:::demo Utilisez la balise `<el-button-group>` pour grouper vos boutons.
+:::demo Utilisez la balise `<sg-button-group>` pour grouper vos boutons.
 
 ```html
-<el-button-group>
-  <el-button type="primary" icon="el-icon-arrow-left">Page précédente</el-button>
-  <el-button type="primary">Page suivante<i class="el-icon-arrow-right el-icon-right"></i></el-button>
-</el-button-group>
-<el-button-group>
-  <el-button type="primary" icon="el-icon-edit"></el-button>
-  <el-button type="primary" icon="el-icon-share"></el-button>
-  <el-button type="primary" icon="el-icon-delete"></el-button>
-</el-button-group>
+<sg-button-group>
+  <sg-button type="primary" icon="sg-icon-arrow-left">Page précédente</sg-button>
+  <sg-button type="primary">Page suivante<i class="sg-icon-arrow-right sg-icon-right"></i></sg-button>
+</sg-button-group>
+<sg-button-group>
+  <sg-button type="primary" icon="sg-icon-edit"></sg-button>
+  <sg-button type="primary" icon="sg-icon-share"></sg-button>
+  <sg-button type="primary" icon="sg-icon-delete"></sg-button>
+</sg-button-group>
 ```
 :::
 
@@ -124,7 +124,7 @@ Cliquez sur le bouton pour charger des données et il affichera un état de char
 :::demo Configurez l'attribut `loading` à `true` pour afficher un état de chargement.
 
 ```html
-<el-button type="primary" :loading="true">Chargement</el-button>
+<sg-button type="primary" :loading="true">Chargement</sg-button>
 ```
 :::
 
@@ -135,18 +135,18 @@ En plus de la taille par défaut, le composant Button fournit trois tailles supp
 :::demo Utilisez l'attribut `size` pour choisir d'autres tailles parmi `medium`, `small` ou `mini`.
 
 ```html
-<el-row>
-  <el-button>Défaut</el-button>
-  <el-button size="medium">Medium</el-button>
-  <el-button size="small">Small</el-button>
-  <el-button size="mini">Mini</el-button>
-</el-row>
-<el-row>
-  <el-button round>Défaut</el-button>
-  <el-button size="medium" round>Medium</el-button>
-  <el-button size="small" round>Small</el-button>
-  <el-button size="mini" round>Mini</el-button>
-</el-row>
+<sg-row>
+  <sg-button>Défaut</sg-button>
+  <sg-button size="medium">Medium</sg-button>
+  <sg-button size="small">Small</sg-button>
+  <sg-button size="mini">Mini</sg-button>
+</sg-row>
+<sg-row>
+  <sg-button round>Défaut</sg-button>
+  <sg-button size="medium" round>Medium</sg-button>
+  <sg-button size="small" round>Small</sg-button>
+  <sg-button size="mini" round>Mini</sg-button>
+</sg-row>
 ```
 :::
 

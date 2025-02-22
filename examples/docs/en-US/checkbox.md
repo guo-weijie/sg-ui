@@ -6,12 +6,12 @@ A group of options for multiple choices.
 
 Checkbox can be used alone to switch between two states.
 
-:::demo Define `v-model`(bind variable) in `el-checkbox`. The default value is a `Boolean` for single `checkbox`, and it becomes `true` when selected. Content inside the `el-checkbox` tag will become the description following the button of the checkbox.
+:::demo Define `v-model`(bind variable) in `sg-checkbox`. The default value is a `Boolean` for single `checkbox`, and it becomes `true` when selected. Content inside the `sg-checkbox` tag will become the description following the button of the checkbox.
 
 ```html
 <template>
   <!-- `checked` should be true or false -->
-  <el-checkbox v-model="checked">Option</el-checkbox>
+  <sg-checkbox v-model="checked">Option</sg-checkbox>
 </template>
 <script>
   export default {
@@ -33,8 +33,8 @@ Disabled state for checkbox.
 
 ```html
 <template>
-  <el-checkbox v-model="checked1" disabled>Option</el-checkbox>
-  <el-checkbox v-model="checked2" disabled>Option</el-checkbox>
+  <sg-checkbox v-model="checked1" disabled>Option</sg-checkbox>
+  <sg-checkbox v-model="checked2" disabled>Option</sg-checkbox>
 </template>
 <script>
   export default {
@@ -53,17 +53,17 @@ Disabled state for checkbox.
 
 It is used for multiple checkboxes which are bound in one group, and indicates whether one option is selected by checking if it is checked.
 
-:::demo `checkbox-group` element can manage multiple checkboxes in one group by using `v-model` which is bound as an `Array`. Inside the `el-checkbox` element, `label` is the value of the checkbox. If no content is nested in that tag, `label` will be rendered as the description following the button of the checkbox. `label` also corresponds with the element values in the array. It is selected if the specified value exists in the array, and vice versa.
+:::demo `checkbox-group` element can manage multiple checkboxes in one group by using `v-model` which is bound as an `Array`. Inside the `sg-checkbox` element, `label` is the value of the checkbox. If no content is nested in that tag, `label` will be rendered as the description following the button of the checkbox. `label` also corresponds with the element values in the array. It is selected if the specified value exists in the array, and vice versa.
 
 ```html
 <template>
-  <el-checkbox-group v-model="checkList">
-    <el-checkbox label="Option A"></el-checkbox>
-    <el-checkbox label="Option B"></el-checkbox>
-    <el-checkbox label="Option C"></el-checkbox>
-    <el-checkbox label="disabled" disabled></el-checkbox>
-    <el-checkbox label="selected and disabled" disabled></el-checkbox>
-  </el-checkbox-group>
+  <sg-checkbox-group v-model="checkList">
+    <sg-checkbox label="Option A"></sg-checkbox>
+    <sg-checkbox label="Option B"></sg-checkbox>
+    <sg-checkbox label="Option C"></sg-checkbox>
+    <sg-checkbox label="disabled" disabled></sg-checkbox>
+    <sg-checkbox label="selected and disabled" disabled></sg-checkbox>
+  </sg-checkbox-group>
 </template>
 
 <script>
@@ -86,11 +86,11 @@ The `indeterminate` property can help you to achieve a 'check all' effect.
 
 ```html
 <template>
-  <el-checkbox :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange">Check all</el-checkbox>
+  <sg-checkbox :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange">Check all</sg-checkbox>
   <div style="margin: 15px 0;"></div>
-  <el-checkbox-group v-model="checkedCities" @change="handleCheckedCitiesChange">
-    <el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
-  </el-checkbox-group>
+  <sg-checkbox-group v-model="checkedCities" @change="handleCheckedCitiesChange">
+    <sg-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</sg-checkbox>
+  </sg-checkbox-group>
 </template>
 <script>
   const cityOptions = ['Shanghai', 'Beijing', 'Guangzhou', 'Shenzhen'];
@@ -127,12 +127,12 @@ The `min` and `max` properties can help you to limit the number of checked items
 
 ```html
 <template>
-  <el-checkbox-group 
+  <sg-checkbox-group 
     v-model="checkedCities"
     :min="1"
     :max="2">
-    <el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
-  </el-checkbox-group>
+    <sg-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</sg-checkbox>
+  </sg-checkbox-group>
 </template>
 <script>
   const cityOptions = ['Shanghai', 'Beijing', 'Guangzhou', 'Shenzhen'];
@@ -152,28 +152,28 @@ The `min` and `max` properties can help you to limit the number of checked items
 
 Checkbox with button styles.
 
-:::demo You just need to change `el-checkbox` element into `el-checkbox-button` element. We also provide `size` attribute.
+:::demo You just need to change `sg-checkbox` element into `sg-checkbox-button` element. We also provide `size` attribute.
 ```html
 <template>
   <div>
-    <el-checkbox-group v-model="checkboxGroup1">
-      <el-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox-button>
-    </el-checkbox-group>
+    <sg-checkbox-group v-model="checkboxGroup1">
+      <sg-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</sg-checkbox-button>
+    </sg-checkbox-group>
   </div>
   <div style="margin-top: 20px">
-    <el-checkbox-group v-model="checkboxGroup2" size="medium">
-      <el-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox-button>
-    </el-checkbox-group>
+    <sg-checkbox-group v-model="checkboxGroup2" size="medium">
+      <sg-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</sg-checkbox-button>
+    </sg-checkbox-group>
   </div>
   <div style="margin-top: 20px">
-    <el-checkbox-group v-model="checkboxGroup3" size="small">
-      <el-checkbox-button v-for="city in cities" :label="city" :disabled="city === 'Beijing'" :key="city">{{city}}</el-checkbox-button>
-    </el-checkbox-group>
+    <sg-checkbox-group v-model="checkboxGroup3" size="small">
+      <sg-checkbox-button v-for="city in cities" :label="city" :disabled="city === 'Beijing'" :key="city">{{city}}</sg-checkbox-button>
+    </sg-checkbox-group>
   </div>
   <div style="margin-top: 20px">
-    <el-checkbox-group v-model="checkboxGroup4" size="mini" disabled>
-      <el-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox-button>
-    </el-checkbox-group>
+    <sg-checkbox-group v-model="checkboxGroup4" size="mini" disabled>
+      <sg-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</sg-checkbox-button>
+    </sg-checkbox-group>
   </div>
 </template>
 <script>
@@ -200,24 +200,24 @@ Checkbox with button styles.
 ```html
 <template>
   <div>
-    <el-checkbox v-model="checked1" label="Option1" border></el-checkbox>
-    <el-checkbox v-model="checked2" label="Option2" border></el-checkbox>
+    <sg-checkbox v-model="checked1" label="Option1" border></sg-checkbox>
+    <sg-checkbox v-model="checked2" label="Option2" border></sg-checkbox>
   </div>
   <div style="margin-top: 20px">
-    <el-checkbox v-model="checked3" label="Option1" border size="medium"></el-checkbox>
-    <el-checkbox v-model="checked4" label="Option2" border size="medium"></el-checkbox>
+    <sg-checkbox v-model="checked3" label="Option1" border size="medium"></sg-checkbox>
+    <sg-checkbox v-model="checked4" label="Option2" border size="medium"></sg-checkbox>
   </div>
   <div style="margin-top: 20px">
-    <el-checkbox-group v-model="checkboxGroup1" size="small">
-      <el-checkbox label="Option1" border></el-checkbox>
-      <el-checkbox label="Option2" border disabled></el-checkbox>
-    </el-checkbox-group>
+    <sg-checkbox-group v-model="checkboxGroup1" size="small">
+      <sg-checkbox label="Option1" border></sg-checkbox>
+      <sg-checkbox label="Option2" border disabled></sg-checkbox>
+    </sg-checkbox-group>
   </div>
   <div style="margin-top: 20px">
-    <el-checkbox-group v-model="checkboxGroup2" size="mini" disabled>
-      <el-checkbox label="Option1" border></el-checkbox>
-      <el-checkbox label="Option2" border></el-checkbox>
-    </el-checkbox-group>
+    <sg-checkbox-group v-model="checkboxGroup2" size="mini" disabled>
+      <sg-checkbox label="Option1" border></sg-checkbox>
+      <sg-checkbox label="Option2" border></sg-checkbox>
+    </sg-checkbox-group>
   </div>
 </template>
 

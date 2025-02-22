@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Loading from './loading.vue';
-import { addClass, removeClass, getStyle } from 'element-ui/src/utils/dom';
-import { PopupManager } from 'element-ui/src/utils/popup';
-import afterLeave from 'element-ui/src/utils/after-leave';
+import { addClass, removeClass, getStyle } from 'sg-ui/src/utils/dom';
+import { PopupManager } from 'sg-ui/src/utils/popup';
+import afterLeave from 'sg-ui/src/utils/after-leave';
 const Mask = Vue.extend(Loading);
 
 const loadingDirective = {};
@@ -29,7 +29,7 @@ loadingDirective.install = Vue => {
               el.maskStyle[property] = el.getBoundingClientRect()[property] +
                 document.body[scroll] +
                 document.documentElement[scroll] -
-                parseInt(getStyle(document.body, `margin-${ property }`), 10) +
+                parseInt(getStyle(document.body, `margin-${property}`), 10) +
                 'px';
             });
             ['height', 'width'].forEach(property => {
@@ -50,8 +50,8 @@ loadingDirective.install = Vue => {
         const target = binding.modifiers.fullscreen || binding.modifiers.body
           ? document.body
           : el;
-        removeClass(target, 'el-loading-parent--relative');
-        removeClass(target, 'el-loading-parent--hidden');
+        removeClass(target, 'sg-loading-parent--relative');
+        removeClass(target, 'sg-loading-parent--hidden');
         el.instance.hiding = false;
       }, 300, true);
       el.instance.visible = false;
@@ -65,10 +65,10 @@ loadingDirective.install = Vue => {
       });
 
       if (el.originalPosition !== 'absolute' && el.originalPosition !== 'fixed' && el.originalPosition !== 'sticky') {
-        addClass(parent, 'el-loading-parent--relative');
+        addClass(parent, 'sg-loading-parent--relative');
       }
       if (binding.modifiers.fullscreen && binding.modifiers.lock) {
-        addClass(parent, 'el-loading-parent--hidden');
+        addClass(parent, 'sg-loading-parent--hidden');
       }
       el.domVisible = true;
 
@@ -88,7 +88,7 @@ loadingDirective.install = Vue => {
   };
 
   Vue.directive('loading', {
-    bind: function(el, binding, vnode) {
+    bind: function (el, binding, vnode) {
       const textExr = el.getAttribute('element-loading-text');
       const spinnerExr = el.getAttribute('element-loading-spinner');
       const backgroundExr = el.getAttribute('element-loading-background');
@@ -111,18 +111,18 @@ loadingDirective.install = Vue => {
       binding.value && toggleLoading(el, binding);
     },
 
-    update: function(el, binding) {
+    update: function (el, binding) {
       el.instance.setText(el.getAttribute('element-loading-text'));
       if (binding.oldValue !== binding.value) {
         toggleLoading(el, binding);
       }
     },
 
-    unbind: function(el, binding) {
+    unbind: function (el, binding) {
       if (el.domInserted) {
         el.mask &&
-        el.mask.parentNode &&
-        el.mask.parentNode.removeChild(el.mask);
+          el.mask.parentNode &&
+          el.mask.parentNode.removeChild(el.mask);
         toggleLoading(el, { value: false, modifiers: binding.modifiers });
       }
       el.instance && el.instance.$destroy();

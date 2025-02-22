@@ -1,19 +1,17 @@
 <template>
-  <div
-    class="el-steps"
-    :class="[
-       !simple && 'el-steps--' + direction,
-       simple && 'el-steps--simple'
-     ]">
-      <slot></slot>
+  <div class="sg-steps" :class="[
+    !simple && 'sg-steps--' + direction,
+    simple && 'sg-steps--simple'
+  ]">
+    <slot></slot>
   </div>
 </template>
 
 <script>
-import Migrating from 'element-ui/src/mixins/migrating';
+import Migrating from 'sg-ui/src/mixins/migrating';
 
 export default {
-  name: 'ElSteps',
+  name: 'SgSteps',
 
   mixins: [Migrating],
 

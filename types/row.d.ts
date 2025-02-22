@@ -1,25 +1,30 @@
-import { ElementUIComponent } from './component'
+import { SgementUIComponent } from "./component";
 
 /** Horizontal alignment of flex layout */
-export type HorizontalAlignment = 'start' | 'end' | 'center' | 'space-around' | 'space-between'
+export type HorizontalAlignment =
+  | "start"
+  | "end"
+  | "center"
+  | "space-around"
+  | "space-between";
 
 /** vertical alignment of flex layout */
-export type VertialAlignment = 'top' | 'middle' | 'bottom'
+export type VertialAlignment = "top" | "middle" | "bottom";
 
 /** Row Layout Component */
-export declare class ElRow extends ElementUIComponent {
+export declare class SgRow extends SgementUIComponent {
   /** Grid spacing */
-  gutter: number
+  gutter: number;
 
   /** Layout mode. You can use flex. Works in modern browsers */
-  type: string
+  type: string;
 
   /** Horizontal alignment of flex layout */
-  justify: HorizontalAlignment
+  justify: HorizontalAlignment;
 
   /** Vertical alignment of flex layout */
-  align: VertialAlignment
+  align: VertialAlignment;
 
   /** Custom element tag */
-  tag: string
+  tag: string;
 }

@@ -1,37 +1,43 @@
-import { ElementUIComponent, ElementUIComponentSize } from './component'
+import { SgementUIComponent, SgementUIComponentSize } from "./component";
 
 /** Button type */
-export type ButtonType = 'primary' | 'success' | 'warning' | 'danger' | 'info' | 'text'
+export type ButtonType =
+  | "primary"
+  | "success"
+  | "warning"
+  | "danger"
+  | "info"
+  | "text";
 
 /** Same as native button's type */
-export type ButtonNativeType = 'button' | 'submit' | 'reset' | 'menu'
+export type ButtonNativeType = "button" | "submit" | "reset" | "menu";
 
 /** Button Component */
-export declare class ElButton extends ElementUIComponent {
+export declare class SgButton extends SgementUIComponent {
   /** Button size */
-  size: ElementUIComponentSize
+  size: SgementUIComponentSize;
 
   /** Button type */
-  type: ButtonType
+  type: ButtonType;
 
   /** Determine whether it's a plain button */
-  plain: boolean
+  plain: boolean;
 
   /** Determine whether it's a round button */
-  round: boolean
+  round: boolean;
 
   /** Determine whether it's loading */
-  loading: boolean
+  loading: boolean;
 
   /** Disable the button */
-  disabled: boolean
+  disabled: boolean;
 
-  /** Button icon, accepts an icon name of Element icon component */
-  icon: string
+  /** Button icon, accepts an icon name of Sgement icon component */
+  icon: string;
 
   /** Same as native button's autofocus */
-  autofocus: boolean
+  autofocus: boolean;
 
   /** Same as native button's type */
-  nativeType: ButtonNativeType
+  nativeType: ButtonNativeType;
 }

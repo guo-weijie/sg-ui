@@ -1,8 +1,8 @@
-import ElDropdownItem from '../dropdown/src/dropdown-item';
+import SgDropdownItem from '../dropdown/src/dropdown-item';
 
 /* istanbul ignore next */
-ElDropdownItem.install = function(Vue) {
-  Vue.component(ElDropdownItem.name, ElDropdownItem);
+SgDropdownItem.install = function (Vue) {
+  Vue.component(SgDropdownItem.name, SgDropdownItem);
 };
 
-export default ElDropdownItem;
+export default SgDropdownItem;

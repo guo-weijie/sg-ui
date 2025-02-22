@@ -8,11 +8,11 @@ ColorPicker is a color selector supporting multiple color formats.
 ```html
 <div class="block">
   <span class="demonstration">With default value</span>
-  <el-color-picker v-model="color1"></el-color-picker>
+  <sg-color-picker v-model="color1"></sg-color-picker>
 </div>
 <div class="block">
   <span class="demonstration">With no default value</span>
-  <el-color-picker v-model="color2"></el-color-picker>
+  <sg-color-picker v-model="color2"></sg-color-picker>
 </div>
 
 <script>
@@ -32,7 +32,7 @@ ColorPicker is a color selector supporting multiple color formats.
 
 :::demo ColorPicker supports alpha channel selecting. To activate alpha selecting, just add the `show-alpha` attribute.
 ```html
-<el-color-picker v-model="color" show-alpha></el-color-picker>
+<sg-color-picker v-model="color" show-alpha></sg-color-picker>
 
 <script>
   export default {
@@ -50,11 +50,11 @@ ColorPicker is a color selector supporting multiple color formats.
 
 :::demo ColorPicker supports predefined color options
 ```html
-<el-color-picker
+<sg-color-picker
   v-model="color"
   show-alpha
   :predefine="predefineColors">
-</el-color-picker>
+</sg-color-picker>
 
 <script>
   export default {
@@ -89,10 +89,10 @@ ColorPicker is a color selector supporting multiple color formats.
 
 :::demo
 ```html
-<el-color-picker v-model="color"></el-color-picker>
-<el-color-picker v-model="color" size="medium"></el-color-picker>
-<el-color-picker v-model="color" size="small"></el-color-picker>
-<el-color-picker v-model="color" size="mini"></el-color-picker>
+<sg-color-picker v-model="color"></sg-color-picker>
+<sg-color-picker v-model="color" size="medium"></sg-color-picker>
+<sg-color-picker v-model="color" size="small"></sg-color-picker>
+<sg-color-picker v-model="color" size="mini"></sg-color-picker>
 
 <script>
   export default {

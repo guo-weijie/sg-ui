@@ -1,7 +1,7 @@
-import { ElementUIComponent } from './component'
+import { SgementUIComponent } from "./component";
 
 /** Icon Component */
-export declare class ElIcon extends ElementUIComponent {
+export declare class SgIcon extends SgementUIComponent {
   /** Icon name */
-  name: string  
+  name: string;
 }

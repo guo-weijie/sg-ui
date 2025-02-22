@@ -6,11 +6,11 @@ Progreso es usado para mostrar el estado de la operación actual e informar al u
 :::demo Usa el atributo `percentage` para asignar el porcentaje. Este es **requerido** y tiene que ser un valor entre `0-100`. Puede personalizar el formato de texto estableciendo `format`.
 
 ```html
-<el-progress :percentage="50"></el-progress>
-<el-progress :percentage="100" :format="format"></el-progress>
-<el-progress :percentage="100" status="success"></el-progress>
-<el-progress :percentage="100" status="warning"></el-progress>
-<el-progress :percentage="50" status="exception"></el-progress>
+<sg-progress :percentage="50"></sg-progress>
+<sg-progress :percentage="100" :format="format"></sg-progress>
+<sg-progress :percentage="100" status="success"></sg-progress>
+<sg-progress :percentage="100" status="warning"></sg-progress>
+<sg-progress :percentage="50" status="exception"></sg-progress>
 
 <script>
   export default {
@@ -29,10 +29,10 @@ En este caso el porcentaje no toma espacio adicional.
 
 :::demo El atributo `stroke-width` decide el ancho de la barra de progreso, y usa el atributo `text-inside` para poner la descripción dentro de la misma.
 ```html
-<el-progress :text-inside="true" :stroke-width="26" :percentage="70"></el-progress>
-<el-progress :text-inside="true" :stroke-width="24" :percentage="100" status="success"></el-progress>
-<el-progress :text-inside="true" :stroke-width="22" :percentage="80" status="warning"></el-progress>
-<el-progress :text-inside="true" :stroke-width="20" :percentage="50" status="exception"></el-progress>
+<sg-progress :text-inside="true" :stroke-width="26" :percentage="70"></sg-progress>
+<sg-progress :text-inside="true" :stroke-width="24" :percentage="100" status="success"></sg-progress>
+<sg-progress :text-inside="true" :stroke-width="22" :percentage="80" status="warning"></sg-progress>
+<sg-progress :text-inside="true" :stroke-width="20" :percentage="50" status="exception"></sg-progress>
 ```
 :::
 
@@ -43,16 +43,16 @@ Puede utilizar el atributo `color` para establecer el color de la barra de progr
 :::demo
 
 ```html
-<el-progress :percentage="percentage" :color="customColor"></el-progress>
+<sg-progress :percentage="percentage" :color="customColor"></sg-progress>
 
-<el-progress :percentage="percentage" :color="customColorMethod"></el-progress>
+<sg-progress :percentage="percentage" :color="customColorMethod"></sg-progress>
 
-<el-progress :percentage="percentage" :color="customColors"></el-progress>
+<sg-progress :percentage="percentage" :color="customColors"></sg-progress>
 <div>
-  <el-button-group>
-    <el-button icon="el-icon-minus" @click="decrease"></el-button>
-    <el-button icon="el-icon-plus" @click="increase"></el-button>
-  </el-button-group>
+  <sg-button-group>
+    <sg-button icon="sg-icon-minus" @click="decrease"></sg-button>
+    <sg-button icon="sg-icon-plus" @click="increase"></sg-button>
+  </sg-button-group>
 </div>
 
 <script>
@@ -102,11 +102,11 @@ Puede utilizar el atributo `color` para establecer el color de la barra de progr
 
 :::demo Puede asignar el atributo `type` como `circle` para usar la barra circular de progreso, y usar el atributo `width` para cambiar el tamaño del círculo.
 ```html
-<el-progress type="circle" :percentage="0"></el-progress>
-<el-progress type="circle" :percentage="25"></el-progress>
-<el-progress type="circle" :percentage="100" status="success"></el-progress>
-<el-progress type="circle" :percentage="70" status="warning"></el-progress>
-<el-progress type="circle" :percentage="50" status="exception"></el-progress>
+<sg-progress type="circle" :percentage="0"></sg-progress>
+<sg-progress type="circle" :percentage="25"></sg-progress>
+<sg-progress type="circle" :percentage="100" status="success"></sg-progress>
+<sg-progress type="circle" :percentage="70" status="warning"></sg-progress>
+<sg-progress type="circle" :percentage="50" status="exception"></sg-progress>
 ```
 :::
 
@@ -115,13 +115,13 @@ Puede utilizar el atributo `color` para establecer el color de la barra de progr
 :::demo También puede especificar el atributo `type` a `dashboard` para usar la barra de progreso del panel de control.
 
 ```html
-<el-progress type="dashboard" :percentage="percentage" :color="colors"></el-progress>
+<sg-progress type="dashboard" :percentage="percentage" :color="colors"></sg-progress>
 
 <div>
-  <el-button-group>
-    <el-button icon="el-icon-minus" @click="decrease"></el-button>
-    <el-button icon="el-icon-plus" @click="increase"></el-button>
-  </el-button-group>
+  <sg-button-group>
+    <sg-button icon="sg-icon-minus" @click="decrease"></sg-button>
+    <sg-button icon="sg-icon-plus" @click="increase"></sg-button>
+  </sg-button-group>
 </div>
 
 <script>

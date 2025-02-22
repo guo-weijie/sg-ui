@@ -1,8 +1,8 @@
-import ElTable from './src/table';
+import SgTable from './src/table';
 
 /* istanbul ignore next */
-ElTable.install = function(Vue) {
-  Vue.component(ElTable.name, ElTable);
+SgTable.install = function (Vue) {
+  Vue.component(SgTable.name, SgTable);
 };
 
-export default ElTable;
+export default SgTable;

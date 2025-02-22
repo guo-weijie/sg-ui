@@ -38,8 +38,8 @@
     }
 
     &:last-child {
-      .el-breadcrumb__inner,
-      .el-breadcrumb__inner a {
+      .sg-breadcrumb__inner,
+      .sg-breadcrumb__inner a {
         &, &:hover {
           font-weight: normal;
           color: $--color-text-regular;
@@ -47,7 +47,7 @@
         }
       }
 
-      .el-breadcrumb__separator {
+      .sg-breadcrumb__separator {
         display: none;
       }
     }

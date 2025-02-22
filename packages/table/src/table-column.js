@@ -1,11 +1,11 @@
 import { cellStarts, cellForced, defaultRenderCell, treeCellPrefix } from './config';
 import { mergeOptions, parseWidth, parseMinWidth, compose } from './util';
-import ElCheckbox from 'element-ui/packages/checkbox';
+import SgCheckbox from 'sg-ui/packages/checkbox';
 
 let columnIdSeed = 1;
 
 export default {
-  name: 'ElTableColumn',
+  name: 'SgTableColumn',
 
   props: {
     type: {
@@ -159,7 +159,7 @@ export default {
       if (column.type === 'expand') {
         // 对于展开行，renderCell 不允许配置的。在上一步中已经设置过，这里需要简单封装一下。
         column.renderCell = (h, data) => (<div class="cell">
-          { originRenderCell(h, data) }
+          {originRenderCell(h, data)}
         </div>);
         this.owner.renderExpanded = (h, data) => {
           return this.$scopedSlots.default
@@ -182,12 +182,12 @@ export default {
             style: {}
           };
           if (column.showOverflowTooltip) {
-            props.class += ' el-tooltip';
-            props.style = {width: (data.column.realWidth || data.column.width) - 1 + 'px'};
+            props.class += ' sg-tooltip';
+            props.style = { width: (data.column.realWidth || data.column.width) - 1 + 'px' };
           }
-          return (<div { ...props }>
-            { prefix }
-            { children }
+          return (<div {...props}>
+            {prefix}
+            {children}
           </div>);
         };
       }
@@ -241,7 +241,7 @@ export default {
   },
 
   components: {
-    ElCheckbox
+    SgCheckbox
   },
 
   beforeCreate() {

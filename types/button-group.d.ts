@@ -1,4 +1,4 @@
-import { ElementUIComponent } from './component'
+import { SgementUIComponent } from "./component";
 
 /** Button Group Component */
-export declare class ElButtonGroup extends ElementUIComponent {}
+export declare class SgButtonGroup extends SgementUIComponent {}

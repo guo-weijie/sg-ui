@@ -1,7 +1,7 @@
-import { ElementUIComponent } from './component'
+import { SgementUIComponent } from "./component";
 
 /** Footer Component */
-export declare class ElFooter extends ElementUIComponent {
+export declare class SgFooter extends SgementUIComponent {
   /** Height of the footer */
-  height: string
+  height: string;
 }

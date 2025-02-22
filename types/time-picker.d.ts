@@ -1,4 +1,8 @@
-import { ElementUIComponent, ElementUIComponentSize, ElementUIHorizontalAlignment } from './component'
+import {
+  SgementUIComponent,
+  SgementUIComponentSize,
+  SgementUIHorizontalAlignment,
+} from "./component";
 
 export interface TimePickerOptions {
   /**
@@ -6,58 +10,58 @@ export interface TimePickerOptions {
    * e.g. `'18:30:00 - 20:30:00'`
    * or `['09:30:00 - 12:00:00', '14:30:00 - 18:30:00']`
    */
-  selectableRange?: string | string[],
+  selectableRange?: string | string[];
 
   /** Format  of the picker */
-  format?: string
+  format?: string;
 }
 
 /** TimePicker Component */
-export declare class ElTimePicker extends ElementUIComponent {
+export declare class SgTimePicker extends SgementUIComponent {
   /** Whether DatePicker is read only */
-  readonly: boolean
+  readonly: boolean;
 
   /** Whether DatePicker is disabled */
-  disabled: boolean
+  disabled: boolean;
 
   /** Whether the input is editable */
-  editable: boolean
+  editable: boolean;
 
   /** Whether to show clear button */
-  clearable: boolean
+  clearable: boolean;
 
   /** Size of Input */
-  size: ElementUIComponentSize
+  size: SgementUIComponentSize;
 
   /** Placeholder */
-  placeholder: string
+  placeholder: string;
 
   /** Placeholder for the start time in range mode */
-  startPlaceholder: string
+  startPlaceholder: string;
 
   /** Placeholder for the end time in range mode */
-  endPlaceholder: string
+  endPlaceholder: string;
 
   /** Whether to pick a time range */
-  isRange: boolean
+  isRange: boolean;
 
   /** Value of the picker */
-  value: string | Date
+  value: string | Date;
 
   /** Alignment */
-  align: ElementUIHorizontalAlignment
+  align: SgementUIHorizontalAlignment;
 
   /** Custom class name for TimePicker's dropdown */
-  popperClass: string
+  popperClass: string;
 
   /** Additional options, check the table below */
-  pickerOptions: TimePickerOptions
+  pickerOptions: TimePickerOptions;
 
   /** Range separator */
-  rangeSeparator: string
+  rangeSeparator: string;
 
   /**
    * Focus the Input component
    */
-  focus (): void
+  focus(): void;
 }

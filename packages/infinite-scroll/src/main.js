@@ -4,10 +4,10 @@ import {
   isFunction,
   isUndefined,
   isDefined
-} from 'element-ui/src/utils/types';
+} from 'sg-ui/src/utils/types';
 import {
   getScrollContainer
-} from 'element-ui/src/utils/dom';
+} from 'sg-ui/src/utils/dom';
 
 const getStyleComputedProperty = (element, property) => {
   if (element === window) {
@@ -41,7 +41,7 @@ const getClientHeight = el => {
   return getPositionSize(el, 'clientHeight');
 };
 
-const scope = 'ElInfiniteScroll';
+const scope = 'SgInfiniteScroll';
 const attributes = {
   delay: {
     type: Number,
@@ -86,7 +86,7 @@ const getScrollOptions = (el, vm) => {
 
 const getElementTop = el => el.getBoundingClientRect().top;
 
-const handleScroll = function(cb) {
+const handleScroll = function (cb) {
   const { el, vm, container, observer } = this[scope];
   const { distance, disabled } = getScrollOptions(el, vm);
 

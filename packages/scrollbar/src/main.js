@@ -1,13 +1,13 @@
 // reference https://github.com/noeldelgado/gemini-scrollbar/blob/master/index.js
 
-import { addResizeListener, removeResizeListener } from 'element-ui/src/utils/resize-event';
-import scrollbarWidth from 'element-ui/src/utils/scrollbar-width';
-import { toObject } from 'element-ui/src/utils/util';
+import { addResizeListener, removeResizeListener } from 'sg-ui/src/utils/resize-event';
+import scrollbarWidth from 'sg-ui/src/utils/scrollbar-width';
+import { toObject } from 'sg-ui/src/utils/util';
 import Bar from './bar';
 
 /* istanbul ignore next */
 export default {
-  name: 'ElScrollbar',
+  name: 'SgScrollbar',
 
   components: { Bar },
 
@@ -57,17 +57,17 @@ export default {
       }
     }
     const view = h(this.tag, {
-      class: ['el-scrollbar__view', this.viewClass],
+      class: ['sg-scrollbar__view', this.viewClass],
       style: this.viewStyle,
       ref: 'resize'
     }, this.$slots.default);
     const wrap = (
       <div
         ref="wrap"
-        style={ style }
-        onScroll={ this.handleScroll }
-        class={ [this.wrapClass, 'el-scrollbar__wrap', gutter ? '' : 'el-scrollbar__wrap--hidden-default'] }>
-        { [view] }
+        style={style}
+        onScroll={this.handleScroll}
+        class={[this.wrapClass, 'sg-scrollbar__wrap', gutter ? '' : 'sg-scrollbar__wrap--hidden-default']}>
+        {[view]}
       </div>
     );
     let nodes;
@@ -76,24 +76,24 @@ export default {
       nodes = ([
         wrap,
         <Bar
-          move={ this.moveX }
-          size={ this.sizeWidth }></Bar>,
+          move={this.moveX}
+          size={this.sizeWidth}></Bar>,
         <Bar
           vertical
-          move={ this.moveY }
-          size={ this.sizeHeight }></Bar>
+          move={this.moveY}
+          size={this.sizeHeight}></Bar>
       ]);
     } else {
       nodes = ([
         <div
           ref="wrap"
-          class={ [this.wrapClass, 'el-scrollbar__wrap'] }
-          style={ style }>
-          { [view] }
+          class={[this.wrapClass, 'sg-scrollbar__wrap']}
+          style={style}>
+          {[view]}
         </div>
       ]);
     }
-    return h('div', { class: 'el-scrollbar' }, nodes);
+    return h('div', { class: 'sg-scrollbar' }, nodes);
   },
 
   methods: {

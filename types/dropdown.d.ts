@@ -1,38 +1,44 @@
-import { ElementUIComponent, ElementUIComponentSize } from './component'
-import { ButtonType } from './button'
+import { SgementUIComponent, SgementUIComponentSize } from "./component";
+import { ButtonType } from "./button";
 
-export type DropdownMenuAlignment = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end'
-export type DropdownMenuTrigger = 'hover' | 'click'
+export type DropdownMenuAlignment =
+  | "top"
+  | "top-start"
+  | "top-end"
+  | "bottom"
+  | "bottom-start"
+  | "bottom-end";
+export type DropdownMenuTrigger = "hover" | "click";
 
 /** Toggleable menu for displaying lists of links and actions */
-export declare class ElDropdown extends ElementUIComponent {
+export declare class SgDropdown extends SgementUIComponent {
   /** Menu button type. only works when split-button is true */
-  type: ButtonType
+  type: ButtonType;
 
   /** Whether a button group is displayed */
-  splitButton: boolean
+  splitButton: boolean;
 
   /** menu size, also works on the split button */
-  size: ElementUIComponentSize
+  size: SgementUIComponentSize;
 
   /** Placement of the menu */
-  placement: DropdownMenuAlignment
+  placement: DropdownMenuAlignment;
 
   /** How to trigger */
-  trigger: DropdownMenuTrigger
+  trigger: DropdownMenuTrigger;
 
   /** Whether to hide menu after clicking menu-item */
-  hideOnClick: boolean
+  hideOnClick: boolean;
 
   /** Delay time before show a dropdown */
-  showTimeout: number
+  showTimeout: number;
 
   /** Delay time before hide a dropdown */
-  hideTimeout: number
+  hideTimeout: number;
 
   /** Dropdown tabindex */
-  tabindex: number
+  tabindex: number;
 
   /** Whether Dropdown is disabled */
-  disabled: boolean
+  disabled: boolean;
 }

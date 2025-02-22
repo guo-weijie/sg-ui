@@ -1,8 +1,8 @@
-import ElBreadcrumb from './src/breadcrumb';
+import SgBreadcrumb from './src/breadcrumb';
 
 /* istanbul ignore next */
-ElBreadcrumb.install = function(Vue) {
-  Vue.component(ElBreadcrumb.name, ElBreadcrumb);
+SgBreadcrumb.install = function (Vue) {
+  Vue.component(SgBreadcrumb.name, SgBreadcrumb);
 };
 
-export default ElBreadcrumb;
+export default SgBreadcrumb;

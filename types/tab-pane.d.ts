@@ -1,19 +1,19 @@
-import { ElementUIComponent } from './component'
+import { SgementUIComponent } from "./component";
 
 /** Tab Pane Component */
-export declare class ElTabPane extends ElementUIComponent {
+export declare class SgTabPane extends SgementUIComponent {
   /** Title of the tab */
-  label: string
+  label: string;
 
   /** Whether Tab is disabled */
-  disabled: boolean
+  disabled: boolean;
 
   /** Identifier corresponding to the activeName of Tabs, representing the alias of the tab-pane */
-  name: string
+  name: string;
 
   /** Whether Tab is closable */
-  closable: boolean
+  closable: boolean;
 
   /** Whether Tab is lazily rendered */
-  lazy: boolean
+  lazy: boolean;
 }

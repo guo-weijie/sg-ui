@@ -1,16 +1,16 @@
 .demo-block {
-  .el-dropdown {
+  .sg-dropdown {
     vertical-align: top;
 
-    & + .el-dropdown {
+    & + .sg-dropdown {
       margin-left: 15px;
     }
   }
-  .el-dropdown-link {
+  .sg-dropdown-link {
     cursor: pointer;
     color: #409eff;
   }
-  .el-icon-arrow-down {
+  .sg-icon-arrow-down {
     font-size: 12px;
   }
 }
@@ -18,7 +18,7 @@
 .block-col-2 {
   margin: -24px;
 
-  .el-col {
+  .sg-col {
     padding: 30px 0;
     text-align: center;
     border-right: 1px solid #eff2f6;

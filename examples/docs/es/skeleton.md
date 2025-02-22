@@ -10,7 +10,7 @@ The basic skeleton.
 
 ```html
 <template>
-  <el-skeleton />
+  <sg-skeleton />
 </template>
 ```
 
@@ -23,18 +23,18 @@ You can configure the row numbers yourself, we are rendering a title row with 33
 :::demo
 
 ```html
-<el-skeleton :rows="6" />
+<sg-skeleton :rows="6" />
 ```
 
 :::
 
 ### Animation
-We have provided a switch flag indicating whether showing the loading animation, called `animated` when this is true, all children of `el-skeleton` will show animation
+We have provided a switch flag indicating whether showing the loading animation, called `animated` when this is true, all children of `sg-skeleton` will show animation
 
 :::demo
 
 ```html
-<el-skeleton :rows="6" animated />
+<sg-skeleton :rows="6" animated />
 ```
 
 :::
@@ -48,20 +48,20 @@ Also we have provided different types skeleton unit that you can choose, for mor
 
 ```html
 <template>
-  <el-skeleton style="width: 240px">
+  <sg-skeleton style="width: 240px">
     <template slot="template">
-      <el-skeleton-item variant="image" style="width: 240px; height: 240px;" />
+      <sg-skeleton-item variant="image" style="width: 240px; height: 240px;" />
       <div style="padding: 14px;">
-        <el-skeleton-item variant="p" style="width: 50%" />
+        <sg-skeleton-item variant="p" style="width: 50%" />
         <div
           style="display: flex; align-items: center; justify-items: space-between;"
         >
-          <el-skeleton-item variant="text" style="margin-right: 16px;" />
-          <el-skeleton-item variant="text" style="width: 30%;" />
+          <sg-skeleton-item variant="text" style="margin-right: 16px;" />
+          <sg-skeleton-item variant="text" style="width: 30%;" />
         </div>
       </div>
     </template>
-  </el-skeleton>
+  </sg-skeleton>
 </template>
 ```
 
@@ -78,26 +78,26 @@ When `Loading` ends, we always need to show the real UI with data to our end use
   <div style="width: 240px">
     <p>
       <label style="margin-right: 16px;">Switch Loading</label>
-      <el-switch v-model="loading" />
+      <sg-switch v-model="loading" />
     </p>
-    <el-skeleton style="width: 240px" :loading="loading" animated>
+    <sg-skeleton style="width: 240px" :loading="loading" animated>
       <template slot="template">
-        <el-skeleton-item
+        <sg-skeleton-item
           variant="image"
           style="width: 240px; height: 240px;"
         />
         <div style="padding: 14px;">
-          <el-skeleton-item variant="h3" style="width: 50%;" />
+          <sg-skeleton-item variant="h3" style="width: 50%;" />
           <div
             style="display: flex; align-items: center; justify-items: space-between; margin-top: 16px; height: 16px;"
           >
-            <el-skeleton-item variant="text" style="margin-right: 16px;" />
-            <el-skeleton-item variant="text" style="width: 30%;" />
+            <sg-skeleton-item variant="text" style="margin-right: 16px;" />
+            <sg-skeleton-item variant="text" style="width: 30%;" />
           </div>
         </div>
       </template>
       <template>
-        <el-card :body-style="{ padding: '0px', marginBottom: '1px' }">
+        <sg-card :body-style="{ padding: '0px', marginBottom: '1px' }">
           <img
             src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
             class="image"
@@ -106,12 +106,12 @@ When `Loading` ends, we always need to show the real UI with data to our end use
             <span>Delicious hamberger</span>
             <div class="bottom card-header">
               <span class="time">{{ currentDate }}</span>
-              <el-button type="text" class="button">Operation button</el-button>
+              <sg-button type="text" class="button">Operation button</sg-button>
             </div>
           </div>
-        </el-card>
+        </sg-card>
       </template>
-    </el-skeleton>
+    </sg-skeleton>
   </div>
 </template>
 
@@ -145,26 +145,26 @@ We do not recommend rendering lots of fake UI to the browser, it will still caus
 <template>
   <div style="width: 400px">
     <p>
-      <el-button @click="setLoading">Click me to reload</el-button>
+      <sg-button @click="setLoading">Click me to reload</sg-button>
     </p>
-    <el-skeleton style="width:400px" :loading="loading" animated :count="3">
+    <sg-skeleton style="width:400px" :loading="loading" animated :count="3">
       <template slot="template">
-        <el-skeleton-item
+        <sg-skeleton-item
           variant="image"
           style="width: 400px; height: 267px;"
         />
         <div style="padding: 14px;">
-          <el-skeleton-item variant="h3" style="width: 50%;" />
+          <sg-skeleton-item variant="h3" style="width: 50%;" />
           <div
             style="display: flex; align-items: center; justify-items: space-between; margin-top: 16px; height: 16px;"
           >
-            <el-skeleton-item variant="text" style="margin-right: 16px;" />
-            <el-skeleton-item variant="text" style="width: 30%;" />
+            <sg-skeleton-item variant="text" style="margin-right: 16px;" />
+            <sg-skeleton-item variant="text" style="width: 30%;" />
           </div>
         </div>
       </template>
       <template>
-        <el-card
+        <sg-card
           :body-style="{ padding: '0px', marginBottom: '1px' }"
           v-for="item in lists"
           :key="item.name"
@@ -174,12 +174,12 @@ We do not recommend rendering lots of fake UI to the browser, it will still caus
             <span>Delicious hamberger</span>
             <div class="bottom card-header">
               <span class="time">{{ currentDate }}</span>
-              <el-button type="text" class="button">Operation button</el-button>
+              <sg-button type="text" class="button">Operation button</sg-button>
             </div>
           </div>
-        </el-card>
+        </sg-card>
       </template>
-    </el-skeleton>
+    </sg-skeleton>
   </div>
 </template>
 
@@ -235,31 +235,31 @@ Sometimes API responds very quickly, when that happens, the skeleton just gets r
   <div style="width: 240px">
     <p>
       <label style="margin-right: 16px;">Switch Loading</label>
-      <el-switch v-model="loading" />
+      <sg-switch v-model="loading" />
     </p>
-    <el-skeleton
+    <sg-skeleton
       style="width: 240px"
       :loading="loading"
       animated
       :throttle="500"
     >
       <template slot="template">
-        <el-skeleton-item
+        <sg-skeleton-item
           variant="image"
           style="width: 240px; height: 240px;"
         />
         <div style="padding: 14px;">
-          <el-skeleton-item variant="h3" style="width: 50%;" />
+          <sg-skeleton-item variant="h3" style="width: 50%;" />
           <div
             style="display: flex; align-items: center; justify-items: space-between; margin-top: 16px; height: 16px;"
           >
-            <el-skeleton-item variant="text" style="margin-right: 16px;" />
-            <el-skeleton-item variant="text" style="width: 30%;" />
+            <sg-skeleton-item variant="text" style="margin-right: 16px;" />
+            <sg-skeleton-item variant="text" style="width: 30%;" />
           </div>
         </div>
       </template>
       <template>
-        <el-card :body-style="{ padding: '0px', marginBottom: '1px'}">
+        <sg-card :body-style="{ padding: '0px', marginBottom: '1px'}">
           <img
             src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
             class="image"
@@ -268,12 +268,12 @@ Sometimes API responds very quickly, when that happens, the skeleton just gets r
             <span>Delicious hamberger</span>
             <div class="bottom card-header">
               <span class="time">{{ currentDate }}</span>
-              <el-button type="text" class="button">operation button</el-button>
+              <sg-button type="text" class="button">operation button</sg-button>
             </div>
           </div>
-        </el-card>
+        </sg-card>
       </template>
-    </el-skeleton>
+    </sg-skeleton>
   </div>
 </template>
 

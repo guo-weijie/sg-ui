@@ -1,34 +1,34 @@
-import { ElementUIComponent, ElementUIComponentSize } from './component'
+import { SgementUIComponent, SgementUIComponentSize } from "./component";
 
 /** Checkbox Component */
-export declare class ElCheckbox extends ElementUIComponent {
+export declare class SgCheckbox extends SgementUIComponent {
   /** The form input value */
-  value: string | string[]
+  value: string | string[];
 
   /** Value of the checkbox when used inside a checkbox-group */
-  label: string | number | boolean
+  label: string | number | boolean;
 
   /** Value of the checkbox if it's checked */
-  trueLabel: string | number
+  trueLabel: string | number;
 
   /** Value of the checkbox if it's not checked */
-  falseLabel: string | number
+  falseLabel: string | number;
 
   /** Native 'name' attribute */
-  name: string
+  name: string;
 
   /** Whether to add a border around Checkbox */
-  border: boolean
+  border: boolean;
 
   /** Size of the Checkbox, only works when border is true */
-  size: ElementUIComponentSize
+  size: SgementUIComponentSize;
 
   /** If the checkbox is disabled */
-  disabled: boolean
+  disabled: boolean;
 
   /** If the checkbox is checked */
-  checked: boolean
+  checked: boolean;
 
   /** Same as indeterminate in native checkbox */
-  indeterminate: boolean
+  indeterminate: boolean;
 }

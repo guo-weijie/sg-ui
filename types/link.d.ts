@@ -1,25 +1,25 @@
-import { ElementUIComponent } from './component'
+import { SgementUIComponent } from "./component";
 
 /** Button type */
-export type LinkType = 'primary' | 'success' | 'warning' | 'danger' | 'info' 
+export type LinkType = "primary" | "success" | "warning" | "danger" | "info";
 
 /** Link Component */
-export declare class ElLink extends ElementUIComponent {
+export declare class SgLink extends SgementUIComponent {
   /** Link type */
-  type: LinkType
-  
+  type: LinkType;
+
   /** Disable the link */
-  disabled: boolean
+  disabled: boolean;
 
   /** Link underline */
-  underline: boolean
+  underline: boolean;
 
-  /** Link icon, accepts an icon name of Element icon component */
-  icon: string
+  /** Link icon, accepts an icon name of Sgement icon component */
+  icon: string;
 
   /** Link href */
-  href: string
+  href: string;
 
   /** Link target */
-  target: string
+  target: string;
 }

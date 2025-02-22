@@ -1,17 +1,17 @@
 <template>
   <section class="config" :key="displayName">
     <div class="config-label">
-      <el-tooltip :content="displayName" placement="top">
+      <sg-tooltip :content="displayName" placement="top">
         <span>{{displayKeyName}}</span>
-      </el-tooltip>
-      <el-button 
+      </sg-tooltip>
+      <sg-button 
         class="plus-button" 
         size="mini" 
         round 
-        icon="el-icon-plus"
+        icon="sg-icon-plus"
         @click.stop="onAddShadow"
       >
-      </el-button>
+      </sg-button>
     </div>
     <div class="config-content" v-for="(each, key) in valueArr" :key="key">
       <div class="content-10">
@@ -61,12 +61,12 @@
         <span class="content-tip">Blur</span>
       </div>
       <div class="content-10">
-        <el-button 
+        <sg-button 
           size="mini" 
           round 
-          icon="el-icon-minus"
+          icon="sg-icon-minus"
           @click.stop="val => onMinusShadow(key)"
-        ></el-button>
+        ></sg-button>
       </div>
     </div>
   </section>
@@ -81,7 +81,7 @@
 .colorPicker {
   margin-left: 0;
 }
-.content-20 .el-input__suffix-inner span{
+.content-20 .sg-input__suffix-inner span{
   line-height: 28px;
 }
 .content-20 {
@@ -98,7 +98,7 @@
   padding: 5px 0;
 }
 /* Element buton style override */
-.el-button--mini.is-round {
+.sg-button--mini.is-round {
   padding: 3px 3px;  
 }
 </style>

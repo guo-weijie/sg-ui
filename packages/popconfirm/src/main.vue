@@ -1,47 +1,30 @@
 <template>
-  <el-popover
-    v-bind="$attrs"
-    v-model="visible"
-    trigger="click"
-  >
-  <div class="el-popconfirm">
-    <p class="el-popconfirm__main">
-    <i
-      v-if="!hideIcon"
-      :class="icon"
-      class="el-popconfirm__icon"
-      :style="{color: iconColor}"
-    ></i>
-      {{title}}
-    </p>
-    <div class="el-popconfirm__action">
-      <el-button 
-        size="mini" 
-        :type="cancelButtonType" 
-        @click="cancel"
-      >
-        {{ displayCancelButtonText }}
-      </el-button>
-      <el-button 
-        size="mini" 
-        :type="confirmButtonType" 
-        @click="confirm"
-      >
-        {{ displayConfirmButtonText }}
-      </el-button>
+  <sg-popover v-bind="$attrs" v-model="visible" trigger="click">
+    <div class="sg-popconfirm">
+      <p class="sg-popconfirm__main">
+        <i v-if="!hideIcon" :class="icon" class="sg-popconfirm__icon" :style="{ color: iconColor }"></i>
+        {{ title }}
+      </p>
+      <div class="sg-popconfirm__action">
+        <sg-button size="mini" :type="cancelButtonType" @click="cancel">
+          {{ displayCancelButtonText }}
+        </sg-button>
+        <sg-button size="mini" :type="confirmButtonType" @click="confirm">
+          {{ displayConfirmButtonText }}
+        </sg-button>
+      </div>
     </div>
-  </div>
-  <slot name="reference" slot="reference"></slot>
-</el-popover>
+    <slot name="reference" slot="reference"></slot>
+  </sg-popover>
 </template>
 
 <script>
-import ElPopover from 'element-ui/packages/popover';
-import ElButton from 'element-ui/packages/button';
-import {t} from 'element-ui/src/locale';
+import SgPopover from 'sg-ui/packages/popover';
+import SgButton from 'sg-ui/packages/button';
+import { t } from 'sg-ui/src/locale';
 
 export default {
-  name: 'ElPopconfirm',
+  name: 'SgPopconfirm',
   props: {
     title: {
       type: String
@@ -62,7 +45,7 @@ export default {
     },
     icon: {
       type: String,
-      default: 'el-icon-question'
+      default: 'sg-icon-question'
     },
     iconColor: {
       type: String,
@@ -74,8 +57,8 @@ export default {
     }
   },
   components: {
-    ElPopover,
-    ElButton
+    SgPopover,
+    SgButton
   },
   data() {
     return {

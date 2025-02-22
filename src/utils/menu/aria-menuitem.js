@@ -1,22 +1,22 @@
 import Utils from '../aria-utils';
 import SubMenu from './aria-submenu';
 
-const MenuItem = function(domNode) {
+const MenuItem = function (domNode) {
   this.domNode = domNode;
   this.submenu = null;
   this.init();
 };
 
-MenuItem.prototype.init = function() {
+MenuItem.prototype.init = function () {
   this.domNode.setAttribute('tabindex', '0');
-  let menuChild = this.domNode.querySelector('.el-menu');
+  let menuChild = this.domNode.querySelector('.sg-menu');
   if (menuChild) {
     this.submenu = new SubMenu(this, menuChild);
   }
   this.addListeners();
 };
 
-MenuItem.prototype.addListeners = function() {
+MenuItem.prototype.addListeners = function () {
   const keys = Utils.keys;
   this.domNode.addEventListener('keydown', event => {
     let prevDef = false;

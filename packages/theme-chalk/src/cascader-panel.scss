@@ -23,7 +23,7 @@
 
   &:last-child {
     border-right: none;
-    .el-cascader-node {
+    .sg-cascader-node {
       padding-right: 20px;
     }
   }
@@ -110,10 +110,10 @@
     text-overflow: ellipsis;
   }
 
-  > .el-radio {
+  > .sg-radio {
     margin-right: 0;
 
-    .el-radio__label {
+    .sg-radio__label {
       padding-left: 0;
     }
   }

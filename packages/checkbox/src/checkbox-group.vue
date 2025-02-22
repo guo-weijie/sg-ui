@@ -1,48 +1,48 @@
 <script>
-  import Emitter from 'element-ui/src/mixins/emitter';
+import Emitter from 'sg-ui/src/mixins/emitter';
 
-  export default {
-    name: 'ElCheckboxGroup',
+export default {
+  name: 'SgCheckboxGroup',
 
-    componentName: 'ElCheckboxGroup',
+  componentName: 'SgCheckboxGroup',
 
-    mixins: [Emitter],
+  mixins: [Emitter],
 
-    inject: {
-      elFormItem: {
-        default: ''
-      }
-    },
-
-    props: {
-      value: {},
-      disabled: Boolean,
-      min: Number,
-      max: Number,
-      size: String,
-      fill: String,
-      textColor: String
-    },
-
-    computed: {
-      _elFormItemSize() {
-        return (this.elFormItem || {}).elFormItemSize;
-      },
-      checkboxGroupSize() {
-        return this.size || this._elFormItemSize || (this.$ELEMENT || {}).size;
-      }
-    },
-
-    watch: {
-      value(value) {
-        this.dispatch('ElFormItem', 'el.form.change', [value]);
-      }
+  inject: {
+    sgFormItem: {
+      default: ''
     }
-  };
+  },
+
+  props: {
+    value: {},
+    disabled: Boolean,
+    min: Number,
+    max: Number,
+    size: String,
+    fill: String,
+    textColor: String
+  },
+
+  computed: {
+    _sgFormItemSize() {
+      return (this.sgFormItem || {}).sgFormItemSize;
+    },
+    checkboxGroupSize() {
+      return this.size || this._sgFormItemSize || (this.$ELEMENT || {}).size;
+    }
+  },
+
+  watch: {
+    value(value) {
+      this.dispatch('SgFormItem', 'el.form.change', [value]);
+    }
+  }
+};
 </script>
 
 <template>
-  <div class="el-checkbox-group" role="group" aria-label="checkbox-group">
+  <div class="sg-checkbox-group" role="group" aria-label="checkbox-group">
     <slot></slot>
   </div>
 </template>

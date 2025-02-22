@@ -20,7 +20,7 @@ const webpackConfig = {
     docs: './examples/entry.js'
   } : (isPlay ? './examples/play.js' : './examples/entry.js'),
   output: {
-    path: path.resolve(process.cwd(), './examples/element-ui/'),
+    path: path.resolve(process.cwd(), './examples/sg-ui/'),
     publicPath: process.env.CI_ENV || '',
     filename: '[name].[hash:7].js',
     chunkFilename: isProd ? '[name].[hash:7].js' : '[name].js'
@@ -31,7 +31,6 @@ const webpackConfig = {
     modules: ['node_modules']
   },
   devServer: {
-    host: '0.0.0.0',
     port: 8085,
     publicPath: '/',
     hot: true,
@@ -53,12 +52,6 @@ const webpackConfig = {
   },
   module: {
     rules: [
-      {
-        enforce: 'pre',
-        test: /\.(vue|jsx?)$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader'
-      },
       {
         test: /\.(jsx?|babel|es6)$/,
         include: process.cwd(),
@@ -162,7 +155,7 @@ if (isProd) {
     cacheGroups: {
       vendor: {
         test: /\/src\//,
-        name: 'element-ui',
+        name: 'sg-ui',
         chunks: 'all'
       }
     }

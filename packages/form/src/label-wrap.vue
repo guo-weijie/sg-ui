@@ -6,13 +6,13 @@ export default {
     updateAll: Boolean
   },
 
-  inject: ['elForm', 'elFormItem'],
+  inject: ['sgForm', 'sgFormItem'],
 
   render() {
     const slots = this.$slots.default;
     if (!slots) return null;
     if (this.isAutoWidth) {
-      const autoLabelWidth = this.elForm.autoLabelWidth;
+      const autoLabelWidth = this.sgForm.autoLabelWidth;
       const style = {};
       if (autoLabelWidth && autoLabelWidth !== 'auto') {
         const marginLeft = parseInt(autoLabelWidth, 10) - this.computedWidth;
@@ -20,8 +20,8 @@ export default {
           style.marginLeft = marginLeft + 'px';
         }
       }
-      return (<div class="el-form-item__label-wrap" style={style}>
-        { slots }
+      return (<div class="sg-form-item__label-wrap" style={style}>
+        {slots}
       </div>);
     } else {
       return slots[0];
@@ -42,7 +42,7 @@ export default {
         if (action === 'update') {
           this.computedWidth = this.getLabelWidth();
         } else if (action === 'remove') {
-          this.elForm.deregisterLabelWidth(this.computedWidth);
+          this.sgForm.deregisterLabelWidth(this.computedWidth);
         }
       }
     }
@@ -51,8 +51,8 @@ export default {
   watch: {
     computedWidth(val, oldVal) {
       if (this.updateAll) {
-        this.elForm.registerLabelWidth(val, oldVal);
-        this.elFormItem.updateComputedLabelWidth(val);
+        this.sgForm.registerLabelWidth(val, oldVal);
+        this.sgFormItem.updateComputedLabelWidth(val);
       }
     }
   },

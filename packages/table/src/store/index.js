@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Watcher from './watcher';
-import { arrayFind } from 'element-ui/src/utils/util';
+import { arrayFind } from 'sg-ui/src/utils/util';
 
 Watcher.prototype.mutations = {
   setData(states, data) {
@@ -131,7 +131,7 @@ Watcher.prototype.mutations = {
   }
 };
 
-Watcher.prototype.commit = function(name, ...args) {
+Watcher.prototype.commit = function (name, ...args) {
   const mutations = this.mutations;
   if (mutations[name]) {
     mutations[name].apply(this, [this.states].concat(args));
@@ -140,7 +140,7 @@ Watcher.prototype.commit = function(name, ...args) {
   }
 };
 
-Watcher.prototype.updateTableScrollY = function() {
+Watcher.prototype.updateTableScrollY = function () {
   Vue.nextTick(this.table.updateScrollY);
 };
 

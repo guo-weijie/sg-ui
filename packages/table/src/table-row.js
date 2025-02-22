@@ -1,6 +1,6 @@
-import ElCheckbox from 'element-ui/packages/checkbox';
+import SgCheckbox from 'sg-ui/packages/checkbox';
 export default {
-  name: 'ElTableRow',
+  name: 'SgTableRow',
   props: [
     'columns',
     'row',
@@ -22,7 +22,7 @@ export default {
     'fixed'
   ],
   components: {
-    ElCheckbox
+    SgCheckbox
   },
   render() {
     const {

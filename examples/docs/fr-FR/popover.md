@@ -8,43 +8,43 @@ Similaire à Tooltip, Popover est aussi construit avec `Vue-popper`. Certains at
 
 ```html
 <template>
-  <el-popover
+  <sg-popover
     placement="top-start"
     title="Title"
     width="200"
     trigger="hover"
     content="this is content, this is content, this is content">
-    <el-button slot="reference">S'active au passage du curseur</el-button>
-  </el-popover>
+    <sg-button slot="reference">S'active au passage du curseur</sg-button>
+  </sg-popover>
 
-  <el-popover
+  <sg-popover
     placement="bottom"
     title="Title"
     width="200"
     trigger="click"
     content="this is content, this is content, this is content">
-    <el-button slot="reference">S'active en cliquant</el-button>
-  </el-popover>
+    <sg-button slot="reference">S'active en cliquant</sg-button>
+  </sg-popover>
 
-  <el-popover
+  <sg-popover
     ref="popover"
     placement="right"
     title="Title"
     width="200"
     trigger="focus"
     content="this is content, this is content, this is content">
-  </el-popover>
-  <el-button v-popover:popover>S'active au focus</el-button>
+  </sg-popover>
+  <sg-button v-popover:popover>S'active au focus</sg-button>
 
-  <el-popover
+  <sg-popover
     placement="bottom"
     title="Title"
     width="200"
     trigger="manual"
     content="this is content, this is content, this is content"
     v-model="visible">
-    <el-button slot="reference" @click="visible = !visible">S'active manuellement</el-button>
-  </el-popover>
+    <sg-button slot="reference" @click="visible = !visible">S'active manuellement</sg-button>
+  </sg-popover>
 </template>
 
 <script>
@@ -66,17 +66,17 @@ D'autres composants peuvent s'imbriquer dans un popover.
 :::demo Remplacez `content` par un `slot`.
 
 ```html
-<el-popover
+<sg-popover
   placement="right"
   width="400"
   trigger="click">
-  <el-table :data="gridData">
-    <el-table-column width="150" property="date" label="date"></el-table-column>
-    <el-table-column width="100" property="name" label="name"></el-table-column>
-    <el-table-column width="300" property="address" label="address"></el-table-column>
-  </el-table>
-  <el-button slot="reference">Cliquez pour activer</el-button>
-</el-popover>
+  <sg-table :data="gridData">
+    <sg-table-column width="150" property="date" label="date"></sg-table-column>
+    <sg-table-column width="100" property="name" label="name"></sg-table-column>
+    <sg-table-column width="300" property="address" label="address"></sg-table-column>
+  </sg-table>
+  <sg-button slot="reference">Cliquez pour activer</sg-button>
+</sg-popover>
 
 <script>
   export default {
@@ -112,17 +112,17 @@ Vous pouvez aussi imbriquer des opérations. Procéder ainsi est plus léger que
 
 :::demo
 ```html
-<el-popover
+<sg-popover
   placement="top"
   width="160"
   v-model="visible">
   <p>Voulez-vous vraiment supprimer ceci?</p>
   <div style="text-align: right; margin: 0">
-    <el-button size="mini" type="text" @click="visible = false">Annuler</el-button>
-    <el-button type="primary" size="mini" @click="visible = false">Confirmer</el-button>
+    <sg-button size="mini" type="text" @click="visible = false">Annuler</sg-button>
+    <sg-button type="primary" size="mini" @click="visible = false">Confirmer</sg-button>
   </div>
-  <el-button slot="reference">Supprimer</el-button>
-</el-popover>
+  <sg-button slot="reference">Supprimer</sg-button>
+</sg-popover>
 
 <script>
   export default {
@@ -148,7 +148,7 @@ Vous pouvez aussi imbriquer des opérations. Procéder ainsi est plus léger que
 | disabled | Si le popover est désactivé. | boolean | — |  false |
 | value / v-model | Si le popover est visible. | Boolean | — |  false |
 | offset | Décalage du popover. | number | — |  0 |
-| transition | Animation de transition du popover. | string | — | el-fade-in-linear |
+| transition | Animation de transition du popover. | string | — | sg-fade-in-linear |
 | visible-arrow | Si une flèche doit être affichée ou non. Pour plus d'informations, référez-vous à [Vue-popper](https://github.com/element-component/vue-popper). | boolean | — | true |
 | popper-options | Paramètres pour [popper.js](https://popper.js.org/docs/v2/). | object | Référez-vous à [popper.js](https://popper.js.org/docs/v2/). | `{ boundariesElement: 'body', gpuAcceleration: false }` |
 | popper-class | Classe du popover. | string | — | — |

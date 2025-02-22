@@ -1,8 +1,8 @@
-import ElCarouselItem from '../carousel/src/item';
+import SgCarouselItem from '../carousel/src/item';
 
 /* istanbul ignore next */
-ElCarouselItem.install = function(Vue) {
-  Vue.component(ElCarouselItem.name, ElCarouselItem);
+SgCarouselItem.install = function (Vue) {
+  Vue.component(SgCarouselItem.name, SgCarouselItem);
 };
 
-export default ElCarouselItem;
+export default SgCarouselItem;

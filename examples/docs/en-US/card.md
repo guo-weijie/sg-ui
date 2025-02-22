@@ -7,15 +7,15 @@ Card includes title, content and operations.
 
 :::demo Card is made up of `header` and `body`. `header` is optional, and its content distribution depends on a named slot.
 ```html
-<el-card class="box-card">
+<sg-card class="box-card">
   <div slot="header" class="clearfix">
     <span>Card name</span>
-    <el-button style="float: right; padding: 3px 0" type="text">Operation button</el-button>
+    <sg-button style="float: right; padding: 3px 0" type="text">Operation button</sg-button>
   </div>
   <div v-for="o in 4" :key="o" class="text item">
     {{'List item ' + o }}
   </div>
-</el-card>
+</sg-card>
 
 <style>
   .text {
@@ -48,11 +48,11 @@ The header part can be omitted.
 
 :::demo
 ```html
-<el-card class="box-card">
+<sg-card class="box-card">
   <div v-for="o in 4" :key="o" class="text item">
     {{'List item ' + o }}
   </div>
-</el-card>
+</sg-card>
 
 <style>
   .text {
@@ -74,22 +74,22 @@ The header part can be omitted.
 
 Display richer content by adding some configs.
 
-:::demo The `body-style` attribute defines CSS style of custom `body`. This example also uses `el-col` for layout.
+:::demo The `body-style` attribute defines CSS style of custom `body`. This example also uses `sg-col` for layout.
 ```html
-<el-row>
-  <el-col :span="8" v-for="(o, index) in 2" :key="o" :offset="index > 0 ? 2 : 0">
-    <el-card :body-style="{ padding: '0px' }">
+<sg-row>
+  <sg-col :span="8" v-for="(o, index) in 2" :key="o" :offset="index > 0 ? 2 : 0">
+    <sg-card :body-style="{ padding: '0px' }">
       <img src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png" class="image">
       <div style="padding: 14px;">
         <span>Yummy hamburger</span>
         <div class="bottom clearfix">
           <time class="time">{{ currentDate }}</time>
-          <el-button type="text" class="button">Operating</el-button>
+          <sg-button type="text" class="button">Operating</sg-button>
         </div>
       </div>
-    </el-card>
-  </el-col>
-</el-row>
+    </sg-card>
+  </sg-col>
+</sg-row>
 
 <style>
   .time {
@@ -141,23 +141,23 @@ You can define when to show the card shadows
 
 :::demo The `shadow` attribute determines when the card shadows are displayed. It can be `always`, `hover` or `never`.
 ```html
-<el-row :gutter="12">
-  <el-col :span="8">
-    <el-card shadow="always">
+<sg-row :gutter="12">
+  <sg-col :span="8">
+    <sg-card shadow="always">
       Always
-    </el-card>
-  </el-col>
-  <el-col :span="8">
-    <el-card shadow="hover">
+    </sg-card>
+  </sg-col>
+  <sg-col :span="8">
+    <sg-card shadow="hover">
       Hover
-    </el-card>
-  </el-col>
-  <el-col :span="8">
-    <el-card shadow="never">
+    </sg-card>
+  </sg-col>
+  <sg-col :span="8">
+    <sg-card shadow="never">
       Never
-    </el-card>
-  </el-col>
-</el-row>
+    </sg-card>
+  </sg-col>
+</sg-row>
 ```
 :::
 

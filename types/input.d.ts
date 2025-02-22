@@ -1,107 +1,107 @@
-import { ElementUIComponent, ElementUIComponentSize } from './component'
+import { SgementUIComponent, SgementUIComponentSize } from "./component";
 
 /** The resizability of el-input component */
-export type Resizability = 'none' | 'both' | 'horizontal' | 'vertical'
-export type InputType = 'text' | 'textarea'
+export type Resizability = "none" | "both" | "horizontal" | "vertical";
+export type InputType = "text" | "textarea";
 
 /** Controls how el-input component automatically sets size */
 export interface AutoSize {
   /** Minimum rows to show */
-  minRows: number,
+  minRows: number;
 
   /** Maximum rows to show */
-  maxRows: number
+  maxRows: number;
 }
 
 /** Input Component */
-export declare class ElInput extends ElementUIComponent {
+export declare class SgInput extends SgementUIComponent {
   /** Type of input */
-  type: InputType
+  type: InputType;
 
   /** Binding value */
-  value: string | number
+  value: string | number;
 
   /** Maximum Input text length */
-  maxlength: number
+  maxlength: number;
 
   /** Minimum Input text length */
-  minlength: number
+  minlength: number;
 
   /** Placeholder of Input */
-  placeholder: string
+  placeholder: string;
 
   /** Whether Input is disabled */
-  disabled: boolean
+  disabled: boolean;
 
   /** Size of Input, works when type is not 'textarea' */
-  size: ElementUIComponentSize
+  size: SgementUIComponentSize;
 
   /** Prefix icon class */
-  prefixIcon: string
+  prefixIcon: string;
 
   /** Suffix icon class */
-  suffixIcon: string
+  suffixIcon: string;
 
   /** Number of rows of textarea, only works when type is 'textarea' */
-  rows: number
+  rows: number;
 
   /** Whether textarea has an adaptive height, only works when type is 'textarea' */
-  autosize: boolean | AutoSize
+  autosize: boolean | AutoSize;
 
   /** @Deprecated in next major version */
-  autoComplete: string
+  autoComplete: string;
 
   /** Same as autocomplete in native input */
-  autocomplete: string
+  autocomplete: string;
 
   /** Same as name in native input */
-  name: string
+  name: string;
 
   /** Same as readonly in native input */
-  readonly: boolean
+  readonly: boolean;
 
   /** Same as max in native input */
-  max: any
+  max: any;
 
   /** Same as min in native input */
-  min: any
+  min: any;
 
   /** Same as step in native input */
-  step: any
+  step: any;
 
   /** Control the resizability */
-  resize: Resizability
+  resize: Resizability;
 
   /** Same as autofocus in native input */
-  autofocus: boolean
+  autofocus: boolean;
 
   /** Same as form in native input */
-  form: string
+  form: string;
 
   /** Whether to trigger form validatio */
-  validateEvent: boolean
+  validateEvent: boolean;
 
   /** Whether the input is clearable */
-  clearable: boolean
+  clearable: boolean;
 
   /** Whether to show password */
-  showPassword: boolean
+  showPassword: boolean;
 
   /** Whether to show wordCount when setting maxLength */
-  showWordLimit: boolean
+  showWordLimit: boolean;
 
   /**
    * Focus the Input component
    */
-  focus (): void
+  focus(): void;
 
   /**
    * Blur the Input component
    */
-  blur (): void
+  blur(): void;
 
   /**
    * Select the text in input element
    */
-  select (): void
+  select(): void;
 }

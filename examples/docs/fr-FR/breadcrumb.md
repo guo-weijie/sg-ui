@@ -5,15 +5,15 @@ Affiche le chemin de la page actuelle, afin de pouvoir naviguer plus facilement.
 ### Usage
 
 
-:::demo Dans `el-breadcrumb`, chaque `el-breadcrumb-item` est un tag représentant chaque niveau depuis la page d'accueil. Ce Composant possède un attribut de type `String` appelé `separator` qui détermine le séparateur. Sa valeur par défaut est '/'.
+:::demo Dans `sg-breadcrumb`, chaque `sg-breadcrumb-item` est un tag représentant chaque niveau depuis la page d'accueil. Ce Composant possède un attribut de type `String` appelé `separator` qui détermine le séparateur. Sa valeur par défaut est '/'.
 
 ```html
-<el-breadcrumb separator="/">
-  <el-breadcrumb-item :to="{ path: '/' }">Accueil</el-breadcrumb-item>
-  <el-breadcrumb-item><a href="/">Gestion promotions</a></el-breadcrumb-item>
-  <el-breadcrumb-item>Liste promotions</el-breadcrumb-item>
-  <el-breadcrumb-item>Détail promotion</el-breadcrumb-item>
-</el-breadcrumb>
+<sg-breadcrumb separator="/">
+  <sg-breadcrumb-item :to="{ path: '/' }">Accueil</sg-breadcrumb-item>
+  <sg-breadcrumb-item><a href="/">Gestion promotions</a></sg-breadcrumb-item>
+  <sg-breadcrumb-item>Liste promotions</sg-breadcrumb-item>
+  <sg-breadcrumb-item>Détail promotion</sg-breadcrumb-item>
+</sg-breadcrumb>
 ```
 :::
 
@@ -22,12 +22,12 @@ Affiche le chemin de la page actuelle, afin de pouvoir naviguer plus facilement.
 :::demo Configurez `separator-class` pour utiliser `iconfont` en tant que séparateur. Cela remplacera `separator`.
 
 ```html
-<el-breadcrumb separator-class="el-icon-arrow-right">
-  <el-breadcrumb-item :to="{ path: '/' }">Accueil</el-breadcrumb-item>
-  <el-breadcrumb-item>Gestion promotions</el-breadcrumb-item>
-  <el-breadcrumb-item>Liste promotions</el-breadcrumb-item>
-  <el-breadcrumb-item>Détail promotion</el-breadcrumb-item>
-</el-breadcrumb>
+<sg-breadcrumb separator-class="sg-icon-arrow-right">
+  <sg-breadcrumb-item :to="{ path: '/' }">Accueil</sg-breadcrumb-item>
+  <sg-breadcrumb-item>Gestion promotions</sg-breadcrumb-item>
+  <sg-breadcrumb-item>Liste promotions</sg-breadcrumb-item>
+  <sg-breadcrumb-item>Détail promotion</sg-breadcrumb-item>
+</sg-breadcrumb>
 ```
 :::
 

@@ -1,26 +1,26 @@
-import { VNode, VNodeDirective } from 'vue'
-import { ElementUIComponent } from './component'
+import { VNode, VNodeDirective } from "vue";
+import { SgementUIComponent } from "./component";
 
 export interface CardSlots {
   /** Content of the card */
-  default: VNode[],
+  default: VNode[];
 
   /** Title of the card */
-  header: VNode[]
+  header: VNode[];
 
-  [key: string]: VNode[]
+  [key: string]: VNode[];
 }
 
 /** Integrate information in a card container */
-export declare class ElCard extends ElementUIComponent {
+export declare class SgCard extends SgementUIComponent {
   /** Title of the card */
-  header: string
+  header: string;
 
   /** CSS style of body */
-  bodyStyle: object
+  bodyStyle: object;
 
   /** When to show card shadows */
-  shadow: string
+  shadow: string;
 
-  $slots: CardSlots
+  $slots: CardSlots;
 }

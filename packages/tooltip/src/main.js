@@ -1,11 +1,11 @@
-import Popper from 'element-ui/src/utils/vue-popper';
+import Popper from 'sg-ui/src/utils/vue-popper';
 import debounce from 'throttle-debounce/debounce';
-import { addClass, removeClass, on, off } from 'element-ui/src/utils/dom';
-import { generateId } from 'element-ui/src/utils/util';
+import { addClass, removeClass, on, off } from 'sg-ui/src/utils/dom';
+import { generateId } from 'sg-ui/src/utils/util';
 import Vue from 'vue';
 
 export default {
-  name: 'ElTooltip',
+  name: 'SgTooltip',
 
   mixins: [Popper],
 
@@ -31,7 +31,7 @@ export default {
     },
     transition: {
       type: String,
-      default: 'el-fade-in-linear'
+      default: 'sg-fade-in-linear'
     },
     popperOptions: {
       default() {
@@ -57,7 +57,7 @@ export default {
 
   data() {
     return {
-      tooltipId: `el-tooltip-${generateId()}`,
+      tooltipId: `sg-tooltip-${generateId()}`,
       timeoutPending: null,
       focusing: false
     };
@@ -79,20 +79,20 @@ export default {
     if (this.popperVM) {
       this.popperVM.node = (
         <transition
-          name={ this.transition }
-          onAfterLeave={ this.doDestroy }>
+          name={this.transition}
+          onAfterLeave={this.doDestroy}>
           <div
-            onMouseleave={ () => { this.setExpectedState(false); this.debounceClose(); } }
-            onMouseenter= { () => { this.setExpectedState(true); } }
+            onMouseleave={() => { this.setExpectedState(false); this.debounceClose(); }}
+            onMouseenter={() => { this.setExpectedState(true); }}
             ref="popper"
             role="tooltip"
             id={this.tooltipId}
-            aria-hidden={ (this.disabled || !this.showPopper) ? 'true' : 'false' }
+            aria-hidden={(this.disabled || !this.showPopper) ? 'true' : 'false'}
             v-show={!this.disabled && this.showPopper}
             class={
-              ['el-tooltip__popper', 'is-' + this.effect, this.popperClass]
+              ['sg-tooltip__popper', 'is-' + this.effect, this.popperClass]
             }>
-            { this.$slots.content || this.content }
+            {this.$slots.content || this.content}
           </div>
         </transition>);
     }
@@ -170,9 +170,9 @@ export default {
 
     addTooltipClass(prev) {
       if (!prev) {
-        return 'el-tooltip';
+        return 'sg-tooltip';
       } else {
-        return 'el-tooltip ' + prev.replace('el-tooltip', '');
+        return 'sg-tooltip ' + prev.replace('sg-tooltip', '');
       }
     },
 

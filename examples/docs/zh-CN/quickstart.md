@@ -8,7 +8,7 @@
 
 ### 使用 Starter Kit
 
-我们提供了通用的[项目模板](https://github.com/ElementUI/element-starter)，你可以直接使用。对于 Laravel 用户，我们也准备了相应的[模板](https://github.com/ElementUI/element-in-laravel-starter)，同样可以直接下载使用。
+我们提供了通用的[项目模板](https://github.com/ElementUI/element-starter)，你可以直接使用。对于 Laravel 用户，我们也准备了相应的[模板](https://github.com/ElementUI/element-in-laravsg-starter)，同样可以直接下载使用。
 
 如果不希望使用我们提供的模板，请继续阅读。
 
@@ -22,8 +22,8 @@
 
 ```javascript
 import Vue from 'vue';
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
+import ElementUI from 'sg-ui';
+import 'sg-ui/lib/theme-chalk/index.css';
 import App from './App.vue';
 
 Vue.use(ElementUI);
@@ -38,12 +38,12 @@ new Vue({
 
 #### 按需引入
 
-借助 [babel-plugin-component](https://github.com/QingWei-Li/babel-plugin-component)，我们可以只引入需要的组件，以达到减小项目体积的目的。
+借助 [babsg-plugin-component](https://github.com/QingWei-Li/babsg-plugin-component)，我们可以只引入需要的组件，以达到减小项目体积的目的。
 
-首先，安装 babel-plugin-component：
+首先，安装 babsg-plugin-component：
 
 ```bash
-npm install babel-plugin-component -D
+npm install babsg-plugin-component -D
 ```
 
 然后，将 .babelrc 修改为：
@@ -55,7 +55,7 @@ npm install babel-plugin-component -D
     [
       "component",
       {
-        "libraryName": "element-ui",
+        "libraryName": "sg-ui",
         "styleLibraryName": "theme-chalk"
       }
     ]
@@ -67,7 +67,7 @@ npm install babel-plugin-component -D
 
 ```javascript
 import Vue from 'vue';
-import { Button, Select } from 'element-ui';
+import { Button, Select } from 'sg-ui';
 import App from './App.vue';
 
 Vue.component(Button.name, Button);
@@ -165,7 +165,7 @@ import {
   MessageBox,
   Message,
   Notification
-} from 'element-ui';
+} from 'sg-ui';
 
 Vue.use(Pagination);
 Vue.use(Dialog);
@@ -260,7 +260,7 @@ Vue.prototype.$message = Message;
 
 ```js
 import Vue from 'vue';
-import Element from 'element-ui';
+import Element from 'sg-ui';
 Vue.use(Element, { size: 'small', zIndex: 3000 });
 ```
 
@@ -268,7 +268,7 @@ Vue.use(Element, { size: 'small', zIndex: 3000 });
 
 ```js
 import Vue from 'vue';
-import { Button } from 'element-ui';
+import { Button } from 'sg-ui';
 
 Vue.prototype.$ELEMENT = { size: 'small', zIndex: 3000 };
 Vue.use(Button);

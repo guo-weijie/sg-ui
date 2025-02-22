@@ -1,15 +1,11 @@
 <template>
-  <transition name="el-fade-in">
-    <div
-      v-if="visible"
-      @click.stop="handleClick"
-      :style="{
-        'right': styleRight,
-        'bottom': styleBottom
-      }"
-      class="el-backtop">
+  <transition name="sg-fade-in">
+    <div v-if="visible" @click.stop="handleClick" :style="{
+      'right': styleRight,
+      'bottom': styleBottom
+    }" class="sg-backtop">
       <slot>
-        <el-icon name="caret-top"></el-icon>
+        <sg-icon name="caret-top"></sg-icon>
       </slot>
     </div>
   </transition>
@@ -24,7 +20,7 @@ const easeInOutCubic = value => value < 0.5
   : 1 - cubic((1 - value) * 2) / 2;
 
 export default {
-  name: 'ElBacktop',
+  name: 'SgBacktop',
 
   props: {
     visibilityHeight: {

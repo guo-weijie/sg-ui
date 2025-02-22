@@ -13,10 +13,10 @@
   margin: 5px 0;
 
   @include when(multiple) {
-    & .el-select-dropdown__item {
+    & .sg-select-dropdown__item {
       padding-right: 40px;
     }
-    & .el-select-dropdown__item.selected {
+    & .sg-select-dropdown__item.selected {
       color: $--select-option-selected-font-color;
       background-color: $--select-dropdown-background;
 
@@ -37,7 +37,7 @@
     }
   }
 
-  .el-scrollbar.is-empty .el-select-dropdown__list{
+  .sg-scrollbar.is-empty .sg-select-dropdown__list{
     padding: 0;
   }
 }

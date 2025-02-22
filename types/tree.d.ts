@@ -1,5 +1,5 @@
-import { CreateElement, VNode } from 'vue';
-import { ElementUIComponent } from './component';
+import { CreateSgement, VNode } from "vue";
+import { SgementUIComponent } from "./component";
 
 export interface TreeData {
   id?: any;
@@ -45,7 +45,7 @@ export interface TreeStore<K, D> {
 }
 
 /** Tree Component */
-export declare class ElTree<K, D extends TreeData> extends ElementUIComponent {
+export declare class SgTree<K, D extends TreeData> extends SgementUIComponent {
   /** TreeStore */
   store: TreeStore<K, D>;
 
@@ -69,7 +69,10 @@ export declare class ElTree<K, D extends TreeData> extends ElementUIComponent {
    *
    * @param h The render function
    */
-  renderContent: (h: CreateElement, context: { node: TreeNode<K, D>; data: D; store: TreeStore<K, D> }) => VNode;
+  renderContent: (
+    h: CreateSgement,
+    context: { node: TreeNode<K, D>; data: D; store: TreeStore<K, D> }
+  ) => VNode;
 
   /** Whether current node is highlighted */
   highlightCurrent: boolean;
@@ -130,7 +133,11 @@ export declare class ElTree<K, D extends TreeData> extends ElementUIComponent {
    * @param dropNode The target node
    * @param type Drop type
    */
-  allowDrop: (draggingNode: TreeNode<K, D>, dropNode: TreeNode<K, D>, type: 'prev' | 'inner' | 'next') => boolean;
+  allowDrop: (
+    draggingNode: TreeNode<K, D>,
+    dropNode: TreeNode<K, D>,
+    type: "prev" | "inner" | "next"
+  ) => boolean;
 
   /**
    * Filter all tree nodes. Filtered nodes will be hidden
@@ -262,5 +269,4 @@ export declare class ElTree<K, D extends TreeData> extends ElementUIComponent {
 
   /** Custom tree node icon */
   iconClass?: string;
-
 }

@@ -9,24 +9,24 @@ Callout a temporary drawer, from multiple direction
 :::demo You must set `visible` for `Drawer` like `Dialog` does to control the visibility of `Drawer` itself, it's `boolean` type. `Drawer` has to parts: `title` & `body`, the `title` is a named slot, you can also set the title through attribute named `title`, default to an empty string, the `body` part is the main area of `Drawer`, which contains user defined content. When opening, `Drawer` expand itself from the **right corner to left** which size is **30%** of the browser window by default. You can change that default behavior by setting `direction` and `size` attribute. This show case also demonstrated how to use the `before-close` API, check the Attribute section for more detail
 
 ```html
-<el-radio-group v-model="direction">
-  <el-radio label="ltr">left to right</el-radio>
-  <el-radio label="rtl">right to left</el-radio>
-  <el-radio label="ttb">top to bottom</el-radio>
-  <el-radio label="btt">bottom to top</el-radio>
-</el-radio-group>
+<sg-radio-group v-model="direction">
+  <sg-radio label="ltr">left to right</sg-radio>
+  <sg-radio label="rtl">right to left</sg-radio>
+  <sg-radio label="ttb">top to bottom</sg-radio>
+  <sg-radio label="btt">bottom to top</sg-radio>
+</sg-radio-group>
 
-<el-button @click="drawer = true" type="primary" style="margin-left: 16px;">
+<sg-button @click="drawer = true" type="primary" style="margin-left: 16px;">
   open
-</el-button>
+</sg-button>
 
-<el-drawer
+<sg-drawer
   title="I am the title"
   :visible.sync="drawer"
   :direction="direction"
   :before-close="handleClose">
   <span>Hi, there!</span>
-</el-drawer>
+</sg-drawer>
 
 <script>
   export default {
@@ -57,16 +57,16 @@ When you no longer need a title, you can remove title from drawer.
 :::demo Set the `withHeader` attribute to **false**, you can remove the title from drawer, thus your drawer can have more space on screen. If you want to be accessible, make sure to set the `title` attribute.
 
 ```html
-<el-button @click="drawer = true" type="primary" style="margin-left: 16px;">
+<sg-button @click="drawer = true" type="primary" style="margin-left: 16px;">
   open
-</el-button>
+</sg-button>
 
-<el-drawer
+<sg-drawer
   title="I am the title"
   :visible.sync="drawer"
   :with-header="false">
   <span>Hi there!</span>
-</el-drawer>
+</sg-drawer>
 
 <script>
   export default {
@@ -87,21 +87,21 @@ Like `Dialog`, `Drawer` can do many diverse interaction as you wanted.
 :::demo
 
 ```html
-<el-button type="text" @click="table = true">Open Drawer with nested table</el-button>
-<el-button type="text" @click="dialog = true">Open Drawer with nested form</el-button>
-<el-drawer
+<sg-button type="text" @click="table = true">Open Drawer with nested table</sg-button>
+<sg-button type="text" @click="dialog = true">Open Drawer with nested form</sg-button>
+<sg-drawer
   title="I have a nested table inside!"
   :visible.sync="table"
   direction="rtl"
   size="50%">
-   <el-table :data="gridData">
-      <el-table-column property="date" label="Date" width="150"></el-table-column>
-      <el-table-column property="name" label="Name" width="200"></el-table-column>
-      <el-table-column property="address" label="Address"></el-table-column>
-    </el-table>
-</el-drawer>
+   <sg-table :data="gridData">
+      <sg-table-column property="date" label="Date" width="150"></sg-table-column>
+      <sg-table-column property="name" label="Name" width="200"></sg-table-column>
+      <sg-table-column property="address" label="Address"></sg-table-column>
+    </sg-table>
+</sg-drawer>
 
-<el-drawer
+<sg-drawer
   title="I have a nested form inside!"
   :before-close="handleClose"
   :visible.sync="dialog"
@@ -110,23 +110,23 @@ Like `Dialog`, `Drawer` can do many diverse interaction as you wanted.
   ref="drawer"
   >
   <div class="demo-drawer__content">
-    <el-form :model="form">
-      <el-form-item label="Name" :label-width="formLabelWidth">
-        <el-input v-model="form.name" autocomplete="off"></el-input>
-      </el-form-item>
-      <el-form-item label="Area" :label-width="formLabelWidth">
-        <el-select v-model="form.region" placeholder="Please select activity area">
-          <el-option label="Area1" value="shanghai"></el-option>
-          <el-option label="Area2" value="beijing"></el-option>
-        </el-select>
-      </el-form-item>
-    </el-form>
+    <sg-form :model="form">
+      <sg-form-item label="Name" :label-width="formLabelWidth">
+        <sg-input v-model="form.name" autocomplete="off"></sg-input>
+      </sg-form-item>
+      <sg-form-item label="Area" :label-width="formLabelWidth">
+        <sg-select v-model="form.region" placeholder="Please select activity area">
+          <sg-option label="Area1" value="shanghai"></sg-option>
+          <sg-option label="Area2" value="beijing"></sg-option>
+        </sg-select>
+      </sg-form-item>
+    </sg-form>
     <div class="demo-drawer__footer">
-      <el-button @click="cancelForm">Cancel</el-button>
-      <el-button type="primary" @click="$refs.drawer.closeDrawer()" :loading="loading">{{ loading ? 'Submitting ...' : 'Submit' }}</el-button>
+      <sg-button @click="cancelForm">Cancel</sg-button>
+      <sg-button type="primary" @click="$refs.drawer.closeDrawer()" :loading="loading">{{ loading ? 'Submitting ...' : 'Submit' }}</sg-button>
     </div>
   </div>
-</el-drawer>
+</sg-drawer>
 
 <script>
 export default {
@@ -202,25 +202,25 @@ You can also have multiple layer of `Drawer` just like `Dialog`.
 
 ```html
 
-<el-button @click="drawer = true" type="primary" style="margin-left: 16px;">
+<sg-button @click="drawer = true" type="primary" style="margin-left: 16px;">
   open
-</el-button>
+</sg-button>
 
-<el-drawer
+<sg-drawer
   title="I'm outer Drawer"
   :visible.sync="drawer"
   size="50%">
   <div>
-   <el-button @click="innerDrawer = true">Click me!</el-button>
-   <el-drawer
+   <sg-button @click="innerDrawer = true">Click me!</sg-button>
+   <sg-drawer
      title="I'm inner Drawer"
      :append-to-body="true"
      :before-close="handleClose"
      :visible.sync="innerDrawer">
      <p>_(:зゝ∠)_</p>
-   </el-drawer>
+   </sg-drawer>
   </div>
-</el-drawer>
+</sg-drawer>
 
 <script>
   export default {

@@ -1,65 +1,68 @@
-import { VNode } from 'vue';
-import { ElementUIComponent, ElementUIComponentSize } from './component'
-import { CascaderOption, CascaderProps, CascaderNode } from './cascader-panel';
+import { VNode } from "vue";
+import { SgementUIComponent, SgementUIComponentSize } from "./component";
+import { CascaderOption, CascaderProps, CascaderNode } from "./cascader-panel";
 
 export { CascaderOption, CascaderProps, CascaderNode };
 
 export interface CascaderSlots {
   /** Custom label content */
-  default: VNode[],
+  default: VNode[];
 
   /** Empty content when no option matches */
-  empty: VNode[]
+  empty: VNode[];
 
-  [key: string]: VNode[]
+  [key: string]: VNode[];
 }
 
 /** Cascader Component */
-export declare class ElCascader<V = any, D = CascaderOption> extends ElementUIComponent {
+export declare class SgCascader<
+  V = any,
+  D = CascaderOption
+> extends SgementUIComponent {
   /** Data of the options */
-  options: CascaderOption[]
+  options: CascaderOption[];
 
   /** Configuration options */
-  props: CascaderProps<V, D>
+  props: CascaderProps<V, D>;
 
   /** Selected value */
-  value: V | V[]
+  value: V | V[];
 
   /** Size of Input */
-  size: ElementUIComponentSize
+  size: SgementUIComponentSize;
 
   /** Input placeholder */
-  placeholder: string
+  placeholder: string;
 
   /** Whether Cascader is disabled */
-  disabled: boolean
+  disabled: boolean;
 
   /** Whether selected value can be cleared */
-  clearable: boolean
+  clearable: boolean;
 
   /** Whether to display all levels of the selected value in the input */
-  showAllLevels: boolean
+  showAllLevels: boolean;
 
   /** Whether to collapse selected tags in multiple selection mode */
-  collapseTags: boolean
+  collapseTags: boolean;
 
   /** Separator of option labels */
-  separator: string
+  separator: string;
 
   /** Whether the options can be searched */
-  filterable: boolean
+  filterable: boolean;
 
   /** filter method to match options according to input keyword */
-  filterMethod: (node: CascaderNode<V, D>, keyword: string) => boolean
+  filterMethod: (node: CascaderNode<V, D>, keyword: string) => boolean;
 
   /** Debounce delay when typing filter keyword, in millisecond */
-  debounce: number
+  debounce: number;
 
   /** Custom class name for Cascader's dropdown */
-  popperClass: string
+  popperClass: string;
 
   /** Hook function before filtering with the value to be filtered as its parameter */
-  beforeFilter: (value: string) => boolean | Promise<any>
+  beforeFilter: (value: string) => boolean | Promise<any>;
 
-  $slots: CascaderSlots
+  $slots: CascaderSlots;
 }

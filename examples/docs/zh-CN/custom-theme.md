@@ -20,15 +20,15 @@ Element 的 theme-chalk 使用 SCSS 编写，如果你的项目也使用了 SCSS
 $--color-primary: teal;
 
 /* 改变 icon 字体路径变量，必需 */
-$--font-path: '~element-ui/lib/theme-chalk/fonts';
+$--font-path: '~sg-ui/lib/theme-chalk/fonts';
 
-@import "~element-ui/packages/theme-chalk/src/index";
+@import "~sg-ui/packages/theme-chalk/src/index";
 ```
 
 之后，在项目的入口文件中，直接引入以上样式文件即可（无需引入 Element 编译好的 CSS 文件）：
 ```JS
 import Vue from 'vue'
-import Element from 'element-ui'
+import Element from 'sg-ui'
 import './element-variables.scss'
 
 Vue.use(Element)
@@ -106,21 +106,21 @@ et
 
 ```javascript
 import '../theme/index.css'
-import ElementUI from 'element-ui'
+import ElementUI from 'sg-ui'
 import Vue from 'vue'
 
 Vue.use(ElementUI)
 ```
 
 #### <strong>搭配插件按需引入组件主题</strong>
-如果是搭配 `babel-plugin-component` 一起使用，只需要修改 `.babelrc` 的配置，指定 `styleLibraryName` 路径为自定义主题相对于 `.babelrc` 的路径，注意要加 `~`。
+如果是搭配 `babsg-plugin-component` 一起使用，只需要修改 `.babelrc` 的配置，指定 `styleLibraryName` 路径为自定义主题相对于 `.babelrc` 的路径，注意要加 `~`。
 ```json
 {
   "plugins": [
     [
       "component",
       {
-        "libraryName": "element-ui",
+        "libraryName": "sg-ui",
         "styleLibraryName": "~theme"
       }
     ]
@@ -128,4 +128,4 @@ Vue.use(ElementUI)
 }
 ```
 
-如果不清楚 `babel-plugin-component` 是什么，请阅读 <a href="./#/zh-CN/component/quickstart">快速上手</a> 一节。更多 `element-theme` 用法请参考[项目仓库](https://github.com/ElementUI/element-theme)。
+如果不清楚 `babsg-plugin-component` 是什么，请阅读 <a href="./#/zh-CN/component/quickstart">快速上手</a> 一节。更多 `element-theme` 用法请参考[项目仓库](https://github.com/ElementUI/element-theme)。

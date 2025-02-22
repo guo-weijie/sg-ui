@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import merge from 'element-ui/src/utils/merge';
+import merge from 'sg-ui/src/utils/merge';
 import { getKeysMap, getRowIdentity, getColumnById, getColumnByKey, orderBy, toggleRowStatus } from '../util';
 import expand from './expand';
 import current from './current';
@@ -223,7 +223,7 @@ export default Vue.extend({
       if (rowKey) {
         selectedMap = getKeysMap(selection, rowKey);
       }
-      const isSelected = function(row) {
+      const isSelected = function (row) {
         if (selectedMap) {
           return !!selectedMap[getRowIdentity(row, rowKey)];
         } else {

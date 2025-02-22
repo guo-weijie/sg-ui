@@ -1,21 +1,21 @@
-import { ElementUIComponent, ElementUIComponentSize } from './component'
+import { SgementUIComponent, SgementUIComponentSize } from "./component";
 
-export type ColorFormat = 'hsl' | 'hsv' | 'hex' | 'rgb'
+export type ColorFormat = "hsl" | "hsv" | "hex" | "rgb";
 
 /** ColorPicker Component */
-export declare class ElColorPicker extends ElementUIComponent {
+export declare class SgColorPicker extends SgementUIComponent {
   /** Whether to display the alpha slider */
-  showAlpha: boolean
+  showAlpha: boolean;
 
   /** Whether to disable the ColorPicker */
-  disabled: boolean
+  disabled: boolean;
 
   /** Size of ColorPicker */
-  size: ElementUIComponentSize
+  size: SgementUIComponentSize;
 
   /** Whether to display the alpha slider */
-  popperClass: string
+  popperClass: string;
 
   /** Custom class name for ColorPicker's dropdown */
-  colorFormat: ColorFormat
+  colorFormat: ColorFormat;
 }

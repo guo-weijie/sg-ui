@@ -1,14 +1,14 @@
 <template>
-  <aside class="el-aside" :style="{ width }">
+  <aside class="sg-aside" :style="{ width }">
     <slot></slot>
   </aside>
 </template>
 
 <script>
   export default {
-    name: 'ElAside',
+    name: 'SgAside',
 
-    componentName: 'ElAside',
+    componentName: 'SgAside',
 
     props: {
       width: {

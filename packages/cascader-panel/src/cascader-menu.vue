@@ -1,18 +1,18 @@
 <script>
-import ElScrollbar from 'element-ui/packages/scrollbar';
+import SgScrollbar from 'sg-ui/packages/scrollbar';
 import CascaderNode from './cascader-node.vue';
-import Locale from 'element-ui/src/mixins/locale';
-import { generateId } from 'element-ui/src/utils/util';
+import Locale from 'sg-ui/src/mixins/locale';
+import { generateId } from 'sg-ui/src/utils/util';
 
 export default {
-  name: 'ElCascaderMenu',
+  name: 'SgCascaderMenu',
 
   mixins: [Locale],
 
   inject: ['panel'],
 
   components: {
-    ElScrollbar,
+    SgScrollbar,
     CascaderNode
   },
 
@@ -76,7 +76,7 @@ export default {
 
     renderEmptyText(h) {
       return (
-        <div class="el-cascader-menu__empty-text">{ this.t('el.cascader.noData') }</div>
+        <div class="sg-cascader-menu__empty-text">{this.t('el.cascader.noData')}</div>
       );
     },
     renderNodeList(h) {
@@ -92,18 +92,18 @@ export default {
         const { hasChildren } = node;
         return (
           <cascader-node
-            key={ node.uid }
-            node={ node }
-            node-id={ `${menuId}-${index}` }
-            aria-haspopup={ hasChildren }
-            aria-owns = { hasChildren ? menuId : null }
-            { ...events }></cascader-node>
+            key={node.uid}
+            node={node}
+            node-id={`${menuId}-${index}`}
+            aria-haspopup={hasChildren}
+            aria-owns={hasChildren ? menuId : null}
+            {...events}></cascader-node>
         );
       });
 
       return [
         ...nodes,
-        isHoverMenu ? <svg ref='hoverZone' class='el-cascader-menu__hover-zone'></svg> : null
+        isHoverMenu ? <svg ref='hoverZone' class='sg-cascader-menu__hover-zone'></svg> : null
       ];
     }
   },
@@ -119,19 +119,19 @@ export default {
     }
 
     return (
-      <el-scrollbar
+      <sg-scrollbar
         tag="ul"
         role="menu"
-        id={ menuId }
-        class="el-cascader-menu"
-        wrap-class="el-cascader-menu__wrap"
+        id={menuId}
+        class="sg-cascader-menu"
+        wrap-class="sg-cascader-menu__wrap"
         view-class={{
-          'el-cascader-menu__list': true,
+          'sg-cascader-menu__list': true,
           'is-empty': isEmpty
         }}
-        { ...events }>
-        { isEmpty ? this.renderEmptyText(h) : this.renderNodeList(h) }
-      </el-scrollbar>
+        {...events}>
+        {isEmpty ? this.renderEmptyText(h) : this.renderNodeList(h)}
+      </sg-scrollbar>
     );
   }
 };

@@ -1,13 +1,13 @@
 {
   "framework": "vue",
-  "name": "element-ui",
+  "name": "sg-ui",
   "version": "2.15.9",
   "description-markup": "markdown",
   "contributions": {
     "html": {
       "vue-components": [
         {
-          "name": "ElAlert",
+          "name": "SgAlert",
           "description": "Displays important alert messages.",
           "doc-url": "https://element.eleme.io/#/en-US/component/alert",
           "props": [
@@ -77,7 +77,7 @@
           }
         },
         {
-          "name": "ElAside",
+          "name": "SgAside",
           "description": "Container for side sections (usually a side nav).",
           "doc-url": "https://element.eleme.io/#/en-US/component/container",
           "props": [
@@ -90,7 +90,7 @@
           ]
         },
         {
-          "name": "ElAutocomplete",
+          "name": "SgAutocomplete",
           "doc-url": "https://element.eleme.io/#/en-US/component/input#autocomplete-attributes",
           "props": [
             {
@@ -204,7 +204,7 @@
           ]
         },
         {
-          "name": "ElAvatar",
+          "name": "SgAvatar",
           "description": "Avatars can be used to represent people or objects. It supports images, Icons, or characters.",
           "doc-url": "https://element.eleme.io/#/en-US/component/avatar",
           "props": [
@@ -257,7 +257,7 @@
           }
         },
         {
-          "name": "ElBacktop",
+          "name": "SgBacktop",
           "description": "A button to back to top",
           "doc-url": "https://element.eleme.io/#/en-US/component/backtop",
           "props": [
@@ -295,7 +295,7 @@
           }
         },
         {
-          "name": "ElBadge",
+          "name": "SgBadge",
           "description": "A number or status mark on buttons and icons.",
           "doc-url": "https://element.eleme.io/#/en-US/component/badge",
           "props": [
@@ -329,7 +329,7 @@
           ]
         },
         {
-          "name": "ElBreadcrumb",
+          "name": "SgBreadcrumb",
           "description": "Displays the location of the current page, making it easier to browser back.",
           "doc-url": "https://element.eleme.io/#/en-US/component/breadcrumb",
           "props": [
@@ -347,7 +347,7 @@
           ]
         },
         {
-          "name": "ElBreadcrumbItem",
+          "name": "SgBreadcrumbItem",
           "doc-url": "https://element.eleme.io/#/en-US/component/breadcrumb",
           "props": [
             {
@@ -364,7 +364,7 @@
           ]
         },
         {
-          "name": "ElButton",
+          "name": "SgButton",
           "description": "Commonly used button.",
           "doc-url": "https://element.eleme.io/#/en-US/component/button",
           "props": [
@@ -428,12 +428,12 @@
           ]
         },
         {
-          "name": "ElButtonGroup",
+          "name": "SgButtonGroup",
           "description": "Displayed as a button group, can be used to group a series of similar operations.",
           "doc-url": "https://element.eleme.io/#/en-US/component/button"
         },
         {
-          "name": "ElCalendar",
+          "name": "SgCalendar",
           "description": "Display date.",
           "doc-url": "https://element.eleme.io/#/en-US/component/calendar",
           "props": [
@@ -462,7 +462,7 @@
           ]
         },
         {
-          "name": "ElCard",
+          "name": "SgCard",
           "description": "Integrate information in a card container.",
           "doc-url": "https://element.eleme.io/#/en-US/component/card",
           "props": [
@@ -496,7 +496,7 @@
           ]
         },
         {
-          "name": "ElCarousel",
+          "name": "SgCarousel",
           "description": "Loop a series of images or texts in a limited space",
           "doc-url": "https://element.eleme.io/#/en-US/component/carousel",
           "props": [
@@ -568,7 +568,7 @@
           }
         },
         {
-          "name": "ElCarouselItem",
+          "name": "SgCarouselItem",
           "doc-url": "https://element.eleme.io/#/en-US/component/carousel#carousel-item-attributes",
           "props": [
             {
@@ -584,7 +584,7 @@
           ]
         },
         {
-          "name": "ElCascader",
+          "name": "SgCascader",
           "description": "If the options have a clear hierarchical structure, Cascader can be used to view and select them.",
           "doc-url": "https://element.eleme.io/#/en-US/component/cascader",
           "props": [
@@ -666,7 +666,7 @@
           ]
         },
         {
-          "name": "ElCascaderPanel",
+          "name": "SgCascaderPanel",
           "doc-url": "https://element.eleme.io/#/en-US/component/cascader#cascaderpanel-attributes",
           "props": [
             {
@@ -698,7 +698,7 @@
           ]
         },
         {
-          "name": "ElCheckbox",
+          "name": "SgCheckbox",
           "description": "A group of options for multiple choices.",
           "doc-url": "https://element.eleme.io/#/en-US/component/checkbox",
           "props": [
@@ -755,7 +755,7 @@
           ]
         },
         {
-          "name": "ElCheckboxButton",
+          "name": "SgCheckboxButton",
           "doc-url": "https://element.eleme.io/#/en-US/component/checkbox#checkbox-group-attributes",
           "props": [
             {
@@ -791,7 +791,7 @@
           ]
         },
         {
-          "name": "ElCheckboxGroup",
+          "name": "SgCheckboxGroup",
           "doc-url": "https://element.eleme.io/#/en-US/component/checkbox#checkbox-group-attributes",
           "props": [
             {
@@ -827,7 +827,7 @@
           ]
         },
         {
-          "name": "ElCol",
+          "name": "SgCol",
           "props": [
             {
               "name": "md",
@@ -882,7 +882,7 @@
           ]
         },
         {
-          "name": "ElCollapse",
+          "name": "SgCollapse",
           "description": "Use Collapse to store contents.",
           "doc-url": "https://element.eleme.io/#/en-US/component/collapse",
           "props": [
@@ -899,7 +899,7 @@
           ]
         },
         {
-          "name": "ElCollapseItem",
+          "name": "SgCollapseItem",
           "doc-url": "https://element.eleme.io/#/en-US/component/collapse#collapse-item-attributes",
           "props": [
             {
@@ -930,7 +930,7 @@
           ]
         },
         {
-          "name": "ElColorPicker",
+          "name": "SgColorPicker",
           "description": "ColorPicker is a color selector supporting multiple color formats.",
           "doc-url": "https://element.eleme.io/#/en-US/component/color-picker",
           "props": [
@@ -962,11 +962,11 @@
           ]
         },
         {
-          "name": "ElComponent",
+          "name": "SgComponent",
           "props": []
         },
         {
-          "name": "ElContainer",
+          "name": "SgContainer",
           "description": "Wrapper container. When nested with a `<el-header>` or `<el-footer>`, all its child elements will be vertically arranged. Otherwise horizontally.",
           "doc-url": "https://element.eleme.io/#/en-US/component/container",
           "props": [
@@ -978,7 +978,7 @@
           ]
         },
         {
-          "name": "ElDatePicker",
+          "name": "SgDatePicker",
           "description": "Use Date Picker for date input.",
           "doc-url": "https://element.eleme.io/#/en-US/component/date-picker",
           "props": [
@@ -1081,7 +1081,7 @@
           ]
         },
         {
-          "name": "ElDescriptions",
+          "name": "SgDescriptions",
           "description": "Display multiple fields in list form.",
           "doc-url": "https://element.eleme.io/#/en-US/component/descriptions",
           "props": [
@@ -1153,7 +1153,7 @@
           ]
         },
         {
-          "name": "ElDescriptionsItem",
+          "name": "SgDescriptionsItem",
           "doc-url": "https://element.eleme.io/#/en-US/component/descriptions#descriptions-item-attributes",
           "props": [
             {
@@ -1199,7 +1199,7 @@
           ]
         },
         {
-          "name": "ElDialog",
+          "name": "SgDialog",
           "description": "Informs users while preserving the current page state.",
           "doc-url": "https://element.eleme.io/#/en-US/component/dialog",
           "props": [
@@ -1285,7 +1285,7 @@
           ]
         },
         {
-          "name": "ElDivider",
+          "name": "SgDivider",
           "description": "The dividing line that separates the content.",
           "doc-url": "https://element.eleme.io/#/en-US/component/divider",
           "props": [
@@ -1302,7 +1302,7 @@
           ]
         },
         {
-          "name": "ElDrawer",
+          "name": "SgDrawer",
           "description": "Sometimes, `Dialog` does not always satisfy our requirements, let's say you have a massive form, or you need space to display something like `terms & conditions`, `Drawer` has almost identical API with `Dialog`, but it introduces different user experience.",
           "doc-url": "https://element.eleme.io/#/en-US/component/drawer",
           "props": [
@@ -1379,7 +1379,7 @@
           ]
         },
         {
-          "name": "ElDropdown",
+          "name": "SgDropdown",
           "description": "Toggleable menu for displaying lists of links and actions.",
           "doc-url": "https://element.eleme.io/#/en-US/component/dropdown",
           "props": [
@@ -1446,7 +1446,7 @@
           ]
         },
         {
-          "name": "ElDropdownItem",
+          "name": "SgDropdownItem",
           "doc-url": "https://element.eleme.io/#/en-US/component/dropdown#dropdown-menu-item-attributes",
           "props": [
             {
@@ -1472,12 +1472,12 @@
           ]
         },
         {
-          "name": "ElDropdownMenu",
+          "name": "SgDropdownMenu",
           "doc-url": "https://element.eleme.io/#/en-US/component/dropdown",
           "props": []
         },
         {
-          "name": "ElEmpty",
+          "name": "SgEmpty",
           "description": "Placeholder hints for empty states.",
           "doc-url": "https://element.eleme.io/#/en-US/component/empty",
           "props": [
@@ -1513,7 +1513,7 @@
           ]
         },
         {
-          "name": "ElFooter",
+          "name": "SgFooter",
           "description": "Container for footers.",
           "doc-url": "https://element.eleme.io/#/en-US/component/container",
           "props": [
@@ -1525,7 +1525,7 @@
           ]
         },
         {
-          "name": "ElForm",
+          "name": "SgForm",
           "description": "Form consists of `input`, `radio`, `select`, `checkbox` and so on. With form, you can collect, verify and submit data.",
           "doc-url": "https://element.eleme.io/#/en-US/component/form",
           "props": [
@@ -1597,7 +1597,7 @@
           ]
         },
         {
-          "name": "ElFormItem",
+          "name": "SgFormItem",
           "doc-url": "https://element.eleme.io/#/en-US/component/form#form-item-attributes",
           "props": [
             {
@@ -1663,7 +1663,7 @@
           ]
         },
         {
-          "name": "ElHeader",
+          "name": "SgHeader",
           "description": "Container for headers.",
           "doc-url": "https://element.eleme.io/#/en-US/component/container",
           "props": [
@@ -1675,7 +1675,7 @@
           ]
         },
         {
-          "name": "ElIcon",
+          "name": "SgIcon",
           "description": "Element provides a set of common icons.",
           "doc-url": "https://element.eleme.io/#/en-US/component/icon",
           "props": [
@@ -1688,7 +1688,7 @@
           ]
         },
         {
-          "name": "ElImage",
+          "name": "SgImage",
           "description": "Besides the native features of img, support lazy load, custom placeholder and load failure, etc.",
           "doc-url": "https://element.eleme.io/#/en-US/component/image",
           "props": [
@@ -1743,7 +1743,7 @@
           ]
         },
         {
-          "name": "ElInput",
+          "name": "SgInput",
           "description": "Input data using mouse or keyboard.",
           "doc-url": "https://element.eleme.io/#/en-US/component/input",
           "props": [
@@ -1892,7 +1892,7 @@
           ]
         },
         {
-          "name": "ElInputNumber",
+          "name": "SgInputNumber",
           "description": "Input numerical values with a customizable range.",
           "doc-url": "https://element.eleme.io/#/en-US/component/input-number",
           "props": [
@@ -1959,7 +1959,7 @@
           ]
         },
         {
-          "name": "ElLink",
+          "name": "SgLink",
           "description": "Text hyperlink",
           "doc-url": "https://element.eleme.io/#/en-US/component/link",
           "props": [
@@ -1996,13 +1996,13 @@
           ]
         },
         {
-          "name": "ElMain",
+          "name": "SgMain",
           "description": "Container for main sections.",
           "doc-url": "https://element.eleme.io/#/en-US/component/container",
           "props": []
         },
         {
-          "name": "ElMenu",
+          "name": "SgMenu",
           "description": "Menu that provides navigation for your website.",
           "doc-url": "https://element.eleme.io/#/en-US/component/menu",
           "props": [
@@ -2064,7 +2064,7 @@
           ]
         },
         {
-          "name": "ElMenuItem",
+          "name": "SgMenuItem",
           "doc-url": "https://element.eleme.io/#/en-US/component/menu#menu-item-attribute",
           "props": [
             {
@@ -2080,7 +2080,7 @@
           ]
         },
         {
-          "name": "ElMenuItemGroup",
+          "name": "SgMenuItemGroup",
           "doc-url": "https://element.eleme.io/#/en-US/component/menu#menu-item-attribute",
           "props": [
             {
@@ -2091,7 +2091,7 @@
           ]
         },
         {
-          "name": "ElOption",
+          "name": "SgOption",
           "doc-url": "https://element.eleme.io/#/en-US/component/select#option-attributes",
           "props": [
             {
@@ -2112,7 +2112,7 @@
           ]
         },
         {
-          "name": "ElOptionGroup",
+          "name": "SgOptionGroup",
           "doc-url": "https://element.eleme.io/#/en-US/component/select#option-group-attributes",
           "props": [
             {
@@ -2128,7 +2128,7 @@
           ]
         },
         {
-          "name": "ElPageHeader",
+          "name": "SgPageHeader",
           "description": "If path of the page is simple, it is recommended to use PageHeader instead of the Breadcrumb.",
           "doc-url": "https://element.eleme.io/#/en-US/component/page-header",
           "props": [
@@ -2155,7 +2155,7 @@
           ]
         },
         {
-          "name": "ElPagination",
+          "name": "SgPagination",
           "description": "If you have too much data to display in one page, use pagination.",
           "doc-url": "https://element.eleme.io/#/en-US/component/pagination",
           "props": [
@@ -2228,7 +2228,7 @@
           ]
         },
         {
-          "name": "ElPopconfirm",
+          "name": "SgPopconfirm",
           "description": "A simple confirmation dialog of an element click action.",
           "doc-url": "https://element.eleme.io/#/en-US/component/popconfirm",
           "props": [
@@ -2355,7 +2355,7 @@
           ]
         },
         {
-          "name": "ElPopover",
+          "name": "SgPopover",
           "description": "Similar to Tooltip, Popover is also built with `Vue-popper`",
           "doc-url": "https://element.eleme.io/#/en-US/component/popover",
           "props": [
@@ -2447,7 +2447,7 @@
           ]
         },
         {
-          "name": "ElProgress",
+          "name": "SgProgress",
           "description": "Progress is used to show the progress of current operation, and inform the user the current status.",
           "doc-url": "https://element.eleme.io/#/en-US/component/progress",
           "props": [
@@ -2499,7 +2499,7 @@
           ]
         },
         {
-          "name": "ElRadio",
+          "name": "SgRadio",
           "description": "Single selection among multiple options.",
           "doc-url": "https://element.eleme.io/#/en-US/component/radio",
           "props": [
@@ -2531,7 +2531,7 @@
           ]
         },
         {
-          "name": "ElRadioButton",
+          "name": "SgRadioButton",
           "doc-url": "https://element.eleme.io/#/en-US/component/radio#radio-group-attributes",
           "props": [
             {
@@ -2557,7 +2557,7 @@
           ]
         },
         {
-          "name": "ElRadioGroup",
+          "name": "SgRadioGroup",
           "doc-url": "https://element.eleme.io/#/en-US/component/radio#radio-group-attributes",
           "props": [
             {
@@ -2583,7 +2583,7 @@
           ]
         },
         {
-          "name": "ElRate",
+          "name": "SgRate",
           "description": "Used for rating",
           "doc-url": "https://element.eleme.io/#/en-US/component/rate",
           "props": [
@@ -2670,7 +2670,7 @@
           ]
         },
         {
-          "name": "ElResult",
+          "name": "SgResult",
           "description": "Used to give feedback on the result of user's operation or access exception.",
           "doc-url": "https://element.eleme.io/#/en-US/component/result",
           "props": [
@@ -2710,7 +2710,7 @@
           ]
         },
         {
-          "name": "ElRow",
+          "name": "SgRow",
           "props": [
             {
               "name": "type",
@@ -2740,7 +2740,7 @@
           ]
         },
         {
-          "name": "ElSelect",
+          "name": "SgSelect",
           "description": "When there are plenty of options, use a drop-down menu to display and select desired ones.",
           "doc-url": "https://element.eleme.io/#/en-US/component/select",
           "props": [
@@ -2875,7 +2875,7 @@
           ]
         },
         {
-          "name": "ElSkeleton",
+          "name": "SgSkeleton",
           "description": "When loading data, and you need a rich experience for visual and interactions for your end users, you can choose `skeleton`.",
           "doc-url": "https://element.eleme.io/#/en-US/component/skeleton",
           "props": [
@@ -2917,7 +2917,7 @@
           ]
         },
         {
-          "name": "ElSkeletonItem",
+          "name": "SgSkeletonItem",
           "doc-url": "https://element.eleme.io/#/en-US/component/skeleton#skeleton-item-attributes",
           "props": [
             {
@@ -2928,7 +2928,7 @@
           ]
         },
         {
-          "name": "ElSlider",
+          "name": "SgSlider",
           "description": "Drag the slider within a fixed range.",
           "doc-url": "https://element.eleme.io/#/en-US/component/slider",
           "props": [
@@ -3020,7 +3020,7 @@
           ]
         },
         {
-          "name": "ElSpinner",
+          "name": "SgSpinner",
           "props": [
             {
               "name": "type",
@@ -3045,7 +3045,7 @@
           ]
         },
         {
-          "name": "ElStep",
+          "name": "SgStep",
           "doc-url": "https://element.eleme.io/#/en-US/component/steps#step-attributes",
           "props": [
             {
@@ -3085,7 +3085,7 @@
           ]
         },
         {
-          "name": "ElSteps",
+          "name": "SgSteps",
           "description": "Guide the user to complete tasks in accordance with the process. Its steps can be set according to the actual application scenario and the number of the steps can't be less than 2.",
           "doc-url": "https://element.eleme.io/#/en-US/component/steps",
           "props": [
@@ -3127,7 +3127,7 @@
           ]
         },
         {
-          "name": "ElSubmenu",
+          "name": "SgSubmenu",
           "doc-url": "https://element.eleme.io/#/en-US/component/menu#submenu-attribute",
           "props": [
             {
@@ -3163,7 +3163,7 @@
           ]
         },
         {
-          "name": "ElSwitch",
+          "name": "SgSwitch",
           "description": "Switch is used for switching between two opposing states.",
           "doc-url": "https://element.eleme.io/#/en-US/component/switch",
           "props": [
@@ -3235,7 +3235,7 @@
           ]
         },
         {
-          "name": "ElTabPane",
+          "name": "SgTabPane",
           "doc-url": "https://element.eleme.io/#/en-US/component/tabs#tab-pane-attributes",
           "props": [
             {
@@ -3266,7 +3266,7 @@
           ]
         },
         {
-          "name": "ElTable",
+          "name": "SgTable",
           "description": "Display multiple data with similar format. You can sort, filter, compare your data in a table.",
           "doc-url": "https://element.eleme.io/#/en-US/component/table",
           "props": [
@@ -3414,7 +3414,7 @@
           ]
         },
         {
-          "name": "ElTableColumn",
+          "name": "SgTableColumn",
           "doc-url": "https://element.eleme.io/#/en-US/component/table#table-column-attributes",
           "props": [
             {
@@ -3532,7 +3532,7 @@
           ]
         },
         {
-          "name": "ElTabs",
+          "name": "SgTabs",
           "description": "Divide data collections which are related yet belong to different types.",
           "doc-url": "https://element.eleme.io/#/en-US/component/tabs",
           "props": [
@@ -3574,7 +3574,7 @@
           ]
         },
         {
-          "name": "ElTag",
+          "name": "SgTag",
           "description": "Used for marking and selection.",
           "doc-url": "https://element.eleme.io/#/en-US/component/tag",
           "props": [
@@ -3616,7 +3616,7 @@
           ]
         },
         {
-          "name": "ElTimePicker",
+          "name": "SgTimePicker",
           "description": "Use Time Picker for time input.",
           "doc-url": "https://element.eleme.io/#/en-US/component/time-picker",
           "props": [
@@ -3693,7 +3693,7 @@
           ]
         },
         {
-          "name": "ElTimeSelect",
+          "name": "SgTimeSelect",
           "doc-url": "https://element.eleme.io/#/en-US/component/time-picker#time-select-options",
           "props": [
             {
@@ -3749,7 +3749,7 @@
           ]
         },
         {
-          "name": "ElTimeline",
+          "name": "SgTimeline",
           "description": "Visually display timeline.",
           "doc-url": "https://element.eleme.io/#/en-US/component/timeline",
           "props": [
@@ -3760,7 +3760,7 @@
           ]
         },
         {
-          "name": "ElTimelineItem",
+          "name": "SgTimelineItem",
           "doc-url": "https://element.eleme.io/#/en-US/component/timeline#timeline-item-attributes",
           "props": [
             {
@@ -3800,7 +3800,7 @@
           ]
         },
         {
-          "name": "ElTooltip",
+          "name": "SgTooltip",
           "description": "Display prompt information for mouse hover.",
           "doc-url": "https://element.eleme.io/#/en-US/component/tooltip",
           "props": [
@@ -3882,7 +3882,7 @@
           ]
         },
         {
-          "name": "ElTransfer",
+          "name": "SgTransfer",
           "doc-url": "https://element.eleme.io/#/en-US/component/transfer",
           "props": [
             {
@@ -3958,7 +3958,7 @@
           ]
         },
         {
-          "name": "ElTree",
+          "name": "SgTree",
           "description": "Display a set of data with hierarchies.",
           "doc-url": "https://element.eleme.io/#/en-US/component/tree",
           "props": [
@@ -4062,7 +4062,7 @@
           ]
         },
         {
-          "name": "ElUpload",
+          "name": "SgUpload",
           "description": "Upload files by clicking or drag-and-drop",
           "doc-url": "https://element.eleme.io/#/en-US/component/upload",
           "props": [

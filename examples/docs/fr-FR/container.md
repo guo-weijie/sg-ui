@@ -1,108 +1,108 @@
 ## Container
 Les composants Container servent à structurer la page:
 
-`<el-container>`: Conteneur de wrapping. Quand il est placé à l'intérieur de `<el-header>` ou `<el-footer>`, tous les éléments enfants seront placés verticalement. Dans le cas contraire ils seront placés horizontalement.
+`<sg-container>`: Conteneur de wrapping. Quand il est placé à l'intérieur de `<sg-header>` ou `<sg-footer>`, tous les éléments enfants seront placés verticalement. Dans le cas contraire ils seront placés horizontalement.
 
-`<el-header>`: Conteneur pour headers.
+`<sg-header>`: Conteneur pour headers.
 
-`<el-aside>`: Conteneur pour section latérale (en général un menu).
+`<sg-aside>`: Conteneur pour section latérale (en général un menu).
 
-`<el-main>`: Conteneur pour la section principal.
+`<sg-main>`: Conteneur pour la section principal.
 
-`<el-footer>`: Conteneur pour footers.
+`<sg-footer>`: Conteneur pour footers.
 
 :::tip
-Ces composants utilisent flexbox, assurez vous que le navigateur supporte cette fonctionnalité. De plus, les éléments enfants directs de `<el-container>` doivent être un des quatre éléments précédents, leur élément père devant obligatoirement être `<el-container>`.
+Ces composants utilisent flexbox, assurez vous que le navigateur supporte cette fonctionnalité. De plus, les éléments enfants directs de `<sg-container>` doivent être un des quatre éléments précédents, leur élément père devant obligatoirement être `<sg-container>`.
 :::
 
 ### Mises en page habituelles
 
 :::demo
 ```html
-<el-container>
-  <el-header>Header</el-header>
-  <el-main>Main</el-main>
-</el-container>
+<sg-container>
+  <sg-header>Header</sg-header>
+  <sg-main>Main</sg-main>
+</sg-container>
 
-<el-container>
-  <el-header>Header</el-header>
-  <el-main>Main</el-main>
-  <el-footer>Footer</el-footer>
-</el-container>
+<sg-container>
+  <sg-header>Header</sg-header>
+  <sg-main>Main</sg-main>
+  <sg-footer>Footer</sg-footer>
+</sg-container>
 
-<el-container>
-  <el-aside width="200px">Aside</el-aside>
-  <el-main>Main</el-main>
-</el-container>
+<sg-container>
+  <sg-aside width="200px">Aside</sg-aside>
+  <sg-main>Main</sg-main>
+</sg-container>
 
-<el-container>
-  <el-header>Header</el-header>
-  <el-container>
-    <el-aside width="200px">Aside</el-aside>
-    <el-main>Main</el-main>
-  </el-container>
-</el-container>
+<sg-container>
+  <sg-header>Header</sg-header>
+  <sg-container>
+    <sg-aside width="200px">Aside</sg-aside>
+    <sg-main>Main</sg-main>
+  </sg-container>
+</sg-container>
 
-<el-container>
-  <el-header>Header</el-header>
-  <el-container>
-    <el-aside width="200px">Aside</el-aside>
-    <el-container>
-      <el-main>Main</el-main>
-      <el-footer>Footer</el-footer>
-    </el-container>
-  </el-container>
-</el-container>
+<sg-container>
+  <sg-header>Header</sg-header>
+  <sg-container>
+    <sg-aside width="200px">Aside</sg-aside>
+    <sg-container>
+      <sg-main>Main</sg-main>
+      <sg-footer>Footer</sg-footer>
+    </sg-container>
+  </sg-container>
+</sg-container>
 
-<el-container>
-  <el-aside width="200px">Aside</el-aside>
-  <el-container>
-    <el-header>Header</el-header>
-    <el-main>Main</el-main>
-  </el-container>
-</el-container>
+<sg-container>
+  <sg-aside width="200px">Aside</sg-aside>
+  <sg-container>
+    <sg-header>Header</sg-header>
+    <sg-main>Main</sg-main>
+  </sg-container>
+</sg-container>
 
-<el-container>
-  <el-aside width="200px">Aside</el-aside>
-  <el-container>
-    <el-header>Header</el-header>
-    <el-main>Main</el-main>
-    <el-footer>Footer</el-footer>
-  </el-container>
-</el-container>
+<sg-container>
+  <sg-aside width="200px">Aside</sg-aside>
+  <sg-container>
+    <sg-header>Header</sg-header>
+    <sg-main>Main</sg-main>
+    <sg-footer>Footer</sg-footer>
+  </sg-container>
+</sg-container>
 
 <style>
-  .el-header, .el-footer {
+  .sg-header, .sg-footer {
     background-color: #B3C0D1;
     color: #333;
     text-align: center;
     line-height: 60px;
   }
 
-  .el-aside {
+  .sg-aside {
     background-color: #D3DCE6;
     color: #333;
     text-align: center;
     line-height: 200px;
   }
 
-  .el-main {
+  .sg-main {
     background-color: #E9EEF3;
     color: #333;
     text-align: center;
     line-height: 160px;
   }
 
-  body > .el-container {
+  body > .sg-container {
     margin-bottom: 40px;
   }
 
-  .el-container:nth-child(5) .el-aside,
-  .el-container:nth-child(6) .el-aside {
+  .sg-container:nth-child(5) .sg-aside,
+  .sg-container:nth-child(6) .sg-aside {
     line-height: 260px;
   }
 
-  .el-container:nth-child(7) .el-aside {
+  .sg-container:nth-child(7) .sg-aside {
     line-height: 320px;
   }
 </style>
@@ -113,91 +113,91 @@ Ces composants utilisent flexbox, assurez vous que le navigateur supporte cette 
 
 :::demo
 ```html
-<el-container style="height: 500px; border: 1px solid #eee">
-  <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
-    <el-menu :default-openeds="['1', '3']">
-      <el-submenu index="1">
-        <template slot="title"><i class="el-icon-message"></i>Navigator One</template>
-        <el-menu-item-group>
+<sg-container style="height: 500px; border: 1px solid #eee">
+  <sg-aside width="200px" style="background-color: rgb(238, 241, 246)">
+    <sg-menu :default-openeds="['1', '3']">
+      <sg-submenu index="1">
+        <template slot="title"><i class="sg-icon-message"></i>Navigator One</template>
+        <sg-menu-item-group>
           <template slot="title">Group 1</template>
-          <el-menu-item index="1-1">Option 1</el-menu-item>
-          <el-menu-item index="1-2">Option 2</el-menu-item>
-        </el-menu-item-group>
-        <el-menu-item-group title="Group 2">
-          <el-menu-item index="1-3">Option 3</el-menu-item>
-        </el-menu-item-group>
-        <el-submenu index="1-4">
+          <sg-menu-item index="1-1">Option 1</sg-menu-item>
+          <sg-menu-item index="1-2">Option 2</sg-menu-item>
+        </sg-menu-item-group>
+        <sg-menu-item-group title="Group 2">
+          <sg-menu-item index="1-3">Option 3</sg-menu-item>
+        </sg-menu-item-group>
+        <sg-submenu index="1-4">
           <template slot="title">Option4</template>
-          <el-menu-item index="1-4-1">Option 4-1</el-menu-item>
-        </el-submenu>
-      </el-submenu>
-      <el-submenu index="2">
-        <template slot="title"><i class="el-icon-menu"></i>Navigator Two</template>
-        <el-menu-item-group>
+          <sg-menu-item index="1-4-1">Option 4-1</sg-menu-item>
+        </sg-submenu>
+      </sg-submenu>
+      <sg-submenu index="2">
+        <template slot="title"><i class="sg-icon-menu"></i>Navigator Two</template>
+        <sg-menu-item-group>
           <template slot="title">Group 1</template>
-          <el-menu-item index="2-1">Option 1</el-menu-item>
-          <el-menu-item index="2-2">Option 2</el-menu-item>
-        </el-menu-item-group>
-        <el-menu-item-group title="Group 2">
-          <el-menu-item index="2-3">Option 3</el-menu-item>
-        </el-menu-item-group>
-        <el-submenu index="2-4">
+          <sg-menu-item index="2-1">Option 1</sg-menu-item>
+          <sg-menu-item index="2-2">Option 2</sg-menu-item>
+        </sg-menu-item-group>
+        <sg-menu-item-group title="Group 2">
+          <sg-menu-item index="2-3">Option 3</sg-menu-item>
+        </sg-menu-item-group>
+        <sg-submenu index="2-4">
           <template slot="title">Option 4</template>
-          <el-menu-item index="2-4-1">Option 4-1</el-menu-item>
-        </el-submenu>
-      </el-submenu>
-      <el-submenu index="3">
-        <template slot="title"><i class="el-icon-setting"></i>Navigator Three</template>
-        <el-menu-item-group>
+          <sg-menu-item index="2-4-1">Option 4-1</sg-menu-item>
+        </sg-submenu>
+      </sg-submenu>
+      <sg-submenu index="3">
+        <template slot="title"><i class="sg-icon-setting"></i>Navigator Three</template>
+        <sg-menu-item-group>
           <template slot="title">Group 1</template>
-          <el-menu-item index="3-1">Option 1</el-menu-item>
-          <el-menu-item index="3-2">Option 2</el-menu-item>
-        </el-menu-item-group>
-        <el-menu-item-group title="Group 2">
-          <el-menu-item index="3-3">Option 3</el-menu-item>
-        </el-menu-item-group>
-        <el-submenu index="3-4">
+          <sg-menu-item index="3-1">Option 1</sg-menu-item>
+          <sg-menu-item index="3-2">Option 2</sg-menu-item>
+        </sg-menu-item-group>
+        <sg-menu-item-group title="Group 2">
+          <sg-menu-item index="3-3">Option 3</sg-menu-item>
+        </sg-menu-item-group>
+        <sg-submenu index="3-4">
           <template slot="title">Option 4</template>
-          <el-menu-item index="3-4-1">Option 4-1</el-menu-item>
-        </el-submenu>
-      </el-submenu>
-    </el-menu>
-  </el-aside>
+          <sg-menu-item index="3-4-1">Option 4-1</sg-menu-item>
+        </sg-submenu>
+      </sg-submenu>
+    </sg-menu>
+  </sg-aside>
 
-  <el-container>
-    <el-header style="text-align: right; font-size: 12px">
-      <el-dropdown>
-        <i class="el-icon-setting" style="margin-right: 15px"></i>
-        <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item>View</el-dropdown-item>
-          <el-dropdown-item>Add</el-dropdown-item>
-          <el-dropdown-item>Delete</el-dropdown-item>
-        </el-dropdown-menu>
-      </el-dropdown>
+  <sg-container>
+    <sg-header style="text-align: right; font-size: 12px">
+      <sg-dropdown>
+        <i class="sg-icon-setting" style="margin-right: 15px"></i>
+        <sg-dropdown-menu slot="dropdown">
+          <sg-dropdown-item>View</sg-dropdown-item>
+          <sg-dropdown-item>Add</sg-dropdown-item>
+          <sg-dropdown-item>Delete</sg-dropdown-item>
+        </sg-dropdown-menu>
+      </sg-dropdown>
       <span>Tom</span>
-    </el-header>
+    </sg-header>
 
-    <el-main>
-      <el-table :data="tableData">
-        <el-table-column prop="date" label="Date" width="140">
-        </el-table-column>
-        <el-table-column prop="name" label="Name" width="120">
-        </el-table-column>
-        <el-table-column prop="address" label="Address">
-        </el-table-column>
-      </el-table>
-    </el-main>
-  </el-container>
-</el-container>
+    <sg-main>
+      <sg-table :data="tableData">
+        <sg-table-column prop="date" label="Date" width="140">
+        </sg-table-column>
+        <sg-table-column prop="name" label="Name" width="120">
+        </sg-table-column>
+        <sg-table-column prop="address" label="Address">
+        </sg-table-column>
+      </sg-table>
+    </sg-main>
+  </sg-container>
+</sg-container>
 
 <style>
-  .el-header {
+  .sg-header {
     background-color: #B3C0D1;
     color: #333;
     line-height: 60px;
   }
 
-  .el-aside {
+  .sg-aside {
     color: #333;
   }
 </style>
@@ -222,7 +222,7 @@ Ces composants utilisent flexbox, assurez vous que le navigateur supporte cette 
 ### Attributs de Container
 | Attribut      | Description          | Type      | Valeurs acceptées       | Défaut  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |
-| direction | Direction d'affichage pour les éléments enfants. | string | horizontal / vertical | vertical quand dans `el-header` ou `el-footer`; horizontal sinon |
+| direction | Direction d'affichage pour les éléments enfants. | string | horizontal / vertical | vertical quand dans `sg-header` ou `sg-footer`; horizontal sinon |
 
 ### Attributs de Header
 | Attribut      | Description          | Type      | Valeurs acceptées       | Défaut  |

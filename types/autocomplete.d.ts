@@ -1,6 +1,12 @@
-import { ElementUIComponent } from './component'
+import { SgementUIComponent } from "./component";
 
-export type SuggestionPlacement = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end'
+export type SuggestionPlacement =
+  | "top"
+  | "top-start"
+  | "top-end"
+  | "bottom"
+  | "bottom-start"
+  | "bottom-end";
 
 export interface FetchSuggestionsCallback {
   /**
@@ -8,7 +14,7 @@ export interface FetchSuggestionsCallback {
    *
    * @param data Suggestions to use
    */
-  (data: any[]): void
+  (data: any[]): void;
 }
 
 export interface FetchSuggestions {
@@ -18,61 +24,61 @@ export interface FetchSuggestions {
    * @param queryString Current value of the text input
    * @param callback Callback function used to indicate that suggestions have completely fetched
    */
-  (queryString: string, callback: FetchSuggestionsCallback): void
+  (queryString: string, callback: FetchSuggestionsCallback): void;
 }
 
 /** Autocomplete Component */
-export declare class ElAutocomplete extends ElementUIComponent {
+export declare class SgAutocomplete extends SgementUIComponent {
   /** The placeholder of Autocomplete */
-  placeholder: string
+  placeholder: string;
 
   /** Whether to show clear button */
-  clearable: boolean
+  clearable: boolean;
 
   /** Whether Autocomplete is disabled */
-  disabled: boolean
+  disabled: boolean;
 
   /** Binding value */
-  value: string
+  value: string;
 
   /** Debounce delay when typing */
-  debounce: number
+  debounce: number;
 
   /** Placement of the popup menu */
-  placement: SuggestionPlacement
+  placement: SuggestionPlacement;
 
   /** Name for the inner native input */
-  name: string
+  name: string;
 
   /** Key name of the input suggestion object for display */
-  valueKey: string
+  valueKey: string;
 
   /** Whether to emit select event on enter when there is no autocomplete match */
-  selectWhenUnmatched: boolean
+  selectWhenUnmatched: boolean;
 
   /** A method to fetch input suggestions. When suggestions are ready, invoke callback(data:[]) to return them to Autocomplete */
-  fetchSuggestions: FetchSuggestions
+  fetchSuggestions: FetchSuggestions;
 
   /** Custom class name for autocomplete's dropdown */
-  popperClass: string
+  popperClass: string;
 
   /** Whether show suggestions when input focus */
-  triggerOnFocus: boolean
+  triggerOnFocus: boolean;
 
   /** Prefix icon class */
-  prefixIcon: string
+  prefixIcon: string;
 
   /** Suffix icon class */
-  suffixIcon: string
+  suffixIcon: string;
 
   /** Whether to hide the loading icon in remote search */
-  hideLoading: boolean
+  hideLoading: boolean;
 
   /** Whether to append the dropdown to body */
-  popperAppendToBody: boolean
+  popperAppendToBody: boolean;
 
   /**
    * Focus the Input component
    */
-  focus (): void
+  focus(): void;
 }

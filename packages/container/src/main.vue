@@ -1,14 +1,14 @@
 <template>
-  <section class="el-container" :class="{ 'is-vertical': isVertical }">
+  <section class="sg-container" :class="{ 'is-vertical': isVertical }">
     <slot></slot>
   </section>
 </template>
 
 <script>
   export default {
-    name: 'ElContainer',
+    name: 'SgContainer',
 
-    componentName: 'ElContainer',
+    componentName: 'SgContainer',
 
     props: {
       direction: String
@@ -24,7 +24,7 @@
         return this.$slots && this.$slots.default
           ? this.$slots.default.some(vnode => {
             const tag = vnode.componentOptions && vnode.componentOptions.tag;
-            return tag === 'el-header' || tag === 'el-footer';
+            return tag === 'sg-header' || tag === 'sg-footer';
           })
           : false;
       }

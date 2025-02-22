@@ -1,8 +1,8 @@
 import DescriptionsRow from './descriptions-row';
-import { isFunction } from 'element-ui/src/utils/types';
+import { isFunction } from 'sg-ui/src/utils/types';
 
 export default {
-  name: 'ElDescriptions',
+  name: 'SgDescriptions',
   components: {
     [DescriptionsRow.name]: DescriptionsRow
   },
@@ -113,7 +113,7 @@ export default {
     },
     getRows() {
       const children = ((this.$slots.default || []).filter(vnode => vnode.tag &&
-            vnode.componentOptions && vnode.componentOptions.Ctor.options.name === 'ElDescriptionsItem'));
+        vnode.componentOptions && vnode.componentOptions.Ctor.options.name === 'SgDescriptionsItem'));
       const nodes = children.map(vnode => {
         return {
           props: this.getOptionProps(vnode),
@@ -153,22 +153,22 @@ export default {
     const rows = this.getRows();
 
     return (
-      <div class="el-descriptions">
+      <div class="sg-descriptions">
         {
           (title || extra || $slots.title || $slots.extra)
-            ? <div class="el-descriptions__header">
-              <div class="el-descriptions__title">
-                { $slots.title ? $slots.title : title}
+            ? <div class="sg-descriptions__header">
+              <div class="sg-descriptions__title">
+                {$slots.title ? $slots.title : title}
               </div>
-              <div class="el-descriptions__extra">
-                { $slots.extra ? $slots.extra : extra }
+              <div class="sg-descriptions__extra">
+                {$slots.extra ? $slots.extra : extra}
               </div>
             </div>
             : null
         }
 
-        <div class="el-descriptions__body">
-          <table class={['el-descriptions__table', {'is-bordered': border}, descriptionsSize ? `el-descriptions--${descriptionsSize}` : '']}>
+        <div class="sg-descriptions__body">
+          <table class={['sg-descriptions__table', { 'is-bordered': border }, descriptionsSize ? `sg-descriptions--${descriptionsSize}` : '']}>
             {rows.map(row => (
               <DescriptionsRow row={row}></DescriptionsRow>
             ))}

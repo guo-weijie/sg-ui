@@ -1,33 +1,32 @@
-import { ElementUIComponent } from './component'
-import { VNode } from 'vue'
+import { SgementUIComponent } from "./component";
+import { VNode } from "vue";
 
-interface ElResultSlots {
+interface SgResultSlots {
   /* title slot: custom title */
-  title: VNode[]
+  title: VNode[];
 
   /* icon slot: custom icon */
-  icon: VNode[]
+  icon: VNode[];
 
   /* subTitle slot: custom sub title */
-  subTitle: VNode[]
+  subTitle: VNode[];
 
   /* extra slot: custom extra area, display on the top right */
-  extra: VNode[]
+  extra: VNode[];
 
-  [key: string]: VNode[]
+  [key: string]: VNode[];
 }
 
 /** Used to give feedback on the result of user's operation or access exception. **/
-export declare class ElResult extends ElementUIComponent {
-
+export declare class SgResult extends SgementUIComponent {
   /* title */
-  title: string
+  title: string;
 
   /* sub title */
-  subTitle: string
+  subTitle: string;
 
   /* icon type */
-  icon: 'success' | 'warning' | 'info' | 'error'
+  icon: "success" | "warning" | "info" | "error";
 
-  $slots: ElResultSlots
+  $slots: SgResultSlots;
 }

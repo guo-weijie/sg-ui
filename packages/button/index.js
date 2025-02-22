@@ -1,8 +1,8 @@
-import ElButton from './src/button';
+import SgButton from './src/button';
 
 /* istanbul ignore next */
-ElButton.install = function(Vue) {
-  Vue.component(ElButton.name, ElButton);
+SgButton.install = function (Vue) {
+  Vue.component(SgButton.name, SgButton);
 };
 
-export default ElButton;
+export default SgButton;

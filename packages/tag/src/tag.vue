@@ -1,6 +1,6 @@
 <script>
   export default {
-    name: 'ElTag',
+    name: 'SgTag',
     props: {
       text: String,
       closable: Boolean,
@@ -34,25 +34,25 @@
     render(h) {
       const { type, tagSize, hit, effect } = this;
       const classes = [
-        'el-tag',
-        type ? `el-tag--${type}` : '',
-        tagSize ? `el-tag--${tagSize}` : '',
-        effect ? `el-tag--${effect}` : '',
+        'sg-tag',
+        type ? `sg-tag--${type}` : '',
+        tagSize ? `sg-tag--${tagSize}` : '',
+        effect ? `sg-tag--${effect}` : '',
         hit && 'is-hit'
       ];
-      const tagEl = (
+      const tagSg = (
         <span
           class={ classes }
           style={{ backgroundColor: this.color }}
           on-click={ this.handleClick }>
           { this.$slots.default }
           {
-            this.closable && <i class="el-tag__close el-icon-close" on-click={ this.handleClose }></i>
+            this.closable && <i class="sg-tag__close sg-icon-close" on-click={ this.handleClose }></i>
           }
         </span>
       );
 
-      return this.disableTransitions ? tagEl : <transition name="el-zoom-in-center">{ tagEl }</transition>;
+      return this.disableTransitions ? tagSg : <transition name="sg-zoom-in-center">{ tagSg }</transition>;
     }
   };
 </script>

@@ -1,31 +1,31 @@
-import { ElementUIComponent } from './component'
+import { SgementUIComponent } from "./component";
 
-export type AlertType = 'success' | 'warning' | 'info' | 'error'
-export type AlertEffect = 'dark' | 'light'
+export type AlertType = "success" | "warning" | "info" | "error";
+export type AlertEffect = "dark" | "light";
 
 /** Alert Component */
-export declare class ElAlert extends ElementUIComponent {
+export declare class SgAlert extends SgementUIComponent {
   /** Title */
-  title: string
+  title: string;
 
   /** Component type */
-  type: AlertType
+  type: AlertType;
 
   /** Descriptive text. Can also be passed with the default slot */
-  description: string
+  description: string;
 
   /** If closable or not */
-  closable: boolean
+  closable: boolean;
 
   /** whether to center the text */
-  center: boolean
+  center: boolean;
 
   /** Customized close button text */
-  closeText: string
+  closeText: string;
 
   /** If a type icon is displayed */
-  showIcon: boolean
+  showIcon: boolean;
 
   /** Choose effect */
-  effect: AlertEffect
+  effect: AlertEffect;
 }

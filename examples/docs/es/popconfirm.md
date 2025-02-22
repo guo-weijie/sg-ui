@@ -9,11 +9,11 @@ Popconfirm es parecido a Popover. Para algunos atributos duplicados, por favor c
 :::demo Solo el atributo  `title`  esta disponible en Popconfirm, `content` sera ignorado.
 ```html
 <template>
-<el-popconfirm
+<sg-popconfirm
   title="Are you sure to delete this?"
 >
-  <el-button slot="reference">Delete</el-button>
-</el-popconfirm>
+  <sg-button slot="reference">Delete</sg-button>
+</sg-popconfirm>
 </template>
 ````
 :::
@@ -24,15 +24,15 @@ Se puede personalizar Popconfirm así:
 
 ```html
 <template>
-<el-popconfirm
+<sg-popconfirm
   confirm-button-text='OK'
-  cancel-button-text='No, Thanks'
-  icon="el-icon-info"
+  cancsg-button-text='No, Thanks'
+  icon="sg-icon-info"
   icon-color="red"
   title="Are you sure to delete this?"
 >
-  <el-button slot="reference">Delete</el-button>
-</el-popconfirm>
+  <sg-button slot="reference">Delete</sg-button>
+</sg-popconfirm>
 </template>
 ```
 :::
@@ -42,10 +42,10 @@ Se puede personalizar Popconfirm así:
 |--------------------|----------------------------------------------------------|-------------------|-------------|--------|
 |  title              | Titulo | String | — | — |
 |  confirm-button-text              | Texto del botón de confirmación | String | — | — |
-|  cancel-button-text              | Texto del botón de cancelación | String | — | — |
+|  cancsg-button-text              | Texto del botón de cancelación | String | — | — |
 |  confirm-button-type              | Tipo del botón de confirmación | String | — | Primary |
-|  cancel-button-type              | Tipo del botón de cancelación | String | — | Text |
-|  icon              | Icono | String | — | el-icon-question |
+|  cancsg-button-type              | Tipo del botón de cancelación | String | — | Text |
+|  icon              | Icono | String | — | sg-icon-question |
 |  icon-color              | Color icono | String | — | #f90 |
 |  hide-icon              | ¿Es un icono oculto? | Boolean | — | false |
 

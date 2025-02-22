@@ -3,24 +3,24 @@
     <img class="entrance touch-icon" src="./icon-entrance.png" v-show="!showSidebar" @click="toggleSidebar" />
     <img class="close touch-icon" src="./icon-close.png" v-show="showSidebar" @click="toggleSidebar" />
     <div class="editor" :style="{height: `${height}px`}" v-show="showSidebar">
-      <el-tabs v-model="activeTab" @tab-click="onTabClick">
-        <el-tab-pane label="Config" name="config">
+      <sg-tabs v-model="activeTab" @tab-click="onTabClick">
+        <sg-tab-pane label="Config" name="config">
           <theme-configurator
             :themeConfig="themeConfig"
             :previewConfig="previewConfig"
             :onUserConfigUpdate="onUserConfigUpdate"
             from="extension"
           ></theme-configurator>
-        </el-tab-pane>
-        <el-tab-pane label="Gallery" name="gallery">
+        </sg-tab-pane>
+        <sg-tab-pane label="Gallery" name="gallery">
           <gallery 
             ref='gallery'
             :height="height"
             :width="width - 7"
             @action="onGalleryAction"
           />
-        </el-tab-pane>
-      </el-tabs>
+        </sg-tab-pane>
+      </sg-tabs>
     </div>
   </div>
 </template>
@@ -200,10 +200,10 @@ export default {
 }
 </style>
 <style>
-.ext-panel  .editor .el-tabs__content, .ext-panel  .editor .el-tabs--top, .ext-panel  .editor .el-tab-pane {
+.ext-panel  .editor .sg-tabs__content, .ext-panel  .editor .sg-tabs--top, .ext-panel  .editor .sg-tab-pane {
   height: 100%;
 }
-.ext-panel .el-tabs__nav-scroll >div {
+.ext-panel .sg-tabs__nav-scroll >div {
   transform: translateX(60px)!important;
 }
 .ext-panel .editor-main {

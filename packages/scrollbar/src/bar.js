@@ -1,4 +1,4 @@
-import { on, off } from 'element-ui/src/utils/dom';
+import { on, off } from 'sg-ui/src/utils/dom';
 import { renderThumbStyle, BAR_MAP } from './util';
 
 /* istanbul ignore next */
@@ -26,13 +26,13 @@ export default {
 
     return (
       <div
-        class={ ['el-scrollbar__bar', 'is-' + bar.key] }
-        onMousedown={ this.clickTrackHandler } >
+        class={['sg-scrollbar__bar', 'is-' + bar.key]}
+        onMousedown={this.clickTrackHandler} >
         <div
           ref="thumb"
-          class="el-scrollbar__thumb"
-          onMousedown={ this.clickThumbHandler }
-          style={ renderThumbStyle({ size, move, bar }) }>
+          class="sg-scrollbar__thumb"
+          onMousedown={this.clickThumbHandler}
+          style={renderThumbStyle({ size, move, bar })}>
         </div>
       </div>
     );

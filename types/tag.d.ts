@@ -1,28 +1,28 @@
-import { ElementUIComponent, ElementUIComponentSize } from './component'
+import { SgementUIComponent, SgementUIComponentSize } from "./component";
 
-export type TagType = 'primary' | 'gray' | 'success' | 'warning' | 'danger'
-export type TagTheme = 'dark' | 'light' | 'plain'
+export type TagType = "primary" | "gray" | "success" | "warning" | "danger";
+export type TagTheme = "dark" | "light" | "plain";
 
 /** Tag Component */
-export declare class ElTag extends ElementUIComponent {
+export declare class SgTag extends SgementUIComponent {
   /** Tag type */
-  type: TagType
+  type: TagType;
 
   /** Whether Tab can be removed */
-  closable: boolean
+  closable: boolean;
 
   /** Whether the removal animation is disabled */
-  disableTransitions: boolean
+  disableTransitions: boolean;
 
   /** Whether Tag has a highlighted border */
-  hit: boolean
+  hit: boolean;
 
   /** Background color of the tag */
-  color: string
+  color: string;
 
   /** Tag size */
-  size: ElementUIComponentSize
+  size: SgementUIComponentSize;
 
   /** Tag theme */
-  effect: TagTheme
+  effect: TagTheme;
 }

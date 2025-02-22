@@ -1,6 +1,6 @@
 <script>
-import fecha from 'element-ui/src/utils/date';
-import { range as rangeArr, getFirstDayOfMonth, getPrevMonthLastDays, getMonthDays, getI18nSettings, validateRangeInOneMonth } from 'element-ui/src/utils/date-util';
+import fecha from 'sg-ui/src/utils/date';
+import { range as rangeArr, getFirstDayOfMonth, getPrevMonthLastDays, getMonthDays, getI18nSettings, validateRangeInOneMonth } from 'sg-ui/src/utils/date-util';
 
 export default {
   props: {
@@ -42,7 +42,7 @@ export default {
       return `${prefix}-${day}`;
     },
 
-    getCellClass({ text, type}) {
+    getCellClass({ text, type }) {
       const classes = [type];
       if (type === 'current') {
         const date = this.getFormateDate(text, type);
@@ -63,7 +63,7 @@ export default {
 
     cellRenderProxy({ text, type }) {
       let render = this.elCalendar.$scopedSlots.dateCell;
-      if (!render) return <span>{ text }</span>;
+      if (!render) return <span>{text}</span>;
 
       const day = this.getFormateDate(text, type);
       const date = new Date(day);
@@ -158,13 +158,13 @@ export default {
   render() {
     const thead = this.hideHeader ? null : (<thead>
       {
-        this.weekDays.map(day => <th key={day}>{ day }</th>)
+        this.weekDays.map(day => <th key={day}>{day}</th>)
       }
     </thead>);
     return (
       <table
         class={{
-          'el-calendar-table': true,
+          'sg-calendar-table': true,
           'is-range': this.isInRange
         }}
         cellspacing="0"
@@ -176,15 +176,15 @@ export default {
           {
             this.rows.map((row, index) => <tr
               class={{
-                'el-calendar-table__row': true,
-                'el-calendar-table__row--hide-border': index === 0 && this.hideHeader
+                'sg-calendar-table__row': true,
+                'sg-calendar-table__row--hide-border': index === 0 && this.hideHeader
               }}
               key={index}>
               {
                 row.map((cell, key) => <td key={key}
-                  class={ this.getCellClass(cell) }
+                  class={this.getCellClass(cell)}
                   onClick={this.pickDay.bind(this, cell)}>
-                  <div class="el-calendar-day">
+                  <div class="sg-calendar-day">
                     {
                       this.cellRenderProxy(cell)
                     }

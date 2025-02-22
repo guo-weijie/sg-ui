@@ -4,15 +4,15 @@ Element proporciona un conjunto de iconos propios.
 
 ### Uso básico
 
-Simplemente asigna el nombre de la clase a `el-icon-iconName`.
+Simplemente asigna el nombre de la clase a `sg-icon-iconName`.
 
 :::demo
 
 ```html
-<i class="el-icon-edit"></i>
-<i class="el-icon-share"></i>
-<i class="el-icon-delete"></i>
-<el-button type="primary" icon="el-icon-search">Search</el-button>
+<i class="sg-icon-edit"></i>
+<i class="sg-icon-share"></i>
+<i class="sg-icon-delete"></i>
+<sg-button type="primary" icon="sg-icon-search">Search</sg-button>
 
 ```
 :::
@@ -22,8 +22,8 @@ Simplemente asigna el nombre de la clase a `el-icon-iconName`.
 <ul class="icon-list">
   <li v-for="name in $icon" :key="name">
     <span>
-      <i :class="'el-icon-' + name"></i>
-      <span class="icon-name">{{'el-icon-' + name}}</span>
+      <i :class="'sg-icon-' + name"></i>
+      <span class="icon-name">{{'sg-icon-' + name}}</span>
     </span>
   </li>
 </ul>

@@ -1,7 +1,7 @@
-import { ElementUIComponent } from './component'
+import { SgementUIComponent } from "./component";
 
 /** Container Component */
-export declare class ElContainer extends ElementUIComponent {
+export declare class SgContainer extends SgementUIComponent {
   /** Layout direction for child elements */
-  direction: 'horizontal' | 'vertical'
+  direction: "horizontal" | "vertical";
 }

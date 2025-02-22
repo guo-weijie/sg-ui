@@ -1,8 +1,8 @@
-import ElTableColumn from '../table/src/table-column';
+import SgTableColumn from '../table/src/table-column';
 
 /* istanbul ignore next */
-ElTableColumn.install = function(Vue) {
-  Vue.component(ElTableColumn.name, ElTableColumn);
+SgTableColumn.install = function (Vue) {
+  Vue.component(SgTableColumn.name, SgTableColumn);
 };
 
-export default ElTableColumn;
+export default SgTableColumn;

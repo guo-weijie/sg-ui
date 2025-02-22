@@ -1,11 +1,11 @@
-import Vue, {VNode} from 'vue'
+import Vue, { VNode } from "vue";
 
-export type MessageType = 'success' | 'warning' | 'info' | 'error'
+export type MessageType = "success" | "warning" | "info" | "error";
 
 /** Message Component */
-export declare class ElMessageComponent extends Vue {
+export declare class SgMessageComponent extends Vue {
   /** Close the Loading instance */
-  close (): void
+  close(): void;
 }
 
 export interface CloseEventHandler {
@@ -14,77 +14,77 @@ export interface CloseEventHandler {
    *
    * @param instance The message component that is being closed
    */
-  (instance: ElMessageComponent): void
+  (instance: SgMessageComponent): void;
 }
 
 /** Options used in Message */
-export interface ElMessageOptions {
+export interface SgMessageOptions {
   /** Message text */
-  message: string | VNode
+  message: string | VNode;
 
   /** Message type */
-  type?: MessageType
+  type?: MessageType;
 
   /** Custom icon's class, overrides type */
-  iconClass?: string
+  iconClass?: string;
 
   /** Custom class name for Message */
-  customClass?: string
+  customClass?: string;
 
   /** Display duration, millisecond. If set to 0, it will not turn off automatically */
-  duration?: number
+  duration?: number;
 
   /** Whether to show a close button */
-  showClose?: boolean
+  showClose?: boolean;
 
   /** Whether to center the text */
-  center?: boolean
+  center?: boolean;
 
   /** Whether message is treated as HTML string */
-  dangerouslyUseHTMLString?: boolean
+  dangerouslyUseHTMLString?: boolean;
 
   /** Callback function when closed with the message instance as the parameter */
-  onClose?: CloseEventHandler
-  
+  onClose?: CloseEventHandler;
+
   /** Set the distance to the top of viewport. Default is 20 px. */
-  offset?: number
+  offset?: number;
 }
 
-export interface ElMessage {
+export interface SgMessage {
   /** Show an info message */
-  (text: string): ElMessageComponent
+  (text: string): SgMessageComponent;
 
   /** Show message */
-  (options: ElMessageOptions): ElMessageComponent
+  (options: SgMessageOptions): SgMessageComponent;
 
   /** Show a success message */
-  success (text: string): ElMessageComponent
-  
+  success(text: string): SgMessageComponent;
+
   /** Show a success message with options */
-  success (options: ElMessageOptions): ElMessageComponent
+  success(options: SgMessageOptions): SgMessageComponent;
 
   /** Show a warning message */
-  warning (text: string): ElMessageComponent
-  
+  warning(text: string): SgMessageComponent;
+
   /** Show a warning message with options */
-  warning (options: ElMessageOptions): ElMessageComponent
+  warning(options: SgMessageOptions): SgMessageComponent;
 
   /** Show an info message */
-  info (text: string): ElMessageComponent
-  
+  info(text: string): SgMessageComponent;
+
   /** Show an info message with options */
-  info (options: ElMessageOptions): ElMessageComponent
+  info(options: SgMessageOptions): SgMessageComponent;
 
   /** Show an error message */
-  error (text: string): ElMessageComponent
-  
+  error(text: string): SgMessageComponent;
+
   /** Show an error message with options */
-  error (options: ElMessageOptions): ElMessageComponent
+  error(options: SgMessageOptions): SgMessageComponent;
 }
 
-declare module 'vue/types/vue' {
+declare module "vue/types/vue" {
   interface Vue {
-  /** Used to show feedback after an activity. The difference with Notification is that the latter is often used to show a system level passive notification. */
-    $message: ElMessage
+    /** Used to show feedback after an activity. The difference with Notification is that the latter is often used to show a system level passive notification. */
+    $message: SgMessage;
   }
 }

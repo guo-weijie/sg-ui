@@ -1,8 +1,8 @@
-import ElMenuItem from '../menu/src/menu-item';
+import SgMenuItem from '../menu/src/menu-item';
 
 /* istanbul ignore next */
-ElMenuItem.install = function(Vue) {
-  Vue.component(ElMenuItem.name, ElMenuItem);
+SgMenuItem.install = function (Vue) {
+  Vue.component(SgMenuItem.name, SgMenuItem);
 };
 
-export default ElMenuItem;
+export default SgMenuItem;

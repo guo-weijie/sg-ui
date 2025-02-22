@@ -10,8 +10,8 @@
   height: $--switch-height;
   vertical-align: middle;
   @include when(disabled) {
-    & .el-switch__core,
-    & .el-switch__label {
+    & .sg-switch__core,
+    & .sg-switch__label {
       cursor: not-allowed;
     }
   }
@@ -80,7 +80,7 @@
   }
 
   @include when(checked) {
-    .el-switch__core {
+    .sg-switch__core {
       border-color: $--switch-on-color;
       background-color: $--switch-on-color;
       &::after {
@@ -95,13 +95,13 @@
   }
 
   @include m(wide) {
-    .el-switch__label {
-      &.el-switch__label--left {
+    .sg-switch__label {
+      &.sg-switch__label--left {
         span {
           left: 10px;
         }
       }
-      &.el-switch__label--right {
+      &.sg-switch__label--right {
         span {
           right: 10px;
         }

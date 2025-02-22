@@ -1,47 +1,47 @@
-import { ElementUIComponent } from './component'
+import { SgementUIComponent } from "./component";
 
-export type InputNumberSize = 'large' | 'small'
+export type InputNumberSize = "large" | "small";
 
 /** InputNumber Component */
-export declare class ElInputNumber extends ElementUIComponent {
+export declare class SgInputNumber extends SgementUIComponent {
   /** Binding value */
-  value: number
+  value: number;
 
   /** The minimum allowed value */
-  min: number
+  min: number;
 
   /** The maximum allowed value */
-  max: number
+  max: number;
 
   /** Incremental step */
-  step: number
+  step: number;
 
   /** Size of the component */
-  size: InputNumberSize
+  size: InputNumberSize;
 
   /** Whether the component is disabled */
-  disabled: boolean
+  disabled: boolean;
 
   /** Whether to enable the control buttons */
-  controls: boolean
+  controls: boolean;
 
   /** Debounce delay when typing, in milliseconds */
-  debounce: number
+  debounce: number;
 
   /** Position of the control buttons */
-  controlsPosition: string
+  controlsPosition: string;
 
   /** Same as name in native input */
-  name: string
+  name: string;
 
   /** Precision of input value */
-  precision: number
+  precision: number;
 
   /** whether input value can only be multiple of step */
-  stepStrictly: boolean
+  stepStrictly: boolean;
 
   /**
    * Focus the Input component
    */
-  focus (): void
+  focus(): void;
 }

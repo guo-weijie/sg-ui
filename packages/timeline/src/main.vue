@@ -1,6 +1,6 @@
 <script>
   export default {
-    name: 'ElTimeline',
+    name: 'SgTimeline',
 
     props: {
       reverse: {
@@ -18,7 +18,7 @@
     render() {
       const reverse = this.reverse;
       const classes = {
-        'el-timeline': true,
+        'sg-timeline': true,
         'is-reverse': reverse
       };
       let slots = this.$slots.default || [];

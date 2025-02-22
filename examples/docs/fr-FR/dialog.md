@@ -9,19 +9,19 @@ Le Dialog ouvre un modal personnalisable.
 :::demo Configurez l'attribut `visible` avec un `Boolean`, un modal apparaîtra quand la valeur sera à `true`. Le Dialog possède deux parties: `body` et `footer`, ce-dernier nécessitant un `slot` appelé `footer`. L'attribut optionnel `title` (vide par défaut) définit le titre. Cet exemple montre également comment `before-close` peut être utilisé.
 
 ```html
-<el-button type="text" @click="dialogVisible = true">Cliquez pour ouvrir le modal</el-button>
+<sg-button type="text" @click="dialogVisible = true">Cliquez pour ouvrir le modal</sg-button>
 
-<el-dialog
+<sg-dialog
   title="Tips"
   :visible.sync="dialogVisible"
   width="30%"
   :before-close="handleClose">
   <span>Ceci est un message</span>
   <span slot="footer" class="dialog-footer">
-    <el-button @click="dialogVisible = false">Annuler</el-button>
-    <el-button type="primary" @click="dialogVisible = false">Confirmer</el-button>
+    <sg-button @click="dialogVisible = false">Annuler</sg-button>
+    <sg-button type="primary" @click="dialogVisible = false">Confirmer</sg-button>
   </span>
-</el-dialog>
+</sg-dialog>
 
 <script>
   export default {
@@ -56,36 +56,36 @@ Le contenu du modal peut être n'importe quoi, tableau ou formulaire compris.
 
 ```html
 <!-- Table -->
-<el-button type="text" @click="dialogTableVisible = true">Ouvrir un modal avec tableau</el-button>
+<sg-button type="text" @click="dialogTableVisible = true">Ouvrir un modal avec tableau</sg-button>
 
-<el-dialog title="Adresse d'expédition" :visible.sync="dialogTableVisible">
-  <el-table :data="gridData">
-    <el-table-column property="date" label="Date" width="150"></el-table-column>
-    <el-table-column property="name" label="Nom" width="200"></el-table-column>
-    <el-table-column property="address" label="Adresse"></el-table-column>
-  </el-table>
-</el-dialog>
+<sg-dialog title="Adresse d'expédition" :visible.sync="dialogTableVisible">
+  <sg-table :data="gridData">
+    <sg-table-column property="date" label="Date" width="150"></sg-table-column>
+    <sg-table-column property="name" label="Nom" width="200"></sg-table-column>
+    <sg-table-column property="address" label="Adresse"></sg-table-column>
+  </sg-table>
+</sg-dialog>
 
 <!-- Form -->
-<el-button type="text" @click="dialogFormVisible = true">Ouvrir un modal avec formulaire</el-button>
+<sg-button type="text" @click="dialogFormVisible = true">Ouvrir un modal avec formulaire</sg-button>
 
-<el-dialog title="Adresse d'expédition" :visible.sync="dialogFormVisible">
-  <el-form :model="form">
-    <el-form-item label="Nom de promotion" :label-width="formLabelWidth">
-      <el-input v-model="form.name" autocomplete="off"></el-input>
-    </el-form-item>
-    <el-form-item label="Zones" :label-width="formLabelWidth">
-      <el-select v-model="form.region" placeholder="Sélectionnez une zone">
-        <el-option label="Zone No.1" value="shanghai"></el-option>
-        <el-option label="Zone No.2" value="beijing"></el-option>
-      </el-select>
-    </el-form-item>
-  </el-form>
+<sg-dialog title="Adresse d'expédition" :visible.sync="dialogFormVisible">
+  <sg-form :model="form">
+    <sg-form-item label="Nom de promotion" :label-width="formLabelWidth">
+      <sg-input v-model="form.name" autocomplete="off"></sg-input>
+    </sg-form-item>
+    <sg-form-item label="Zones" :label-width="formLabelWidth">
+      <sg-select v-model="form.region" placeholder="Sélectionnez une zone">
+        <sg-option label="Zone No.1" value="shanghai"></sg-option>
+        <sg-option label="Zone No.2" value="beijing"></sg-option>
+      </sg-select>
+    </sg-form-item>
+  </sg-form>
   <span slot="footer" class="dialog-footer">
-    <el-button @click="dialogFormVisible = false">Annuler</el-button>
-    <el-button type="primary" @click="dialogFormVisible = false">Confirmer</el-button>
+    <sg-button @click="dialogFormVisible = false">Annuler</sg-button>
+    <sg-button type="primary" @click="dialogFormVisible = false">Confirmer</sg-button>
   </span>
-</el-dialog>
+</sg-dialog>
 
 <script>
   export default {
@@ -135,20 +135,20 @@ Si un Dialog est imbriqué dans un autre Dialog, `append-to-body` est requis.
 :::demo Normalement l'utilisation de Dialog imbriqué est déconseillée. Si vous avez besoin de plusieurs Dialogs sur la page, vous pouvez les aplatir afin qu'ils soit au même niveau. Si vous devez absolument utiliser un Dialog imbriqué, configurez l'attribut `append-to-body` du Dialog imbriqué à `true` et il sera ajouté au body au lieu de son noeud parent, afin d'avoir un affichage correct.
 ```html
 <template>
-  <el-button type="text" @click="outerVisible = true">Ouvrir le modal extérieur</el-button>
+  <sg-button type="text" @click="outerVisible = true">Ouvrir le modal extérieur</sg-button>
 
-  <el-dialog title="Modal extérieur" :visible.sync="outerVisible">
-    <el-dialog
+  <sg-dialog title="Modal extérieur" :visible.sync="outerVisible">
+    <sg-dialog
         width="30%"
         title="Modal intérieur"
         :visible.sync="innerVisible"
         append-to-body>
-    </el-dialog>
+    </sg-dialog>
     <div slot="footer" class="dialog-footer">
-      <el-button @click="outerVisible = false">Annuler</el-button>
-      <el-button type="primary" @click="innerVisible = true">Ouvrir le modal intérieur</el-button>
+      <sg-button @click="outerVisible = false">Annuler</sg-button>
+      <sg-button type="primary" @click="innerVisible = true">Ouvrir le modal intérieur</sg-button>
     </div>
-  </el-dialog>
+  </sg-dialog>
 </template>
 
 <script>
@@ -171,19 +171,19 @@ Le contenu du modal peut être centré.
 :::demo Régler `center` à `true` centrera horizontalement le header et le footer. `center` n'affecte que le header et le footer. Le contenu du body pouvant être n'importe quoi, si vous désirez le centrer vous devrez ajouter des règles CSS.
 
 ```html
-<el-button type="text" @click="centerDialogVisible = true">Cliquez pour ouvrir le modal</el-button>
+<sg-button type="text" @click="centerDialogVisible = true">Cliquez pour ouvrir le modal</sg-button>
 
-<el-dialog
+<sg-dialog
   title="Attention"
   :visible.sync="centerDialogVisible"
   width="30%"
   center>
   <span>Le contenu du modal n'est pas centré par défaut.</span>
   <span slot="footer" class="dialog-footer">
-    <el-button @click="centerDialogVisible = false">Annuler</el-button>
-    <el-button type="primary" @click="centerDialogVisible = false">Confirmer</el-button>
+    <sg-button @click="centerDialogVisible = false">Annuler</sg-button>
+    <sg-button type="primary" @click="centerDialogVisible = false">Confirmer</sg-button>
   </span>
-</el-dialog>
+</sg-dialog>
 
 <script>
   export default {

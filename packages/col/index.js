@@ -1,9 +1,9 @@
-import ElCol from './src/col';
+import SgCol from './src/col';
 
 /* istanbul ignore next */
-ElCol.install = function(Vue) {
-  Vue.component(ElCol.name, ElCol);
+SgCol.install = function (Vue) {
+  Vue.component(SgCol.name, SgCol);
 };
 
-export default ElCol;
+export default SgCol;
 

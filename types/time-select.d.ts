@@ -1,56 +1,60 @@
-import { ElementUIComponent, ElementUIComponentSize, ElementUIHorizontalAlignment } from './component'
+import {
+  SgementUIComponent,
+  SgementUIComponentSize,
+  SgementUIHorizontalAlignment,
+} from "./component";
 
 export interface TimeSelectOptions {
   /** Start time */
-  start?: string,
+  start?: string;
 
   /** End time */
-  end?: string,
+  end?: string;
 
   /** Time step */
-  step?: string,
+  step?: string;
 
   /** Minimum time, any time before this time will be disabled */
-  minTime?: string,
+  minTime?: string;
 
   /** Maximum time, any time after this time will be disabled */
-  maxTime?: string
+  maxTime?: string;
 }
 
 /** TimeSelect Component */
-export declare class ElTimeSelect extends ElementUIComponent {
+export declare class SgTimeSelect extends SgementUIComponent {
   /** Whether DatePicker is read only */
-  readonly: boolean
+  readonly: boolean;
 
   /** Whether DatePicker is disabled */
-  disabled: boolean
+  disabled: boolean;
 
   /** Whether the input is editable */
-  editable: boolean
+  editable: boolean;
 
   /** Whether to show clear button */
-  clearable: boolean
+  clearable: boolean;
 
   /** Size of Input */
-  size: ElementUIComponentSize
+  size: SgementUIComponentSize;
 
   /** Placeholder */
-  placeholder: string
+  placeholder: string;
 
   /** Value of the picker */
-  value: string | Date
+  value: string | Date;
 
   /** Alignment */
-  align: ElementUIHorizontalAlignment
+  align: SgementUIHorizontalAlignment;
 
   /** Custom class name for TimePicker's dropdown */
-  popperClass: string
+  popperClass: string;
 
   /** Additional options, check the table below */
-  pickerOptions: TimeSelectOptions
+  pickerOptions: TimeSelectOptions;
 
   /**
    * Focus the Input component
    */
-  focus (): void
+  focus(): void;
 }

@@ -60,12 +60,12 @@
     font-size: $--message-close-size;
     cursor: pointer;
 
-    .el-message-box__close {
+    .sg-message-box__close {
       color: $--color-info;
     }
 
     &:focus, &:hover {
-      .el-message-box__close {
+      .sg-message-box__close {
         color: $--color-primary;
       }
     }
@@ -104,24 +104,24 @@
       padding-left: 1px;
     }
 
-    + .el-message-box__message {
+    + .sg-message-box__message {
       padding-left: 36px;
       padding-right: 12px;
     }
 
-    &.el-icon-success {
+    &.sg-icon-success {
       color: $--messagebox-success-color;
     }
 
-    &.el-icon-info {
+    &.sg-icon-info {
       color: $--messagebox-info-color;
     }
 
-    &.el-icon-warning {
+    &.sg-icon-warning {
       color: $--messagebox-warning-color;
     }
 
-    &.el-icon-error {
+    &.sg-icon-error {
       color: $--messagebox-danger-color;
     }
   }

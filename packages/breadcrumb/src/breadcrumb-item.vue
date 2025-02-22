@@ -1,18 +1,18 @@
 <template>
-  <span class="el-breadcrumb__item">
+  <span class="sg-breadcrumb__item">
     <span
-      :class="['el-breadcrumb__inner', to ? 'is-link' : '']"
+      :class="['sg-breadcrumb__inner', to ? 'is-link' : '']"
       ref="link"
       role="link">
       <slot></slot>
     </span>
-    <i v-if="separatorClass" class="el-breadcrumb__separator" :class="separatorClass"></i>
-    <span v-else class="el-breadcrumb__separator" role="presentation">{{separator}}</span>
+    <i v-if="separatorClass" class="sg-breadcrumb__separator" :class="separatorClass"></i>
+    <span v-else class="sg-breadcrumb__separator" role="presentation">{{separator}}</span>
   </span>
 </template>
 <script>
   export default {
-    name: 'ElBreadcrumbItem',
+    name: 'SgBreadcrumbItem',
     props: {
       to: {},
       replace: Boolean

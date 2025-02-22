@@ -52,7 +52,7 @@
       font-size: 14px;
     }
 
-    & [class*="el-icon-"] + span {
+    & [class*="sg-icon-"] + span {
       margin-left: 0;
     }
   }
@@ -98,11 +98,11 @@
     padding-left: 15px;
     display: block !important;
 
-    & + .el-transfer-panel__item {
+    & + .sg-transfer-panel__item {
       margin-left: 0;
     }
 
-    &.el-checkbox {
+    &.sg-checkbox {
       color: $--color-text-regular;
     }
 
@@ -110,7 +110,7 @@
       color: $--color-primary;
     }
 
-    &.el-checkbox .el-checkbox__label {
+    &.sg-checkbox .sg-checkbox__label {
       width: 100%;
       @include utils-ellipsis;
       display: block;
@@ -119,7 +119,7 @@
       line-height: $--transfer-item-height;
     }
 
-    .el-checkbox__input {
+    .sg-checkbox__input {
       position: absolute;
       top: 8px;
     }
@@ -132,7 +132,7 @@
     display: block;
     width: auto;
 
-    .el-input__inner {
+    .sg-input__inner {
       height: $--transfer-filter-height;
       width: 100%;
       font-size: 12px;
@@ -143,16 +143,16 @@
       padding-left: 30px;
     }
 
-    .el-input__icon {
+    .sg-input__icon {
       margin-left: 5px;
     }
 
-    .el-icon-circle-close {
+    .sg-icon-circle-close {
       cursor: pointer;
     }
   }
 
-  .el-transfer-panel__header {
+  .sg-transfer-panel__header {
     height: $--transfer-panel-header-height;
     line-height: $--transfer-panel-header-height;
     background: $--transfer-panel-header-background-color;
@@ -162,11 +162,11 @@
     box-sizing: border-box;
     color: $--color-black;
 
-    .el-checkbox {
+    .sg-checkbox {
       display: block;
       line-height: 40px;
 
-      .el-checkbox__label {
+      .sg-checkbox__label {
         font-size: 16px;
         color: $--color-text-primary;
         font-weight: normal;
@@ -182,7 +182,7 @@
     }
   }
 
-  .el-transfer-panel__footer {
+  .sg-transfer-panel__footer {
     height: $--transfer-panel-footer-height;
     background: $--color-white;
     margin: 0;
@@ -195,13 +195,13 @@
     z-index: $--index-normal;
     @include utils-vertical-center;
 
-    .el-checkbox {
+    .sg-checkbox {
       padding-left: 20px;
       color: $--color-text-regular;
     }
   }
 
-  .el-transfer-panel__empty {
+  .sg-transfer-panel__empty {
     margin: 0;
     height: $--transfer-item-height;
     line-height: $--transfer-item-height;
@@ -210,11 +210,11 @@
     text-align: center;
   }
 
-  .el-checkbox__label {
+  .sg-checkbox__label {
     padding-left: 8px;
   }
 
-  .el-checkbox__inner {
+  .sg-checkbox__inner {
     height: 14px;
     width: 14px;
     border-radius: 3px;

@@ -8,48 +8,48 @@ La barre du haut peut être utilisée pour différents scénarios.
 
 :::demo Par défaut le menu est vertical, mais vous pouvez le passer en horizontal en réglant l'attribut `mode` sur 'horizontal'. De plus, vous pouvez utiliser le composant submenu pour créer un second niveau niveau de menu. Le menu utilises `background-color`, `text-color` et `active-text-color` pour personnaliser les couleurs.
 ```html
-<el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-  <el-menu-item index="1">Centre de traitement</el-menu-item>
-  <el-submenu index="2">
+<sg-menu :default-active="activeIndex" class="sg-menu-demo" mode="horizontal" @select="handleSelect">
+  <sg-menu-item index="1">Centre de traitement</sg-menu-item>
+  <sg-submenu index="2">
     <template slot="title">Lieu de travail</template>
-    <el-menu-item index="2-1">item un</el-menu-item>
-    <el-menu-item index="2-2">item deux</el-menu-item>
-    <el-menu-item index="2-3">item trois</el-menu-item>
-    <el-submenu index="2-4">
+    <sg-menu-item index="2-1">item un</sg-menu-item>
+    <sg-menu-item index="2-2">item deux</sg-menu-item>
+    <sg-menu-item index="2-3">item trois</sg-menu-item>
+    <sg-submenu index="2-4">
       <template slot="title">item quatre</template>
-      <el-menu-item index="2-4-1">item un</el-menu-item>
-      <el-menu-item index="2-4-2">item deux</el-menu-item>
-      <el-menu-item index="2-4-3">item trois</el-menu-item>
-    </el-submenu>
-  </el-submenu>
-  <el-menu-item index="3" disabled>Infos</el-menu-item>
-  <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">Commandes</a></el-menu-item>
-</el-menu>
+      <sg-menu-item index="2-4-1">item un</sg-menu-item>
+      <sg-menu-item index="2-4-2">item deux</sg-menu-item>
+      <sg-menu-item index="2-4-3">item trois</sg-menu-item>
+    </sg-submenu>
+  </sg-submenu>
+  <sg-menu-item index="3" disabled>Infos</sg-menu-item>
+  <sg-menu-item index="4"><a href="https://www.ele.me" target="_blank">Commandes</a></sg-menu-item>
+</sg-menu>
 <div class="line"></div>
-<el-menu
+<sg-menu
   :default-active="activeIndex2"
-  class="el-menu-demo"
+  class="sg-menu-demo"
   mode="horizontal"
   @select="handleSelect"
   background-color="#545c64"
   text-color="#fff"
   active-text-color="#ffd04b">
-  <el-menu-item index="1">Centre de traitement</el-menu-item>
-  <el-submenu index="2">
+  <sg-menu-item index="1">Centre de traitement</sg-menu-item>
+  <sg-submenu index="2">
     <template slot="title">Lieu de travail</template>
-    <el-menu-item index="2-1">item un</el-menu-item>
-    <el-menu-item index="2-2">item deux</el-menu-item>
-    <el-menu-item index="2-3">item trois</el-menu-item>
-    <el-submenu index="2-4">
+    <sg-menu-item index="2-1">item un</sg-menu-item>
+    <sg-menu-item index="2-2">item deux</sg-menu-item>
+    <sg-menu-item index="2-3">item trois</sg-menu-item>
+    <sg-submenu index="2-4">
       <template slot="title">item quatre</template>
-      <el-menu-item index="2-4-1">item un</el-menu-item>
-      <el-menu-item index="2-4-2">item deux</el-menu-item>
-      <el-menu-item index="2-4-3">item trois</el-menu-item>
-    </el-submenu>
-  </el-submenu>
-  <el-menu-item index="3" disabled>Info</el-menu-item>
-  <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">Commandes</a></el-menu-item>
-</el-menu>
+      <sg-menu-item index="2-4-1">item un</sg-menu-item>
+      <sg-menu-item index="2-4-2">item deux</sg-menu-item>
+      <sg-menu-item index="2-4-3">item trois</sg-menu-item>
+    </sg-submenu>
+  </sg-submenu>
+  <sg-menu-item index="3" disabled>Info</sg-menu-item>
+  <sg-menu-item index="4"><a href="https://www.ele.me" target="_blank">Commandes</a></sg-menu-item>
+</sg-menu>
 
 <script>
   export default {
@@ -73,89 +73,89 @@ La barre du haut peut être utilisée pour différents scénarios.
 
 Menu vertical avec sous-menus.
 
-:::demo Vous pouvez utiliser le composant el-menu-item-group pour créer un groupe dans le menu dont le nom sera déterminé par celui de la propriété title ou d'un slot.
+:::demo Vous pouvez utiliser le composant sg-menu-item-group pour créer un groupe dans le menu dont le nom sera déterminé par celui de la propriété title ou d'un slot.
 ```html
-<el-row class="tac">
-  <el-col :span="12">
+<sg-row class="tac">
+  <sg-col :span="12">
     <h5>Couleurs par défaut</h5>
-    <el-menu
+    <sg-menu
       default-active="2"
-      class="el-menu-vertical-demo"
+      class="sg-menu-vertical-demo"
       @open="handleOpen"
       @close="handleClose">
-      <el-submenu index="1">
+      <sg-submenu index="1">
         <template slot="title">
-          <i class="el-icon-location"></i>
+          <i class="sg-icon-location"></i>
           <span>Navigateur Un</span>
         </template>
-        <el-menu-item-group title="Group Un">
-          <el-menu-item index="1-1">item un</el-menu-item>
-          <el-menu-item index="1-2">item un</el-menu-item>
-        </el-menu-item-group>
-        <el-menu-item-group title="Group Deux">
-          <el-menu-item index="1-3">item trois</el-menu-item>
-        </el-menu-item-group>
-        <el-submenu index="1-4">
+        <sg-menu-item-group title="Group Un">
+          <sg-menu-item index="1-1">item un</sg-menu-item>
+          <sg-menu-item index="1-2">item un</sg-menu-item>
+        </sg-menu-item-group>
+        <sg-menu-item-group title="Group Deux">
+          <sg-menu-item index="1-3">item trois</sg-menu-item>
+        </sg-menu-item-group>
+        <sg-submenu index="1-4">
           <template slot="title">item quatre</template>
-          <el-menu-item index="1-4-1">item un</el-menu-item>
-        </el-submenu>
-      </el-submenu>
-      <el-menu-item index="2">
-        <i class="el-icon-menu"></i>
+          <sg-menu-item index="1-4-1">item un</sg-menu-item>
+        </sg-submenu>
+      </sg-submenu>
+      <sg-menu-item index="2">
+        <i class="sg-icon-menu"></i>
         <span>Navigateur Deux</span>
-      </el-menu-item>
-      <el-menu-item index="3" disabled>
-        <i class="el-icon-document"></i>
+      </sg-menu-item>
+      <sg-menu-item index="3" disabled>
+        <i class="sg-icon-document"></i>
         <span>Navigateur Trois</span>
-      </el-menu-item>
-      <el-menu-item index="4">
-        <i class="el-icon-setting"></i>
+      </sg-menu-item>
+      <sg-menu-item index="4">
+        <i class="sg-icon-setting"></i>
         <span>Navigateur Quatre</span>
-      </el-menu-item>
-    </el-menu>
-  </el-col>
-  <el-col :span="12">
+      </sg-menu-item>
+    </sg-menu>
+  </sg-col>
+  <sg-col :span="12">
     <h5>Couleurs personnalisées</h5>
-    <el-menu
+    <sg-menu
       default-active="2"
-      class="el-menu-vertical-demo"
+      class="sg-menu-vertical-demo"
       @open="handleOpen"
       @close="handleClose"
       background-color="#545c64"
       text-color="#fff"
       active-text-color="#ffd04b">
-      <el-submenu index="1">
+      <sg-submenu index="1">
         <template slot="title">
-          <i class="el-icon-location"></i>
+          <i class="sg-icon-location"></i>
           <span>Navigateur Un</span>
         </template>
-        <el-menu-item-group title="Group Un">
-          <el-menu-item index="1-1">item un</el-menu-item>
-          <el-menu-item index="1-2">item un</el-menu-item>
-        </el-menu-item-group>
-        <el-menu-item-group title="Group Deux">
-          <el-menu-item index="1-3">item trois</el-menu-item>
-        </el-menu-item-group>
-        <el-submenu index="1-4">
+        <sg-menu-item-group title="Group Un">
+          <sg-menu-item index="1-1">item un</sg-menu-item>
+          <sg-menu-item index="1-2">item un</sg-menu-item>
+        </sg-menu-item-group>
+        <sg-menu-item-group title="Group Deux">
+          <sg-menu-item index="1-3">item trois</sg-menu-item>
+        </sg-menu-item-group>
+        <sg-submenu index="1-4">
           <template slot="title">item quatre</template>
-          <el-menu-item index="1-4-1">item un</el-menu-item>
-        </el-submenu>
-      </el-submenu>
-      <el-menu-item index="2">
-        <i class="el-icon-menu"></i>
+          <sg-menu-item index="1-4-1">item un</sg-menu-item>
+        </sg-submenu>
+      </sg-submenu>
+      <sg-menu-item index="2">
+        <i class="sg-icon-menu"></i>
         <span>Navigateur Deux</span>
-      </el-menu-item>
-      <el-menu-item index="3" disabled>
-        <i class="el-icon-document"></i>
+      </sg-menu-item>
+      <sg-menu-item index="3" disabled>
+        <i class="sg-icon-document"></i>
         <span>Navigateur Trois</span>
-      </el-menu-item>
-      <el-menu-item index="4">
-        <i class="el-icon-setting"></i>
+      </sg-menu-item>
+      <sg-menu-item index="4">
+        <i class="sg-icon-setting"></i>
         <span>Navigateur Quatre</span>
-      </el-menu-item>
-    </el-menu>
-  </el-col>
-</el-row>
+      </sg-menu-item>
+    </sg-menu>
+  </sg-col>
+</sg-row>
 
 <script>
   export default {
@@ -178,45 +178,45 @@ Le menu vertical peut être réduit.
 
 :::demo
 ```html
-<el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
-  <el-radio-button :label="false">Agrandir</el-radio-button>
-  <el-radio-button :label="true">Réduire</el-radio-button>
-</el-radio-group>
-<el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
-  <el-submenu index="1">
+<sg-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
+  <sg-radio-button :label="false">Agrandir</sg-radio-button>
+  <sg-radio-button :label="true">Réduire</sg-radio-button>
+</sg-radio-group>
+<sg-menu default-active="2" class="sg-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
+  <sg-submenu index="1">
     <template slot="title">
-      <i class="el-icon-location"></i>
+      <i class="sg-icon-location"></i>
       <span slot="title">Navigateur Un</span>
     </template>
-    <el-menu-item-group>
+    <sg-menu-item-group>
       <span slot="title">Group Un</span>
-      <el-menu-item index="1-1">item un</el-menu-item>
-      <el-menu-item index="1-2">item deux</el-menu-item>
-    </el-menu-item-group>
-    <el-menu-item-group title="Group Deux">
-      <el-menu-item index="1-3">item trois</el-menu-item>
-    </el-menu-item-group>
-    <el-submenu index="1-4">
+      <sg-menu-item index="1-1">item un</sg-menu-item>
+      <sg-menu-item index="1-2">item deux</sg-menu-item>
+    </sg-menu-item-group>
+    <sg-menu-item-group title="Group Deux">
+      <sg-menu-item index="1-3">item trois</sg-menu-item>
+    </sg-menu-item-group>
+    <sg-submenu index="1-4">
       <span slot="title">item quatre</span>
-      <el-menu-item index="1-4-1">item un</el-menu-item>
-    </el-submenu>
-  </el-submenu>
-  <el-menu-item index="2">
-    <i class="el-icon-menu"></i>
+      <sg-menu-item index="1-4-1">item un</sg-menu-item>
+    </sg-submenu>
+  </sg-submenu>
+  <sg-menu-item index="2">
+    <i class="sg-icon-menu"></i>
     <span slot="title">Navigateur Deux</span>
-  </el-menu-item>
-  <el-menu-item index="3" disabled>
-    <i class="el-icon-document"></i>
+  </sg-menu-item>
+  <sg-menu-item index="3" disabled>
+    <i class="sg-icon-document"></i>
     <span slot="title">Navigateur Trois</span>
-  </el-menu-item>
-  <el-menu-item index="4">
-    <i class="el-icon-setting"></i>
+  </sg-menu-item>
+  <sg-menu-item index="4">
+    <i class="sg-icon-setting"></i>
     <span slot="title">Navigateur Quatre</span>
-  </el-menu-item>
-</el-menu>
+  </sg-menu-item>
+</sg-menu>
 
 <style>
-  .el-menu-vertical-demo:not(.el-menu--collapse) {
+  .sg-menu-vertical-demo:not(.sg-menu--collapse) {
     width: 200px;
     min-height: 400px;
   }

@@ -9,50 +9,50 @@ Incluye todo tipo de entradas, tales como `input`, `select`, `radio` y `checkbox
 :::demo En cada componente `form`, necesita un campo `form-item` para que sea el contenedor del ítem.
 
 ```html
-<el-form ref="form" :model="form" label-width="120px">
-  <el-form-item label="Activity name">
-    <el-input v-model="form.name"></el-input>
-  </el-form-item>
-  <el-form-item label="Activity zone">
-    <el-select v-model="form.region" placeholder="please select your zone">
-      <el-option label="Zone one" value="shanghai"></el-option>
-      <el-option label="Zone two" value="beijing"></el-option>
-    </el-select>
-  </el-form-item>
-  <el-form-item label="Activity time">
-    <el-col :span="11">
-      <el-date-picker type="date" placeholder="Pick a date" v-model="form.date1" style="width: 100%;"></el-date-picker>
-    </el-col>
-    <el-col class="line" :span="2">-</el-col>
-    <el-col :span="11">
-      <el-time-picker placeholder="Pick a time" v-model="form.date2" style="width: 100%;"></el-time-picker>
-    </el-col>
-  </el-form-item>
-  <el-form-item label="Instant delivery">
-    <el-switch v-model="form.delivery"></el-switch>
-  </el-form-item>
-  <el-form-item label="Activity type">
-    <el-checkbox-group v-model="form.type">
-      <el-checkbox label="Online activities" name="type"></el-checkbox>
-      <el-checkbox label="Promotion activities" name="type"></el-checkbox>
-      <el-checkbox label="Offline activities" name="type"></el-checkbox>
-      <el-checkbox label="Simple brand exposure" name="type"></el-checkbox>
-    </el-checkbox-group>
-  </el-form-item>
-  <el-form-item label="Resources">
-    <el-radio-group v-model="form.resource">
-      <el-radio label="Sponsor"></el-radio>
-      <el-radio label="Venue"></el-radio>
-    </el-radio-group>
-  </el-form-item>
-  <el-form-item label="Activity form">
-    <el-input type="textarea" v-model="form.desc"></el-input>
-  </el-form-item>
-  <el-form-item>
-    <el-button type="primary" @click="onSubmit">Create</el-button>
-    <el-button>Cancel</el-button>
-  </el-form-item>
-</el-form>
+<sg-form ref="form" :model="form" label-width="120px">
+  <sg-form-item label="Activity name">
+    <sg-input v-model="form.name"></sg-input>
+  </sg-form-item>
+  <sg-form-item label="Activity zone">
+    <sg-select v-model="form.region" placeholder="please select your zone">
+      <sg-option label="Zone one" value="shanghai"></sg-option>
+      <sg-option label="Zone two" value="beijing"></sg-option>
+    </sg-select>
+  </sg-form-item>
+  <sg-form-item label="Activity time">
+    <sg-col :span="11">
+      <sg-date-picker type="date" placeholder="Pick a date" v-model="form.date1" style="width: 100%;"></sg-date-picker>
+    </sg-col>
+    <sg-col class="line" :span="2">-</sg-col>
+    <sg-col :span="11">
+      <sg-time-picker placeholder="Pick a time" v-model="form.date2" style="width: 100%;"></sg-time-picker>
+    </sg-col>
+  </sg-form-item>
+  <sg-form-item label="Instant delivery">
+    <sg-switch v-model="form.delivery"></sg-switch>
+  </sg-form-item>
+  <sg-form-item label="Activity type">
+    <sg-checkbox-group v-model="form.type">
+      <sg-checkbox label="Online activities" name="type"></sg-checkbox>
+      <sg-checkbox label="Promotion activities" name="type"></sg-checkbox>
+      <sg-checkbox label="Offline activities" name="type"></sg-checkbox>
+      <sg-checkbox label="Simple brand exposure" name="type"></sg-checkbox>
+    </sg-checkbox-group>
+  </sg-form-item>
+  <sg-form-item label="Resources">
+    <sg-radio-group v-model="form.resource">
+      <sg-radio label="Sponsor"></sg-radio>
+      <sg-radio label="Venue"></sg-radio>
+    </sg-radio-group>
+  </sg-form-item>
+  <sg-form-item label="Activity form">
+    <sg-input type="textarea" v-model="form.desc"></sg-input>
+  </sg-form-item>
+  <sg-form-item>
+    <sg-button type="primary" @click="onSubmit">Create</sg-button>
+    <sg-button>Cancel</sg-button>
+  </sg-form-item>
+</sg-form>
 <script>
   export default {
     data() {
@@ -85,7 +85,7 @@ Incluye todo tipo de entradas, tales como `input`, `select`, `radio` y `checkbox
 
 > <i>Cuando sólo hay un campo de entrada de texto de una sola línea en un formulario, el agente usuario debe aceptar <b>Enter</b> en ese campo como una solicitud para enviar el formulario.</i>
 
-Para prevenir este comportamiento, puede agregar `@submit.native.prevent` on `<el-form>`.
+Para prevenir este comportamiento, puede agregar `@submit.native.prevent` on `<sg-form>`.
 :::
 
 ### Formulario inline
@@ -95,20 +95,20 @@ Cuando el espacio vertical es limitado y la forma es relativamente simple, puede
 :::demo Establezca el atributo `inline` como `true` y el formulario sera inline.
 
 ```html
-<el-form :inline="true" :model="formInline" class="demo-form-inline">
-  <el-form-item label="Approved by">
-    <el-input v-model="formInline.user" placeholder="Approved by"></el-input>
-  </el-form-item>
-  <el-form-item label="Activity zone">
-    <el-select v-model="formInline.region" placeholder="Activity zone">
-      <el-option label="Zone one" value="shanghai"></el-option>
-      <el-option label="Zone two" value="beijing"></el-option>
-    </el-select>
-  </el-form-item>
-  <el-form-item>
-    <el-button type="primary" @click="onSubmit">Query</el-button>
-  </el-form-item>
-</el-form>
+<sg-form :inline="true" :model="formInline" class="demo-form-inline">
+  <sg-form-item label="Approved by">
+    <sg-input v-model="formInline.user" placeholder="Approved by"></sg-input>
+  </sg-form-item>
+  <sg-form-item label="Activity zone">
+    <sg-select v-model="formInline.region" placeholder="Activity zone">
+      <sg-option label="Zone one" value="shanghai"></sg-option>
+      <sg-option label="Zone two" value="beijing"></sg-option>
+    </sg-select>
+  </sg-form-item>
+  <sg-form-item>
+    <sg-button type="primary" @click="onSubmit">Query</sg-button>
+  </sg-form-item>
+</sg-form>
 <script>
   export default {
     data() {
@@ -137,23 +137,23 @@ Dependiendo de su diseño, hay varias maneras diferentes de alinear el elemento 
 :::demo El atributo `label-position` decide cómo se alinean las etiquetas, puede estar `top` o `left`. Cuando se establece en `top`, las etiquetas se colocarán en la parte superior del campo de formulario.
 
 ```html
-<el-radio-group v-model="labelPosition" size="small">
-  <el-radio-button label="left">Left</el-radio-button>
-  <el-radio-button label="right">Right</el-radio-button>
-  <el-radio-button label="top">Top</el-radio-button>
-</el-radio-group>
+<sg-radio-group v-model="labelPosition" size="small">
+  <sg-radio-button label="left">Left</sg-radio-button>
+  <sg-radio-button label="right">Right</sg-radio-button>
+  <sg-radio-button label="top">Top</sg-radio-button>
+</sg-radio-group>
 <div style="margin: 20px;"></div>
-<el-form :label-position="labelPosition" label-width="100px" :model="formLabelAlign">
-  <el-form-item label="Name">
-    <el-input v-model="formLabelAlign.name"></el-input>
-  </el-form-item>
-  <el-form-item label="Activity zone">
-    <el-input v-model="formLabelAlign.region"></el-input>
-  </el-form-item>
-  <el-form-item label="Activity form">
-    <el-input v-model="formLabelAlign.type"></el-input>
-  </el-form-item>
-</el-form>
+<sg-form :label-position="labelPosition" label-width="100px" :model="formLabelAlign">
+  <sg-form-item label="Name">
+    <sg-input v-model="formLabelAlign.name"></sg-input>
+  </sg-form-item>
+  <sg-form-item label="Activity zone">
+    <sg-input v-model="formLabelAlign.region"></sg-input>
+  </sg-form-item>
+  <sg-form-item label="Activity form">
+    <sg-input v-model="formLabelAlign.type"></sg-input>
+  </sg-form-item>
+</sg-form>
 <script>
   export default {
     data() {
@@ -179,54 +179,54 @@ El componente `form` le permite verificar sus datos, ayudándole a encontrar y c
 :::demo Sólo tiene que añadir el atributo `rules` en el componente `Form`, pasar las reglas de validación y establecer el atributo `prop` para `Form-Item` como una clave específica que necesita ser validada. Ver más información en [async-validator](https://github.com/yiminghe/async-validator).
 
 ```html
-<el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="120px" class="demo-ruleForm">
-  <el-form-item label="Activity name" prop="name">
-    <el-input v-model="ruleForm.name"></el-input>
-  </el-form-item>
-  <el-form-item label="Activity zone" prop="region">
-    <el-select v-model="ruleForm.region" placeholder="Activity zone">
-      <el-option label="Zone one" value="shanghai"></el-option>
-      <el-option label="Zone two" value="beijing"></el-option>
-    </el-select>
-  </el-form-item>
-  <el-form-item label="Activity time" required>
-    <el-col :span="11">
-      <el-form-item prop="date1">
-        <el-date-picker type="date" placeholder="Pick a date" v-model="ruleForm.date1" style="width: 100%;"></el-date-picker>
-      </el-form-item>
-    </el-col>
-    <el-col class="line" :span="2">-</el-col>
-    <el-col :span="11">
-      <el-form-item prop="date2">
-        <el-time-picker placeholder="Pick a time" v-model="ruleForm.date2" style="width: 100%;"></el-time-picker>
-      </el-form-item>
-    </el-col>
-  </el-form-item>
-  <el-form-item label="Instant delivery" prop="delivery">
-    <el-switch v-model="ruleForm.delivery"></el-switch>
-  </el-form-item>
-  <el-form-item label="Activity type" prop="type">
-    <el-checkbox-group v-model="ruleForm.type">
-      <el-checkbox label="Online activities" name="type"></el-checkbox>
-      <el-checkbox label="Promotion activities" name="type"></el-checkbox>
-      <el-checkbox label="Offline activities" name="type"></el-checkbox>
-      <el-checkbox label="Simple brand exposure" name="type"></el-checkbox>
-    </el-checkbox-group>
-  </el-form-item>
-  <el-form-item label="Resources" prop="resource">
-    <el-radio-group v-model="ruleForm.resource">
-      <el-radio label="Sponsorship"></el-radio>
-      <el-radio label="Venue"></el-radio>
-    </el-radio-group>
-  </el-form-item>
-  <el-form-item label="Activity form" prop="desc">
-    <el-input type="textarea" v-model="ruleForm.desc"></el-input>
-  </el-form-item>
-  <el-form-item>
-    <el-button type="primary" @click="submitForm('ruleForm')">Create</el-button>
-    <el-button @click="resetForm('ruleForm')">Reset</el-button>
-  </el-form-item>
-</el-form>
+<sg-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="120px" class="demo-ruleForm">
+  <sg-form-item label="Activity name" prop="name">
+    <sg-input v-model="ruleForm.name"></sg-input>
+  </sg-form-item>
+  <sg-form-item label="Activity zone" prop="region">
+    <sg-select v-model="ruleForm.region" placeholder="Activity zone">
+      <sg-option label="Zone one" value="shanghai"></sg-option>
+      <sg-option label="Zone two" value="beijing"></sg-option>
+    </sg-select>
+  </sg-form-item>
+  <sg-form-item label="Activity time" required>
+    <sg-col :span="11">
+      <sg-form-item prop="date1">
+        <sg-date-picker type="date" placeholder="Pick a date" v-model="ruleForm.date1" style="width: 100%;"></sg-date-picker>
+      </sg-form-item>
+    </sg-col>
+    <sg-col class="line" :span="2">-</sg-col>
+    <sg-col :span="11">
+      <sg-form-item prop="date2">
+        <sg-time-picker placeholder="Pick a time" v-model="ruleForm.date2" style="width: 100%;"></sg-time-picker>
+      </sg-form-item>
+    </sg-col>
+  </sg-form-item>
+  <sg-form-item label="Instant delivery" prop="delivery">
+    <sg-switch v-model="ruleForm.delivery"></sg-switch>
+  </sg-form-item>
+  <sg-form-item label="Activity type" prop="type">
+    <sg-checkbox-group v-model="ruleForm.type">
+      <sg-checkbox label="Online activities" name="type"></sg-checkbox>
+      <sg-checkbox label="Promotion activities" name="type"></sg-checkbox>
+      <sg-checkbox label="Offline activities" name="type"></sg-checkbox>
+      <sg-checkbox label="Simple brand exposure" name="type"></sg-checkbox>
+    </sg-checkbox-group>
+  </sg-form-item>
+  <sg-form-item label="Resources" prop="resource">
+    <sg-radio-group v-model="ruleForm.resource">
+      <sg-radio label="Sponsorship"></sg-radio>
+      <sg-radio label="Venue"></sg-radio>
+    </sg-radio-group>
+  </sg-form-item>
+  <sg-form-item label="Activity form" prop="desc">
+    <sg-input type="textarea" v-model="ruleForm.desc"></sg-input>
+  </sg-form-item>
+  <sg-form-item>
+    <sg-button type="primary" @click="submitForm('ruleForm')">Create</sg-button>
+    <sg-button @click="resetForm('ruleForm')">Reset</sg-button>
+  </sg-form-item>
+</sg-form>
 <script>
   export default {
     data() {
@@ -295,21 +295,21 @@ Este ejemplo muestra cómo personalizar sus propias reglas de validación para f
 :::demo Aquí utilizamos el `status-icon` para reflejar el resultado de la validación como un icono.
 
 ```html
-<el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="120px" class="demo-ruleForm">
-  <el-form-item label="Password" prop="pass">
-    <el-input type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
-  </el-form-item>
-  <el-form-item label="Confirm" prop="checkPass">
-    <el-input type="password" v-model="ruleForm.checkPass" autocomplete="off"></el-input>
-  </el-form-item>
-  <el-form-item label="Age" prop="age">
-    <el-input v-model.number="ruleForm.age"></el-input>
-  </el-form-item>
-  <el-form-item>
-    <el-button type="primary" @click="submitForm('ruleForm')">Submit</el-button>
-    <el-button @click="resetForm('ruleForm')">Reset</el-button>
-  </el-form-item>
-</el-form>
+<sg-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="120px" class="demo-ruleForm">
+  <sg-form-item label="Password" prop="pass">
+    <sg-input type="password" v-model="ruleForm.pass" autocomplete="off"></sg-input>
+  </sg-form-item>
+  <sg-form-item label="Confirm" prop="checkPass">
+    <sg-input type="password" v-model="ruleForm.checkPass" autocomplete="off"></sg-input>
+  </sg-form-item>
+  <sg-form-item label="Age" prop="age">
+    <sg-input v-model.number="ruleForm.age"></sg-input>
+  </sg-form-item>
+  <sg-form-item>
+    <sg-button type="primary" @click="submitForm('ruleForm')">Submit</sg-button>
+    <sg-button @click="resetForm('ruleForm')">Reset</sg-button>
+  </sg-form-item>
+</sg-form>
 <script>
   export default {
     data() {
@@ -397,8 +397,8 @@ Se debe llamar a la función de validación de llamada de retorno personalizada.
 :::demo Además de pasar todas las reglas de validación al mismo tiempo en el componente `form`, también puede pasar las reglas de validación o borrar reglas en un único campo de formulario de forma dinámica.
 
 ```html
-<el-form :model="dynamicValidateForm" ref="dynamicValidateForm" label-width="120px" class="demo-dynamic">
-  <el-form-item
+<sg-form :model="dynamicValidateForm" ref="dynamicValidateForm" label-width="120px" class="demo-dynamic">
+  <sg-form-item
     prop="email"
     label="Email"
     :rules="[
@@ -406,9 +406,9 @@ Se debe llamar a la función de validación de llamada de retorno personalizada.
       { type: 'email', message: 'Please input correct email address', trigger: ['blur', 'change'] }
     ]"
   >
-    <el-input v-model="dynamicValidateForm.email"></el-input>
-  </el-form-item>
-  <el-form-item
+    <sg-input v-model="dynamicValidateForm.email"></sg-input>
+  </sg-form-item>
+  <sg-form-item
     v-for="(domain, index) in dynamicValidateForm.domains"
     :label="'Domain' + index"
     :key="domain.key"
@@ -417,14 +417,14 @@ Se debe llamar a la función de validación de llamada de retorno personalizada.
       required: true, message: 'domain can not be null', trigger: 'blur'
     }"
   >
-    <el-input v-model="domain.value"></el-input><el-button @click.prevent="removeDomain(domain)">Delete</el-button>
-  </el-form-item>
-  <el-form-item>
-    <el-button type="primary" @click="submitForm('dynamicValidateForm')">Submit</el-button>
-    <el-button @click="addDomain">New domain</el-button>
-    <el-button @click="resetForm('dynamicValidateForm')">Reset</el-button>
-  </el-form-item>
-</el-form>
+    <sg-input v-model="domain.value"></sg-input><sg-button @click.prevent="removeDomain(domain)">Delete</sg-button>
+  </sg-form-item>
+  <sg-form-item>
+    <sg-button type="primary" @click="submitForm('dynamicValidateForm')">Submit</sg-button>
+    <sg-button @click="addDomain">New domain</sg-button>
+    <sg-button @click="resetForm('dynamicValidateForm')">Reset</sg-button>
+  </sg-form-item>
+</sg-form>
 <script>
   export default {
     data() {
@@ -476,8 +476,8 @@ Se debe llamar a la función de validación de llamada de retorno personalizada.
 :::demo La validación numérica necesita un modificador `.number` añadido en el enlace `v-model` de entrada, sirve para transformar el valor de la cadena al número proporcionado por Vuejs.
 
 ```html
-<el-form :model="numberValidateForm" ref="numberValidateForm" label-width="100px" class="demo-ruleForm">
-  <el-form-item
+<sg-form :model="numberValidateForm" ref="numberValidateForm" label-width="100px" class="demo-ruleForm">
+  <sg-form-item
     label="age"
     prop="age"
     :rules="[
@@ -485,13 +485,13 @@ Se debe llamar a la función de validación de llamada de retorno personalizada.
       { type: 'number', message: 'age must be a number'}
     ]"
   >
-    <el-input v-model.number="numberValidateForm.age" autocomplete="off"></el-input>
-  </el-form-item>
-  <el-form-item>
-    <el-button type="primary" @click="submitForm('numberValidateForm')">Submit</el-button>
-    <el-button @click="resetForm('numberValidateForm')">Reset</el-button>
-  </el-form-item>
-</el-form>
+    <sg-input v-model.number="numberValidateForm.age" autocomplete="off"></sg-input>
+  </sg-form-item>
+  <sg-form-item>
+    <sg-button type="primary" @click="submitForm('numberValidateForm')">Submit</sg-button>
+    <sg-button @click="resetForm('numberValidateForm')">Reset</sg-button>
+  </sg-form-item>
+</sg-form>
 <script>
   export default {
     data() {
@@ -524,7 +524,7 @@ Se debe llamar a la función de validación de llamada de retorno personalizada.
 
 :::tip
 
-Cuando un `el-form-item` está anidado en otro `el-form-item`, su ancho de etiqueta será 0. Si es necesario, puede establecer el ancho de etiqueta en ese `el-form-item`.
+Cuando un `sg-form-item` está anidado en otro `sg-form-item`, su ancho de etiqueta será 0. Si es necesario, puede establecer el ancho de etiqueta en ese `sg-form-item`.
 
 :::
 
@@ -535,42 +535,42 @@ Todos los componentes de un formulario heredan su atributo `size`. De manera sim
 :::demo Aún así, puede ajustar el `size` de cada componente si no desea que herede su tamaño de From o FormItem.
 
 ```html
-<el-form ref="form" :model="sizeForm" label-width="120px" size="mini">
-  <el-form-item label="Activity name">
-    <el-input v-model="sizeForm.name"></el-input>
-  </el-form-item>
-  <el-form-item label="Activity zone">
-    <el-select v-model="sizeForm.region" placeholder="please select your zone">
-      <el-option label="Zone one" value="shanghai"></el-option>
-      <el-option label="Zone two" value="beijing"></el-option>
-    </el-select>
-  </el-form-item>
-  <el-form-item label="Activity time">
-    <el-col :span="11">
-      <el-date-picker type="date" placeholder="Pick a date" v-model="sizeForm.date1" style="width: 100%;"></el-date-picker>
-    </el-col>
-    <el-col class="line" :span="2">-</el-col>
-    <el-col :span="11">
-      <el-time-picker placeholder="Pick a time" v-model="sizeForm.date2" style="width: 100%;"></el-time-picker>
-    </el-col>
-  </el-form-item>
-  <el-form-item label="Activity type">
-    <el-checkbox-group v-model="sizeForm.type">
-      <el-checkbox-button label="Online activities" name="type"></el-checkbox-button>
-      <el-checkbox-button label="Promotion activities" name="type"></el-checkbox-button>
-    </el-checkbox-group>
-  </el-form-item>
-  <el-form-item label="Resources">
-    <el-radio-group v-model="sizeForm.resource" size="medium">
-      <el-radio border label="Sponsor"></el-radio>
-      <el-radio border label="Venue"></el-radio>
-    </el-radio-group>
-  </el-form-item>
-  <el-form-item size="large">
-    <el-button type="primary" @click="onSubmit">Create</el-button>
-    <el-button>Cancel</el-button>
-  </el-form-item>
-</el-form>
+<sg-form ref="form" :model="sizeForm" label-width="120px" size="mini">
+  <sg-form-item label="Activity name">
+    <sg-input v-model="sizeForm.name"></sg-input>
+  </sg-form-item>
+  <sg-form-item label="Activity zone">
+    <sg-select v-model="sizeForm.region" placeholder="please select your zone">
+      <sg-option label="Zone one" value="shanghai"></sg-option>
+      <sg-option label="Zone two" value="beijing"></sg-option>
+    </sg-select>
+  </sg-form-item>
+  <sg-form-item label="Activity time">
+    <sg-col :span="11">
+      <sg-date-picker type="date" placeholder="Pick a date" v-model="sizeForm.date1" style="width: 100%;"></sg-date-picker>
+    </sg-col>
+    <sg-col class="line" :span="2">-</sg-col>
+    <sg-col :span="11">
+      <sg-time-picker placeholder="Pick a time" v-model="sizeForm.date2" style="width: 100%;"></sg-time-picker>
+    </sg-col>
+  </sg-form-item>
+  <sg-form-item label="Activity type">
+    <sg-checkbox-group v-model="sizeForm.type">
+      <sg-checkbox-button label="Online activities" name="type"></sg-checkbox-button>
+      <sg-checkbox-button label="Promotion activities" name="type"></sg-checkbox-button>
+    </sg-checkbox-group>
+  </sg-form-item>
+  <sg-form-item label="Resources">
+    <sg-radio-group v-model="sizeForm.resource" size="medium">
+      <sg-radio border label="Sponsor"></sg-radio>
+      <sg-radio border label="Venue"></sg-radio>
+    </sg-radio-group>
+  </sg-form-item>
+  <sg-form-item size="large">
+    <sg-button type="primary" @click="onSubmit">Create</sg-button>
+    <sg-button>Cancel</sg-button>
+  </sg-form-item>
+</sg-form>
 
 <script>
   export default {

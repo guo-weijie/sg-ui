@@ -1,10 +1,10 @@
-import { ElementUIComponent } from './component'
+import { SgementUIComponent } from "./component";
 
 /** Carousel Item Component */
-export declare class ElCarouselItem extends ElementUIComponent {
+export declare class SgCarouselItem extends SgementUIComponent {
   /** Name of the item, can be used in setActiveItem */
-  name: string
+  name: string;
 
   /** Text content for the corresponding indicator */
-  label: string
+  label: string;
 }

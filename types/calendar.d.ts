@@ -1,15 +1,15 @@
-import { ElementUIComponent } from './component'
+import { SgementUIComponent } from "./component";
 
-export type DateType = Date | String | Number
+export type DateType = Date | String | Number;
 
 /** Calendar Component */
-export declare class ElCalendar extends ElementUIComponent {
+export declare class SgCalendar extends SgementUIComponent {
   /** Binding value */
-  value: DateType
+  value: DateType;
 
   /** Specify the display range of the calendar */
-  range: DateType[]
+  range: DateType[];
 
   /** First day of week */
-  firstDayOfWeek: number
+  firstDayOfWeek: number;
 }

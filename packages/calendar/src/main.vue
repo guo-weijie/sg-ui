@@ -1,82 +1,55 @@
 <template>
-  <div class="el-calendar">
-    <div class="el-calendar__header">
-      <div class="el-calendar__title">
+  <div class="sg-calendar">
+    <div class="sg-calendar__header">
+      <div class="sg-calendar__title">
         {{ i18nDate }}
       </div>
-      <div
-        class="el-calendar__button-group"
-        v-if="validatedRange.length === 0">
-        <el-button-group>
-          <el-button
-            type="plain"
-            size="mini"
-            @click="selectDate('prev-month')">
+      <div class="sg-calendar__button-group" v-if="validatedRange.length === 0">
+        <sg-button-group>
+          <sg-button type="plain" size="mini" @click="selectDate('prev-month')">
             {{ t('el.datepicker.prevMonth') }}
-          </el-button>
-          <el-button
-            type="plain"
-            size="mini"
-            @click="selectDate('today')">
+          </sg-button>
+          <sg-button type="plain" size="mini" @click="selectDate('today')">
             {{ t('el.datepicker.today') }}
-          </el-button>
-          <el-button
-            type="plain"
-            size="mini"
-            @click="selectDate('next-month')">
+          </sg-button>
+          <sg-button type="plain" size="mini" @click="selectDate('next-month')">
             {{ t('el.datepicker.nextMonth') }}
-          </el-button>
-        </el-button-group>
+          </sg-button>
+        </sg-button-group>
       </div>
     </div>
-    <div
-      class="el-calendar__body"
-      v-if="validatedRange.length === 0"
-      key="no-range">
-      <date-table
-        :date="date"
-        :selected-day="realSelectedDay"
-        :first-day-of-week="realFirstDayOfWeek"
+    <div class="sg-calendar__body" v-if="validatedRange.length === 0" key="no-range">
+      <date-table :date="date" :selected-day="realSelectedDay" :first-day-of-week="realFirstDayOfWeek"
         @pick="pickDay" />
     </div>
-    <div
-      v-else
-      class="el-calendar__body"
-      key="has-range">
-      <date-table
-        v-for="(range, index) in validatedRange"
-        :key="index"
-        :date="range[0]"
-        :selected-day="realSelectedDay"
-        :range="range"
-        :hide-header="index !== 0"
-        :first-day-of-week="realFirstDayOfWeek"
-        @pick="pickDay" />
+    <div v-else class="sg-calendar__body" key="has-range">
+      <date-table v-for="(range, index) in validatedRange" :key="index" :date="range[0]" :selected-day="realSelectedDay"
+        :range="range" :hide-header="index !== 0" :first-day-of-week="realFirstDayOfWeek" @pick="pickDay" />
     </div>
   </div>
 </template>
 
 <script>
-import Locale from 'element-ui/src/mixins/locale';
-import fecha from 'element-ui/src/utils/date';
-import ElButton from 'element-ui/packages/button';
-import ElButtonGroup from 'element-ui/packages/button-group';
+import Locale from 'sg-ui/src/mixins/locale';
+import fecha from 'sg-ui/src/utils/date';
+import SgButton from 'sg-ui/packages/button';
+import SgButtonGroup from 'sg-ui/packages/button-group';
 import DateTable from './date-table';
-import { validateRangeInOneMonth } from 'element-ui/src/utils/date-util';
+import { validateRangeInOneMonth } from 'sg-ui/src/utils/date-util';
 
 const validTypes = ['prev-month', 'today', 'next-month'];
 const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const oneDay = 86400000;
 
 export default {
-  name: 'ElCalendar',
+  name: 'SgCalendar',
 
   mixins: [Locale],
 
   components: {
     DateTable,
-    ElButton,
-    ElButtonGroup
+    SgButton,
+    SgButtonGroup
   },
 
   props: {
@@ -87,8 +60,8 @@ export default {
         if (Array.isArray(range)) {
           return range.length === 2 && range.every(
             item => typeof item === 'string' ||
-            typeof item === 'number' ||
-            item instanceof Date);
+              typeof item === 'number' ||
+              item instanceof Date);
         } else {
           return true;
         }

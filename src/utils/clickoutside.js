@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { on } from 'element-ui/src/utils/dom';
+import { on } from 'sg-ui/src/utils/dom';
 
 const nodeList = [];
 const ctx = '@@clickoutsideContext';
@@ -14,7 +14,7 @@ let seed = 0;
 });
 
 function createDocumentHandler(el, binding, vnode) {
-  return function(mouseup = {}, mousedown = {}) {
+  return function (mouseup = {}, mousedown = {}) {
     if (!vnode ||
       !vnode.context ||
       !mouseup.target ||
@@ -23,8 +23,8 @@ function createDocumentHandler(el, binding, vnode) {
       el.contains(mousedown.target) ||
       el === mouseup.target ||
       (vnode.context.popperElm &&
-      (vnode.context.popperElm.contains(mouseup.target) ||
-      vnode.context.popperElm.contains(mousedown.target)))) return;
+        (vnode.context.popperElm.contains(mouseup.target) ||
+          vnode.context.popperElm.contains(mousedown.target)))) return;
 
     if (binding.expression &&
       el[ctx].methodName &&

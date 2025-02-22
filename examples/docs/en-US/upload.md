@@ -6,7 +6,7 @@ Upload files by clicking or drag-and-drop
 
 :::demo Customize upload button type and text using `slot`. Set `limit` and `on-exceed` to limit the maximum number of uploads allowed and specify method when the limit is exceeded. Plus, you can abort removing a file in the `before-remove` hook.
 ```html
-<el-upload
+<sg-upload
   class="upload-demo"
   action="https://jsonplaceholder.typicode.com/posts/"
   :on-preview="handlePreview"
@@ -16,9 +16,9 @@ Upload files by clicking or drag-and-drop
   :limit="3"
   :on-exceed="handleExceed"
   :file-list="fileList">
-  <el-button size="small" type="primary">Click to upload</el-button>
-  <div slot="tip" class="el-upload__tip">jpg/png files with a size less than 500kb</div>
-</el-upload>
+  <sg-button size="small" type="primary">Click to upload</sg-button>
+  <div slot="tip" class="sg-upload__tip">jpg/png files with a size less than 500kb</div>
+</sg-upload>
 <script>
   export default {
     data() {
@@ -51,25 +51,25 @@ Use `before-upload` hook to limit the upload file format and size.
 
 :::demo
 ```html
-<el-upload
+<sg-upload
   class="avatar-uploader"
   action="https://jsonplaceholder.typicode.com/posts/"
   :show-file-list="false"
   :on-success="handleAvatarSuccess"
   :before-upload="beforeAvatarUpload">
   <img v-if="imageUrl" :src="imageUrl" class="avatar">
-  <i v-else class="el-icon-plus avatar-uploader-icon"></i>
-</el-upload>
+  <i v-else class="sg-icon-plus avatar-uploader-icon"></i>
+</sg-upload>
 
 <style>
-  .avatar-uploader .el-upload {
+  .avatar-uploader .sg-upload {
     border: 1px dashed #d9d9d9;
     border-radius: 6px;
     cursor: pointer;
     position: relative;
     overflow: hidden;
   }
-  .avatar-uploader .el-upload:hover {
+  .avatar-uploader .sg-upload:hover {
     border-color: #409EFF;
   }
   .avatar-uploader-icon {
@@ -122,16 +122,16 @@ Use `list-type` to change the fileList style.
 
 :::demo
 ```html
-<el-upload
+<sg-upload
   action="https://jsonplaceholder.typicode.com/posts/"
   list-type="picture-card"
   :on-preview="handlePictureCardPreview"
   :on-remove="handleRemove">
-  <i class="el-icon-plus"></i>
-</el-upload>
-<el-dialog :visible.sync="dialogVisible">
+  <i class="sg-icon-plus"></i>
+</sg-upload>
+<sg-dialog :visible.sync="dialogVisible">
   <img width="100%" :src="dialogImageUrl" alt="">
-</el-dialog>
+</sg-dialog>
 <script>
   export default {
     data() {
@@ -160,43 +160,43 @@ Use `scoped-slot` to change default thumbnail template.
 
 :::demo
 ```html
-<el-upload
+<sg-upload
   action="#"
   list-type="picture-card"
   :auto-upload="false">
-    <i slot="default" class="el-icon-plus"></i>
+    <i slot="default" class="sg-icon-plus"></i>
     <div slot="file" slot-scope="{file}">
       <img
-        class="el-upload-list__item-thumbnail"
+        class="sg-upload-list__item-thumbnail"
         :src="file.url" alt=""
       >
-      <span class="el-upload-list__item-actions">
+      <span class="sg-upload-list__item-actions">
         <span
-          class="el-upload-list__item-preview"
+          class="sg-upload-list__item-preview"
           @click="handlePictureCardPreview(file)"
         >
-          <i class="el-icon-zoom-in"></i>
+          <i class="sg-icon-zoom-in"></i>
         </span>
         <span
           v-if="!disabled"
-          class="el-upload-list__item-delete"
+          class="sg-upload-list__item-delete"
           @click="handleDownload(file)"
         >
-          <i class="el-icon-download"></i>
+          <i class="sg-icon-download"></i>
         </span>
         <span
           v-if="!disabled"
-          class="el-upload-list__item-delete"
+          class="sg-upload-list__item-delete"
           @click="handleRemove(file)"
         >
-          <i class="el-icon-delete"></i>
+          <i class="sg-icon-delete"></i>
         </span>
       </span>
     </div>
-</el-upload>
-<el-dialog :visible.sync="dialogVisible">
+</sg-upload>
+<sg-dialog :visible.sync="dialogVisible">
   <img width="100%" :src="dialogImageUrl" alt="">
-</el-dialog>
+</sg-dialog>
 <script>
   export default {
     data() {
@@ -227,16 +227,16 @@ Use `scoped-slot` to change default thumbnail template.
 
 :::demo
 ```html
-<el-upload
+<sg-upload
   class="upload-demo"
   action="https://jsonplaceholder.typicode.com/posts/"
   :on-preview="handlePreview"
   :on-remove="handleRemove"
   :file-list="fileList"
   list-type="picture">
-  <el-button size="small" type="primary">Click to upload</el-button>
-  <div slot="tip" class="el-upload__tip">jpg/png files with a size less than 500kb</div>
-</el-upload>
+  <sg-button size="small" type="primary">Click to upload</sg-button>
+  <div slot="tip" class="sg-upload__tip">jpg/png files with a size less than 500kb</div>
+</sg-upload>
 <script>
   export default {
     data() {
@@ -263,14 +263,14 @@ Use `on-change` hook function to control upload file list
 
 :::demo
 ```html
-<el-upload
+<sg-upload
   class="upload-demo"
   action="https://jsonplaceholder.typicode.com/posts/"
   :on-change="handleChange"
   :file-list="fileList">
-  <el-button size="small" type="primary">Click to upload</el-button>
-  <div slot="tip" class="el-upload__tip">jpg/png files with a size less than 500kb</div>
-</el-upload>
+  <sg-button size="small" type="primary">Click to upload</sg-button>
+  <div slot="tip" class="sg-upload__tip">jpg/png files with a size less than 500kb</div>
+</sg-upload>
 <script>
   export default {
     data() {
@@ -300,7 +300,7 @@ You can drag your file to a certain area to upload it.
 
 :::demo
 ```html
-<el-upload
+<sg-upload
   class="upload-demo"
   drag
   action="https://jsonplaceholder.typicode.com/posts/"
@@ -308,10 +308,10 @@ You can drag your file to a certain area to upload it.
   :on-remove="handleRemove"
   :file-list="fileList"
   multiple>
-  <i class="el-icon-upload"></i>
-  <div class="el-upload__text">Drop file here or <em>click to upload</em></div>
-  <div class="el-upload__tip" slot="tip">jpg/png files with a size less than 500kb</div>
-</el-upload>
+  <i class="sg-icon-upload"></i>
+  <div class="sg-upload__text">Drop file here or <em>click to upload</em></div>
+  <div class="sg-upload__tip" slot="tip">jpg/png files with a size less than 500kb</div>
+</sg-upload>
 ```
 :::
 
@@ -319,15 +319,15 @@ You can drag your file to a certain area to upload it.
 
 :::demo
 ```html
-<el-upload
+<sg-upload
   class="upload-demo"
   ref="upload"
   action="https://jsonplaceholder.typicode.com/posts/"
   :auto-upload="false">
-  <el-button slot="trigger" size="small" type="primary">select file</el-button>
-  <el-button style="margin-left: 10px;" size="small" type="success" @click="submitUpload">upload to server</el-button>
-  <div class="el-upload__tip" slot="tip">jpg/png files with a size less than 500kb</div>
-</el-upload>
+  <sg-button slot="trigger" size="small" type="primary">select file</sg-button>
+  <sg-button style="margin-left: 10px;" size="small" type="success" @click="submitUpload">upload to server</sg-button>
+  <div class="sg-upload__tip" slot="tip">jpg/png files with a size less than 500kb</div>
+</sg-upload>
 <script>
   export default {
     methods: {

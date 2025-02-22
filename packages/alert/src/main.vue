@@ -1,19 +1,19 @@
 <template>
-  <transition name="el-alert-fade">
+  <transition name="sg-alert-fade">
     <div
-      class="el-alert"
+      class="sg-alert"
       :class="[typeClass, center ? 'is-center' : '', 'is-' + effect]"
       v-show="visible"
       role="alert"
     >
-      <i class="el-alert__icon" :class="[ iconClass, isBigIcon ]" v-if="showIcon"></i>
-      <div class="el-alert__content">
-        <span class="el-alert__title" :class="[ isBoldTitle ]" v-if="title || $slots.title">
+      <i class="sg-alert__icon" :class="[ iconClass, isBigIcon ]" v-if="showIcon"></i>
+      <div class="sg-alert__content">
+        <span class="sg-alert__title" :class="[ isBoldTitle ]" v-if="title || $slots.title">
           <slot name="title">{{ title }}</slot>
         </span>
-        <p class="el-alert__description" v-if="$slots.default && !description"><slot></slot></p>
-        <p class="el-alert__description" v-if="description && !$slots.default">{{ description }}</p>
-        <i class="el-alert__closebtn" :class="{ 'is-customed': closeText !== '', 'el-icon-close': closeText === '' }" v-show="closable" @click="close()">{{closeText}}</i>
+        <p class="sg-alert__description" v-if="$slots.default && !description"><slot></slot></p>
+        <p class="sg-alert__description" v-if="description && !$slots.default">{{ description }}</p>
+        <i class="sg-alert__closebtn" :class="{ 'is-customed': closeText !== '', 'sg-icon-close': closeText === '' }" v-show="closable" @click="close()">{{closeText}}</i>
       </div>
     </div>
   </transition>
@@ -21,12 +21,12 @@
 
 <script type="text/babel">
   const TYPE_CLASSES_MAP = {
-    'success': 'el-icon-success',
-    'warning': 'el-icon-warning',
-    'error': 'el-icon-error'
+    'success': 'sg-icon-success',
+    'warning': 'sg-icon-warning',
+    'error': 'sg-icon-error'
   };
   export default {
-    name: 'ElAlert',
+    name: 'SgAlert',
 
     props: {
       title: {
@@ -75,11 +75,11 @@
 
     computed: {
       typeClass() {
-        return `el-alert--${ this.type }`;
+        return `sg-alert--${ this.type }`;
       },
 
       iconClass() {
-        return TYPE_CLASSES_MAP[this.type] || 'el-icon-info';
+        return TYPE_CLASSES_MAP[this.type] || 'sg-icon-info';
       },
 
       isBigIcon() {

@@ -7,25 +7,25 @@ Passez sur le menu avec la souris pour dérouler son contenu.
 :::demo L'élément déclencheur est généré par le `slot` par défaut, et le menu déroulant est généré par le `slot` appelé `dropdown`. Par défaut le menu apparaît simplement en passant la souris sur l'élément déclencheur, sans avoir à cliquer.
 
 ```html
-<el-dropdown>
-  <span class="el-dropdown-link">
-    Menu déroulant<i class="el-icon-arrow-down el-icon--right"></i>
+<sg-dropdown>
+  <span class="sg-dropdown-link">
+    Menu déroulant<i class="sg-icon-arrow-down sg-icon--right"></i>
   </span>
-  <el-dropdown-menu slot="dropdown">
-    <el-dropdown-item>Action 1</el-dropdown-item>
-    <el-dropdown-item>Action 2</el-dropdown-item>
-    <el-dropdown-item>Action 3</el-dropdown-item>
-    <el-dropdown-item disabled>Action 4</el-dropdown-item>
-    <el-dropdown-item divided>Action 5</el-dropdown-item>
-  </el-dropdown-menu>
-</el-dropdown>
+  <sg-dropdown-menu slot="dropdown">
+    <sg-dropdown-item>Action 1</sg-dropdown-item>
+    <sg-dropdown-item>Action 2</sg-dropdown-item>
+    <sg-dropdown-item>Action 3</sg-dropdown-item>
+    <sg-dropdown-item disabled>Action 4</sg-dropdown-item>
+    <sg-dropdown-item divided>Action 5</sg-dropdown-item>
+  </sg-dropdown-menu>
+</sg-dropdown>
 
 <style>
-  .el-dropdown-link {
+  .sg-dropdown-link {
     cursor: pointer;
     color: #409EFF;
   }
-  .el-icon-arrow-down {
+  .sg-icon-arrow-down {
     font-size: 12px;
   }
 </style>
@@ -40,37 +40,37 @@ Utilisez le bouton pour ouvrir le menu déroulant.
 
 :::demo Utilisez `split-button` pour séparer le déclencheur du reste du bouton, ce dernier devenant la partie gauche et le déclencheur la partie droite.
 ```html
-<el-dropdown>
-  <el-button type="primary">
-    Liste déroulante<i class="el-icon-arrow-down el-icon--right"></i>
-  </el-button>
-  <el-dropdown-menu slot="dropdown">
-    <el-dropdown-item>Action 1</el-dropdown-item>
-    <el-dropdown-item>Action 2</el-dropdown-item>
-    <el-dropdown-item>Action 3</el-dropdown-item>
-    <el-dropdown-item>Action 4</el-dropdown-item>
-    <el-dropdown-item>Action 5</el-dropdown-item>
-  </el-dropdown-menu>
-</el-dropdown>
-<el-dropdown split-button type="primary" @click="handleClick">
+<sg-dropdown>
+  <sg-button type="primary">
+    Liste déroulante<i class="sg-icon-arrow-down sg-icon--right"></i>
+  </sg-button>
+  <sg-dropdown-menu slot="dropdown">
+    <sg-dropdown-item>Action 1</sg-dropdown-item>
+    <sg-dropdown-item>Action 2</sg-dropdown-item>
+    <sg-dropdown-item>Action 3</sg-dropdown-item>
+    <sg-dropdown-item>Action 4</sg-dropdown-item>
+    <sg-dropdown-item>Action 5</sg-dropdown-item>
+  </sg-dropdown-menu>
+</sg-dropdown>
+<sg-dropdown split-button type="primary" @click="handleClick">
   Liste déroulante
-  <el-dropdown-menu slot="dropdown">
-    <el-dropdown-item>Action 1</el-dropdown-item>
-    <el-dropdown-item>Action 2</el-dropdown-item>
-    <el-dropdown-item>Action 3</el-dropdown-item>
-    <el-dropdown-item>Action 4</el-dropdown-item>
-    <el-dropdown-item>Action 5</el-dropdown-item>
-  </el-dropdown-menu>
-</el-dropdown>
+  <sg-dropdown-menu slot="dropdown">
+    <sg-dropdown-item>Action 1</sg-dropdown-item>
+    <sg-dropdown-item>Action 2</sg-dropdown-item>
+    <sg-dropdown-item>Action 3</sg-dropdown-item>
+    <sg-dropdown-item>Action 4</sg-dropdown-item>
+    <sg-dropdown-item>Action 5</sg-dropdown-item>
+  </sg-dropdown-menu>
+</sg-dropdown>
 
 <style>
-  .el-dropdown {
+  .sg-dropdown {
     vertical-align: top;
   }
-  .el-dropdown + .el-dropdown {
+  .sg-dropdown + .sg-dropdown {
     margin-left: 15px;
   }
-  .el-icon-arrow-down {
+  .sg-icon-arrow-down {
     font-size: 12px;
   }
 </style>
@@ -94,45 +94,45 @@ Vous pouvez choisir de déclencher le menu au moment du clic, ou en passant la s
 :::demo Utilisez l'attribut `trigger`. Par défaut, il est à `hover`.
 
 ```html
-<el-row class="block-col-2">
-  <el-col :span="12">
+<sg-row class="block-col-2">
+  <sg-col :span="12">
     <span class="demonstration">En passant la souris</span>
-    <el-dropdown>
-      <span class="el-dropdown-link">
-        Liste déroulante<i class="el-icon-arrow-down el-icon--right"></i>
+    <sg-dropdown>
+      <span class="sg-dropdown-link">
+        Liste déroulante<i class="sg-icon-arrow-down sg-icon--right"></i>
       </span>
-      <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item icon="el-icon-plus">Action 1</el-dropdown-item>
-        <el-dropdown-item icon="el-icon-circle-plus">Action 2</el-dropdown-item>
-        <el-dropdown-item icon="el-icon-circle-plus-outline">Action 3</el-dropdown-item>
-        <el-dropdown-item icon="el-icon-check">Action 4</el-dropdown-item>
-        <el-dropdown-item icon="el-icon-circle-check">Action 5</el-dropdown-item>
-      </el-dropdown-menu>
-    </el-dropdown>
-  </el-col>
-  <el-col :span="12">
+      <sg-dropdown-menu slot="dropdown">
+        <sg-dropdown-item icon="sg-icon-plus">Action 1</sg-dropdown-item>
+        <sg-dropdown-item icon="sg-icon-circle-plus">Action 2</sg-dropdown-item>
+        <sg-dropdown-item icon="sg-icon-circle-plus-outline">Action 3</sg-dropdown-item>
+        <sg-dropdown-item icon="sg-icon-check">Action 4</sg-dropdown-item>
+        <sg-dropdown-item icon="sg-icon-circle-check">Action 5</sg-dropdown-item>
+      </sg-dropdown-menu>
+    </sg-dropdown>
+  </sg-col>
+  <sg-col :span="12">
     <span class="demonstration">En cliquant</span>
-    <el-dropdown trigger="click">
-      <span class="el-dropdown-link">
-        Liste déroulante<i class="el-icon-arrow-down el-icon--right"></i>
+    <sg-dropdown trigger="click">
+      <span class="sg-dropdown-link">
+        Liste déroulante<i class="sg-icon-arrow-down sg-icon--right"></i>
       </span>
-      <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item icon="el-icon-plus">Action 1</el-dropdown-item>
-        <el-dropdown-item icon="el-icon-circle-plus">Action 2</el-dropdown-item>
-        <el-dropdown-item icon="el-icon-circle-plus-outline">Action 3</el-dropdown-item>
-        <el-dropdown-item icon="el-icon-check">Action 4</el-dropdown-item>
-        <el-dropdown-item icon="el-icon-circle-check">Action 5</el-dropdown-item>
-      </el-dropdown-menu>
-    </el-dropdown>
-  </el-col>
-</el-row>
+      <sg-dropdown-menu slot="dropdown">
+        <sg-dropdown-item icon="sg-icon-plus">Action 1</sg-dropdown-item>
+        <sg-dropdown-item icon="sg-icon-circle-plus">Action 2</sg-dropdown-item>
+        <sg-dropdown-item icon="sg-icon-circle-plus-outline">Action 3</sg-dropdown-item>
+        <sg-dropdown-item icon="sg-icon-check">Action 4</sg-dropdown-item>
+        <sg-dropdown-item icon="sg-icon-circle-check">Action 5</sg-dropdown-item>
+      </sg-dropdown-menu>
+    </sg-dropdown>
+  </sg-col>
+</sg-row>
 
 <style>
-  .el-dropdown-link {
+  .sg-dropdown-link {
     cursor: pointer;
     color: #409EFF;
   }
-  .el-icon-arrow-down {
+  .sg-icon-arrow-down {
     font-size: 12px;
   }
   .demonstration {
@@ -151,25 +151,25 @@ Utilisez l'attribut `hide-on-click` pour déterminer si le menu se ferme après 
 
 :::demo Par défaut le menu se ferme après avoir cliqué dans la liste. Vous pouvez changer cette option en mettant `hide-on-click` à `false`.
 ```html
-<el-dropdown :hide-on-click="false">
-  <span class="el-dropdown-link">
-    Liste déroulante<i class="el-icon-arrow-down el-icon--right"></i>
+<sg-dropdown :hide-on-click="false">
+  <span class="sg-dropdown-link">
+    Liste déroulante<i class="sg-icon-arrow-down sg-icon--right"></i>
   </span>
-  <el-dropdown-menu slot="dropdown">
-    <el-dropdown-item>Action 1</el-dropdown-item>
-    <el-dropdown-item>Action 2</el-dropdown-item>
-    <el-dropdown-item>Action 3</el-dropdown-item>
-    <el-dropdown-item disabled>Action 4</el-dropdown-item>
-    <el-dropdown-item divided>Action 5</el-dropdown-item>
-  </el-dropdown-menu>
-</el-dropdown>
+  <sg-dropdown-menu slot="dropdown">
+    <sg-dropdown-item>Action 1</sg-dropdown-item>
+    <sg-dropdown-item>Action 2</sg-dropdown-item>
+    <sg-dropdown-item>Action 3</sg-dropdown-item>
+    <sg-dropdown-item disabled>Action 4</sg-dropdown-item>
+    <sg-dropdown-item divided>Action 5</sg-dropdown-item>
+  </sg-dropdown-menu>
+</sg-dropdown>
 
 <style>
-  .el-dropdown-link {
+  .sg-dropdown-link {
     cursor: pointer;
     color: #409EFF;
   }
-  .el-icon-arrow-down {
+  .sg-icon-arrow-down {
     font-size: 12px;
   }
 </style>
@@ -183,25 +183,25 @@ Le paramètre de cet évènement peut être assigné à chaque élément de la l
 
 :::demo
 ```html
-<el-dropdown @command="handleCommand">
-  <span class="el-dropdown-link">
-    Liste déroulante<i class="el-icon-arrow-down el-icon--right"></i>
+<sg-dropdown @command="handleCommand">
+  <span class="sg-dropdown-link">
+    Liste déroulante<i class="sg-icon-arrow-down sg-icon--right"></i>
   </span>
-  <el-dropdown-menu slot="dropdown">
-    <el-dropdown-item command="a">Action 1</el-dropdown-item>
-    <el-dropdown-item command="b">Action 2</el-dropdown-item>
-    <el-dropdown-item command="c">Action 3</el-dropdown-item>
-    <el-dropdown-item command="d" disabled>Action 4</el-dropdown-item>
-    <el-dropdown-item command="e" divided>Action 5</el-dropdown-item>
-  </el-dropdown-menu>
-</el-dropdown>
+  <sg-dropdown-menu slot="dropdown">
+    <sg-dropdown-item command="a">Action 1</sg-dropdown-item>
+    <sg-dropdown-item command="b">Action 2</sg-dropdown-item>
+    <sg-dropdown-item command="c">Action 3</sg-dropdown-item>
+    <sg-dropdown-item command="d" disabled>Action 4</sg-dropdown-item>
+    <sg-dropdown-item command="e" divided>Action 5</sg-dropdown-item>
+  </sg-dropdown-menu>
+</sg-dropdown>
 
 <style>
-  .el-dropdown-link {
+  .sg-dropdown-link {
     cursor: pointer;
     color: #409EFF;
   }
-  .el-icon-arrow-down {
+  .sg-icon-arrow-down {
     font-size: 12px;
   }
 </style>
@@ -225,45 +225,45 @@ En plus de la taille par défaut, le composant Dropdown propose trois autres tai
 :::demo Utilisez `size` pour déterminer une autre taille parmi `medium`, `small` ou `mini`.
 
 ```html
-<el-dropdown split-button type="primary">
+<sg-dropdown split-button type="primary">
   Défaut
-  <el-dropdown-menu slot="dropdown">
-    <el-dropdown-item>Action 1</el-dropdown-item>
-    <el-dropdown-item>Action 2</el-dropdown-item>
-    <el-dropdown-item>Action 3</el-dropdown-item>
-    <el-dropdown-item>Action 4</el-dropdown-item>
-  </el-dropdown-menu>
-</el-dropdown>
+  <sg-dropdown-menu slot="dropdown">
+    <sg-dropdown-item>Action 1</sg-dropdown-item>
+    <sg-dropdown-item>Action 2</sg-dropdown-item>
+    <sg-dropdown-item>Action 3</sg-dropdown-item>
+    <sg-dropdown-item>Action 4</sg-dropdown-item>
+  </sg-dropdown-menu>
+</sg-dropdown>
 
-<el-dropdown size="medium" split-button type="primary">
+<sg-dropdown size="medium" split-button type="primary">
   Medium
-  <el-dropdown-menu slot="dropdown">
-    <el-dropdown-item>Action 1</el-dropdown-item>
-    <el-dropdown-item>Action 2</el-dropdown-item>
-    <el-dropdown-item>Action 3</el-dropdown-item>
-    <el-dropdown-item>Action 4</el-dropdown-item>
-  </el-dropdown-menu>
-</el-dropdown>
+  <sg-dropdown-menu slot="dropdown">
+    <sg-dropdown-item>Action 1</sg-dropdown-item>
+    <sg-dropdown-item>Action 2</sg-dropdown-item>
+    <sg-dropdown-item>Action 3</sg-dropdown-item>
+    <sg-dropdown-item>Action 4</sg-dropdown-item>
+  </sg-dropdown-menu>
+</sg-dropdown>
 
-<el-dropdown size="small" split-button type="primary">
+<sg-dropdown size="small" split-button type="primary">
   Small
-  <el-dropdown-menu slot="dropdown">
-   <el-dropdown-item>Action 1</el-dropdown-item>
-   <el-dropdown-item>Action 2</el-dropdown-item>
-   <el-dropdown-item>Action 3</el-dropdown-item>
-   <el-dropdown-item>Action 4</el-dropdown-item>
-  </el-dropdown-menu>
-</el-dropdown>
+  <sg-dropdown-menu slot="dropdown">
+   <sg-dropdown-item>Action 1</sg-dropdown-item>
+   <sg-dropdown-item>Action 2</sg-dropdown-item>
+   <sg-dropdown-item>Action 3</sg-dropdown-item>
+   <sg-dropdown-item>Action 4</sg-dropdown-item>
+  </sg-dropdown-menu>
+</sg-dropdown>
 
-<el-dropdown size="mini" split-button type="primary">
+<sg-dropdown size="mini" split-button type="primary">
   Mini
-  <el-dropdown-menu slot="dropdown">
-    <el-dropdown-item>Action 1</el-dropdown-item>
-    <el-dropdown-item>Action 2</el-dropdown-item>
-    <el-dropdown-item>Action 3</el-dropdown-item>
-    <el-dropdown-item>Action 4</el-dropdown-item>
-  </el-dropdown-menu>
-</el-dropdown>
+  <sg-dropdown-menu slot="dropdown">
+    <sg-dropdown-item>Action 1</sg-dropdown-item>
+    <sg-dropdown-item>Action 2</sg-dropdown-item>
+    <sg-dropdown-item>Action 3</sg-dropdown-item>
+    <sg-dropdown-item>Action 4</sg-dropdown-item>
+  </sg-dropdown-menu>
+</sg-dropdown>
 ```
 :::
 
@@ -287,8 +287,8 @@ En plus de la taille par défaut, le composant Dropdown propose trois autres tai
 
 | Nom | Description |
 |------|--------|
-| — | Contenu du Dropdown. Note: doit être un élément du DOM valide (ex. `<span>, <button> etc.`) ou `el-component`, pour y attacher un évènement.  |
-| dropdown | Contenu du menu du Dropdown, en général un élément `<el-dropdown-menu>`. |
+| — | Contenu du Dropdown. Note: doit être un élément du DOM valide (ex. `<span>, <button> etc.`) ou `sg-component`, pour y attacher un évènement.  |
+| dropdown | Contenu du menu du Dropdown, en général un élément `<sg-dropdown-menu>`. |
 
 ### Évènements du Dropdown
 

@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import scrollbarWidth from 'element-ui/src/utils/scrollbar-width';
+import scrollbarWidth from 'sg-ui/src/utils/scrollbar-width';
 import { parseHeight } from './util';
 
 class TableLayout {
@@ -45,7 +45,7 @@ class TableLayout {
     if (height === null) return false;
     const bodyWrapper = this.table.bodyWrapper;
     if (this.table.$el && bodyWrapper) {
-      const body = bodyWrapper.querySelector('.el-table__body');
+      const body = bodyWrapper.querySelector('.sg-table__body');
       const prevScrollY = this.scrollY;
       const scrollY = body.offsetHeight > this.bodyHeight;
       this.scrollY = scrollY;
@@ -97,7 +97,7 @@ class TableLayout {
     if (this.showHeader && !headerWrapper) return;
 
     // fix issue (https://github.com/ElemeFE/element/pull/16956)
-    const headerTrElm = headerWrapper ? headerWrapper.querySelector('.el-table__header tr') : null;
+    const headerTrElm = headerWrapper ? headerWrapper.querySelector('.sg-table__header tr') : null;
     const noneHeader = this.headerDisplayNone(headerTrElm);
 
     const headerHeight = this.headerHeight = !this.showHeader ? 0 : headerWrapper.offsetHeight;
@@ -172,7 +172,7 @@ class TableLayout {
         }
       } else { // HAVE HORIZONTAL SCROLL BAR
         this.scrollX = true;
-        flexColumns.forEach(function(column) {
+        flexColumns.forEach(function (column) {
           column.realWidth = column.minWidth;
         });
       }
@@ -198,7 +198,7 @@ class TableLayout {
 
     if (fixedColumns.length > 0) {
       let fixedWidth = 0;
-      fixedColumns.forEach(function(column) {
+      fixedColumns.forEach(function (column) {
         fixedWidth += column.realWidth || column.width;
       });
 
@@ -208,7 +208,7 @@ class TableLayout {
     const rightFixedColumns = this.store.states.rightFixedColumns;
     if (rightFixedColumns.length > 0) {
       let rightFixedWidth = 0;
-      rightFixedColumns.forEach(function(column) {
+      rightFixedColumns.forEach(function (column) {
         rightFixedWidth += column.realWidth || column.width;
       });
 

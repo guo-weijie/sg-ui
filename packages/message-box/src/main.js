@@ -35,8 +35,8 @@ const defaults = {
 
 import Vue from 'vue';
 import msgboxVue from './main.vue';
-import merge from 'element-ui/src/utils/merge';
-import { isVNode } from 'element-ui/src/utils/vdom';
+import merge from 'sg-ui/src/utils/merge';
+import { isVNode } from 'sg-ui/src/utils/vdom';
 
 const MessageBoxConstructor = Vue.extend(msgboxVue);
 
@@ -120,7 +120,7 @@ const showNextMsg = () => {
   }
 };
 
-const MessageBox = function(options, callback) {
+const MessageBox = function (options, callback) {
   if (Vue.prototype.$isServer) return;
   if (typeof options === 'string' || isVNode(options)) {
     options = {

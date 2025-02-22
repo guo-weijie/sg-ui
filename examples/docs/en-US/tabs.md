@@ -10,12 +10,12 @@ Basic and concise tabs.
 
 ```html
 <template>
-  <el-tabs v-model="activeName" @tab-click="handleClick">
-    <el-tab-pane label="User" name="first">User</el-tab-pane>
-    <el-tab-pane label="Config" name="second">Config</el-tab-pane>
-    <el-tab-pane label="Role" name="third">Role</el-tab-pane>
-    <el-tab-pane label="Task" name="fourth">Task</el-tab-pane>
-  </el-tabs>
+  <sg-tabs v-model="activeName" @tab-click="handleClick">
+    <sg-tab-pane label="User" name="first">User</sg-tab-pane>
+    <sg-tab-pane label="Config" name="second">Config</sg-tab-pane>
+    <sg-tab-pane label="Role" name="third">Role</sg-tab-pane>
+    <sg-tab-pane label="Task" name="fourth">Task</sg-tab-pane>
+  </sg-tabs>
 </template>
 <script>
   export default {
@@ -42,12 +42,12 @@ Tabs styled as cards.
 
 ```html
 <template>
-  <el-tabs type="card" @tab-click="handleClick">
-    <el-tab-pane label="User">User</el-tab-pane>
-    <el-tab-pane label="Config">Config</el-tab-pane>
-    <el-tab-pane label="Role">Role</el-tab-pane>
-    <el-tab-pane label="Task">Task</el-tab-pane>
-  </el-tabs>
+  <sg-tabs type="card" @tab-click="handleClick">
+    <sg-tab-pane label="User">User</sg-tab-pane>
+    <sg-tab-pane label="Config">Config</sg-tab-pane>
+    <sg-tab-pane label="Role">Role</sg-tab-pane>
+    <sg-tab-pane label="Task">Task</sg-tab-pane>
+  </sg-tabs>
 </template>
 <script>
   export default {
@@ -73,12 +73,12 @@ Border card tabs.
 :::demo Set `type` to `border-card`.
 
 ```html
-<el-tabs type="border-card">
-  <el-tab-pane label="User">User</el-tab-pane>
-  <el-tab-pane label="Config">Config</el-tab-pane>
-  <el-tab-pane label="Role">Role</el-tab-pane>
-  <el-tab-pane label="Task">Task</el-tab-pane>
-</el-tabs>
+<sg-tabs type="border-card">
+  <sg-tab-pane label="User">User</sg-tab-pane>
+  <sg-tab-pane label="Config">Config</sg-tab-pane>
+  <sg-tab-pane label="Role">Role</sg-tab-pane>
+  <sg-tab-pane label="Task">Task</sg-tab-pane>
+</sg-tabs>
 ```
 
 :::
@@ -91,19 +91,19 @@ You can use `tab-position` attribute to set the tab's position.
 
 ```html
 <template>
-  <el-radio-group v-model="tabPosition" style="margin-bottom: 30px;">
-    <el-radio-button label="top">top</el-radio-button>
-    <el-radio-button label="right">right</el-radio-button>
-    <el-radio-button label="bottom">bottom</el-radio-button>
-    <el-radio-button label="left">left</el-radio-button>
-  </el-radio-group>
+  <sg-radio-group v-model="tabPosition" style="margin-bottom: 30px;">
+    <sg-radio-button label="top">top</sg-radio-button>
+    <sg-radio-button label="right">right</sg-radio-button>
+    <sg-radio-button label="bottom">bottom</sg-radio-button>
+    <sg-radio-button label="left">left</sg-radio-button>
+  </sg-radio-group>
 
-  <el-tabs :tab-position="tabPosition" style="height: 200px;">
-    <el-tab-pane label="User">User</el-tab-pane>
-    <el-tab-pane label="Config">Config</el-tab-pane>
-    <el-tab-pane label="Role">Role</el-tab-pane>
-    <el-tab-pane label="Task">Task</el-tab-pane>
-  </el-tabs>
+  <sg-tabs :tab-position="tabPosition" style="height: 200px;">
+    <sg-tab-pane label="User">User</sg-tab-pane>
+    <sg-tab-pane label="Config">Config</sg-tab-pane>
+    <sg-tab-pane label="Role">Role</sg-tab-pane>
+    <sg-tab-pane label="Task">Task</sg-tab-pane>
+  </sg-tabs>
 </template>
 <script>
   export default {
@@ -123,15 +123,15 @@ You can use named slot to customize the tab label content.
 
 :::demo
 ```html
-<el-tabs type="border-card">
-  <el-tab-pane>
-    <span slot="label"><i class="el-icon-date"></i> Route</span>
+<sg-tabs type="border-card">
+  <sg-tab-pane>
+    <span slot="label"><i class="sg-icon-date"></i> Route</span>
     Route
-  </el-tab-pane>
-  <el-tab-pane label="Config">Config</el-tab-pane>
-  <el-tab-pane label="Role">Role</el-tab-pane>
-  <el-tab-pane label="Task">Task</el-tab-pane>
-</el-tabs>
+  </sg-tab-pane>
+  <sg-tab-pane label="Config">Config</sg-tab-pane>
+  <sg-tab-pane label="Role">Role</sg-tab-pane>
+  <sg-tab-pane label="Task">Task</sg-tab-pane>
+</sg-tabs>
 ```
 :::
 
@@ -141,16 +141,16 @@ Only card type Tabs support addable & closeable.
 
 :::demo
 ```html
-<el-tabs v-model="editableTabsValue" type="card" editable @edit="handleTabsEdit">
-  <el-tab-pane
+<sg-tabs v-model="editableTabsValue" type="card" editable @edit="handleTabsEdit">
+  <sg-tab-pane
     v-for="(item, index) in editableTabs"
     :key="item.name"
     :label="item.title"
     :name="item.name"
   >
     {{item.content}}
-  </el-tab-pane>
-</el-tabs>
+  </sg-tab-pane>
+</sg-tabs>
 <script>
   export default {
     data() {
@@ -208,23 +208,23 @@ Only card type Tabs support addable & closeable.
 :::demo
 ```html
 <div style="margin-bottom: 20px;">
-  <el-button
+  <sg-button
     size="small"
     @click="addTab(editableTabsValue)"
   >
     add tab
-  </el-button>
+  </sg-button>
 </div>
-<el-tabs v-model="editableTabsValue" type="card" closable @tab-remove="removeTab">
-  <el-tab-pane
+<sg-tabs v-model="editableTabsValue" type="card" closable @tab-remove="removeTab">
+  <sg-tab-pane
     v-for="(item, index) in editableTabs"
     :key="item.name"
     :label="item.title"
     :name="item.name"
   >
     {{item.content}}
-  </el-tab-pane>
-</el-tabs>
+  </sg-tab-pane>
+</sg-tabs>
 <script>
   export default {
     data() {

@@ -1,382 +1,386 @@
-import Vue, { PluginObject } from 'vue'
-import { ElementUIComponent, ElementUIComponentSize, ElementUIHorizontalAlignment } from './component'
+import Vue, { PluginObject } from "vue";
+import {
+  SgementUIComponent,
+  SgementUIComponentSize,
+  SgementUIHorizontalAlignment,
+} from "./component";
 
-import { ElAlert } from './alert'
-import { ElAside } from './aside'
-import { ElAutocomplete } from './autocomplete'
-import { ElBadge } from './badge'
-import { ElBreadcrumb } from './breadcrumb'
-import { ElBreadcrumbItem } from './breadcrumb-item'
-import { ElButton } from './button'
-import { ElButtonGroup } from './button-group'
-import { ElCard } from './card'
-import { ElCarousel } from './carousel'
-import { ElCarouselItem } from './carousel-item'
-import { ElCascader } from './cascader'
-import { ElCheckbox } from './checkbox'
-import { ElCheckboxButton } from './checkbox-button'
-import { ElCheckboxGroup } from './checkbox-group'
-import { ElCol } from './col'
-import { ElCollapse } from './collapse'
-import { ElCollapseItem } from './collapse-item'
-import { ElColorPicker } from './color-picker'
-import { ElContainer } from './container'
-import { ElDatePicker } from './date-picker'
-import { ElDialog } from './dialog'
-import { ElDropdown } from './dropdown'
-import { ElDropdownItem } from './dropdown-item'
-import { ElDropdownMenu } from './dropdown-menu'
-import { ElFooter } from './footer'
-import { ElForm } from './form'
-import { ElFormItem } from './form-item'
-import { ElHeader } from './header'
-import { ElInput } from './input'
-import { ElInputNumber } from './input-number'
-import { ElLoading } from './loading'
-import { ElMain } from './main'
-import { ElMenu } from './menu'
-import { ElMenuItem } from './menu-item'
-import { ElMenuItemGroup } from './menu-item-group'
-import { ElMessage } from './message'
-import { ElMessageBox } from './message-box'
-import { ElNotification } from './notification'
-import { ElOption } from './option'
-import { ElOptionGroup } from './option-group'
-import { ElPagination } from './pagination'
-import { ElPopover } from './popover'
-import { ElProgress } from './progress'
-import { ElRate } from './rate'
-import { ElRadio } from './radio'
-import { ElRadioButton } from './radio-button'
-import { ElRadioGroup } from './radio-group'
-import { ElRow } from './row'
-import { ElSelect } from './select'
-import { ElSlider } from './slider'
-import { ElStep } from './step'
-import { ElSteps } from './steps'
-import { ElSubmenu } from './submenu'
-import { ElSwitch } from './switch'
-import { ElTable } from './table'
-import { ElTableColumn } from './table-column'
-import { ElTag } from './tag'
-import { ElTabs } from './tabs'
-import { ElTabPane } from './tab-pane'
-import { ElTimeline } from './timeline'
-import { ElTimelineItem } from './timeline-item'
-import { ElTimePicker } from './time-picker'
-import { ElTimeSelect } from './time-select'
-import { ElTooltip } from './tooltip'
-import { ElTransfer } from './transfer'
-import { ElTree, TreeData } from './tree'
-import { ElUpload } from './upload'
-import { ElLink } from './link'
-import { ElDivider } from './divider'
-import { ElIcon } from './icon'
-import { ElCalendar } from './calendar'
-import { ElImage } from './image'
-import { ElBacktop } from './backtop'
-import { ElInfiniteScroll } from './infinite-scroll'
-import { ElPageHeader } from './page-header'
-import { ElAvatar } from './avatar'
-import { ElDrawer } from './drawer'
-import { ElPopconfirm } from './popconfirm'
-import { ElSkeleton } from './skeleton'
-import { ElSkeletonItem } from './skeleton-item'
-import { ElCascaderPanel } from './cascader-panel'
-import { ElEmpty } from './empty'
-import { ElSpinner } from './spinner'
-import { ElDescriptions } from './descriptions'
-import { ElDescriptionsItem } from './descriptions-item'
-import { ElResult } from './result'
-import { ElStatistic } from './statistic'
+import { SgAlert } from "./alert";
+import { SgAside } from "./aside";
+import { SgAutocomplete } from "./autocomplete";
+import { SgBadge } from "./badge";
+import { SgBreadcrumb } from "./breadcrumb";
+import { SgBreadcrumbItem } from "./breadcrumb-item";
+import { SgButton } from "./button";
+import { SgButtonGroup } from "./button-group";
+import { SgCard } from "./card";
+import { SgCarousel } from "./carousel";
+import { SgCarouselItem } from "./carousel-item";
+import { SgCascader } from "./cascader";
+import { SgCheckbox } from "./checkbox";
+import { SgCheckboxButton } from "./checkbox-button";
+import { SgCheckboxGroup } from "./checkbox-group";
+import { SgCol } from "./col";
+import { SgCollapse } from "./collapse";
+import { SgCollapseItem } from "./collapse-item";
+import { SgColorPicker } from "./color-picker";
+import { SgContainer } from "./container";
+import { SgDatePicker } from "./date-picker";
+import { SgDialog } from "./dialog";
+import { SgDropdown } from "./dropdown";
+import { SgDropdownItem } from "./dropdown-item";
+import { SgDropdownMenu } from "./dropdown-menu";
+import { SgFooter } from "./footer";
+import { SgForm } from "./form";
+import { SgFormItem } from "./form-item";
+import { SgHeader } from "./header";
+import { SgInput } from "./input";
+import { SgInputNumber } from "./input-number";
+import { SgLoading } from "./loading";
+import { SgMain } from "./main";
+import { SgMenu } from "./menu";
+import { SgMenuItem } from "./menu-item";
+import { SgMenuItemGroup } from "./menu-item-group";
+import { SgMessage } from "./message";
+import { SgMessageBox } from "./message-box";
+import { SgNotification } from "./notification";
+import { SgOption } from "./option";
+import { SgOptionGroup } from "./option-group";
+import { SgPagination } from "./pagination";
+import { SgPopover } from "./popover";
+import { SgProgress } from "./progress";
+import { SgRate } from "./rate";
+import { SgRadio } from "./radio";
+import { SgRadioButton } from "./radio-button";
+import { SgRadioGroup } from "./radio-group";
+import { SgRow } from "./row";
+import { SgSelect } from "./select";
+import { SgSlider } from "./slider";
+import { SgStep } from "./step";
+import { SgSteps } from "./steps";
+import { SgSubmenu } from "./submenu";
+import { SgSwitch } from "./switch";
+import { SgTable } from "./table";
+import { SgTableColumn } from "./table-column";
+import { SgTag } from "./tag";
+import { SgTabs } from "./tabs";
+import { SgTabPane } from "./tab-pane";
+import { SgTimeline } from "./timeline";
+import { SgTimelineItem } from "./timeline-item";
+import { SgTimePicker } from "./time-picker";
+import { SgTimeSelect } from "./time-select";
+import { SgTooltip } from "./tooltip";
+import { SgTransfer } from "./transfer";
+import { SgTree, TreeData } from "./tree";
+import { SgUpload } from "./upload";
+import { SgLink } from "./link";
+import { SgDivider } from "./divider";
+import { SgIcon } from "./icon";
+import { SgCalendar } from "./calendar";
+import { SgImage } from "./image";
+import { SgBacktop } from "./backtop";
+import { SgInfiniteScroll } from "./infinite-scroll";
+import { SgPageHeader } from "./page-header";
+import { SgAvatar } from "./avatar";
+import { SgDrawer } from "./drawer";
+import { SgPopconfirm } from "./popconfirm";
+import { SgSkeleton } from "./skeleton";
+import { SgSkeletonItem } from "./skeleton-item";
+import { SgCascaderPanel } from "./cascader-panel";
+import { SgEmpty } from "./empty";
+import { SgSpinner } from "./spinner";
+import { SgDescriptions } from "./descriptions";
+import { SgDescriptionsItem } from "./descriptions-item";
+import { SgResult } from "./result";
+import { SgStatistic } from "./statistic";
 
 export interface InstallationOptions {
-  locale: any,
-  i18n: any,
-  size: string
+  locale: any;
+  i18n: any;
+  size: string;
 }
 
-/** The version of element-ui */
-export const version: string
+/** The version of sg-ui */
+export const version: string;
 
 /**
- * Install all element-ui components into Vue.
+ * Install all sg-ui components into Vue.
  * Please do not invoke this method directly.
- * Call `Vue.use(ElementUI)` to install.
+ * Call `Vue.use(SgementUI)` to install.
  */
-export function install (vue: typeof Vue, options: InstallationOptions): void
+export function install(vue: typeof Vue, options: InstallationOptions): void;
 
-/** ElementUI component common definition */
-export type Component = ElementUIComponent
+/** SgementUI component common definition */
+export type Component = SgementUIComponent;
 
 /** Component size definition for button, input, etc */
-export type ComponentSize = ElementUIComponentSize
+export type ComponentSize = SgementUIComponentSize;
 
 /** Horizontal alignment */
-export type HorizontalAlignment = ElementUIHorizontalAlignment
+export type HorizontalAlignment = SgementUIHorizontalAlignment;
 
 /** Show animation while loading data */
-export const Loading: ElLoading
+export const Loading: SgLoading;
 
 /** Used to show feedback after an activity. The difference with Notification is that the latter is often used to show a system level passive notification. */
-export const Message: ElMessage
+export const Message: SgMessage;
 
 /** A set of modal boxes simulating system message box, mainly for message prompt, success tips, error messages and query information */
-export const MessageBox: ElMessageBox
+export const MessageBox: SgMessageBox;
 
 /** Displays a global notification message at the upper right corner of the page */
-export const Notification: ElNotification
+export const Notification: SgNotification;
 
 // TS cannot merge imported class with namespace, so declare subclasses instead
 
 /** Alert Component */
-export class Alert extends ElAlert {}
+export class Alert extends SgAlert {}
 
 /** Aside Component */
-export class Aside extends ElAside {}
+export class Aside extends SgAside {}
 
 /** Autocomplete Component */
-export class Autocomplete extends ElAutocomplete {}
+export class Autocomplete extends SgAutocomplete {}
 
 /** Bagde Component */
-export class Badge extends ElBadge {}
+export class Badge extends SgBadge {}
 
 /** Breadcrumb Component */
-export class Breadcrumb extends ElBreadcrumb {}
+export class Breadcrumb extends SgBreadcrumb {}
 
 /** Breadcrumb Item Component */
-export class BreadcrumbItem extends ElBreadcrumbItem {}
+export class BreadcrumbItem extends SgBreadcrumbItem {}
 
 /** Button Component */
-export class Button extends ElButton {}
+export class Button extends SgButton {}
 
 /** Button Group Component */
-export class ButtonGroup extends ElButtonGroup {}
+export class ButtonGroup extends SgButtonGroup {}
 
 /** Card Component */
-export class Card extends ElCard {}
+export class Card extends SgCard {}
 
 /** Cascader Component */
-export class Cascader extends ElCascader {}
+export class Cascader extends SgCascader {}
 
 /** Carousel Component */
-export class Carousel extends ElCarousel {}
+export class Carousel extends SgCarousel {}
 
 /** Carousel Item Component */
-export class CarouselItem extends ElCarouselItem {}
+export class CarouselItem extends SgCarouselItem {}
 
 /** Checkbox Component */
-export class Checkbox extends ElCheckbox {}
+export class Checkbox extends SgCheckbox {}
 
 /** Checkbox Button Component */
-export class CheckboxButton extends ElCheckboxButton {}
+export class CheckboxButton extends SgCheckboxButton {}
 
 /** Checkbox Group Component */
-export class CheckboxGroup extends ElCheckboxGroup {}
+export class CheckboxGroup extends SgCheckboxGroup {}
 
 /** Colunm Layout Component */
-export class Col extends ElCol {}
+export class Col extends SgCol {}
 
 /** Collapse Component */
-export class Collapse extends ElCollapse {}
+export class Collapse extends SgCollapse {}
 
 /** Collapse Item Component */
-export class CollapseItem extends ElCollapseItem {}
+export class CollapseItem extends SgCollapseItem {}
 
 /** Color Picker Component */
-export class ColorPicker extends ElColorPicker {}
+export class ColorPicker extends SgColorPicker {}
 
 /** Container Component */
-export class Container extends ElContainer {}
+export class Container extends SgContainer {}
 
 /** Date Picker Component */
-export class DatePicker extends ElDatePicker {}
+export class DatePicker extends SgDatePicker {}
 
 /** Dialog Component */
-export class Dialog extends ElDialog {}
+export class Dialog extends SgDialog {}
 
 /** Dropdown Component */
-export class Dropdown extends ElDropdown {}
+export class Dropdown extends SgDropdown {}
 
 /** Dropdown Item Component */
-export class DropdownItem extends ElDropdownItem {}
+export class DropdownItem extends SgDropdownItem {}
 
 /** Dropdown Menu Component */
-export class DropdownMenu extends ElDropdownMenu {}
+export class DropdownMenu extends SgDropdownMenu {}
 
 /** Footer Component */
-export class Footer extends ElFooter {}
+export class Footer extends SgFooter {}
 
 /** Form Component */
-export class Form extends ElForm {}
+export class Form extends SgForm {}
 
 /** Form Item Component */
-export class FormItem extends ElFormItem {}
+export class FormItem extends SgFormItem {}
 
 /** Header Component */
-export class Header extends ElHeader {}
+export class Header extends SgHeader {}
 
 /** Input Component */
-export class Input extends ElInput {}
+export class Input extends SgInput {}
 
 /** Input Number Component */
-export class InputNumber extends ElInputNumber {}
+export class InputNumber extends SgInputNumber {}
 
 /** Main Component */
-export class Main extends ElMain {}
+export class Main extends SgMain {}
 
 /** Menu that provides navigation for your website */
-export class Menu extends ElMenu {}
+export class Menu extends SgMenu {}
 
 /** Menu Item Component */
-export class MenuItem extends ElMenuItem {}
+export class MenuItem extends SgMenuItem {}
 
 /** Menu Item Group Component */
-export class MenuItemGroup extends ElMenuItemGroup {}
+export class MenuItemGroup extends SgMenuItemGroup {}
 
 /** Dropdown Select Option Component */
-export class Option extends ElOption {}
+export class Option extends SgOption {}
 
 /** Dropdown Select Option Group Component */
-export class OptionGroup extends ElOptionGroup {}
+export class OptionGroup extends SgOptionGroup {}
 
 /** Pagination Component */
-export class Pagination extends ElPagination {}
+export class Pagination extends SgPagination {}
 
 /** Popover Component */
-export class Popover extends ElPopover {}
+export class Popover extends SgPopover {}
 
 /** Progress Component */
-export class Progress extends ElProgress {}
+export class Progress extends SgProgress {}
 
 /** Rate Component */
-export class Rate extends ElRate {}
+export class Rate extends SgRate {}
 
 /** Radio Component */
-export class Radio extends ElRadio {}
+export class Radio extends SgRadio {}
 
 /** Radio Button Component */
-export class RadioButton extends ElRadioButton {}
+export class RadioButton extends SgRadioButton {}
 
 /** Radio Group Component */
-export class RadioGroup extends ElRadioGroup {}
+export class RadioGroup extends SgRadioGroup {}
 
 /** Row Layout Component */
-export class Row extends ElRow {}
+export class Row extends SgRow {}
 
 /** Dropdown Select Component */
-export class Select extends ElSelect {}
+export class Select extends SgSelect {}
 
 /** Slider Component */
-export class Slider extends ElSlider {}
+export class Slider extends SgSlider {}
 
 /** Step Component */
-export class Step extends ElStep {}
+export class Step extends SgStep {}
 
 /** Steps Component */
-export class Steps extends ElSteps {}
+export class Steps extends SgSteps {}
 
 /** Submenu Component */
-export class Submenu extends ElSubmenu {}
+export class Submenu extends SgSubmenu {}
 
 /** Switch Component */
-export class Switch extends ElSwitch {}
+export class Switch extends SgSwitch {}
 
 /** Table Component */
-export class Table extends ElTable {}
+export class Table extends SgTable {}
 
 /** Table Column Component */
-export class TableColumn extends ElTableColumn {}
+export class TableColumn extends SgTableColumn {}
 
 /** Tabs Component */
-export class Tabs extends ElTabs {}
+export class Tabs extends SgTabs {}
 
 /** Tab Pane Component */
-export class TabPane extends ElTabPane {}
+export class TabPane extends SgTabPane {}
 
 /** Tag Component */
-export class Tag extends ElTag {}
+export class Tag extends SgTag {}
 
 /** Timeline Component */
-export class Timeline extends ElTimeline {}
+export class Timeline extends SgTimeline {}
 
 /** Timeline Item Component */
-export class TimelineItem extends ElTimelineItem {}
+export class TimelineItem extends SgTimelineItem {}
 
 /** TimePicker Component */
-export class TimePicker extends ElTimePicker {}
+export class TimePicker extends SgTimePicker {}
 
 /** TimeSelect Component */
-export class TimeSelect extends ElTimeSelect {}
+export class TimeSelect extends SgTimeSelect {}
 
 /** Tooltip Component */
-export class Tooltip extends ElTooltip {}
+export class Tooltip extends SgTooltip {}
 
 /** Transfer Component */
-export class Transfer extends ElTransfer {}
+export class Transfer extends SgTransfer {}
 
 /** Tree Component */
-export class Tree<K = any, D = TreeData> extends ElTree<K, D> {}
+export class Tree<K = any, D = TreeData> extends SgTree<K, D> {}
 
 /** Upload Component */
-export class Upload extends ElUpload {}
+export class Upload extends SgUpload {}
 
 /** Divider Component */
-export class Divider extends ElDivider {}
+export class Divider extends SgDivider {}
 
 /** Link Component */
-export class Link extends ElLink {}
+export class Link extends SgLink {}
 
 /** Image Component */
-export class Image extends ElImage {}
+export class Image extends SgImage {}
 
 /** Icon Component */
-export class Icon extends ElIcon {}
+export class Icon extends SgIcon {}
 
 /** Calendar Component */
-export class Calendar extends ElCalendar {}
+export class Calendar extends SgCalendar {}
 
 /** Backtop Component */
-export class Backtop extends ElBacktop {}
+export class Backtop extends SgBacktop {}
 
 /** InfiniteScroll Directive */
-export const InfiniteScroll: PluginObject<ElInfiniteScroll>;
+export const InfiniteScroll: PluginObject<SgInfiniteScroll>;
 
 /** PageHeader Component */
-export class PageHeader extends ElPageHeader {}
+export class PageHeader extends SgPageHeader {}
 
 /** Avatar Component */
-export class Avatar extends ElAvatar {}
+export class Avatar extends SgAvatar {}
 
 /** Drawer Component */
-export class Drawer extends ElDrawer {}
+export class Drawer extends SgDrawer {}
 
 /** Popconfirm Component */
-export class Popconfirm extends ElPopconfirm {}
+export class Popconfirm extends SgPopconfirm {}
 
 /** Skeleton Component */
-export class Skeleton extends ElSkeleton {}
+export class Skeleton extends SgSkeleton {}
 
 /** Skeleton Item Component */
-export class SkeletonItem extends ElSkeletonItem {}
+export class SkeletonItem extends SgSkeletonItem {}
 
 /** CascaderPanel Component */
-export class CascaderPanel extends ElCascaderPanel {}
+export class CascaderPanel extends SgCascaderPanel {}
 
 /** Empty Component */
-export class Empty extends ElEmpty {}
+export class Empty extends SgEmpty {}
 
 /** Spinner Component */
-export class Spinner extends ElSpinner {}
+export class Spinner extends SgSpinner {}
 
 /** Description Component */
-export class Descriptions extends ElDescriptions {}
+export class Descriptions extends SgDescriptions {}
 
 /** Description Item Component */
-export class DescriptionsItem extends ElDescriptionsItem {}
+export class DescriptionsItem extends SgDescriptionsItem {}
 
 /** Result Component */
-export class Result extends ElResult {}
+export class Result extends SgResult {}
 
 /** Statistic Component */
-export class Statistic extends ElStatistic {}
+export class Statistic extends SgStatistic {}

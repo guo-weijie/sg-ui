@@ -1,5 +1,5 @@
 export default {
-  name: 'ElDescriptionsItem',
+  name: 'SgDescriptionsItem',
   props: {
     label: {
       type: String,

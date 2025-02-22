@@ -1,8 +1,8 @@
-import ElCheckbox from './src/checkbox';
+import SgCheckbox from './src/checkbox';
 
 /* istanbul ignore next */
-ElCheckbox.install = function(Vue) {
-  Vue.component(ElCheckbox.name, ElCheckbox);
+SgCheckbox.install = function (Vue) {
+  Vue.component(SgCheckbox.name, SgCheckbox);
 };
 
-export default ElCheckbox;
+export default SgCheckbox;

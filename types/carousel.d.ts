@@ -1,57 +1,57 @@
-import { ElementUIComponent } from './component'
+import { SgementUIComponent } from "./component";
 
-export type CarouselIndicatorTrigger = 'hover' | 'click'
-export type CarouselIndicatorPosition = 'outside' | 'none'
-export type CarouselArrowVisibility = 'always' | 'hover' | 'never'
-export type CarouselType = 'card'
-export type CarouselDirection = 'horizontal' | 'vertical'
+export type CarouselIndicatorTrigger = "hover" | "click";
+export type CarouselIndicatorPosition = "outside" | "none";
+export type CarouselArrowVisibility = "always" | "hover" | "never";
+export type CarouselType = "card";
+export type CarouselDirection = "horizontal" | "vertical";
 
 /** Loop a series of images or texts in a limited space */
-export declare class ElCarousel extends ElementUIComponent {
+export declare class SgCarousel extends SgementUIComponent {
   /** Height of the carousel */
-  height: number
+  height: number;
 
   /** Index of the initially active slide (starting from 0) */
-  initialIndex: number
+  initialIndex: number;
 
   /** How indicators are triggered */
-  trigger: CarouselIndicatorTrigger
+  trigger: CarouselIndicatorTrigger;
 
   /** Whether automatically loop the slides */
-  autoplay: boolean
+  autoplay: boolean;
 
   /** Interval of the auto loop, in milliseconds */
-  interval: number
+  interval: number;
 
   /** Position of the indicators */
-  indicatorPosition: CarouselIndicatorPosition
+  indicatorPosition: CarouselIndicatorPosition;
 
   /** When arrows are shown */
-  arrow: CarouselArrowVisibility
+  arrow: CarouselArrowVisibility;
 
   /** Type of the Carousel */
-  type: CarouselType
+  type: CarouselType;
 
   /** Display direction */
-  direction: CarouselDirection
+  direction: CarouselDirection;
 
   /**
    * Manually switch slide by index
    *
    * @param index Index of the slide to be switched to (starting from 0)
    */
-  setActiveItem (index: number): void
+  setActiveItem(index: number): void;
 
   /**
    * Manually switch slide by carousel item's name
    *
    * @param name The name of the corresponding `el-carousel-item`
    */
-  setActiveItem (name: string): void
+  setActiveItem(name: string): void;
 
   /** Switch to the previous slide */
-  prev (): void
+  prev(): void;
 
   /** Switch to the next slide */
-  next (): void
+  next(): void;
 }

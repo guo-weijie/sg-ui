@@ -1,21 +1,21 @@
 <template>
-  <div class="el-result">
-    <div class="el-result__icon">
+  <div class="sg-result">
+    <div class="sg-result__icon">
       <slot name="icon">
         <component :is="iconElement" :class="iconElement" />
       </slot>
     </div>
-    <div v-if="title || $slots.title" class="el-result__title">
+    <div v-if="title || $slots.title" class="sg-result__title">
       <slot name="title">
         <p>{{ title }}</p>
       </slot>
     </div>
-    <div v-if="subTitle || $slots.subTitle" class="el-result__subtitle">
+    <div v-if="subTitle || $slots.subTitle" class="sg-result__subtitle">
       <slot name="subTitle">
         <p>{{ subTitle }}</p>
       </slot>
     </div>
-    <div v-if="$slots.extra" class="el-result__extra">
+    <div v-if="$slots.extra" class="sg-result__extra">
       <slot name="extra"></slot>
     </div>
   </div>
@@ -34,7 +34,7 @@ const IconMap = {
 };
 
 export default {
-  name: 'ElResult',
+  name: 'SgResult',
   components: {
     [IconSuccess.name]: IconSuccess,
     [IconError.name]: IconError,

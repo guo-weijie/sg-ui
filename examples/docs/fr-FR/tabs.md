@@ -10,12 +10,12 @@ Onglets basiques.
 
 ```html
 <template>
-  <el-tabs v-model="activeName" @tab-click="handleClick">
-    <el-tab-pane label="User" name="first">Utilisateur</el-tab-pane>
-    <el-tab-pane label="Config" name="second">Config</el-tab-pane>
-    <el-tab-pane label="Role" name="third">Rôle</el-tab-pane>
-    <el-tab-pane label="Task" name="fourth">Tâche</el-tab-pane>
-  </el-tabs>
+  <sg-tabs v-model="activeName" @tab-click="handleClick">
+    <sg-tab-pane label="User" name="first">Utilisateur</sg-tab-pane>
+    <sg-tab-pane label="Config" name="second">Config</sg-tab-pane>
+    <sg-tab-pane label="Role" name="third">Rôle</sg-tab-pane>
+    <sg-tab-pane label="Task" name="fourth">Tâche</sg-tab-pane>
+  </sg-tabs>
 </template>
 <script>
   export default {
@@ -42,12 +42,12 @@ Les onglets peuvent être stylisés comme des cartes.
 
 ```html
 <template>
-  <el-tabs type="card" @tab-click="handleClick">
-    <el-tab-pane label="User">Utilisateur</el-tab-pane>
-    <el-tab-pane label="Config">Config</el-tab-pane>
-    <el-tab-pane label="Role">Rôle</el-tab-pane>
-    <el-tab-pane label="Task">Tâche</el-tab-pane>
-  </el-tabs>
+  <sg-tabs type="card" @tab-click="handleClick">
+    <sg-tab-pane label="User">Utilisateur</sg-tab-pane>
+    <sg-tab-pane label="Config">Config</sg-tab-pane>
+    <sg-tab-pane label="Role">Rôle</sg-tab-pane>
+    <sg-tab-pane label="Task">Tâche</sg-tab-pane>
+  </sg-tabs>
 </template>
 <script>
   export default {
@@ -73,12 +73,12 @@ Onglets avec style de carte et bordure.
 :::demo Mettez `type` à `border-card`.
 
 ```html
-<el-tabs type="border-card">
-  <el-tab-pane label="User">Utilisateur</el-tab-pane>
-  <el-tab-pane label="Config">Config</el-tab-pane>
-  <el-tab-pane label="Role">Rôle</el-tab-pane>
-  <el-tab-pane label="Task">Tâche</el-tab-pane>
-</el-tabs>
+<sg-tabs type="border-card">
+  <sg-tab-pane label="User">Utilisateur</sg-tab-pane>
+  <sg-tab-pane label="Config">Config</sg-tab-pane>
+  <sg-tab-pane label="Role">Rôle</sg-tab-pane>
+  <sg-tab-pane label="Task">Tâche</sg-tab-pane>
+</sg-tabs>
 ```
 
 :::
@@ -91,19 +91,19 @@ Vous pouvez utiliser `tab-position` pour régler la position des onglets.
 
 ```html
 <template>
-  <el-radio-group v-model="tabPosition" style="margin-bottom: 30px;">
-    <el-radio-button label="top">En haut</el-radio-button>
-    <el-radio-button label="right">À droite</el-radio-button>
-    <el-radio-button label="bottom">En bas</el-radio-button>
-    <el-radio-button label="left">À gauche</el-radio-button>
-  </el-radio-group>
+  <sg-radio-group v-model="tabPosition" style="margin-bottom: 30px;">
+    <sg-radio-button label="top">En haut</sg-radio-button>
+    <sg-radio-button label="right">À droite</sg-radio-button>
+    <sg-radio-button label="bottom">En bas</sg-radio-button>
+    <sg-radio-button label="left">À gauche</sg-radio-button>
+  </sg-radio-group>
 
-  <el-tabs :tab-position="tabPosition" style="height: 200px;">
-    <el-tab-pane label="User">Utilisateur</el-tab-pane>
-    <el-tab-pane label="Config">Config</el-tab-pane>
-    <el-tab-pane label="Role">Rôle</el-tab-pane>
-    <el-tab-pane label="Task">Tâche</el-tab-pane>
-  </el-tabs>
+  <sg-tabs :tab-position="tabPosition" style="height: 200px;">
+    <sg-tab-pane label="User">Utilisateur</sg-tab-pane>
+    <sg-tab-pane label="Config">Config</sg-tab-pane>
+    <sg-tab-pane label="Role">Rôle</sg-tab-pane>
+    <sg-tab-pane label="Task">Tâche</sg-tab-pane>
+  </sg-tabs>
 </template>
 <script>
   export default {
@@ -123,15 +123,15 @@ Vous pouvez utiliser un slot pour customiser le label d'un onglet.
 
 :::demo
 ```html
-<el-tabs type="border-card">
-  <el-tab-pane>
-    <span slot="label"><i class="el-icon-date"></i> Route</span>
+<sg-tabs type="border-card">
+  <sg-tab-pane>
+    <span slot="label"><i class="sg-icon-date"></i> Route</span>
     Route
-  </el-tab-pane>
-  <el-tab-pane label="Config">Config</el-tab-pane>
-  <el-tab-pane label="Role">Rôle</el-tab-pane>
-  <el-tab-pane label="Task">Tâche</el-tab-pane>
-</el-tabs>
+  </sg-tab-pane>
+  <sg-tab-pane label="Config">Config</sg-tab-pane>
+  <sg-tab-pane label="Role">Rôle</sg-tab-pane>
+  <sg-tab-pane label="Task">Tâche</sg-tab-pane>
+</sg-tabs>
 ```
 :::
 
@@ -141,16 +141,16 @@ Seuls les onglets de type carte supportent l'ajout et la suppression.
 
 :::demo
 ```html
-<el-tabs v-model="editableTabsValue" type="card" editable @edit="handleTabsEdit">
-  <el-tab-pane
+<sg-tabs v-model="editableTabsValue" type="card" editable @edit="handleTabsEdit">
+  <sg-tab-pane
     v-for="(item, index) in editableTabs"
     :key="item.name"
     :label="item.title"
     :name="item.name"
   >
     {{item.content}}
-  </el-tab-pane>
-</el-tabs>
+  </sg-tab-pane>
+</sg-tabs>
 <script>
   export default {
     data() {
@@ -208,23 +208,23 @@ Seuls les onglets de type carte supportent l'ajout et la suppression.
 :::demo
 ```html
 <div style="margin-bottom: 20px;">
-  <el-button
+  <sg-button
     size="small"
     @click="addTab(editableTabsValue)"
   >
     Ajouter un onglet
-  </el-button>
+  </sg-button>
 </div>
-<el-tabs v-model="editableTabsValue" type="card" closable @tab-remove="removeTab">
-  <el-tab-pane
+<sg-tabs v-model="editableTabsValue" type="card" closable @tab-remove="removeTab">
+  <sg-tab-pane
     v-for="(item, index) in editableTabs"
     :key="item.name"
     :label="item.title"
     :name="item.name"
   >
     {{item.content}}
-  </el-tab-pane>
-</el-tabs>
+  </sg-tab-pane>
+</sg-tabs>
 <script>
   export default {
     data() {

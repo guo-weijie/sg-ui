@@ -1,8 +1,8 @@
-import ElTabs from './src/tabs';
+import SgTabs from './src/tabs';
 
 /* istanbul ignore next */
-ElTabs.install = function(Vue) {
-  Vue.component(ElTabs.name, ElTabs);
+SgTabs.install = function (Vue) {
+  Vue.component(SgTabs.name, SgTabs);
 };
 
-export default ElTabs;
+export default SgTabs;

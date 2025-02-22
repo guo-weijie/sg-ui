@@ -1,440 +1,398 @@
 <template>
   <div :class="[
-    type === 'textarea' ? 'el-textarea' : 'el-input',
-    inputSize ? 'el-input--' + inputSize : '',
+    type === 'textarea' ? 'sg-textarea' : 'sg-input',
+    inputSize ? 'sg-input--' + inputSize : '',
     {
       'is-disabled': inputDisabled,
       'is-exceed': inputExceed,
-      'el-input-group': $slots.prepend || $slots.append,
-      'el-input-group--append': $slots.append,
-      'el-input-group--prepend': $slots.prepend,
-      'el-input--prefix': $slots.prefix || prefixIcon,
-      'el-input--suffix': $slots.suffix || suffixIcon || clearable || showPassword
+      'sg-input-group': $slots.prepend || $slots.append,
+      'sg-input-group--append': $slots.append,
+      'sg-input-group--prepend': $slots.prepend,
+      'sg-input--prefix': $slots.prefix || prefixIcon,
+      'sg-input--suffix': $slots.suffix || suffixIcon || clearable || showPassword
     }
-    ]"
-    @mouseenter="hovering = true"
-    @mouseleave="hovering = false"
-  >
+  ]" @mouseenter="hovering = true" @mouseleave="hovering = false">
     <template v-if="type !== 'textarea'">
       <!-- 前置元素 -->
-      <div class="el-input-group__prepend" v-if="$slots.prepend">
+      <div class="sg-input-group__prepend" v-if="$slots.prepend">
         <slot name="prepend"></slot>
       </div>
-      <input
-        :tabindex="tabindex"
-        v-if="type !== 'textarea'"
-        class="el-input__inner"
-        v-bind="$attrs"
-        :type="showPassword ? (passwordVisible ? 'text': 'password') : type"
-        :disabled="inputDisabled"
-        :readonly="readonly"
-        :autocomplete="autoComplete || autocomplete"
-        ref="input"
-        @compositionstart="handleCompositionStart"
-        @compositionupdate="handleCompositionUpdate"
-        @compositionend="handleCompositionEnd"
-        @input="handleInput"
-        @focus="handleFocus"
-        @blur="handleBlur"
-        @change="handleChange"
-        :aria-label="label"
-      >
+      <input :tabindex="tabindex" v-if="type !== 'textarea'" class="sg-input__inner" v-bind="$attrs"
+        :type="showPassword ? (passwordVisible ? 'text' : 'password') : type" :disabled="inputDisabled"
+        :readonly="readonly" :autocomplete="autoComplete || autocomplete" ref="input"
+        @compositionstart="handleCompositionStart" @compositionupdate="handleCompositionUpdate"
+        @compositionend="handleCompositionEnd" @input="handleInput" @focus="handleFocus" @blur="handleBlur"
+        @change="handleChange" :aria-label="label">
       <!-- 前置内容 -->
-      <span class="el-input__prefix" v-if="$slots.prefix || prefixIcon">
+      <span class="sg-input__prefix" v-if="$slots.prefix || prefixIcon">
         <slot name="prefix"></slot>
-        <i class="el-input__icon"
-           v-if="prefixIcon"
-           :class="prefixIcon">
+        <i class="sg-input__icon" v-if="prefixIcon" :class="prefixIcon">
         </i>
       </span>
       <!-- 后置内容 -->
-      <span
-        class="el-input__suffix"
-        v-if="getSuffixVisible()">
-        <span class="el-input__suffix-inner">
+      <span class="sg-input__suffix" v-if="getSuffixVisible()">
+        <span class="sg-input__suffix-inner">
           <template v-if="!showClear || !showPwdVisible || !isWordLimitVisible">
             <slot name="suffix"></slot>
-            <i class="el-input__icon"
-              v-if="suffixIcon"
-              :class="suffixIcon">
+            <i class="sg-input__icon" v-if="suffixIcon" :class="suffixIcon">
             </i>
           </template>
-          <i v-if="showClear"
-            class="el-input__icon el-icon-circle-close el-input__clear"
-            @mousedown.prevent
-            @click="clear"
-          ></i>
-          <i v-if="showPwdVisible"
-            class="el-input__icon el-icon-view el-input__clear"
-            @click="handlePasswordVisible"
-          ></i>
-          <span v-if="isWordLimitVisible" class="el-input__count">
-            <span class="el-input__count-inner">
+          <i v-if="showClear" class="sg-input__icon sg-icon-circle-close sg-input__clear" @mousedown.prevent
+            @click="clear"></i>
+          <i v-if="showPwdVisible" class="sg-input__icon sg-icon-view sg-input__clear"
+            @click="handlePasswordVisible"></i>
+          <span v-if="isWordLimitVisible" class="sg-input__count">
+            <span class="sg-input__count-inner">
               {{ textLength }}/{{ upperLimit }}
             </span>
           </span>
         </span>
-        <i class="el-input__icon"
-          v-if="validateState"
-          :class="['el-input__validateIcon', validateIcon]">
+        <i class="sg-input__icon" v-if="validateState" :class="['sg-input__validateIcon', validateIcon]">
         </i>
       </span>
       <!-- 后置元素 -->
-      <div class="el-input-group__append" v-if="$slots.append">
+      <div class="sg-input-group__append" v-if="$slots.append">
         <slot name="append"></slot>
       </div>
     </template>
-    <textarea
-      v-else
-      :tabindex="tabindex"
-      class="el-textarea__inner"
-      @compositionstart="handleCompositionStart"
-      @compositionupdate="handleCompositionUpdate"
-      @compositionend="handleCompositionEnd"
-      @input="handleInput"
-      ref="textarea"
-      v-bind="$attrs"
-      :disabled="inputDisabled"
-      :readonly="readonly"
-      :autocomplete="autoComplete || autocomplete"
-      :style="textareaStyle"
-      @focus="handleFocus"
-      @blur="handleBlur"
-      @change="handleChange"
-      :aria-label="label"
-    >
-    </textarea>
-    <span v-if="isWordLimitVisible && type === 'textarea'" class="el-input__count">{{ textLength }}/{{ upperLimit }}</span>
+    <textarea v-else :tabindex="tabindex" class="sg-textarea__inner" @compositionstart="handleCompositionStart"
+      @compositionupdate="handleCompositionUpdate" @compositionend="handleCompositionEnd" @input="handleInput"
+      ref="textarea" v-bind="$attrs" :disabled="inputDisabled" :readonly="readonly"
+      :autocomplete="autoComplete || autocomplete" :style="textareaStyle" @focus="handleFocus" @blur="handleBlur"
+      @change="handleChange" :aria-label="label">
+</textarea>
+    <span v-if="isWordLimitVisible && type === 'textarea'" class="sg-input__count">{{ textLength }}/{{ upperLimit
+    }}</span>
   </div>
 </template>
 <script>
-  import emitter from 'element-ui/src/mixins/emitter';
-  import Migrating from 'element-ui/src/mixins/migrating';
-  import calcTextareaHeight from './calcTextareaHeight';
-  import merge from 'element-ui/src/utils/merge';
-  import {isKorean} from 'element-ui/src/utils/shared';
+import emitter from 'sg-ui/src/mixins/emitter';
+import Migrating from 'sg-ui/src/mixins/migrating';
+import calcTextareaHeight from './calcTextareaHeight';
+import merge from 'sg-ui/src/utils/merge';
+import { isKorean } from 'sg-ui/src/utils/shared';
 
-  export default {
-    name: 'ElInput',
+export default {
+  name: 'SgInput',
 
-    componentName: 'ElInput',
+  componentName: 'SgInput',
 
-    mixins: [emitter, Migrating],
+  mixins: [emitter, Migrating],
 
-    inheritAttrs: false,
+  inheritAttrs: false,
 
-    inject: {
-      elForm: {
-        default: ''
-      },
-      elFormItem: {
-        default: ''
+  inject: {
+    sgForm: {
+      default: ''
+    },
+    sgFormItem: {
+      default: ''
+    }
+  },
+
+  data() {
+    return {
+      textareaCalcStyle: {},
+      hovering: false,
+      focused: false,
+      isComposing: false,
+      passwordVisible: false
+    };
+  },
+
+  props: {
+    value: [String, Number],
+    size: String,
+    resize: String,
+    form: String,
+    disabled: Boolean,
+    readonly: Boolean,
+    type: {
+      type: String,
+      default: 'text'
+    },
+    autosize: {
+      type: [Boolean, Object],
+      default: false
+    },
+    autocomplete: {
+      type: String,
+      default: 'off'
+    },
+    /** @Deprecated in next major version */
+    autoComplete: {
+      type: String,
+      validator(val) {
+        process.env.NODE_ENV !== 'production' &&
+          console.warn('[Element Warn][Input]\'auto-complete\' property will be deprecated in next major version. please use \'autocomplete\' instead.');
+        return true;
       }
     },
+    validateEvent: {
+      type: Boolean,
+      default: true
+    },
+    suffixIcon: String,
+    prefixIcon: String,
+    label: String,
+    clearable: {
+      type: Boolean,
+      default: false
+    },
+    showPassword: {
+      type: Boolean,
+      default: false
+    },
+    showWordLimit: {
+      type: Boolean,
+      default: false
+    },
+    tabindex: String
+  },
 
-    data() {
+  computed: {
+    _sgFormItemSize() {
+      return (this.sgFormItem || {}).sgFormItemSize;
+    },
+    validateState() {
+      return this.sgFormItem ? this.sgFormItem.validateState : '';
+    },
+    needStatusIcon() {
+      return this.sgForm ? this.sgForm.statusIcon : false;
+    },
+    validateIcon() {
       return {
-        textareaCalcStyle: {},
-        hovering: false,
-        focused: false,
-        isComposing: false,
-        passwordVisible: false
+        validating: 'sg-icon-loading',
+        success: 'sg-icon-circle-check',
+        error: 'sg-icon-circle-close'
+      }[this.validateState];
+    },
+    textareaStyle() {
+      return merge({}, this.textareaCalcStyle, { resize: this.resize });
+    },
+    inputSize() {
+      return this.size || this._sgFormItemSize || (this.$ELEMENT || {}).size;
+    },
+    inputDisabled() {
+      return this.disabled || (this.sgForm || {}).disabled;
+    },
+    nativeInputValue() {
+      return this.value === null || this.value === undefined ? '' : String(this.value);
+    },
+    showClear() {
+      return this.clearable &&
+        !this.inputDisabled &&
+        !this.readonly &&
+        this.nativeInputValue &&
+        (this.focused || this.hovering);
+    },
+    showPwdVisible() {
+      return this.showPassword &&
+        !this.inputDisabled &&
+        !this.readonly &&
+        (!!this.nativeInputValue || this.focused);
+    },
+    isWordLimitVisible() {
+      return this.showWordLimit &&
+        this.$attrs.maxlength &&
+        (this.type === 'text' || this.type === 'textarea') &&
+        !this.inputDisabled &&
+        !this.readonly &&
+        !this.showPassword;
+    },
+    upperLimit() {
+      return this.$attrs.maxlength;
+    },
+    textLength() {
+      if (typeof this.value === 'number') {
+        return String(this.value).length;
+      }
+
+      return (this.value || '').length;
+    },
+    inputExceed() {
+      // show exceed style if length of initial value greater then maxlength
+      return this.isWordLimitVisible &&
+        (this.textLength > this.upperLimit);
+    }
+  },
+
+  watch: {
+    value(val) {
+      this.$nextTick(this.resizeTextarea);
+      if (this.validateEvent) {
+        this.dispatch('SgFormItem', 'el.form.change', [val]);
+      }
+    },
+    // native input value is set explicitly
+    // do not use v-model / :value in template
+    // see: https://github.com/ElemeFE/element/issues/14521
+    nativeInputValue() {
+      this.setNativeInputValue();
+    },
+    // when change between <input> and <textarea>,
+    // update DOM dependent value and styles
+    // https://github.com/ElemeFE/element/issues/14857
+    type() {
+      this.$nextTick(() => {
+        this.setNativeInputValue();
+        this.resizeTextarea();
+        this.updateIconOffset();
+      });
+    }
+  },
+
+  methods: {
+    focus() {
+      this.getInput().focus();
+    },
+    blur() {
+      this.getInput().blur();
+    },
+    getMigratingConfig() {
+      return {
+        props: {
+          'icon': 'icon is removed, use suffix-icon / prefix-icon instead.',
+          'on-icon-click': 'on-icon-click is removed.'
+        },
+        events: {
+          'click': 'click is removed.'
+        }
       };
     },
-
-    props: {
-      value: [String, Number],
-      size: String,
-      resize: String,
-      form: String,
-      disabled: Boolean,
-      readonly: Boolean,
-      type: {
-        type: String,
-        default: 'text'
-      },
-      autosize: {
-        type: [Boolean, Object],
-        default: false
-      },
-      autocomplete: {
-        type: String,
-        default: 'off'
-      },
-      /** @Deprecated in next major version */
-      autoComplete: {
-        type: String,
-        validator(val) {
-          process.env.NODE_ENV !== 'production' &&
-            console.warn('[Element Warn][Input]\'auto-complete\' property will be deprecated in next major version. please use \'autocomplete\' instead.');
-          return true;
-        }
-      },
-      validateEvent: {
-        type: Boolean,
-        default: true
-      },
-      suffixIcon: String,
-      prefixIcon: String,
-      label: String,
-      clearable: {
-        type: Boolean,
-        default: false
-      },
-      showPassword: {
-        type: Boolean,
-        default: false
-      },
-      showWordLimit: {
-        type: Boolean,
-        default: false
-      },
-      tabindex: String
-    },
-
-    computed: {
-      _elFormItemSize() {
-        return (this.elFormItem || {}).elFormItemSize;
-      },
-      validateState() {
-        return this.elFormItem ? this.elFormItem.validateState : '';
-      },
-      needStatusIcon() {
-        return this.elForm ? this.elForm.statusIcon : false;
-      },
-      validateIcon() {
-        return {
-          validating: 'el-icon-loading',
-          success: 'el-icon-circle-check',
-          error: 'el-icon-circle-close'
-        }[this.validateState];
-      },
-      textareaStyle() {
-        return merge({}, this.textareaCalcStyle, { resize: this.resize });
-      },
-      inputSize() {
-        return this.size || this._elFormItemSize || (this.$ELEMENT || {}).size;
-      },
-      inputDisabled() {
-        return this.disabled || (this.elForm || {}).disabled;
-      },
-      nativeInputValue() {
-        return this.value === null || this.value === undefined ? '' : String(this.value);
-      },
-      showClear() {
-        return this.clearable &&
-          !this.inputDisabled &&
-          !this.readonly &&
-          this.nativeInputValue &&
-          (this.focused || this.hovering);
-      },
-      showPwdVisible() {
-        return this.showPassword &&
-          !this.inputDisabled &&
-          !this.readonly &&
-          (!!this.nativeInputValue || this.focused);
-      },
-      isWordLimitVisible() {
-        return this.showWordLimit &&
-          this.$attrs.maxlength &&
-          (this.type === 'text' || this.type === 'textarea') &&
-          !this.inputDisabled &&
-          !this.readonly &&
-          !this.showPassword;
-      },
-      upperLimit() {
-        return this.$attrs.maxlength;
-      },
-      textLength() {
-        if (typeof this.value === 'number') {
-          return String(this.value).length;
-        }
-
-        return (this.value || '').length;
-      },
-      inputExceed() {
-        // show exceed style if length of initial value greater then maxlength
-        return this.isWordLimitVisible &&
-          (this.textLength > this.upperLimit);
+    handleBlur(event) {
+      this.focused = false;
+      this.$emit('blur', event);
+      if (this.validateEvent) {
+        this.dispatch('SgFormItem', 'el.form.blur', [this.value]);
       }
     },
-
-    watch: {
-      value(val) {
-        this.$nextTick(this.resizeTextarea);
-        if (this.validateEvent) {
-          this.dispatch('ElFormItem', 'el.form.change', [val]);
-        }
-      },
-      // native input value is set explicitly
-      // do not use v-model / :value in template
-      // see: https://github.com/ElemeFE/element/issues/14521
-      nativeInputValue() {
-        this.setNativeInputValue();
-      },
-      // when change between <input> and <textarea>,
-      // update DOM dependent value and styles
-      // https://github.com/ElemeFE/element/issues/14857
-      type() {
-        this.$nextTick(() => {
-          this.setNativeInputValue();
-          this.resizeTextarea();
-          this.updateIconOffset();
-        });
-      }
+    select() {
+      this.getInput().select();
     },
-
-    methods: {
-      focus() {
-        this.getInput().focus();
-      },
-      blur() {
-        this.getInput().blur();
-      },
-      getMigratingConfig() {
-        return {
-          props: {
-            'icon': 'icon is removed, use suffix-icon / prefix-icon instead.',
-            'on-icon-click': 'on-icon-click is removed.'
-          },
-          events: {
-            'click': 'click is removed.'
-          }
+    resizeTextarea() {
+      if (this.$isServer) return;
+      const { autosize, type } = this;
+      if (type !== 'textarea') return;
+      if (!autosize) {
+        this.textareaCalcStyle = {
+          minHeight: calcTextareaHeight(this.$refs.textarea).minHeight
         };
-      },
-      handleBlur(event) {
-        this.focused = false;
-        this.$emit('blur', event);
-        if (this.validateEvent) {
-          this.dispatch('ElFormItem', 'el.form.blur', [this.value]);
-        }
-      },
-      select() {
-        this.getInput().select();
-      },
-      resizeTextarea() {
-        if (this.$isServer) return;
-        const { autosize, type } = this;
-        if (type !== 'textarea') return;
-        if (!autosize) {
-          this.textareaCalcStyle = {
-            minHeight: calcTextareaHeight(this.$refs.textarea).minHeight
-          };
-          return;
-        }
-        const minRows = autosize.minRows;
-        const maxRows = autosize.maxRows;
+        return;
+      }
+      const minRows = autosize.minRows;
+      const maxRows = autosize.maxRows;
 
-        this.textareaCalcStyle = calcTextareaHeight(this.$refs.textarea, minRows, maxRows);
-      },
-      setNativeInputValue() {
-        const input = this.getInput();
-        if (!input) return;
-        if (input.value === this.nativeInputValue) return;
-        input.value = this.nativeInputValue;
-      },
-      handleFocus(event) {
-        this.focused = true;
-        this.$emit('focus', event);
-      },
-      handleCompositionStart(event) {
-        this.$emit('compositionstart', event);
-        this.isComposing = true;
-      },
-      handleCompositionUpdate(event) {
-        this.$emit('compositionupdate', event);
-        const text = event.target.value;
-        const lastCharacter = text[text.length - 1] || '';
-        this.isComposing = !isKorean(lastCharacter);
-      },
-      handleCompositionEnd(event) {
-        this.$emit('compositionend', event);
-        if (this.isComposing) {
-          this.isComposing = false;
-          this.handleInput(event);
-        }
-      },
-      handleInput(event) {
-        // should not emit input during composition
-        // see: https://github.com/ElemeFE/element/issues/10516
-        if (this.isComposing) return;
-
-        // hack for https://github.com/ElemeFE/element/issues/8548
-        // should remove the following line when we don't support IE
-        if (event.target.value === this.nativeInputValue) return;
-
-        this.$emit('input', event.target.value);
-
-        // ensure native input value is controlled
-        // see: https://github.com/ElemeFE/element/issues/12850
-        this.$nextTick(this.setNativeInputValue);
-      },
-      handleChange(event) {
-        this.$emit('change', event.target.value);
-      },
-      calcIconOffset(place) {
-        let elList = [].slice.call(this.$el.querySelectorAll(`.el-input__${place}`) || []);
-        if (!elList.length) return;
-        let el = null;
-        for (let i = 0; i < elList.length; i++) {
-          if (elList[i].parentNode === this.$el) {
-            el = elList[i];
-            break;
-          }
-        }
-        if (!el) return;
-        const pendantMap = {
-          suffix: 'append',
-          prefix: 'prepend'
-        };
-
-        const pendant = pendantMap[place];
-        if (this.$slots[pendant]) {
-          el.style.transform = `translateX(${place === 'suffix' ? '-' : ''}${this.$el.querySelector(`.el-input-group__${pendant}`).offsetWidth}px)`;
-        } else {
-          el.removeAttribute('style');
-        }
-      },
-      updateIconOffset() {
-        this.calcIconOffset('prefix');
-        this.calcIconOffset('suffix');
-      },
-      clear() {
-        this.$emit('input', '');
-        this.$emit('change', '');
-        this.$emit('clear');
-      },
-      handlePasswordVisible() {
-        this.passwordVisible = !this.passwordVisible;
-        this.$nextTick(() => {
-          this.focus();
-        });
-      },
-      getInput() {
-        return this.$refs.input || this.$refs.textarea;
-      },
-      getSuffixVisible() {
-        return this.$slots.suffix ||
-          this.suffixIcon ||
-          this.showClear ||
-          this.showPassword ||
-          this.isWordLimitVisible ||
-          (this.validateState && this.needStatusIcon);
+      this.textareaCalcStyle = calcTextareaHeight(this.$refs.textarea, minRows, maxRows);
+    },
+    setNativeInputValue() {
+      const input = this.getInput();
+      if (!input) return;
+      if (input.value === this.nativeInputValue) return;
+      input.value = this.nativeInputValue;
+    },
+    handleFocus(event) {
+      this.focused = true;
+      this.$emit('focus', event);
+    },
+    handleCompositionStart(event) {
+      this.$emit('compositionstart', event);
+      this.isComposing = true;
+    },
+    handleCompositionUpdate(event) {
+      this.$emit('compositionupdate', event);
+      const text = event.target.value;
+      const lastCharacter = text[text.length - 1] || '';
+      this.isComposing = !isKorean(lastCharacter);
+    },
+    handleCompositionEnd(event) {
+      this.$emit('compositionend', event);
+      if (this.isComposing) {
+        this.isComposing = false;
+        this.handleInput(event);
       }
     },
+    handleInput(event) {
+      // should not emit input during composition
+      // see: https://github.com/ElemeFE/element/issues/10516
+      if (this.isComposing) return;
 
-    created() {
-      this.$on('inputSelect', this.select);
+      // hack for https://github.com/ElemeFE/element/issues/8548
+      // should remove the following line when we don't support IE
+      if (event.target.value === this.nativeInputValue) return;
+
+      this.$emit('input', event.target.value);
+
+      // ensure native input value is controlled
+      // see: https://github.com/ElemeFE/element/issues/12850
+      this.$nextTick(this.setNativeInputValue);
     },
-
-    mounted() {
-      this.setNativeInputValue();
-      this.resizeTextarea();
-      this.updateIconOffset();
+    handleChange(event) {
+      this.$emit('change', event.target.value);
     },
+    calcIconOffset(place) {
+      let elList = [].slice.call(this.$el.querySelectorAll(`.sg-input__${place}`) || []);
+      if (!elList.length) return;
+      let el = null;
+      for (let i = 0; i < elList.length; i++) {
+        if (elList[i].parentNode === this.$el) {
+          el = elList[i];
+          break;
+        }
+      }
+      if (!el) return;
+      const pendantMap = {
+        suffix: 'append',
+        prefix: 'prepend'
+      };
 
-    updated() {
-      this.$nextTick(this.updateIconOffset);
+      const pendant = pendantMap[place];
+      if (this.$slots[pendant]) {
+        el.style.transform = `translateX(${place === 'suffix' ? '-' : ''}${this.$el.querySelector(`.sg-input-group__${pendant}`).offsetWidth}px)`;
+      } else {
+        el.removeAttribute('style');
+      }
+    },
+    updateIconOffset() {
+      this.calcIconOffset('prefix');
+      this.calcIconOffset('suffix');
+    },
+    clear() {
+      this.$emit('input', '');
+      this.$emit('change', '');
+      this.$emit('clear');
+    },
+    handlePasswordVisible() {
+      this.passwordVisible = !this.passwordVisible;
+      this.$nextTick(() => {
+        this.focus();
+      });
+    },
+    getInput() {
+      return this.$refs.input || this.$refs.textarea;
+    },
+    getSuffixVisible() {
+      return this.$slots.suffix ||
+        this.suffixIcon ||
+        this.showClear ||
+        this.showPassword ||
+        this.isWordLimitVisible ||
+        (this.validateState && this.needStatusIcon);
     }
-  };
+  },
+
+  created() {
+    this.$on('inputSelect', this.select);
+  },
+
+  mounted() {
+    this.setNativeInputValue();
+    this.resizeTextarea();
+    this.updateIconOffset();
+  },
+
+  updated() {
+    this.$nextTick(this.updateIconOffset);
+  }
+};
 </script>

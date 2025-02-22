@@ -1,6 +1,6 @@
 <template>
   <div
-    class="el-step"
+    class="sg-step"
     :style="style"
     :class="[
       !isSimple && `is-${$parent.direction}`,
@@ -10,42 +10,42 @@
      ]">
     <!-- icon & line -->
     <div
-      class="el-step__head"
+      class="sg-step__head"
       :class="`is-${currentStatus}`">
       <div
-        class="el-step__line"
+        class="sg-step__line"
         :style="isLast ? '' : { marginRight: $parent.stepOffset + 'px' }"
       >
-        <i class="el-step__line-inner" :style="lineStyle"></i>
+        <i class="sg-step__line-inner" :style="lineStyle"></i>
       </div>
 
-      <div class="el-step__icon" :class="`is-${icon ? 'icon' : 'text'}`">
+      <div class="sg-step__icon" :class="`is-${icon ? 'icon' : 'text'}`">
         <slot
           v-if="currentStatus !== 'success' && currentStatus !== 'error'"
           name="icon">
-          <i v-if="icon" class="el-step__icon-inner" :class="[icon]"></i>
-          <div class="el-step__icon-inner" v-if="!icon && !isSimple">{{ index + 1 }}</div>
+          <i v-if="icon" class="sg-step__icon-inner" :class="[icon]"></i>
+          <div class="sg-step__icon-inner" v-if="!icon && !isSimple">{{ index + 1 }}</div>
         </slot>
         <i
           v-else
-          :class="['el-icon-' + (currentStatus === 'success' ? 'check' : 'close')]"
-          class="el-step__icon-inner is-status"
+          :class="['sg-icon-' + (currentStatus === 'success' ? 'check' : 'close')]"
+          class="sg-step__icon-inner is-status"
         >
         </i>
       </div>
     </div>
     <!-- title & description -->
-    <div class="el-step__main">
+    <div class="sg-step__main">
       <div
-        class="el-step__title"
+        class="sg-step__title"
         ref="title"
         :class="['is-' + currentStatus]">
         <slot name="title">{{ title }}</slot>
       </div>
-      <div v-if="isSimple" class="el-step__arrow"></div>
+      <div v-if="isSimple" class="sg-step__arrow"></div>
       <div
         v-else
-        class="el-step__description"
+        class="sg-step__description"
         :class="['is-' + currentStatus]">
         <slot name="description">{{ description }}</slot>
       </div>
@@ -55,7 +55,7 @@
 
 <script>
 export default {
-  name: 'ElStep',
+  name: 'SgStep',
 
   props: {
     title: String,

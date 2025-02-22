@@ -1,52 +1,29 @@
 <template>
-  <div
-    :class="carouselClasses"
-    @mouseenter.stop="handleMouseEnter"
-    @mouseleave.stop="handleMouseLeave">
-    <div
-      class="el-carousel__container"
-      :style="{ height: height }">
-      <transition
-        v-if="arrowDisplay"
-        name="carousel-arrow-left">
-        <button
-          type="button"
-          v-show="(arrow === 'always' || hover) && (loop || activeIndex > 0)"
-          @mouseenter="handleButtonEnter('left')"
-          @mouseleave="handleButtonLeave"
-          @click.stop="throttledArrowClick(activeIndex - 1)"
-          class="el-carousel__arrow el-carousel__arrow--left">
-          <i class="el-icon-arrow-left"></i>
+  <div :class="carouselClasses" @mouseenter.stop="handleMouseEnter" @mouseleave.stop="handleMouseLeave">
+    <div class="sg-carousel__container" :style="{ height: height }">
+      <transition v-if="arrowDisplay" name="carousel-arrow-left">
+        <button type="button" v-show="(arrow === 'always' || hover) && (loop || activeIndex > 0)"
+          @mouseenter="handleButtonEnter('left')" @mouseleave="handleButtonLeave"
+          @click.stop="throttledArrowClick(activeIndex - 1)" class="sg-carousel__arrow sg-carousel__arrow--left">
+          <i class="sg-icon-arrow-left"></i>
         </button>
       </transition>
-      <transition
-        v-if="arrowDisplay"
-        name="carousel-arrow-right">
-        <button
-          type="button"
-          v-show="(arrow === 'always' || hover) && (loop || activeIndex < items.length - 1)"
-          @mouseenter="handleButtonEnter('right')"
-          @mouseleave="handleButtonLeave"
-          @click.stop="throttledArrowClick(activeIndex + 1)"
-          class="el-carousel__arrow el-carousel__arrow--right">
-          <i class="el-icon-arrow-right"></i>
+      <transition v-if="arrowDisplay" name="carousel-arrow-right">
+        <button type="button" v-show="(arrow === 'always' || hover) && (loop || activeIndex < items.length - 1)"
+          @mouseenter="handleButtonEnter('right')" @mouseleave="handleButtonLeave"
+          @click.stop="throttledArrowClick(activeIndex + 1)" class="sg-carousel__arrow sg-carousel__arrow--right">
+          <i class="sg-icon-arrow-right"></i>
         </button>
       </transition>
       <slot></slot>
     </div>
-    <ul
-      v-if="indicatorPosition !== 'none'"
-      :class="indicatorsClasses">
-      <li
-        v-for="(item, index) in items"
-        :key="index"
-        :class="[
-          'el-carousel__indicator',
-          'el-carousel__indicator--' + direction,
-          { 'is-active': index === activeIndex }]"
-        @mouseenter="throttledIndicatorHover(index)"
+    <ul v-if="indicatorPosition !== 'none'" :class="indicatorsClasses">
+      <li v-for="(item, index) in items" :key="index" :class="[
+        'sg-carousel__indicator',
+        'sg-carousel__indicator--' + direction,
+        { 'is-active': index === activeIndex }]" @mouseenter="throttledIndicatorHover(index)"
         @click.stop="handleIndicatorClick(index)">
-        <button class="el-carousel__button">
+        <button class="sg-carousel__button">
           <span v-if="hasLabel">{{ item.label }}</span>
         </button>
       </li>
@@ -56,10 +33,10 @@
 
 <script>
 import throttle from 'throttle-debounce/throttle';
-import { addResizeListener, removeResizeListener } from 'element-ui/src/utils/resize-event';
+import { addResizeListener, removeResizeListener } from 'sg-ui/src/utils/resize-event';
 
 export default {
-  name: 'ElCarousel',
+  name: 'SgCarousel',
 
   props: {
     initialIndex: {
@@ -122,20 +99,20 @@ export default {
     },
 
     carouselClasses() {
-      const classes = ['el-carousel', 'el-carousel--' + this.direction];
+      const classes = ['sg-carousel', 'sg-carousel--' + this.direction];
       if (this.type === 'card') {
-        classes.push('el-carousel--card');
+        classes.push('sg-carousel--card');
       }
       return classes;
     },
 
     indicatorsClasses() {
-      const classes = ['el-carousel__indicators', 'el-carousel__indicators--' + this.direction];
+      const classes = ['sg-carousel__indicators', 'sg-carousel__indicators--' + this.direction];
       if (this.hasLabel) {
-        classes.push('el-carousel__indicators--labels');
+        classes.push('sg-carousel__indicators--labels');
       }
       if (this.indicatorPosition === 'outside' || this.type === 'card') {
-        classes.push('el-carousel__indicators--outside');
+        classes.push('sg-carousel__indicators--outside');
       }
       return classes;
     }
@@ -207,7 +184,7 @@ export default {
     },
 
     updateItems() {
-      this.items = this.$children.filter(child => child.$options.name === 'ElCarouselItem');
+      this.items = this.$children.filter(child => child.$options.name === 'SgCarouselItem');
     },
 
     resetItemPosition(oldIndex) {

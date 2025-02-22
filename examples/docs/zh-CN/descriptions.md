@@ -7,15 +7,15 @@
 :::demo
 
 ```html
-<el-descriptions title="用户信息">
-    <el-descriptions-item label="用户名">kooriookami</el-descriptions-item>
-    <el-descriptions-item label="手机号">18100000000</el-descriptions-item>
-    <el-descriptions-item label="居住地">苏州市</el-descriptions-item>
-    <el-descriptions-item label="备注">
-      <el-tag size="small">学校</el-tag>
-    </el-descriptions-item>
-    <el-descriptions-item label="联系地址">江苏省苏州市吴中区吴中大道 1188 号</el-descriptions-item>
-</el-descriptions>
+<sg-descriptions title="用户信息">
+    <sg-descriptions-item label="用户名">kooriookami</sg-descriptions-item>
+    <sg-descriptions-item label="手机号">18100000000</sg-descriptions-item>
+    <sg-descriptions-item label="居住地">苏州市</sg-descriptions-item>
+    <sg-descriptions-item label="备注">
+      <sg-tag size="small">学校</sg-tag>
+    </sg-descriptions-item>
+    <sg-descriptions-item label="联系地址">江苏省苏州市吴中区吴中大道 1188 号</sg-descriptions-item>
+</sg-descriptions>
 ```
 :::
 
@@ -25,66 +25,66 @@
 
 ```html
 <template>
-  <el-radio-group v-model="size">
-    <el-radio label="">默认</el-radio>
-    <el-radio label="medium">中等</el-radio>
-    <el-radio label="small">小型</el-radio>
-    <el-radio label="mini">超小</el-radio>
-  </el-radio-group>
+  <sg-radio-group v-model="size">
+    <sg-radio label="">默认</sg-radio>
+    <sg-radio label="medium">中等</sg-radio>
+    <sg-radio label="small">小型</sg-radio>
+    <sg-radio label="mini">超小</sg-radio>
+  </sg-radio-group>
 
-  <el-descriptions class="margin-top" title="带边框列表" :column="3" :size="size" border>
+  <sg-descriptions class="margin-top" title="带边框列表" :column="3" :size="size" border>
     <template slot="extra">
-      <el-button type="primary" size="small">操作</el-button>
+      <sg-button type="primary" size="small">操作</sg-button>
     </template>
-    <el-descriptions-item>
+    <sg-descriptions-item>
       <template slot="label">
-        <i class="el-icon-user"></i>
+        <i class="sg-icon-user"></i>
         用户名
       </template>
       kooriookami
-    </el-descriptions-item>
-    <el-descriptions-item>
+    </sg-descriptions-item>
+    <sg-descriptions-item>
       <template slot="label">
-        <i class="el-icon-mobile-phone"></i>
+        <i class="sg-icon-mobile-phone"></i>
         手机号
       </template>
       18100000000
-    </el-descriptions-item>
-    <el-descriptions-item>
+    </sg-descriptions-item>
+    <sg-descriptions-item>
       <template slot="label">
-        <i class="el-icon-location-outline"></i>
+        <i class="sg-icon-location-outline"></i>
         居住地
       </template>
       苏州市
-    </el-descriptions-item>
-    <el-descriptions-item>
+    </sg-descriptions-item>
+    <sg-descriptions-item>
       <template slot="label">
-        <i class="el-icon-tickets"></i>
+        <i class="sg-icon-tickets"></i>
         备注
       </template>
-      <el-tag size="small">学校</el-tag>
-    </el-descriptions-item>
-    <el-descriptions-item>
+      <sg-tag size="small">学校</sg-tag>
+    </sg-descriptions-item>
+    <sg-descriptions-item>
       <template slot="label">
-        <i class="el-icon-office-building"></i>
+        <i class="sg-icon-office-building"></i>
         联系地址
       </template>
       江苏省苏州市吴中区吴中大道 1188 号
-    </el-descriptions-item>
-  </el-descriptions>
+    </sg-descriptions-item>
+  </sg-descriptions>
 
-  <el-descriptions class="margin-top" title="无边框列表" :column="3" :size="size">
+  <sg-descriptions class="margin-top" title="无边框列表" :column="3" :size="size">
     <template slot="extra">
-      <el-button type="primary" size="small">操作</el-button>
+      <sg-button type="primary" size="small">操作</sg-button>
     </template>
-    <el-descriptions-item label="用户名">kooriookami</el-descriptions-item>
-    <el-descriptions-item label="手机号">18100000000</el-descriptions-item>
-    <el-descriptions-item label="居住地">苏州市</el-descriptions-item>
-    <el-descriptions-item label="备注">
-      <el-tag size="small">学校</el-tag>
-    </el-descriptions-item>
-    <el-descriptions-item label="联系地址">江苏省苏州市吴中区吴中大道 1188 号</el-descriptions-item>
-  </el-descriptions>
+    <sg-descriptions-item label="用户名">kooriookami</sg-descriptions-item>
+    <sg-descriptions-item label="手机号">18100000000</sg-descriptions-item>
+    <sg-descriptions-item label="居住地">苏州市</sg-descriptions-item>
+    <sg-descriptions-item label="备注">
+      <sg-tag size="small">学校</sg-tag>
+    </sg-descriptions-item>
+    <sg-descriptions-item label="联系地址">江苏省苏州市吴中区吴中大道 1188 号</sg-descriptions-item>
+  </sg-descriptions>
 </template>
 
 <script>
@@ -104,25 +104,25 @@
 :::demo
 
 ```html
-<el-descriptions title="垂直带边框列表" direction="vertical" :column="4" border>
-  <el-descriptions-item label="用户名">kooriookami</el-descriptions-item>
-  <el-descriptions-item label="手机号">18100000000</el-descriptions-item>
-  <el-descriptions-item label="居住地" :span="2">苏州市</el-descriptions-item>
-  <el-descriptions-item label="备注">
-    <el-tag size="small">学校</el-tag>
-  </el-descriptions-item>
-  <el-descriptions-item label="联系地址">江苏省苏州市吴中区吴中大道 1188 号</el-descriptions-item>
-</el-descriptions>
+<sg-descriptions title="垂直带边框列表" direction="vertical" :column="4" border>
+  <sg-descriptions-item label="用户名">kooriookami</sg-descriptions-item>
+  <sg-descriptions-item label="手机号">18100000000</sg-descriptions-item>
+  <sg-descriptions-item label="居住地" :span="2">苏州市</sg-descriptions-item>
+  <sg-descriptions-item label="备注">
+    <sg-tag size="small">学校</sg-tag>
+  </sg-descriptions-item>
+  <sg-descriptions-item label="联系地址">江苏省苏州市吴中区吴中大道 1188 号</sg-descriptions-item>
+</sg-descriptions>
 
-<el-descriptions class="margin-top" title="垂直无边框列表" :column="4" direction="vertical">
-  <el-descriptions-item label="用户名">kooriookami</el-descriptions-item>
-  <el-descriptions-item label="手机号">18100000000</el-descriptions-item>
-  <el-descriptions-item label="居住地" :span="2">苏州市</el-descriptions-item>
-  <el-descriptions-item label="备注">
-    <el-tag size="small">学校</el-tag>
-  </el-descriptions-item>
-  <el-descriptions-item label="联系地址">江苏省苏州市吴中区吴中大道 1188 号</el-descriptions-item>
-</el-descriptions>
+<sg-descriptions class="margin-top" title="垂直无边框列表" :column="4" direction="vertical">
+  <sg-descriptions-item label="用户名">kooriookami</sg-descriptions-item>
+  <sg-descriptions-item label="手机号">18100000000</sg-descriptions-item>
+  <sg-descriptions-item label="居住地" :span="2">苏州市</sg-descriptions-item>
+  <sg-descriptions-item label="备注">
+    <sg-tag size="small">学校</sg-tag>
+  </sg-descriptions-item>
+  <sg-descriptions-item label="联系地址">江苏省苏州市吴中区吴中大道 1188 号</sg-descriptions-item>
+</sg-descriptions>
 ```
 :::
 
@@ -131,15 +131,15 @@
 :::demo
 
 ```html
-<el-descriptions title="自定义样式列表" :column="3" border>
-  <el-descriptions-item label="用户名" label-class-name="my-label" content-class-name="my-content">kooriookami</el-descriptions-item>
-  <el-descriptions-item label="手机号">18100000000</el-descriptions-item>
-  <el-descriptions-item label="居住地">苏州市</el-descriptions-item>
-  <el-descriptions-item label="备注">
-    <el-tag size="small">学校</el-tag>
-  </el-descriptions-item>
-  <el-descriptions-item label="联系地址" :contentStyle="{'text-align': 'right'}">江苏省苏州市吴中区吴中大道 1188 号</el-descriptions-item>
-</el-descriptions>
+<sg-descriptions title="自定义样式列表" :column="3" border>
+  <sg-descriptions-item label="用户名" label-class-name="my-label" content-class-name="my-content">kooriookami</sg-descriptions-item>
+  <sg-descriptions-item label="手机号">18100000000</sg-descriptions-item>
+  <sg-descriptions-item label="居住地">苏州市</sg-descriptions-item>
+  <sg-descriptions-item label="备注">
+    <sg-tag size="small">学校</sg-tag>
+  </sg-descriptions-item>
+  <sg-descriptions-item label="联系地址" :contentStyle="{'text-align': 'right'}">江苏省苏州市吴中区吴中大道 1188 号</sg-descriptions-item>
+</sg-descriptions>
 <style>
   .my-label {
     background: #E1F3D8;

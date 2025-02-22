@@ -1,20 +1,25 @@
-import { ElementUIComponent } from './component'
+import { SgementUIComponent } from "./component";
 
-export type TimelineItemPlacement = 'top' | 'bottom'
-export type TimelineItemType = 'primary' | 'success' | 'warning' | 'danger' | 'info'
-export type TimelineItemSize = 'normal' | 'large'
+export type TimelineItemPlacement = "top" | "bottom";
+export type TimelineItemType =
+  | "primary"
+  | "success"
+  | "warning"
+  | "danger"
+  | "info";
+export type TimelineItemSize = "normal" | "large";
 
 /** TimelineItem Component */
-export declare class ElTimelineItem extends ElementUIComponent {
-  timestamp: string
+export declare class SgTimelineItem extends SgementUIComponent {
+  timestamp: string;
 
-  hideTimestamp: boolean
+  hideTimestamp: boolean;
 
-  placement: TimelineItemPlacement
+  placement: TimelineItemPlacement;
 
-  type: TimelineItemType
+  type: TimelineItemType;
 
-  size: TimelineItemSize
+  size: TimelineItemSize;
 
-  icon: string
+  icon: string;
 }

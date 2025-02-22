@@ -6,13 +6,13 @@ Switch is used for switching between two opposing states.
 :::demo Bind `v-model` to a `Boolean` typed variable. The `active-color` and `inactive-color` attribute decides the background color in two states.
 
 ```html
-<el-switch v-model="value1">
-</el-switch>
-<el-switch
+<sg-switch v-model="value1">
+</sg-switch>
+<sg-switch
   v-model="value2"
   active-color="#13ce66"
   inactive-color="#ff4949">
-</el-switch>
+</sg-switch>
 
 <script>
   export default {
@@ -31,19 +31,19 @@ Switch is used for switching between two opposing states.
 :::demo You can add `active-text` and `inactive-text` attribute to show texts.
 
 ```html
-<el-switch
+<sg-switch
   v-model="value1"
   active-text="Pay by month"
   inactive-text="Pay by year">
-</el-switch>
-<el-switch
+</sg-switch>
+<sg-switch
   style="display: block"
   v-model="value2"
   active-color="#13ce66"
   inactive-color="#ff4949"
   active-text="Pay by month"
   inactive-text="Pay by year">
-</el-switch>
+</sg-switch>
 
 <script>
   export default {
@@ -63,15 +63,15 @@ Switch is used for switching between two opposing states.
 :::demo You can set `active-value` and `inactive-value` attributes. They both receive a `Boolean`, `String` or `Number` typed value.
 
 ```html
-<el-tooltip :content="'Switch value: ' + value" placement="top">
-  <el-switch
+<sg-tooltip :content="'Switch value: ' + value" placement="top">
+  <sg-switch
     v-model="value"
     active-color="#13ce66"
     inactive-color="#ff4949"
     active-value="100"
     inactive-value="0">
-  </el-switch>
-</el-tooltip>
+  </sg-switch>
+</sg-tooltip>
 
 <script>
   export default {
@@ -91,14 +91,14 @@ Switch is used for switching between two opposing states.
 :::demo Adding the `disabled` attribute disables Switch.
 
 ```html
-<el-switch
+<sg-switch
   v-model="value1"
   disabled>
-</el-switch>
-<el-switch
+</sg-switch>
+<sg-switch
   v-model="value2"
   disabled>
-</el-switch>
+</sg-switch>
 
 <script>
   export default {

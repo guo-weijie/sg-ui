@@ -1,34 +1,34 @@
-import { VNode } from 'vue'
-import { ElementUIComponent } from './component'
+import { VNode } from "vue";
+import { SgementUIComponent } from "./component";
 
-export type StepStatus = 'wait' | 'process' | 'finish' | 'error' | 'success'
+export type StepStatus = "wait" | "process" | "finish" | "error" | "success";
 
 export interface StepRenderSlots {
   /** Custom icon */
-  icon: VNode[],
+  icon: VNode[];
 
   /** Step title */
-  title: VNode[],
+  title: VNode[];
 
   /** Step description */
-  description: VNode[],
+  description: VNode[];
 
-  [key: string]: VNode[]
+  [key: string]: VNode[];
 }
 
 /** Step Component */
-export declare class ElStep extends ElementUIComponent {
+export declare class SgStep extends SgementUIComponent {
   /** Step title */
-  title: string
+  title: string;
 
   /** Step description */
-  description: string
+  description: string;
 
   /** Step icon */
-  icon: string
+  icon: string;
 
   /** Current status. It will be automatically set by Steps if not configured. */
-  status: StepStatus
+  status: StepStatus;
 
-  readonly $slots: StepRenderSlots
+  readonly $slots: StepRenderSlots;
 }

@@ -1,11 +1,11 @@
 .demo-block.demo-popover {
-  .el-popover + .el-popover {
+  .sg-popover + .sg-popover {
     margin-left: 10px;
   }
-  .el-input {
+  .sg-input {
     width: 360px;
   }
-  .el-button {
+  .sg-button {
     margin-left: 10px;
   }
 }

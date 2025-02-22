@@ -1,7 +1,7 @@
-import { ElementUIComponent } from './component'
+import { SgementUIComponent } from "./component";
 
 /** Menu Item Group Component */
-export declare class ElMenuItemGroup extends ElementUIComponent {
+export declare class SgMenuItemGroup extends SgementUIComponent {
   /** Group title */
-  title: string
+  title: string;
 }

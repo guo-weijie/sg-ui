@@ -15,7 +15,7 @@ No admite modificadores `v-model`.
 :::demo
 
 ```html
-<el-input placeholder="Please input" v-model="input"></el-input>
+<sg-input placeholder="Please input" v-model="input"></sg-input>
 
 <script>
 export default {
@@ -35,11 +35,11 @@ export default {
 :::demo Deshabilite el Input con el atributo `disabled`.
 
 ```html
-<el-input
+<sg-input
   placeholder="Please input"
   v-model="input"
   :disabled="true">
-</el-input>
+</sg-input>
 
 <script>
 export default {
@@ -59,11 +59,11 @@ export default {
 :::demo Marque que el input puede ser limpiable con el atributo `clearable`.
 
 ```html
-<el-input
+<sg-input
   placeholder="Please input"
   v-model="input"
   clearable>
-</el-input>
+</sg-input>
 
 <script>
 export default {
@@ -82,7 +82,7 @@ export default {
 :::demo Haga un input de contraseña conmutable con el atributo `show-password`.
 
 ```html
-<el-input placeholder="Please input password" v-model="input" show-password></el-input>
+<sg-input placeholder="Please input password" v-model="input" show-password></sg-input>
 
 <script>
   export default {
@@ -105,29 +105,29 @@ Añada un icono para indicar el tipo de Input.
 ```html
 <div class="demo-input-suffix">
   <span class="demo-input-label">Using attributes</span>
-  <el-input
+  <sg-input
     placeholder="Pick a date"
-    suffix-icon="el-icon-date"
+    suffix-icon="sg-icon-date"
     v-model="input1">
-  </el-input>
-  <el-input
+  </sg-input>
+  <sg-input
     placeholder="Type something"
-    prefix-icon="el-icon-search"
+    prefix-icon="sg-icon-search"
     v-model="input2">
-  </el-input>
+  </sg-input>
 </div>
 <div class="demo-input-suffix">
   <span class="demo-input-label">Using slots</span>
-  <el-input
+  <sg-input
     placeholder="Pick a date"
     v-model="input3">
-    <i slot="suffix" class="el-input__icon el-icon-date"></i>
-  </el-input>
-  <el-input
+    <i slot="suffix" class="sg-input__icon sg-icon-date"></i>
+  </sg-input>
+  <sg-input
     placeholder="Type something"
     v-model="input4">
-    <i slot="prefix" class="el-input__icon el-icon-search"></i>
-  </el-input>
+    <i slot="prefix" class="sg-input__icon sg-icon-search"></i>
+  </sg-input>
 </div>
 
 <style>
@@ -160,12 +160,12 @@ Re dimensiona para introducir varias líneas de información de texto. Agregue e
 :::demo Controle la altura ajustando el prop `rows`.
 
 ```html
-<el-input
+<sg-input
   type="textarea"
   :rows="2"
   placeholder="Please input"
   v-model="textarea">
-</el-input>
+</sg-input>
 
 <script>
 export default {
@@ -187,19 +187,19 @@ El ajuste del prop `autosize` en el tipo de Input textarea hace que la altura se
 :::demo
 
 ```html
-<el-input
+<sg-input
   type="textarea"
   autosize
   placeholder="Please input"
   v-model="textarea1">
-</el-input>
+</sg-input>
 <div style="margin: 20px 0;"></div>
-<el-input
+<sg-input
   type="textarea"
   :autosize="{ minRows: 2, maxRows: 4}"
   placeholder="Please input"
   v-model="textarea2">
-</el-input>
+</sg-input>
 
 <script>
 export default {
@@ -223,31 +223,31 @@ Añade un elemento antes o después del input, generalmente una etiqueta o un bo
 
 ```html
 <div>
-  <el-input placeholder="Please input" v-model="input1">
+  <sg-input placeholder="Please input" v-model="input1">
     <template slot="prepend">Http://</template>
-  </el-input>
+  </sg-input>
 </div>
 <div style="margin-top: 15px;">
-  <el-input placeholder="Please input" v-model="input2">
+  <sg-input placeholder="Please input" v-model="input2">
     <template slot="append">.com</template>
-  </el-input>
+  </sg-input>
 </div>
 <div style="margin-top: 15px;">
-  <el-input placeholder="Please input" v-model="input3" class="input-with-select">
-    <el-select v-model="select" slot="prepend" placeholder="Select">
-      <el-option label="Restaurant" value="1"></el-option>
-      <el-option label="Order No." value="2"></el-option>
-      <el-option label="Tel" value="3"></el-option>
-    </el-select>
-    <el-button slot="append" icon="el-icon-search"></el-button>
-  </el-input>
+  <sg-input placeholder="Please input" v-model="input3" class="input-with-select">
+    <sg-select v-model="select" slot="prepend" placeholder="Select">
+      <sg-option label="Restaurant" value="1"></sg-option>
+      <sg-option label="Order No." value="2"></sg-option>
+      <sg-option label="Tel" value="3"></sg-option>
+    </sg-select>
+    <sg-button slot="append" icon="sg-icon-search"></sg-button>
+  </sg-input>
 </div>
 
 <style>
-  .el-select .el-input {
+  .sg-select .sg-input {
     width: 110px;
   }
-  .input-with-select .el-input-group__prepend {
+  .input-with-select .sg-input-group__prepend {
     background-color: #fff;
   }
 </style>
@@ -273,25 +273,25 @@ export default {
 
 ```html
 <div class="demo-input-size">
-  <el-input
+  <sg-input
     placeholder="Please Input"
     v-model="input1">
-  </el-input>
-  <el-input
+  </sg-input>
+  <sg-input
     size="medium"
     placeholder="Please Input"
     v-model="input2">
-  </el-input>
-  <el-input
+  </sg-input>
+  <sg-input
     size="small"
     placeholder="Please Input"
     v-model="input3">
-  </el-input>
-  <el-input
+  </sg-input>
+  <sg-input
     size="mini"
     placeholder="Please Input"
     v-model="input4">
-  </el-input>
+  </sg-input>
 </div>
 
 <script>
@@ -317,29 +317,29 @@ Puede obtener algunas sugerencias basadas en la entrada actual.
 :::demo El componente Autocomplete proporciona sugerencias de entrada. El atributo `fetch-suggestions` es un método que devuelve la entrada sugerida. En este ejemplo, `querySearch(queryString, cb)` devuelve las sugerencias al componente mediante `cb(data)` cuando están listas.
 
 ```html
-<el-row class="demo-autocomplete">
-  <el-col :span="12">
+<sg-row class="demo-autocomplete">
+  <sg-col :span="12">
     <div class="sub-title">list suggestions when activated</div>
-    <el-autocomplete
+    <sg-autocomplete
       class="inline-input"
       v-model="state1"
       :fetch-suggestions="querySearch"
       placeholder="Please Input"
       @select="handleSelect"
-    ></el-autocomplete>
-  </el-col>
-  <el-col :span="12">
+    ></sg-autocomplete>
+  </sg-col>
+  <sg-col :span="12">
     <div class="sub-title">list suggestions on input</div>
-    <el-autocomplete
+    <sg-autocomplete
       class="inline-input"
       v-model="state2"
       :fetch-suggestions="querySearch"
       placeholder="Please Input"
       :trigger-on-focus="false"
       @select="handleSelect"
-    ></el-autocomplete>
-  </el-col>
-</el-row>
+    ></sg-autocomplete>
+  </sg-col>
+</sg-row>
 <script>
   export default {
     data() {
@@ -392,14 +392,14 @@ Personalice cómo se muestran las sugerencias.
 :::demo Utilice `scoped slot` para personalizar los elementos de sugerencias. En el scope, puede acceder al objeto de sugerencia mediante la clave `item`.
 
 ```html
-<el-autocomplete
+<sg-autocomplete
   popper-class="my-autocomplete"
   v-model="state"
   :fetch-suggestions="querySearch"
   placeholder="Please input"
   @select="handleSelect">
   <i
-    class="el-icon-edit el-input__icon"
+    class="sg-icon-edit sg-input__icon"
     slot="suffix"
     @click="handleIconClick">
   </i>
@@ -407,7 +407,7 @@ Personalice cómo se muestran las sugerencias.
     <div class="value">{{ item.value }}</div>
     <span class="link">{{ item.link }}</span>
   </template>
-</el-autocomplete>
+</sg-autocomplete>
 
 <style>
   .my-autocomplete {
@@ -481,12 +481,12 @@ Búsqueda de datos desde el servidor.
 :::demo
 
 ```html
-<el-autocomplete
+<sg-autocomplete
   v-model="state"
   :fetch-suggestions="querySearchAsync"
   placeholder="Please input"
   @select="handleSelect"
-></el-autocomplete>
+></sg-autocomplete>
 <script>
   export default {
     data() {
@@ -540,23 +540,23 @@ Búsqueda de datos desde el servidor.
 :::demo `maxlength` y `minlength` son atributos de la entrada nativa, declaran un límite en el número de caracteres que un usuario puede introducir. La configuración de la pro `maxlength` para un tipo de entrada de texto o de área de texto puede limitar la longitud del valor de entrada y le permite mostrar el recuento de palabras al establecer `show-word-limit` a `true` al mismo tiempo.
 
 ```html
-<el-input
+<sg-input
   type="text"
   placeholder="Please input"
   v-model="text"
   maxlength="10"
   show-word-limit
 >
-</el-input>
+</sg-input>
 <div style="margin: 20px 0;"></div>
-<el-input
+<sg-input
   type="textarea"
   placeholder="Please input"
   v-model="textarea"
   maxlength="30"
   show-word-limit
 >
-</el-input>
+</sg-input>
 
 <script>
 export default {

@@ -12,23 +12,23 @@ El valor actual se muestra cuando se inicia el arrastre del slider.
 <template>
   <div class="block">
     <span class="demonstration">Default value</span>
-    <el-slider v-model="value1"></el-slider>
+    <sg-slider v-model="value1"></sg-slider>
   </div>
   <div class="block">
     <span class="demonstration">Customized initial value</span>
-    <el-slider v-model="value2"></el-slider>
+    <sg-slider v-model="value2"></sg-slider>
   </div>
   <div class="block">
     <span class="demonstration">Hide Tooltip</span>
-    <el-slider v-model="value3" :show-tooltip="false"></el-slider>
+    <sg-slider v-model="value3" :show-tooltip="false"></sg-slider>
   </div>
   <div class="block">
     <span class="demonstration">Format Tooltip</span>
-    <el-slider v-model="value4" :format-tooltip="formatTooltip"></el-slider>
+    <sg-slider v-model="value4" :format-tooltip="formatTooltip"></sg-slider>
   </div>
   <div class="block">
     <span class="demonstration">Disabled</span>
-    <el-slider v-model="value5" disabled></el-slider>
+    <sg-slider v-model="value5" disabled></sg-slider>
   </div>
 </template>
 
@@ -63,18 +63,18 @@ Las opciones pueden ser discretas.
 <template>
   <div class="block">
     <span class="demonstration">Breakpoints not displayed</span>
-    <el-slider
+    <sg-slider
       v-model="value1"
       :step="10">
-    </el-slider>
+    </sg-slider>
   </div>
   <div class="block">
     <span class="demonstration">Breakpoints displayed</span>
-    <el-slider
+    <sg-slider
       v-model="value2"
       :step="10"
       show-stops>
-    </el-slider>
+    </sg-slider>
   </div>
 </template>
 
@@ -100,10 +100,10 @@ Inserte el valor a través de un input
 ```html
 <template>
   <div class="block">
-    <el-slider
+    <sg-slider
       v-model="value"
       show-input>
-    </el-slider>
+    </sg-slider>
   </div>
 </template>
 
@@ -128,12 +128,12 @@ Se soporta la selección de un rango de valores.
 ```html
 <template>
   <div class="block">
-    <el-slider
+    <sg-slider
       v-model="value"
       range
       show-stops
       :max="10">
-    </el-slider>
+    </sg-slider>
   </div>
 </template>
 
@@ -156,11 +156,11 @@ Se soporta la selección de un rango de valores.
 ```html
 <template>
   <div class="block">
-    <el-slider
+    <sg-slider
       v-model="value"
       vertical
       height="200px">
-    </el-slider>
+    </sg-slider>
   </div>
 </template>
 
@@ -182,11 +182,11 @@ Se soporta la selección de un rango de valores.
 ```html
 <template>
   <div class="block">
-    <el-slider
+    <sg-slider
       v-model="value"
       range
       :marks="marks">
-    </el-slider>
+    </sg-slider>
   </div>
 </template>
 

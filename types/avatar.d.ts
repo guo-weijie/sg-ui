@@ -1,7 +1,7 @@
-import { ElementUIComponent } from './component'
+import { SgementUIComponent } from "./component";
 
 /** Avatar Component */
-export declare class ElAvatar extends ElementUIComponent {
+export declare class SgAvatar extends SgementUIComponent {
   icon: string;
 
   size: string | number;

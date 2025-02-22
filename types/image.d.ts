@@ -1,43 +1,43 @@
-import { VNode } from 'vue'
-import { ElementUIComponent } from './component'
+import { VNode } from "vue";
+import { SgementUIComponent } from "./component";
 
-export type ObjectFit = 'fill' | 'contain' | 'cover' | 'none' | 'scale-down'
+export type ObjectFit = "fill" | "contain" | "cover" | "none" | "scale-down";
 
 export interface ImageSlots {
   /** Placeholder content when image hasn't loaded yet */
-  placeholder: VNode[]
+  placeholder: VNode[];
 
   /** Error content when error occurs to image load */
-  error: VNode[]
+  error: VNode[];
 
-  [key: string]: VNode[]
+  [key: string]: VNode[];
 }
 
 /** Image Component */
-export declare class ElImage extends ElementUIComponent {
+export declare class SgImage extends SgementUIComponent {
   /** Image source */
-  src: string
+  src: string;
 
   /** Indicate how the image should be resized to fit its container, same as native 'object-fit' */
-  fit: ObjectFit
+  fit: ObjectFit;
 
   /** Whether to use lazy load */
-  lazy: boolean
+  lazy: boolean;
 
   /** Scroll container that to add scroll listener when using lazy load */
-  scrollContainer: string | HTMLElement
+  scrollContainer: string | HTMLSgement;
 
   /** Native 'alt' attribute */
-  alt: string
+  alt: string;
 
   /** Native 'referrerPolicy' attribute */
-  referrerPolicy: string
+  referrerPolicy: string;
 
-  $slots: ImageSlots
+  $slots: ImageSlots;
 
-  previewSrcList: string[]
+  previewSrcList: string[];
 
-  zIndex: number
+  zIndex: number;
 
-  initialIndex: number
+  initialIndex: number;
 }

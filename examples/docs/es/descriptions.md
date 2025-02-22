@@ -7,15 +7,15 @@ Display multiple fields in list form.
 :::demo
 
 ```html
-<el-descriptions title="User Info">
-    <el-descriptions-item label="Username">kooriookami</el-descriptions-item>
-    <el-descriptions-item label="Telephone">18100000000</el-descriptions-item>
-    <el-descriptions-item label="Place">Suzhou</el-descriptions-item>
-    <el-descriptions-item label="Remarks">
-      <el-tag size="small">School</el-tag>
-    </el-descriptions-item>
-    <el-descriptions-item label="Address">No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province</el-descriptions-item>
-</el-descriptions>
+<sg-descriptions title="User Info">
+    <sg-descriptions-item label="Username">kooriookami</sg-descriptions-item>
+    <sg-descriptions-item label="Telephone">18100000000</sg-descriptions-item>
+    <sg-descriptions-item label="Place">Suzhou</sg-descriptions-item>
+    <sg-descriptions-item label="Remarks">
+      <sg-tag size="small">School</sg-tag>
+    </sg-descriptions-item>
+    <sg-descriptions-item label="Address">No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province</sg-descriptions-item>
+</sg-descriptions>
 ```
 :::
 
@@ -25,66 +25,66 @@ Display multiple fields in list form.
 
 ```html
 <template>
-  <el-radio-group v-model="size">
-    <el-radio label="">Default</el-radio>
-    <el-radio label="medium">Medium</el-radio>
-    <el-radio label="small">Small</el-radio>
-    <el-radio label="mini">Mini</el-radio>
-  </el-radio-group>
+  <sg-radio-group v-model="size">
+    <sg-radio label="">Default</sg-radio>
+    <sg-radio label="medium">Medium</sg-radio>
+    <sg-radio label="small">Small</sg-radio>
+    <sg-radio label="mini">Mini</sg-radio>
+  </sg-radio-group>
 
-  <el-descriptions class="margin-top" title="With border" :column="3" :size="size" border>
+  <sg-descriptions class="margin-top" title="With border" :column="3" :size="size" border>
     <template slot="extra">
-      <el-button type="primary" size="small">Operation</el-button>
+      <sg-button type="primary" size="small">Operation</sg-button>
     </template>
-    <el-descriptions-item>
+    <sg-descriptions-item>
       <template slot="label">
-        <i class="el-icon-user"></i>
+        <i class="sg-icon-user"></i>
         Username
       </template>
       kooriookami
-    </el-descriptions-item>
-    <el-descriptions-item>
+    </sg-descriptions-item>
+    <sg-descriptions-item>
       <template slot="label">
-        <i class="el-icon-mobile-phone"></i>
+        <i class="sg-icon-mobile-phone"></i>
         Telephone
       </template>
       18100000000
-    </el-descriptions-item>
-    <el-descriptions-item>
+    </sg-descriptions-item>
+    <sg-descriptions-item>
       <template slot="label">
-        <i class="el-icon-location-outline"></i>
+        <i class="sg-icon-location-outline"></i>
         Place
       </template>
       Suzhou
-    </el-descriptions-item>
-    <el-descriptions-item>
+    </sg-descriptions-item>
+    <sg-descriptions-item>
       <template slot="label">
-        <i class="el-icon-tickets"></i>
+        <i class="sg-icon-tickets"></i>
         Remarks
       </template>
-      <el-tag size="small">School</el-tag>
-    </el-descriptions-item>
-    <el-descriptions-item>
+      <sg-tag size="small">School</sg-tag>
+    </sg-descriptions-item>
+    <sg-descriptions-item>
       <template slot="label">
-        <i class="el-icon-office-building"></i>
+        <i class="sg-icon-office-building"></i>
         Address
       </template>
       No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province
-    </el-descriptions-item>
-  </el-descriptions>
+    </sg-descriptions-item>
+  </sg-descriptions>
 
-  <el-descriptions class="margin-top" title="Without border" :column="3" :size="size">
+  <sg-descriptions class="margin-top" title="Without border" :column="3" :size="size">
     <template slot="extra">
-      <el-button type="primary" size="small">Operation</el-button>
+      <sg-button type="primary" size="small">Operation</sg-button>
     </template>
-    <el-descriptions-item label="Username">kooriookami</el-descriptions-item>
-    <el-descriptions-item label="Telephone">18100000000</el-descriptions-item>
-    <el-descriptions-item label="Place">Suzhou</el-descriptions-item>
-    <el-descriptions-item label="Remarks">
-      <el-tag size="small">School</el-tag>
-    </el-descriptions-item>
-    <el-descriptions-item label="Address">No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province</el-descriptions-item>
-  </el-descriptions>
+    <sg-descriptions-item label="Username">kooriookami</sg-descriptions-item>
+    <sg-descriptions-item label="Telephone">18100000000</sg-descriptions-item>
+    <sg-descriptions-item label="Place">Suzhou</sg-descriptions-item>
+    <sg-descriptions-item label="Remarks">
+      <sg-tag size="small">School</sg-tag>
+    </sg-descriptions-item>
+    <sg-descriptions-item label="Address">No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province</sg-descriptions-item>
+  </sg-descriptions>
 </template>
 
 <script>
@@ -104,25 +104,25 @@ Display multiple fields in list form.
 :::demo
 
 ```html
-<el-descriptions title="Vertical list with border" direction="vertical" :column="4" border>
-  <el-descriptions-item label="Username">kooriookami</el-descriptions-item>
-  <el-descriptions-item label="Telephone">18100000000</el-descriptions-item>
-  <el-descriptions-item label="Place" :span="2">Suzhou</el-descriptions-item>
-  <el-descriptions-item label="Remarks">
-    <el-tag size="small">School</el-tag>
-  </el-descriptions-item>
-  <el-descriptions-item label="Address">No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province</el-descriptions-item>
-</el-descriptions>
+<sg-descriptions title="Vertical list with border" direction="vertical" :column="4" border>
+  <sg-descriptions-item label="Username">kooriookami</sg-descriptions-item>
+  <sg-descriptions-item label="Telephone">18100000000</sg-descriptions-item>
+  <sg-descriptions-item label="Place" :span="2">Suzhou</sg-descriptions-item>
+  <sg-descriptions-item label="Remarks">
+    <sg-tag size="small">School</sg-tag>
+  </sg-descriptions-item>
+  <sg-descriptions-item label="Address">No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province</sg-descriptions-item>
+</sg-descriptions>
 
-<el-descriptions class="margin-top" title="Vertical list without border" :column="4" direction="vertical">
-  <el-descriptions-item label="Username">kooriookami</el-descriptions-item>
-  <el-descriptions-item label="Telephone">18100000000</el-descriptions-item>
-  <el-descriptions-item label="Place" :span="2">Suzhou</el-descriptions-item>
-  <el-descriptions-item label="Remarks">
-    <el-tag size="small">School</el-tag>
-  </el-descriptions-item>
-  <el-descriptions-item label="Address">No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province</el-descriptions-item>
-</el-descriptions>
+<sg-descriptions class="margin-top" title="Vertical list without border" :column="4" direction="vertical">
+  <sg-descriptions-item label="Username">kooriookami</sg-descriptions-item>
+  <sg-descriptions-item label="Telephone">18100000000</sg-descriptions-item>
+  <sg-descriptions-item label="Place" :span="2">Suzhou</sg-descriptions-item>
+  <sg-descriptions-item label="Remarks">
+    <sg-tag size="small">School</sg-tag>
+  </sg-descriptions-item>
+  <sg-descriptions-item label="Address">No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province</sg-descriptions-item>
+</sg-descriptions>
 ```
 :::
 
@@ -131,15 +131,15 @@ Display multiple fields in list form.
 :::demo
 
 ```html
-<el-descriptions title="Customized style list" :column="3" border>
-  <el-descriptions-item label="Username" label-class-name="my-label" content-class-name="my-content">kooriookami</el-descriptions-item>
-  <el-descriptions-item label="Telephone">18100000000</el-descriptions-item>
-  <el-descriptions-item label="Place">Suzhou</el-descriptions-item>
-  <el-descriptions-item label="Remarks">
-    <el-tag size="small">School</el-tag>
-  </el-descriptions-item>
-  <el-descriptions-item label="Address" :content-style="{'text-align': 'right'}">No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province</el-descriptions-item>
-</el-descriptions>
+<sg-descriptions title="Customized style list" :column="3" border>
+  <sg-descriptions-item label="Username" label-class-name="my-label" content-class-name="my-content">kooriookami</sg-descriptions-item>
+  <sg-descriptions-item label="Telephone">18100000000</sg-descriptions-item>
+  <sg-descriptions-item label="Place">Suzhou</sg-descriptions-item>
+  <sg-descriptions-item label="Remarks">
+    <sg-tag size="small">School</sg-tag>
+  </sg-descriptions-item>
+  <sg-descriptions-item label="Address" :content-style="{'text-align': 'right'}">No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province</sg-descriptions-item>
+</sg-descriptions>
 <style>
   .my-label {
     background: #E1F3D8;

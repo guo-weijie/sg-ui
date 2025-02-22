@@ -11,20 +11,20 @@ El Timeline puede ser dividido en múltiples actividades en forma ascendente o d
 <div class="block">
   <div class="radio">
     Order: 
-    <el-radio-group v-model="reverse">
-      <el-radio :label="true">descending</el-radio>
-      <el-radio :label="false">ascending</el-radio>
-    </el-radio-group>
+    <sg-radio-group v-model="reverse">
+      <sg-radio :label="true">descending</sg-radio>
+      <sg-radio :label="false">ascending</sg-radio>
+    </sg-radio-group>
   </div>
 
-  <el-timeline :reverse="reverse">
-    <el-timeline-item
+  <sg-timeline :reverse="reverse">
+    <sg-timeline-item
       v-for="(activity, index) in activities"
       :key="index"
       :timestamp="activity.timestamp">
       {{activity.content}}
-    </el-timeline-item>
-  </el-timeline>
+    </sg-timeline-item>
+  </sg-timeline>
 </div>
 
 <script>
@@ -56,8 +56,8 @@ El tamaño, el color y los iconos se pueden personalizar en el nodo.
 :::demo
 ```html
 <div class="block">
-  <el-timeline>
-    <el-timeline-item
+  <sg-timeline>
+    <sg-timeline-item
       v-for="(activity, index) in activities"
       :key="index"
       :icon="activity.icon"
@@ -66,8 +66,8 @@ El tamaño, el color y los iconos se pueden personalizar en el nodo.
       :size="activity.size"
       :timestamp="activity.timestamp">
       {{activity.content}}
-    </el-timeline-item>
-  </el-timeline>
+    </sg-timeline-item>
+  </sg-timeline>
 </div>
 
 <script>
@@ -79,7 +79,7 @@ El tamaño, el color y los iconos se pueden personalizar en el nodo.
           timestamp: '2018-04-12 20:46',
           size: 'large',
           type: 'primary',
-          icon: 'el-icon-more'
+          icon: 'sg-icon-more'
         }, {
           content: 'Custom color',
           timestamp: '2018-04-03 20:46',
@@ -106,26 +106,26 @@ Las marcas de tiempo ( timestamp )  puede colocarse encima del contenido cuando 
 :::demo
 ```html
 <div class="block">
-  <el-timeline>
-    <el-timeline-item timestamp="2018/4/12" placement="top">
-      <el-card>
+  <sg-timeline>
+    <sg-timeline-item timestamp="2018/4/12" placement="top">
+      <sg-card>
         <h4>Update Github template</h4>
         <p>Tom committed 2018/4/12 20:46</p>
-      </el-card>
-    </el-timeline-item>
-    <el-timeline-item timestamp="2018/4/3" placement="top">
-      <el-card>
+      </sg-card>
+    </sg-timeline-item>
+    <sg-timeline-item timestamp="2018/4/3" placement="top">
+      <sg-card>
         <h4>Update Github template</h4>
         <p>Tom committed 2018/4/3 20:46</p>
-      </el-card>
-    </el-timeline-item>
-    <el-timeline-item timestamp="2018/4/2" placement="top">
-      <el-card>
+      </sg-card>
+    </sg-timeline-item>
+    <sg-timeline-item timestamp="2018/4/2" placement="top">
+      <sg-card>
         <h4>Update Github template</h4>
         <p>Tom committed 2018/4/2 20:46</p>
-      </el-card>
-    </el-timeline-item>
-  </el-timeline>
+      </sg-card>
+    </sg-timeline-item>
+  </sg-timeline>
 </div>
 ```
 :::

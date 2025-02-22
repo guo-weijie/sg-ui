@@ -1,7 +1,19 @@
-import { ElementUIComponent, ElementUIComponentSize, ElementUIHorizontalAlignment } from './component'
+import {
+  SgementUIComponent,
+  SgementUIComponentSize,
+  SgementUIHorizontalAlignment,
+} from "./component";
 
-export type DatePickerType = 'year' | 'month' | 'date' | 'datetime' | 'week' | 'datetimerange' | 'daterange' | 'dates'
-export type FirstDayOfWeek = 1 | 2 | 3 | 4 | 5 | 6 | 7
+export type DatePickerType =
+  | "year"
+  | "month"
+  | "date"
+  | "datetime"
+  | "week"
+  | "datetimerange"
+  | "daterange"
+  | "dates";
+export type FirstDayOfWeek = 1 | 2 | 3 | 4 | 5 | 6 | 7;
 
 export interface DisabledDateChecker {
   /**
@@ -10,13 +22,13 @@ export interface DisabledDateChecker {
    * @param date The date to check
    * @returns if `date` will be disabled in the picker
    */
-  (date: Date): boolean
+  (date: Date): boolean;
 }
 
 // Picked date range
 export interface DateRange {
-  minDate: Date,
-  maxDate: Date
+  minDate: Date;
+  maxDate: Date;
 }
 
 export interface PickEventHandler {
@@ -25,7 +37,7 @@ export interface PickEventHandler {
    *
    * @param dateRange The selected date range
    */
-  (dateRange: DateRange): void
+  (dateRange: DateRange): void;
 }
 
 export interface ShortcutClickEventHandler {
@@ -34,91 +46,91 @@ export interface ShortcutClickEventHandler {
    * You can change the picker value by emitting the pick event.
    * Example: `vm.$emit('pick', new Date())`
    */
-  (vm: ElDatePicker): void
+  (vm: SgDatePicker): void;
 }
 
 /** Shortcut options */
 export interface Shortcut {
   /** Title of the shortcut */
-  text: string,
+  text: string;
 
   /** Callback function that triggers when picks a date range */
-  onClick?: ShortcutClickEventHandler
+  onClick?: ShortcutClickEventHandler;
 }
 
 /** Options of el-date-picker */
 export interface DatePickerOptions {
   /** An object array to set shortcut options */
-  shortcuts?: Shortcut[]
+  shortcuts?: Shortcut[];
 
   /** A function determining if a date is disabled. */
-  disabledDate?: DisabledDateChecker
+  disabledDate?: DisabledDateChecker;
 
   /** First day of week */
-  firstDayOfWeek?: FirstDayOfWeek
+  firstDayOfWeek?: FirstDayOfWeek;
 
   /** A callback that triggers when the seleted date is changed. Only for daterange and datetimerange. */
-  onPick?: PickEventHandler
+  onPick?: PickEventHandler;
 }
 
 /** DatePicker Component */
-export declare class ElDatePicker extends ElementUIComponent {
+export declare class SgDatePicker extends SgementUIComponent {
   /** The value of the date picker */
-  value: Date | string | Date[] | string[]
+  value: Date | string | Date[] | string[];
 
   /** Whether DatePicker is read only */
-  readonly: boolean
+  readonly: boolean;
 
   /** Whether DatePicker is disabled */
-  disabled: boolean
+  disabled: boolean;
 
   /** Size of Input */
-  size: ElementUIComponentSize
+  size: SgementUIComponentSize;
 
   /** Whether the input is editable */
-  editable: boolean
+  editable: boolean;
 
   /** Whether to show clear button */
-  clearable: boolean
+  clearable: boolean;
 
   /** Placeholder */
-  placeholder: string
+  placeholder: string;
 
   /** Placeholder for the start date in range mode */
-  startPlaceholder: string
+  startPlaceholder: string;
 
   /** Placeholder for the end date in range mode */
-  endPlaceholder: string
+  endPlaceholder: string;
 
   /** Type of the picker */
-  type: DatePickerType
+  type: DatePickerType;
 
   /** Format of the picker */
-  format: string
+  format: string;
 
   /** Alignment */
-  align: ElementUIHorizontalAlignment
+  align: SgementUIHorizontalAlignment;
 
   /** Custom class name for DatePicker's dropdown */
-  popperClass: string
+  popperClass: string;
 
   /** Additional options, check the table below */
-  pickerOptions: DatePickerOptions
+  pickerOptions: DatePickerOptions;
 
   /** Range separator */
-  rangeSeparator: string
+  rangeSeparator: string;
 
   /** Default date of the calendar */
-  defaultValue: Date | number | string
+  defaultValue: Date | number | string;
 
   /** Format of binding value. If not specified, the binding value will be a Date object */
-  valueFormat: string
+  valueFormat: string;
 
   /** name for the inner native input */
-  name: string
+  name: string;
 
   /**
    * Focus the Input component
    */
-  focus (): void
+  focus(): void;
 }

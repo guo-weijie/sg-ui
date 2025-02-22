@@ -1,16 +1,16 @@
-import { ElementUIComponent } from './component'
+import { SgementUIComponent } from "./component";
 
 /** Backtop Component */
-export declare class ElBacktop extends ElementUIComponent {
+export declare class SgBacktop extends SgementUIComponent {
   /** Backtop target */
-  target: string
-  
+  target: string;
+
   /** Backtop visibility height */
-  visibilityHeight: string | number
+  visibilityHeight: string | number;
 
   /** Backtop right position */
-  right: string | number
+  right: string | number;
 
   /** Backtop bottom position */
-  bottom: string | number
+  bottom: string | number;
 }

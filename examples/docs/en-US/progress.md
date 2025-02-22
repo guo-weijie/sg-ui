@@ -6,11 +6,11 @@ Progress is used to show the progress of current operation, and inform the user 
 
 :::demo Use `percentage` attribute to set the percentage. It's **required** and must be between `0-100`. You can custom text format by setting `format`.
 ```html
-<el-progress :percentage="50"></el-progress>
-<el-progress :percentage="100" :format="format"></el-progress>
-<el-progress :percentage="100" status="success"></el-progress>
-<el-progress :percentage="100" status="warning"></el-progress>
-<el-progress :percentage="50" status="exception"></el-progress>
+<sg-progress :percentage="50"></sg-progress>
+<sg-progress :percentage="100" :format="format"></sg-progress>
+<sg-progress :percentage="100" status="success"></sg-progress>
+<sg-progress :percentage="100" status="warning"></sg-progress>
+<sg-progress :percentage="50" status="exception"></sg-progress>
 
 <script>
   export default {
@@ -30,10 +30,10 @@ In this case the percentage takes no additional space.
 
 :::demo `stroke-width` attribute decides the `width` of progress bar, and use `text-inside` attribute to put description inside the progress bar.
 ```html
-<el-progress :text-inside="true" :stroke-width="26" :percentage="70"></el-progress>
-<el-progress :text-inside="true" :stroke-width="24" :percentage="100" status="success"></el-progress>
-<el-progress :text-inside="true" :stroke-width="22" :percentage="80" status="warning"></el-progress>
-<el-progress :text-inside="true" :stroke-width="20" :percentage="50" status="exception"></el-progress>
+<sg-progress :text-inside="true" :stroke-width="26" :percentage="70"></sg-progress>
+<sg-progress :text-inside="true" :stroke-width="24" :percentage="100" status="success"></sg-progress>
+<sg-progress :text-inside="true" :stroke-width="22" :percentage="80" status="warning"></sg-progress>
+<sg-progress :text-inside="true" :stroke-width="20" :percentage="50" status="exception"></sg-progress>
 ```
 :::
 
@@ -44,16 +44,16 @@ You can use `color` attr to set the progress bar color. it accepts color string,
 :::demo
 
 ```html
-<el-progress :percentage="percentage" :color="customColor"></el-progress>
+<sg-progress :percentage="percentage" :color="customColor"></sg-progress>
 
-<el-progress :percentage="percentage" :color="customColorMethod"></el-progress>
+<sg-progress :percentage="percentage" :color="customColorMethod"></sg-progress>
 
-<el-progress :percentage="percentage" :color="customColors"></el-progress>
+<sg-progress :percentage="percentage" :color="customColors"></sg-progress>
 <div>
-  <el-button-group>
-    <el-button icon="el-icon-minus" @click="decrease"></el-button>
-    <el-button icon="el-icon-plus" @click="increase"></el-button>
-  </el-button-group>
+  <sg-button-group>
+    <sg-button icon="sg-icon-minus" @click="decrease"></sg-button>
+    <sg-button icon="sg-icon-plus" @click="increase"></sg-button>
+  </sg-button-group>
 </div>
 
 <script>
@@ -103,11 +103,11 @@ You can use `color` attr to set the progress bar color. it accepts color string,
 
 :::demo You can specify `type` attribute to `circle` to use circular progress bar, and use `width` attribute to change the size of circle.
 ```html
-<el-progress type="circle" :percentage="0"></el-progress>
-<el-progress type="circle" :percentage="25"></el-progress>
-<el-progress type="circle" :percentage="100" status="success"></el-progress>
-<el-progress type="circle" :percentage="70" status="warning"></el-progress>
-<el-progress type="circle" :percentage="50" status="exception"></el-progress>
+<sg-progress type="circle" :percentage="0"></sg-progress>
+<sg-progress type="circle" :percentage="25"></sg-progress>
+<sg-progress type="circle" :percentage="100" status="success"></sg-progress>
+<sg-progress type="circle" :percentage="70" status="warning"></sg-progress>
+<sg-progress type="circle" :percentage="50" status="exception"></sg-progress>
 ```
 :::
 
@@ -118,12 +118,12 @@ You also can specify `type` attribute to `dashboard` to use dashboard progress b
 :::demo
 
 ```html
-<el-progress type="dashboard" :percentage="percentage" :color="colors"></el-progress>
+<sg-progress type="dashboard" :percentage="percentage" :color="colors"></sg-progress>
 <div>
-  <el-button-group>
-    <el-button icon="el-icon-minus" @click="decrease"></el-button>
-    <el-button icon="el-icon-plus" @click="increase"></el-button>
-  </el-button-group>
+  <sg-button-group>
+    <sg-button icon="sg-icon-minus" @click="decrease"></sg-button>
+    <sg-button icon="sg-icon-plus" @click="increase"></sg-button>
+  </sg-button-group>
 </div>
 
 <script>

@@ -1,8 +1,8 @@
-import ElTimelineItem from '../timeline/src/item';
+import SgTimelineItem from '../timeline/src/item';
 
 /* istanbul ignore next */
-ElTimelineItem.install = function(Vue) {
-  Vue.component(ElTimelineItem.name, ElTimelineItem);
+SgTimelineItem.install = function (Vue) {
+  Vue.component(SgTimelineItem.name, SgTimelineItem);
 };
 
-export default ElTimelineItem;
+export default SgTimelineItem;

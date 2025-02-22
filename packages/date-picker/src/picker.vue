@@ -1,96 +1,47 @@
 <template>
-  <el-input
-    class="el-date-editor"
-    :class="'el-date-editor--' + type"
+  <sg-input class="sg-date-editor" :class="'sg-date-editor--' + type"
     :readonly="!editable || readonly || type === 'dates' || type === 'week' || type === 'years' || type === 'months'"
-    :disabled="pickerDisabled"
-    :size="pickerSize"
-    :name="name"
-    v-bind="firstInputId"
-    v-if="!ranged"
-    v-clickoutside="handleClose"
-    :placeholder="placeholder"
-    @focus="handleFocus"
-    @keydown.native="handleKeydown"
-    :value="displayValue"
-    @input="value => userInput = value"
-    @change="handleChange"
-    @mouseenter.native="handleMouseEnter"
-    @mouseleave.native="showClose = false"
-    :validateEvent="false"
-    ref="reference">
-    <i slot="prefix"
-      class="el-input__icon"
-      :class="triggerClass"
-      @click="handleFocus">
+    :disabled="pickerDisabled" :size="pickerSize" :name="name" v-bind="firstInputId" v-if="!ranged"
+    v-clickoutside="handleClose" :placeholder="placeholder" @focus="handleFocus" @keydown.native="handleKeydown"
+    :value="displayValue" @input="value => userInput = value" @change="handleChange"
+    @mouseenter.native="handleMouseEnter" @mouseleave.native="showClose = false" :validateEvent="false" ref="reference">
+    <i slot="prefix" class="sg-input__icon" :class="triggerClass" @click="handleFocus">
     </i>
-    <i slot="suffix"
-      class="el-input__icon"
-      @click="handleClickIcon"
-      :class="[showClose ? '' + clearIcon : '']"
+    <i slot="suffix" class="sg-input__icon" @click="handleClickIcon" :class="[showClose ? '' + clearIcon : '']"
       v-if="haveTrigger">
     </i>
-  </el-input>
-  <div
-    class="el-date-editor el-range-editor el-input__inner"
-    :class="[
-      'el-date-editor--' + type,
-      pickerSize ? `el-range-editor--${ pickerSize }` : '',
-      pickerDisabled ? 'is-disabled' : '',
-      pickerVisible ? 'is-active' : ''
-    ]"
-    @click="handleRangeClick"
-    @mouseenter="handleMouseEnter"
-    @mouseleave="showClose = false"
-    @keydown="handleKeydown"
-    ref="reference"
-    v-clickoutside="handleClose"
-    v-else>
-    <i :class="['el-input__icon', 'el-range__icon', triggerClass]"></i>
-    <input
-      autocomplete="off"
-      :placeholder="startPlaceholder"
-      :value="displayValue && displayValue[0]"
-      :disabled="pickerDisabled"
-      v-bind="firstInputId"
-      :readonly="!editable || readonly"
-      :name="name && name[0]"
-      @input="handleStartInput"
-      @change="handleStartChange"
-      @focus="handleFocus"
-      class="el-range-input">
+  </sg-input>
+  <div class="sg-date-editor sg-range-editor sg-input__inner" :class="[
+    'sg-date-editor--' + type,
+    pickerSize ? `sg-range-editor--${pickerSize}` : '',
+    pickerDisabled ? 'is-disabled' : '',
+    pickerVisible ? 'is-active' : ''
+  ]" @click="handleRangeClick" @mouseenter="handleMouseEnter" @mouseleave="showClose = false" @keydown="handleKeydown"
+    ref="reference" v-clickoutside="handleClose" v-else>
+    <i :class="['sg-input__icon', 'sg-range__icon', triggerClass]"></i>
+    <input autocomplete="off" :placeholder="startPlaceholder" :value="displayValue && displayValue[0]"
+      :disabled="pickerDisabled" v-bind="firstInputId" :readonly="!editable || readonly" :name="name && name[0]"
+      @input="handleStartInput" @change="handleStartChange" @focus="handleFocus" class="sg-range-input">
     <slot name="range-separator">
-      <span class="el-range-separator">{{ rangeSeparator }}</span>
+      <span class="sg-range-separator">{{ rangeSeparator }}</span>
     </slot>
-    <input
-      autocomplete="off"
-      :placeholder="endPlaceholder"
-      :value="displayValue && displayValue[1]"
-      :disabled="pickerDisabled"
-      v-bind="secondInputId"
-      :readonly="!editable || readonly"
-      :name="name && name[1]"
-      @input="handleEndInput"
-      @change="handleEndChange"
-      @focus="handleFocus"
-      class="el-range-input">
-    <i
-      @click="handleClickIcon"
-      v-if="haveTrigger"
-      :class="[showClose ? '' + clearIcon : '']"
-      class="el-input__icon el-range__close-icon">
+    <input autocomplete="off" :placeholder="endPlaceholder" :value="displayValue && displayValue[1]"
+      :disabled="pickerDisabled" v-bind="secondInputId" :readonly="!editable || readonly" :name="name && name[1]"
+      @input="handleEndInput" @change="handleEndChange" @focus="handleFocus" class="sg-range-input">
+    <i @click="handleClickIcon" v-if="haveTrigger" :class="[showClose ? '' + clearIcon : '']"
+      class="sg-input__icon sg-range__close-icon">
     </i>
   </div>
 </template>
 
 <script>
 import Vue from 'vue';
-import Clickoutside from 'element-ui/src/utils/clickoutside';
-import { formatDate, parseDate, isDateObject, getWeekNumber } from 'element-ui/src/utils/date-util';
-import Popper from 'element-ui/src/utils/vue-popper';
-import Emitter from 'element-ui/src/mixins/emitter';
-import ElInput from 'element-ui/packages/input';
-import merge from 'element-ui/src/utils/merge';
+import Clickoutside from 'sg-ui/src/utils/clickoutside';
+import { formatDate, parseDate, isDateObject, getWeekNumber } from 'sg-ui/src/utils/date-util';
+import Popper from 'sg-ui/src/utils/vue-popper';
+import Emitter from 'sg-ui/src/mixins/emitter';
+import SgInput from 'sg-ui/packages/input';
+import merge from 'sg-ui/src/utils/merge';
 
 const NewPopper = {
   props: {
@@ -137,15 +88,15 @@ const HAVE_TRIGGER_TYPES = [
   'months',
   'years'
 ];
-const DATE_FORMATTER = function(value, format) {
+const DATE_FORMATTER = function (value, format) {
   if (format === 'timestamp') return value.getTime();
   return formatDate(value, format);
 };
-const DATE_PARSER = function(text, format) {
+const DATE_PARSER = function (text, format) {
   if (format === 'timestamp') return new Date(Number(text));
   return parseDate(text, format);
 };
-const RANGE_FORMATTER = function(value, format) {
+const RANGE_FORMATTER = function (value, format) {
   if (Array.isArray(value) && value.length === 2) {
     const start = value[0];
     const end = value[1];
@@ -156,7 +107,7 @@ const RANGE_FORMATTER = function(value, format) {
   }
   return '';
 };
-const RANGE_PARSER = function(array, format, separator) {
+const RANGE_PARSER = function (array, format, separator) {
   if (!Array.isArray(array)) {
     array = array.split(separator);
   }
@@ -311,9 +262,9 @@ const formatAsFormatAndType = (value, customFormat, type) => {
  *   2. date string
  *   3. array of 1 or 2
  */
-const valueEquals = function(a, b) {
+const valueEquals = function (a, b) {
   // considers Date object and string
-  const dateEquals = function(a, b) {
+  const dateEquals = function (a, b) {
     const aIsDate = a instanceof Date;
     const bIsDate = b instanceof Date;
     if (aIsDate && bIsDate) {
@@ -339,11 +290,11 @@ const valueEquals = function(a, b) {
   return false;
 };
 
-const isString = function(val) {
+const isString = function (val) {
   return typeof val === 'string' || val instanceof String;
 };
 
-const validator = function(val) {
+const validator = function (val) {
   // either: String, Array of String, null / undefined
   return (
     val === null ||
@@ -357,10 +308,10 @@ export default {
   mixins: [Emitter, NewPopper],
 
   inject: {
-    elForm: {
+    sgForm: {
       default: ''
     },
-    elFormItem: {
+    sgFormItem: {
       default: ''
     }
   },
@@ -376,7 +327,7 @@ export default {
     prefixIcon: String,
     clearIcon: {
       type: String,
-      default: 'el-icon-circle-close'
+      default: 'sg-icon-circle-close'
     },
     name: {
       default: '',
@@ -414,7 +365,7 @@ export default {
     }
   },
 
-  components: { ElInput },
+  components: { SgInput },
 
   directives: { Clickoutside },
 
@@ -439,7 +390,7 @@ export default {
         this.emitChange(this.value);
         this.userInput = null;
         if (this.validateEvent) {
-          this.dispatch('ElFormItem', 'el.form.blur');
+          this.dispatch('SgFormItem', 'el.form.blur');
         }
         this.$emit('blur', this);
         this.blur();
@@ -461,7 +412,7 @@ export default {
     },
     value(val, oldVal) {
       if (!valueEquals(val, oldVal) && !this.pickerVisible && this.validateEvent) {
-        this.dispatch('ElFormItem', 'el.form.change', val);
+        this.dispatch('SgFormItem', 'el.form.change', val);
       }
     }
   },
@@ -500,7 +451,7 @@ export default {
     },
 
     triggerClass() {
-      return this.prefixIcon || (this.type.indexOf('time') !== -1 ? 'el-icon-time' : 'el-icon-date');
+      return this.prefixIcon || (this.type.indexOf('time') !== -1 ? 'sg-icon-time' : 'sg-icon-date');
     },
 
     selectionMode() {
@@ -564,16 +515,16 @@ export default {
       return Array.isArray(this.value) ? this.value.map(val => new Date(val)) : new Date(this.value);
     },
 
-    _elFormItemSize() {
-      return (this.elFormItem || {}).elFormItemSize;
+    _sgFormItemSize() {
+      return (this.sgFormItem || {}).sgFormItemSize;
     },
 
     pickerSize() {
-      return this.size || this._elFormItemSize || (this.$ELEMENT || {}).size;
+      return this.size || this._sgFormItemSize || (this.$ELEMENT || {}).size;
     },
 
     pickerDisabled() {
-      return this.disabled || (this.elForm || {}).disabled;
+      return this.disabled || (this.sgForm || {}).disabled;
     },
 
     firstInputId() {
@@ -876,8 +827,8 @@ export default {
 
         for (const option in options) {
           if (options.hasOwnProperty(option) &&
-              // 忽略 time-picker 的该配置项
-              option !== 'selectableRange') {
+            // 忽略 time-picker 的该配置项
+            option !== 'selectableRange') {
             this.picker[option] = options[option];
           }
         }
@@ -929,7 +880,7 @@ export default {
         this.$emit('change', val);
         this.valueOnOpen = val;
         if (this.validateEvent) {
-          this.dispatch('ElFormItem', 'el.form.change', val);
+          this.dispatch('SgFormItem', 'el.form.change', val);
         }
       }
     },

@@ -1,36 +1,26 @@
 <template>
   <span>
-    <transition
-      :name="transition"
-      @after-enter="handleAfterEnter"
-      @after-leave="handleAfterLeave">
-      <div
-        class="el-popover el-popper"
-        :class="[popperClass, content && 'el-popover--plain']"
-        ref="popper"
-        v-show="!disabled && showPopper"
-        :style="{ width: width + 'px' }"
-        role="tooltip"
-        :id="tooltipId"
-        :aria-hidden="(disabled || !showPopper) ? 'true' : 'false'"
-      >
-        <div class="el-popover__title" v-if="title" v-text="title"></div>
+    <transition :name="transition" @after-enter="handleAfterEnter" @after-leave="handleAfterLeave">
+      <div class="sg-popover sg-popper" :class="[popperClass, content && 'sg-popover--plain']" ref="popper"
+        v-show="!disabled && showPopper" :style="{ width: width + 'px' }" role="tooltip" :id="tooltipId"
+        :aria-hidden="(disabled || !showPopper) ? 'true' : 'false'">
+        <div class="sg-popover__title" v-if="title" v-text="title"></div>
         <slot>{{ content }}</slot>
       </div>
     </transition>
-    <span class="el-popover__reference-wrapper" ref="wrapper" >
+    <span class="sg-popover__reference-wrapper" ref="wrapper">
       <slot name="reference"></slot>
     </span>
   </span>
 </template>
 <script>
-import Popper from 'element-ui/src/utils/vue-popper';
-import { on, off } from 'element-ui/src/utils/dom';
-import { addClass, removeClass } from 'element-ui/src/utils/dom';
-import { generateId } from 'element-ui/src/utils/util';
+import Popper from 'sg-ui/src/utils/vue-popper';
+import { on, off } from 'sg-ui/src/utils/dom';
+import { addClass, removeClass } from 'sg-ui/src/utils/dom';
+import { generateId } from 'sg-ui/src/utils/util';
 
 export default {
-  name: 'ElPopover',
+  name: 'SgPopover',
 
   mixins: [Popper],
 
@@ -73,7 +63,7 @@ export default {
 
   computed: {
     tooltipId() {
-      return `el-popover-${generateId()}`;
+      return `sg-popover-${generateId()}`;
     }
   },
   watch: {
@@ -94,7 +84,7 @@ export default {
     }
     // 可访问性
     if (reference) {
-      addClass(reference, 'el-popover__reference');
+      addClass(reference, 'sg-popover__reference');
       reference.setAttribute('aria-describedby', this.tooltipId);
       reference.setAttribute('tabindex', this.tabindex); // tab序列
       popper.setAttribute('tabindex', 0);

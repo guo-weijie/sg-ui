@@ -1,37 +1,40 @@
-import { ElementUIComponent } from './component'
+import { SgementUIComponent } from "./component";
 
-export type ProgressType = 'line' | 'circle'
-export type ProgressStatus = 'success' | 'exception'
+export type ProgressType = "line" | "circle";
+export type ProgressStatus = "success" | "exception";
 
 /** Progress Component */
-export declare class ElProgress extends ElementUIComponent {
+export declare class SgProgress extends SgementUIComponent {
   /** Percentage, required */
-  percentage: number
+  percentage: number;
 
   /** The type of progress bar */
-  type: ProgressType
+  type: ProgressType;
 
   /** The width of progress bar */
-  strokeWidth: number
+  strokeWidth: number;
 
   /** Circle progress bar stroke line cap */
-  strokeLinecap: string
+  strokeLinecap: string;
 
   /** Whether to place the percentage inside progress bar, only works when type is 'line' */
-  textInside: boolean
+  textInside: boolean;
 
   /** The current status of progress bar */
-  status: ProgressStatus
+  status: ProgressStatus;
 
   /** Background color of progress bar. Overrides `status` prop */
-  color: string | Function | Array<string | { color: string, percentage: number }>
+  color:
+    | string
+    | Function
+    | Array<string | { color: string; percentage: number }>;
 
   /** The canvas width of circle progress bar */
-  width: number
+  width: number;
 
   /** Whether to show percentage */
-  showText: boolean
+  showText: boolean;
 
   /** Template function of the content	*/
-  format(percentage: number): string
+  format(percentage: number): string;
 }

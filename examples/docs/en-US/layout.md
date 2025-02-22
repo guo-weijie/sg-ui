@@ -8,41 +8,41 @@ Create basic grid layout using columns.
 
 :::demo With `row` and `col`, we can easily manipulate the layout using the `span` attribute.
 ```html
-<el-row>
-  <el-col :span="24"><div class="grid-content bg-purple-dark"></div></el-col>
-</el-row>
-<el-row>
-  <el-col :span="12"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="12"><div class="grid-content bg-purple-light"></div></el-col>
-</el-row>
-<el-row>
-  <el-col :span="8"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="8"><div class="grid-content bg-purple-light"></div></el-col>
-  <el-col :span="8"><div class="grid-content bg-purple"></div></el-col>
-</el-row>
-<el-row>
-  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple-light"></div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple-light"></div></el-col>
-</el-row>
-<el-row>
-  <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="4"><div class="grid-content bg-purple-light"></div></el-col>
-  <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="4"><div class="grid-content bg-purple-light"></div></el-col>
-  <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="4"><div class="grid-content bg-purple-light"></div></el-col>
-</el-row>
+<sg-row>
+  <sg-col :span="24"><div class="grid-content bg-purple-dark"></div></sg-col>
+</sg-row>
+<sg-row>
+  <sg-col :span="12"><div class="grid-content bg-purple"></div></sg-col>
+  <sg-col :span="12"><div class="grid-content bg-purple-light"></div></sg-col>
+</sg-row>
+<sg-row>
+  <sg-col :span="8"><div class="grid-content bg-purple"></div></sg-col>
+  <sg-col :span="8"><div class="grid-content bg-purple-light"></div></sg-col>
+  <sg-col :span="8"><div class="grid-content bg-purple"></div></sg-col>
+</sg-row>
+<sg-row>
+  <sg-col :span="6"><div class="grid-content bg-purple"></div></sg-col>
+  <sg-col :span="6"><div class="grid-content bg-purple-light"></div></sg-col>
+  <sg-col :span="6"><div class="grid-content bg-purple"></div></sg-col>
+  <sg-col :span="6"><div class="grid-content bg-purple-light"></div></sg-col>
+</sg-row>
+<sg-row>
+  <sg-col :span="4"><div class="grid-content bg-purple"></div></sg-col>
+  <sg-col :span="4"><div class="grid-content bg-purple-light"></div></sg-col>
+  <sg-col :span="4"><div class="grid-content bg-purple"></div></sg-col>
+  <sg-col :span="4"><div class="grid-content bg-purple-light"></div></sg-col>
+  <sg-col :span="4"><div class="grid-content bg-purple"></div></sg-col>
+  <sg-col :span="4"><div class="grid-content bg-purple-light"></div></sg-col>
+</sg-row>
 
 <style>
-  .el-row {
+  .sg-row {
     margin-bottom: 20px;
     &:last-child {
       margin-bottom: 0;
     }
   }
-  .el-col {
+  .sg-col {
     border-radius: 4px;
   }
   .bg-purple-dark {
@@ -72,21 +72,21 @@ Column spacing is supported.
 
 :::demo Row provides `gutter` attribute to specify spacings between columns, and its default value is 0.
 ```html
-<el-row :gutter="20">
-  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-</el-row>
+<sg-row :gutter="20">
+  <sg-col :span="6"><div class="grid-content bg-purple"></div></sg-col>
+  <sg-col :span="6"><div class="grid-content bg-purple"></div></sg-col>
+  <sg-col :span="6"><div class="grid-content bg-purple"></div></sg-col>
+  <sg-col :span="6"><div class="grid-content bg-purple"></div></sg-col>
+</sg-row>
 
 <style>
-  .el-row {
+  .sg-row {
     margin-bottom: 20px;
     &:last-child {
       margin-bottom: 0;
     }
   }
-  .el-col {
+  .sg-col {
     border-radius: 4px;
   }
   .bg-purple-dark {
@@ -116,30 +116,30 @@ Form a more complex hybrid layout by combining the basic 1/24 columns.
 
 :::demo
 ```html
-<el-row :gutter="20">
-  <el-col :span="16"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="8"><div class="grid-content bg-purple"></div></el-col>
-</el-row>
-<el-row :gutter="20">
-  <el-col :span="8"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="8"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
-</el-row>
-<el-row :gutter="20">
-  <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="16"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
-</el-row>
+<sg-row :gutter="20">
+  <sg-col :span="16"><div class="grid-content bg-purple"></div></sg-col>
+  <sg-col :span="8"><div class="grid-content bg-purple"></div></sg-col>
+</sg-row>
+<sg-row :gutter="20">
+  <sg-col :span="8"><div class="grid-content bg-purple"></div></sg-col>
+  <sg-col :span="8"><div class="grid-content bg-purple"></div></sg-col>
+  <sg-col :span="4"><div class="grid-content bg-purple"></div></sg-col>
+  <sg-col :span="4"><div class="grid-content bg-purple"></div></sg-col>
+</sg-row>
+<sg-row :gutter="20">
+  <sg-col :span="4"><div class="grid-content bg-purple"></div></sg-col>
+  <sg-col :span="16"><div class="grid-content bg-purple"></div></sg-col>
+  <sg-col :span="4"><div class="grid-content bg-purple"></div></sg-col>
+</sg-row>
 
 <style>
-  .el-row {
+  .sg-row {
     margin-bottom: 20px;
     &:last-child {
       margin-bottom: 0;
     }
   }
-  .el-col {
+  .sg-col {
     border-radius: 4px;
   }
   .bg-purple-dark {
@@ -170,26 +170,26 @@ You can specify column offsets.
 :::demo You can specify the number of column offset by setting the value of `offset` attribute of Col.
 
 ```html
-<el-row :gutter="20">
-  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="6" :offset="6"><div class="grid-content bg-purple"></div></el-col>
-</el-row>
-<el-row :gutter="20">
-  <el-col :span="6" :offset="6"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="6" :offset="6"><div class="grid-content bg-purple"></div></el-col>
-</el-row>
-<el-row :gutter="20">
-  <el-col :span="12" :offset="6"><div class="grid-content bg-purple"></div></el-col>
-</el-row>
+<sg-row :gutter="20">
+  <sg-col :span="6"><div class="grid-content bg-purple"></div></sg-col>
+  <sg-col :span="6" :offset="6"><div class="grid-content bg-purple"></div></sg-col>
+</sg-row>
+<sg-row :gutter="20">
+  <sg-col :span="6" :offset="6"><div class="grid-content bg-purple"></div></sg-col>
+  <sg-col :span="6" :offset="6"><div class="grid-content bg-purple"></div></sg-col>
+</sg-row>
+<sg-row :gutter="20">
+  <sg-col :span="12" :offset="6"><div class="grid-content bg-purple"></div></sg-col>
+</sg-row>
 
 <style>
-  .el-row {
+  .sg-row {
     margin-bottom: 20px;
     &:last-child {
       margin-bottom: 0;
     }
   }
-  .el-col {
+  .sg-col {
     border-radius: 4px;
   }
   .bg-purple-dark {
@@ -219,40 +219,40 @@ Use the flex layout to make flexible alignment of columns.
 
 :::demo You can enable flex layout by setting `type` attribute to 'flex', and define the layout of child elements by setting `justify` attribute with start, center, end, space-between or space-around.
 ```html
-<el-row type="flex" class="row-bg">
-  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple-light"></div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-</el-row>
-<el-row type="flex" class="row-bg" justify="center">
-  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple-light"></div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-</el-row>
-<el-row type="flex" class="row-bg" justify="end">
-  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple-light"></div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-</el-row>
-<el-row type="flex" class="row-bg" justify="space-between">
-  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple-light"></div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-</el-row>
-<el-row type="flex" class="row-bg" justify="space-around">
-  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple-light"></div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-</el-row>
+<sg-row type="flex" class="row-bg">
+  <sg-col :span="6"><div class="grid-content bg-purple"></div></sg-col>
+  <sg-col :span="6"><div class="grid-content bg-purple-light"></div></sg-col>
+  <sg-col :span="6"><div class="grid-content bg-purple"></div></sg-col>
+</sg-row>
+<sg-row type="flex" class="row-bg" justify="center">
+  <sg-col :span="6"><div class="grid-content bg-purple"></div></sg-col>
+  <sg-col :span="6"><div class="grid-content bg-purple-light"></div></sg-col>
+  <sg-col :span="6"><div class="grid-content bg-purple"></div></sg-col>
+</sg-row>
+<sg-row type="flex" class="row-bg" justify="end">
+  <sg-col :span="6"><div class="grid-content bg-purple"></div></sg-col>
+  <sg-col :span="6"><div class="grid-content bg-purple-light"></div></sg-col>
+  <sg-col :span="6"><div class="grid-content bg-purple"></div></sg-col>
+</sg-row>
+<sg-row type="flex" class="row-bg" justify="space-between">
+  <sg-col :span="6"><div class="grid-content bg-purple"></div></sg-col>
+  <sg-col :span="6"><div class="grid-content bg-purple-light"></div></sg-col>
+  <sg-col :span="6"><div class="grid-content bg-purple"></div></sg-col>
+</sg-row>
+<sg-row type="flex" class="row-bg" justify="space-around">
+  <sg-col :span="6"><div class="grid-content bg-purple"></div></sg-col>
+  <sg-col :span="6"><div class="grid-content bg-purple-light"></div></sg-col>
+  <sg-col :span="6"><div class="grid-content bg-purple"></div></sg-col>
+</sg-row>
 
 <style>
-  .el-row {
+  .sg-row {
     margin-bottom: 20px;
     &:last-child {
       margin-bottom: 0;
     }
   }
-  .el-col {
+  .sg-col {
     border-radius: 4px;
   }
   .bg-purple-dark {
@@ -282,15 +282,15 @@ Taking example by Bootstrap's responsive design, five breakpoints are preset: xs
 
 :::demo
 ```html
-<el-row :gutter="10">
-  <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11"><div class="grid-content bg-purple-light"></div></el-col>
-  <el-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1"><div class="grid-content bg-purple-light"></div></el-col>
-</el-row>
+<sg-row :gutter="10">
+  <sg-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1"><div class="grid-content bg-purple"></div></sg-col>
+  <sg-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11"><div class="grid-content bg-purple-light"></div></sg-col>
+  <sg-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11"><div class="grid-content bg-purple"></div></sg-col>
+  <sg-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1"><div class="grid-content bg-purple-light"></div></sg-col>
+</sg-row>
 
 <style>
-  .el-col {
+  .sg-col {
     border-radius: 4px;
   }
   .bg-purple-dark {
@@ -315,7 +315,7 @@ Taking example by Bootstrap's responsive design, five breakpoints are preset: xs
 Additionally, Element provides a series of classes for hiding elements under certain conditions. These classes can be added to any DOM elements or custom components. You need to import the following CSS file to use these classes:
 
 ```js
-import 'element-ui/lib/theme-chalk/display.css';
+import 'sg-ui/lib/theme-chalk/display.css';
 ```
 
 The classes are:

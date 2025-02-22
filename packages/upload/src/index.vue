@@ -1,18 +1,18 @@
 <script>
 import UploadList from './upload-list';
 import Upload from './upload';
-import ElProgress from 'element-ui/packages/progress';
-import Migrating from 'element-ui/src/mixins/migrating';
+import SgProgress from 'sg-ui/packages/progress';
+import Migrating from 'sg-ui/src/mixins/migrating';
 
-function noop() {}
+function noop() { }
 
 export default {
-  name: 'ElUpload',
+  name: 'SgUpload',
 
   mixins: [Migrating],
 
   components: {
-    ElProgress,
+    SgProgress,
     UploadList,
     Upload
   },
@@ -24,7 +24,7 @@ export default {
   },
 
   inject: {
-    elForm: {
+    sgForm: {
       default: ''
     }
   },
@@ -117,7 +117,7 @@ export default {
 
   computed: {
     uploadDisabled() {
-      return this.disabled || (this.elForm || {}).disabled;
+      return this.disabled || (this.sgForm || {}).disabled;
     }
   },
 
@@ -323,14 +323,14 @@ export default {
 
     return (
       <div>
-        { this.listType === 'picture-card' ? uploadList : ''}
+        {this.listType === 'picture-card' ? uploadList : ''}
         {
           this.$slots.trigger
             ? [uploadComponent, this.$slots.default]
             : uploadComponent
         }
         {this.$slots.tip}
-        { this.listType !== 'picture-card' ? uploadList : ''}
+        {this.listType !== 'picture-card' ? uploadList : ''}
       </div>
     );
   }

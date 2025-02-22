@@ -19,15 +19,15 @@ Este sitio, le permitirá obtener una vista previa del tema con un nuevo color e
 $--color-primary: teal;
 
 /* Ubicación de la fuente, obligatoria */
-$--font-path: '~element-ui/lib/theme-chalk/fonts';
+$--font-path: '~sg-ui/lib/theme-chalk/fonts';
 
-@import "~element-ui/packages/theme-chalk/src/index";
+@import "~sg-ui/packages/theme-chalk/src/index";
 ```
 
 Entonces, en el archivo principal del proyecto, importe este archivo de estilos en lugar de los estilos de Element:
 ```JS
 import Vue from 'vue'
-import Element from 'element-ui'
+import Element from 'sg-ui'
 import './element-variables.scss'
 
 Vue.use(Element)
@@ -106,21 +106,21 @@ Importar su propio tema es igual que importar el tema por defecto, sol que esta 
 
 ```javascript
 import '../theme/index.css'
-import ElementUI from 'element-ui'
+import ElementUI from 'sg-ui'
 import Vue from 'vue'
 
 Vue.use(ElementUI)
 ```
 
 #### <strong>Importar un tema de componente bajo demanda</strong>
-Si esta utilizando `babel-plugin-component` para importar bajo demanda, solo debe modificar el archivo `.babelrc` y especificar en la propiedad `styleLibraryName` la ruta en donde se encuentra localizado su tema personalizado relativo a `.babelrc`. **Nota** el carácter `~` es obligatorio:
+Si esta utilizando `babsg-plugin-component` para importar bajo demanda, solo debe modificar el archivo `.babelrc` y especificar en la propiedad `styleLibraryName` la ruta en donde se encuentra localizado su tema personalizado relativo a `.babelrc`. **Nota** el carácter `~` es obligatorio:
 ```json
 {
   "plugins": [
     [
       "component",
       {
-        "libraryName": "element-ui",
+        "libraryName": "sg-ui",
         "styleLibraryName": "~theme"
       }
     ]
@@ -128,4 +128,4 @@ Si esta utilizando `babel-plugin-component` para importar bajo demanda, solo deb
 }
 ```
 
-Si no esta familiarizado con `babel-plugin-component`, por favor diríjase a la documentación sobre <a href="./#/en-US/component/quickstart">Como Iniciar</a>. Para más detalles, consulte el [repositorio del proyecto](https://github.com/ElementUI/element-theme) de `element-theme`.
+Si no esta familiarizado con `babsg-plugin-component`, por favor diríjase a la documentación sobre <a href="./#/en-US/component/quickstart">Como Iniciar</a>. Para más detalles, consulte el [repositorio del proyecto](https://github.com/ElementUI/element-theme) de `element-theme`.

@@ -4,18 +4,18 @@ Vous pouvez utiliser les transitions d'Element directement. Mais avant ça, merc
 
 ### Fade
 
-:::demo Il y a deux effets de fading: `el-fade-in-linear` et `el-fade-in`.
+:::demo Il y a deux effets de fading: `sg-fade-in-linear` et `sg-fade-in`.
 ```html
 <template>
   <div>
-    <el-button @click="show = !show">Cliquez ici</el-button>
+    <sg-button @click="show = !show">Cliquez ici</sg-button>
 
     <div style="display: flex; margin-top: 20px; height: 100px;">
-      <transition name="el-fade-in-linear">
-        <div v-show="show" class="transition-box">.el-fade-in-linear</div>
+      <transition name="sg-fade-in-linear">
+        <div v-show="show" class="transition-box">.sg-fade-in-linear</div>
       </transition>
-      <transition name="el-fade-in">
-        <div v-show="show" class="transition-box">.el-fade-in</div>
+      <transition name="sg-fade-in">
+        <div v-show="show" class="transition-box">.sg-fade-in</div>
       </transition>
     </div>
   </div>
@@ -48,23 +48,23 @@ Vous pouvez utiliser les transitions d'Element directement. Mais avant ça, merc
 
 ### Zoom
 
-:::demo `el-zoom-in-center`, `el-zoom-in-top` et `el-zoom-in-bottom` sont fournis.
+:::demo `sg-zoom-in-center`, `sg-zoom-in-top` et `sg-zoom-in-bottom` sont fournis.
 ```html
 <template>
   <div>
-    <el-button @click="show2 = !show2">Cliquez ici</el-button>
+    <sg-button @click="show2 = !show2">Cliquez ici</sg-button>
 
     <div style="display: flex; margin-top: 20px; height: 100px;">
-      <transition name="el-zoom-in-center">
-        <div v-show="show2" class="transition-box">.el-zoom-in-center</div>
+      <transition name="sg-zoom-in-center">
+        <div v-show="show2" class="transition-box">.sg-zoom-in-center</div>
       </transition>
 
-      <transition name="el-zoom-in-top">
-        <div v-show="show2" class="transition-box">.el-zoom-in-top</div>
+      <transition name="sg-zoom-in-top">
+        <div v-show="show2" class="transition-box">.sg-zoom-in-top</div>
       </transition>
 
-      <transition name="el-zoom-in-bottom">
-        <div v-show="show2" class="transition-box">.el-zoom-in-bottom</div>
+      <transition name="sg-zoom-in-bottom">
+        <div v-show="show2" class="transition-box">.sg-zoom-in-bottom</div>
       </transition>
     </div>
   </div>
@@ -98,21 +98,21 @@ Vous pouvez utiliser les transitions d'Element directement. Mais avant ça, merc
 
 ### Collapse
 
-Pour l'effet collapse, utilisez le composant `el-collapse-transition`.
+Pour l'effet collapse, utilisez le composant `sg-collapse-transition`.
 
 :::demo
 ```html
 <template>
   <div>
-    <el-button @click="show3 = !show3">Cliquez ici</el-button>
+    <sg-button @click="show3 = !show3">Cliquez ici</sg-button>
 
     <div style="margin-top: 20px; height: 200px;">
-      <el-collapse-transition>
+      <sg-collapse-transition>
         <div v-show="show3">
-          <div class="transition-box">el-collapse-transition</div>
-          <div class="transition-box">el-collapse-transition</div>
+          <div class="transition-box">sg-collapse-transition</div>
+          <div class="transition-box">sg-collapse-transition</div>
         </div>
-      </el-collapse-transition>
+      </sg-collapse-transition>
     </div>
   </div>
 </template>
@@ -146,9 +146,9 @@ Pour l'effet collapse, utilisez le composant `el-collapse-transition`.
 
 ```js
 // fade/zoom
-import 'element-ui/lib/theme-chalk/base.css';
+import 'sg-ui/lib/theme-chalk/base.css';
 // collapse
-import CollapseTransition from 'element-ui/lib/transitions/collapse-transition';
+import CollapseTransition from 'sg-ui/lib/transitions/collapse-transition';
 import Vue from 'vue'
 
 Vue.component(CollapseTransition.name, CollapseTransition)

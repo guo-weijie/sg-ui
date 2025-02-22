@@ -9,25 +9,25 @@
 :::demo Element 提供了两种调用 Loading 的方法：指令和服务。对于自定义指令`v-loading`，只需要绑定`Boolean`即可。默认状况下，Loading 遮罩会插入到绑定元素的子节点，通过添加`body`修饰符，可以使遮罩插入至 DOM 中的 body 上。
 ```html
 <template>
-  <el-table
+  <sg-table
     v-loading="loading"
     :data="tableData"
     style="width: 100%">
-    <el-table-column
+    <sg-table-column
       prop="date"
       label="日期"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </sg-table-column>
+    <sg-table-column
       prop="name"
       label="姓名"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </sg-table-column>
+    <sg-table-column
       prop="address"
       label="地址">
-    </el-table-column>
-  </el-table>
+    </sg-table-column>
+  </sg-table>
 </template>
 
 <style>
@@ -68,28 +68,28 @@
 :::demo 在绑定了`v-loading`指令的元素上添加`element-loading-text`属性，其值会被渲染为加载文案，并显示在加载图标的下方。类似地，`element-loading-spinner`和`element-loading-background`属性分别用来设定图标类名和背景色值。
 ```html
 <template>
-  <el-table
+  <sg-table
     v-loading="loading"
     element-loading-text="拼命加载中"
-    element-loading-spinner="el-icon-loading"
+    element-loading-spinner="sg-icon-loading"
     element-loading-background="rgba(0, 0, 0, 0.8)"
     :data="tableData"
     style="width: 100%">
-    <el-table-column
+    <sg-table-column
       prop="date"
       label="日期"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </sg-table-column>
+    <sg-table-column
       prop="name"
       label="姓名"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </sg-table-column>
+    <sg-table-column
       prop="address"
       label="地址">
-    </el-table-column>
-  </el-table>
+    </sg-table-column>
+  </sg-table>
 </template>
 
 <script>
@@ -125,17 +125,17 @@
 
 ```html
 <template>
-  <el-button
+  <sg-button
     type="primary"
     @click="openFullScreen1"
     v-loading.fullscreen.lock="fullscreenLoading">
     指令方式
-  </el-button>
-  <el-button
+  </sg-button>
+  <sg-button
     type="primary"
     @click="openFullScreen2">
     服务方式
-  </el-button>
+  </sg-button>
 </template>
 
 <script>
@@ -156,7 +156,7 @@
         const loading = this.$loading({
           lock: true,
           text: 'Loading',
-          spinner: 'el-icon-loading',
+          spinner: 'sg-icon-loading',
           background: 'rgba(0, 0, 0, 0.7)'
         });
         setTimeout(() => {
@@ -172,7 +172,7 @@
 ### 服务
 Loading 还可以以服务的方式调用。引入 Loading 服务：
 ```javascript
-import { Loading } from 'element-ui';
+import { Loading } from 'sg-ui';
 ```
 在需要调用时：
 ```javascript

@@ -1,52 +1,50 @@
-import { ElementUIComponent } from './component'
-import { VNode } from 'vue'
+import { SgementUIComponent } from "./component";
+import { VNode } from "vue";
 
-interface ElDescriptionsSlots {
+interface SgDescriptionsSlots {
   /* title slot: custom title, display on the top left */
-  title: VNode[]
+  title: VNode[];
 
   /* title slot: custom extra area, display on the top right */
-  extra: VNode[]
+  extra: VNode[];
 
-  [key: string]: VNode[]
+  [key: string]: VNode[];
 }
 
 /** Display multiple fields in list form. **/
-export declare class ElDescriptions extends ElementUIComponent {
-
+export declare class SgDescriptions extends SgementUIComponent {
   /* with or without border */
-  border: boolean
-  
+  border: boolean;
+
   /* numbers of Descriptions Item in one line */
-  column: number
+  column: number;
 
   /* direction of list */
-  direction: 'vertical' | 'horizontal'
+  direction: "vertical" | "horizontal";
 
   /* size of list */
-  size: 'medium' | 'small' | 'mini'
+  size: "medium" | "small" | "mini";
 
   /* title text, display on the top left */
-  title: string
+  title: string;
 
   /* extra text, display on the top right */
-  extra: string
+  extra: string;
 
   /* change default props colon value of Descriptions Item */
-  colon: boolean
+  colon: boolean;
 
   /* custom label class name */
-  labelClassName: string
+  labelClassName: string;
 
   /* custom content class name */
-  contentClassName: string
+  contentClassName: string;
 
   /* custom label style */
-  labelStyle: object
+  labelStyle: object;
 
   /* custom content style */
-  contentStyle: object
+  contentStyle: object;
 
-  $slots: ElDescriptionsSlots
-
+  $slots: SgDescriptionsSlots;
 }

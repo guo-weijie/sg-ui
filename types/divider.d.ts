@@ -1,12 +1,12 @@
-import { ElementUIComponent } from './component'
+import { SgementUIComponent } from "./component";
 
-export type ContentPosition = 'left' | 'center' | 'right'
+export type ContentPosition = "left" | "center" | "right";
 
 /** Divider Component */
-export declare class ElDivider extends ElementUIComponent {
+export declare class SgDivider extends SgementUIComponent {
   /** enable vertical divider */
-  vertical: boolean
+  vertical: boolean;
 
   /** customize the content on the divider line */
-  posiiton: ContentPosition
+  posiiton: ContentPosition;
 }

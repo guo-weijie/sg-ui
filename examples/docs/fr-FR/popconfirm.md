@@ -9,11 +9,11 @@ Popconfirm is similar to Popover. So for some duplicated attributes, please refe
 :::demo Only `title` attribute is avaliable in Popconfirm, `content` will be ignored.
 ```html
 <template>
-<el-popconfirm
+<sg-popconfirm
   title="Are you sure to delete this?"
 >
-  <el-button slot="reference">Delete</el-button>
-</el-popconfirm>
+  <sg-button slot="reference">Delete</sg-button>
+</sg-popconfirm>
 </template>
 ````
 :::
@@ -23,15 +23,15 @@ You can customise Popconfirm like:
 :::demo
 ```html
 <template>
-<el-popconfirm
+<sg-popconfirm
   confirm-button-text='OK'
-  cancel-button-text='No, Thanks'
-  icon="el-icon-info"
+  cancsg-button-text='No, Thanks'
+  icon="sg-icon-info"
   icon-color="red"
   title="Are you sure to delete this?"
 >
-  <el-button slot="reference">Delete</el-button>
-</el-popconfirm>
+  <sg-button slot="reference">Delete</sg-button>
+</sg-popconfirm>
 </template>
 ```
 :::
@@ -41,10 +41,10 @@ You can customise Popconfirm like:
 |--------------------|----------------------------------------------------------|-------------------|-------------|--------|
 |  title              | Title | String | — | — |
 |  confirm-button-text              | Confirm button text | String | — | — |
-|  cancel-button-text              | Cancel button text | String | — | — |
+|  cancsg-button-text              | Cancel button text | String | — | — |
 |  confirm-button-type              | Confirm button type | String | — | Primary |
-|  cancel-button-type              | Cancel button type | String | — | Text |
-|  icon              | Icon | String | — | el-icon-question |
+|  cancsg-button-type              | Cancel button type | String | — | Text |
+|  icon              | Icon | String | — | sg-icon-question |
 |  icon-color              | Icon color | String | — | #f90 |
 |  hide-icon              | is hide Icon | Boolean | — | false |
 

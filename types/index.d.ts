@@ -1,4 +1,4 @@
-export * from './element-ui'
+export * from "./sg-ui";
 
-import * as ElementUI from './element-ui'
-export default ElementUI
+import * as SgementUI from "./sg-ui";
+export default SgementUI;

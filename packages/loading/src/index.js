@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import loadingVue from './loading.vue';
-import { addClass, removeClass, getStyle } from 'element-ui/src/utils/dom';
-import { PopupManager } from 'element-ui/src/utils/popup';
-import afterLeave from 'element-ui/src/utils/after-leave';
-import merge from 'element-ui/src/utils/merge';
+import { addClass, removeClass, getStyle } from 'sg-ui/src/utils/dom';
+import { PopupManager } from 'sg-ui/src/utils/popup';
+import afterLeave from 'sg-ui/src/utils/after-leave';
+import merge from 'sg-ui/src/utils/merge';
 
 const LoadingConstructor = Vue.extend(loadingVue);
 
@@ -20,7 +20,7 @@ let fullscreenLoading;
 LoadingConstructor.prototype.originalPosition = '';
 LoadingConstructor.prototype.originalOverflow = '';
 
-LoadingConstructor.prototype.close = function() {
+LoadingConstructor.prototype.close = function () {
   if (this.fullscreen) {
     fullscreenLoading = undefined;
   }
@@ -28,8 +28,8 @@ LoadingConstructor.prototype.close = function() {
     const target = this.fullscreen || this.body
       ? document.body
       : this.target;
-    removeClass(target, 'el-loading-parent--relative');
-    removeClass(target, 'el-loading-parent--hidden');
+    removeClass(target, 'sg-loading-parent--relative');
+    removeClass(target, 'sg-loading-parent--hidden');
     if (this.$el && this.$el.parentNode) {
       this.$el.parentNode.removeChild(this.$el);
     }
@@ -88,10 +88,10 @@ const Loading = (options = {}) => {
 
   addStyle(options, parent, instance);
   if (instance.originalPosition !== 'absolute' && instance.originalPosition !== 'fixed' && instance.originalPosition !== 'sticky') {
-    addClass(parent, 'el-loading-parent--relative');
+    addClass(parent, 'sg-loading-parent--relative');
   }
   if (options.fullscreen && options.lock) {
-    addClass(parent, 'el-loading-parent--hidden');
+    addClass(parent, 'sg-loading-parent--hidden');
   }
   parent.appendChild(instance.$el);
   Vue.nextTick(() => {

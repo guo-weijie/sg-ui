@@ -1,6 +1,6 @@
 <template>
-  <div class="el-statistic">
-    <div class="head" v-if="title||$slots.title">
+  <div class="sg-statistic">
+    <div class="head" v-if="title || $slots.title">
       <slot name="title">
         <span class="title">
           {{ title }}
@@ -8,15 +8,15 @@
       </slot>
     </div>
     <div class="con">
-      <span class="prefix" v-if="prefix||$slots.prefix">
-        <slot name="prefix" >
+      <span class="prefix" v-if="prefix || $slots.prefix">
+        <slot name="prefix">
           {{ prefix }}
         </slot>
       </span>
       <span class="number" :style="valueStyle">
         <slot name="formatter"> {{ disposeValue }}</slot>
       </span>
-      <span class="suffix" v-if="suffix||$slots.suffix">
+      <span class="suffix" v-if="suffix || $slots.suffix">
         <slot name="suffix">
           {{ suffix }}
         </slot>
@@ -26,9 +26,9 @@
 </template>
 
 <script>
-import { isNumber, chain, multiply, padStart, reduce} from 'element-ui/src/utils/lodash';
+import { isNumber, chain, multiply, padStart, reduce } from 'sg-ui/src/utils/lodash';
 export default {
-  name: 'ElStatistic',
+  name: 'SgStatistic',
   data() {
     return {
       disposeValue: '',
@@ -71,7 +71,7 @@ export default {
     },
     valueStyle: {
       type: Object,
-      default: function() {
+      default: function () {
         return {};
       }
     },
@@ -88,7 +88,7 @@ export default {
     this.branch();
   },
   watch: {
-    value: function() {
+    value: function () {
       this.branch();
     },
     groupSeparator() {
@@ -100,7 +100,7 @@ export default {
   },
   methods: {
     branch() {
-      let { timeIndices, countDown, dispose} = this;
+      let { timeIndices, countDown, dispose } = this;
       if (timeIndices) {
         countDown(this.value.valueOf() || this.value);
       } else {
@@ -109,7 +109,7 @@ export default {
     },
     magnification(num, mulriple = 1000, groupSeparator = ',') {
       // magnification factor
-      const level = String(mulriple).length ;
+      const level = String(mulriple).length;
       return num.replace(new RegExp(`(\\d)(?=(\\d{${level - 1}})+$)`, 'g'), `$1${groupSeparator}`);
     },
     dispose() {
@@ -141,8 +141,8 @@ export default {
       }
       return this.disposeValue;
     },
-    formatTimeStr: function(time) {
-      let {format} = this;
+    formatTimeStr: function (time) {
+      let { format } = this;
       const escapeRegex = /\[[^\]]*]/g;
       const keepList = (format.match(escapeRegex) || []).map(str => str.slice(1, -1));
       const timeUnits = [
@@ -186,10 +186,10 @@ export default {
       return result;
     },
     countDown(timeVlaue) {
-      let {REFRESH_INTERVAL, timeTask, diffDate, formatTimeStr, stopTime, suspend } = this;
+      let { REFRESH_INTERVAL, timeTask, diffDate, formatTimeStr, stopTime, suspend } = this;
       if (timeTask) return;
       let than = this;
-      this.timeTask = setInterval(()=> {
+      this.timeTask = setInterval(() => {
         let diffTiem = diffDate(timeVlaue, Date.now());
         than.disposeValue = formatTimeStr(diffTiem);
         stopTime(diffTiem);
