@@ -26,3 +26,14 @@
     </span>
   </li>
 </ul>
+
+### 补充图标集合
+
+<ul class="icon-list">
+  <li v-for="name in $iconfont" :key="name">
+    <span>
+      <i :class="'iconfont-' + name"></i>
+      <span class="icon-name">{{'iconfont-' + name}}</span>
+    </span>
+  </li>
+</ul>

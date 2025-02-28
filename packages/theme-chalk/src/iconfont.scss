@@ -1,0 +1,34 @@
+@import 'common/var';
+
+@font-face {
+  font-family: 'iconfont'; /* Project id 4841030 */
+  src:
+    url('#{$--font-path}/iconfont.woff2') format('woff2'),
+    url('#{$--font-path}/iconfont.woff') format('woff'),
+    url('#{$--font-path}/iconfont.ttf') format('truetype');
+  font-weight: normal;
+  font-display: $--font-display;
+  font-style: normal;
+}
+
+[class^='iconfont-'],
+[class*=' iconfont-'] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'iconfont' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: baseline;
+  display: inline-block;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconfont-full-screen-exit:before {
+  content: '\e72e';
+}

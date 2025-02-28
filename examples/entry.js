@@ -16,6 +16,7 @@ import './demo-styles/index.scss';
 import './assets/styles/common.css';
 import './assets/styles/fonts/style.css';
 import icon from './icon.json';
+import iconfomt from './iconfont.json'
 
 Vue.use(Element);
 Vue.use(VueRouter);
@@ -33,12 +34,13 @@ Vue.mixin({
   computed: {
     $isEle: {
       get: () => (globalEle.$data.$isEle),
-      set: (data) => {globalEle.$data.$isEle = data;}
+      set: (data) => { globalEle.$data.$isEle = data; }
     }
   }
 });
 
 Vue.prototype.$icon = icon; // Icon 列表页用
+Vue.prototype.$iconfont = iconfomt; // 补充图标
 
 const router = new VueRouter({
   mode: 'hash',
