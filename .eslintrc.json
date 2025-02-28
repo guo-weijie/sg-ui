@@ -4,7 +4,7 @@
     "chrome": true
   },
   "plugins": ["html", "json"],
-  "extends": "elemefe",
+  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
   "rules": {
     "no-restricted-globals": ["error", "event", "fdescribe"]
   },
