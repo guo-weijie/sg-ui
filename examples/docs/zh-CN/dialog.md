@@ -235,3 +235,4 @@ Dialog 的内容是懒渲染的，即在第一次被打开之前，传入的默�
 | opened  | Dialog 打开动画结束时的回调 | — |
 | close  | Dialog 关闭的回调 | — |
 | closed | Dialog 关闭动画结束时的回调 | — |
+| fullscreenStatusChange | Dialog 全屏/窗口切换时触发 | 全屏/窗口状态 true: 全屏 false: 窗口 |

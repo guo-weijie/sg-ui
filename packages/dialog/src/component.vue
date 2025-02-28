@@ -1,37 +1,70 @@
 <template>
-  <transition name="dialog-fade" @after-enter="afterEnter" @after-leave="afterLeave">
-    <div v-show="visible" class="sg-dialog__wrapper" @click.self="handleWrapperClick">
-      <div role="dialog" :key="key" aria-modal="true" :aria-label="title || 'dialog'"
-        :class="['sg-dialog', { 'is-fullscreen': fullscreen, 'sg-dialog--center': center }, customClass]" ref="dialog"
-        :style="style">
-        <div class="sg-dialog__header">
-          <slot name="title">
-            <span class="sg-dialog__title">{{ title }}</span>
-          </slot>
-          <button type="button" class="sg-dialog__headerbtn" aria-label="Close" v-if="showClose" @click="handleClose">
-            <i class="sg-dialog__close sg-icon sg-icon-close"></i>
-          </button>
-        </div>
-        <div class="sg-dialog__body" v-if="rendered">
-          <slot></slot>
-        </div>
-        <div class="sg-dialog__footer" v-if="$slots.footer">
-          <slot name="footer"></slot>
+  <div v-dialog-drag>
+    <transition :name="transitionName" @after-enter="afterEnter" @after-leave="afterLeave">
+      <div v-show="visible" class="sg-dialog__wrapper" @click.self="handleWrapperClick">
+        <div
+          role="dialog"
+          :key="key"
+          aria-modal="true"
+          :aria-label="title || 'dialog'"
+          :class="['sg-dialog', { 'is-fullscreen': isFullscreen, 'sg-dialog--center': center }, customClass]"
+          ref="dialog"
+          :style="style"
+        >
+          <div class="sg-dialog__header">
+            <slot name="title">
+              <span class="sg-dialog__title">{{ title }}</span>
+            </slot>
+            <div class="sg-dialog__titleRight">
+              <button
+                type="button"
+                class="sg-dialog__headerbtn"
+                aria-label="Close"
+                v-if="showClose"
+                @click="handleFullscreenStatusChange"
+              >
+                <i
+                  class="sg-dialog__rightBtn sg-icon"
+                  :class="isFullscreen ? 'iconfont-full-screen-exit' : 'sg-icon-full-screen'"
+                ></i>
+              </button>
+              <button
+                type="button"
+                class="sg-dialog__headerbtn"
+                aria-label="Close"
+                v-if="showClose"
+                @click="handleClose"
+              >
+                <i class="sg-dialog__rightBtn sg-icon sg-icon-close"></i>
+              </button>
+            </div>
+          </div>
+          <div class="sg-dialog__body" v-if="rendered">
+            <slot></slot>
+          </div>
+          <div class="sg-dialog__footer" v-if="$slots.footer">
+            <slot name="footer"></slot>
+          </div>
         </div>
       </div>
-    </div>
-  </transition>
+    </transition>
+  </div>
 </template>
 
 <script>
 import Popup from 'sg-ui/src/utils/popup';
 import Migrating from 'sg-ui/src/mixins/migrating';
 import emitter from 'sg-ui/src/mixins/emitter';
+import DialogDrag from 'sg-ui/src/directives/dialog-drag';
 
 export default {
   name: 'SgDialog',
 
   mixins: [Popup, emitter, Migrating],
+
+  directives: {
+    DialogDrag
+  },
 
   props: {
     title: {
@@ -92,6 +125,10 @@ export default {
       type: Boolean,
       default: false
     },
+    transitionName: {
+      type: String,
+      default: 'dialog-fade'
+    },
 
     destroyOnClose: Boolean
   },
@@ -99,7 +136,10 @@ export default {
   data() {
     return {
       closed: false,
-      key: 0
+      key: 0,
+      isFullscreen: this.fullscreen,
+      leftPosition: '',
+      topPosition: ''
     };
   },
 
@@ -130,7 +170,7 @@ export default {
   computed: {
     style() {
       let style = {};
-      if (!this.fullscreen) {
+      if (!this.isFullscreen) {
         style.marginTop = this.top;
         if (this.width) {
           style.width = this.width;
@@ -141,10 +181,24 @@ export default {
   },
 
   methods: {
+    handleFullscreenStatusChange() {
+      this.isFullscreen = !this.isFullscreen;
+
+      if (this.isFullscreen) {
+        this.leftPosition = this.$refs.dialog.style.left;
+        this.topPosition = this.$refs.dialog.style.top;
+        this.$refs.dialog.style.left = '';
+        this.$refs.dialog.style.top = '';
+      } else {
+        this.$refs.dialog.style.left = this.leftPosition;
+        this.$refs.dialog.style.top = this.topPosition;
+      }
+      this.$emit('fullscreenStatusChange', this.isFullscreen);
+    },
     getMigratingConfig() {
       return {
         props: {
-          'size': 'size is removed.'
+          size: 'size is removed.'
         }
       };
     },
