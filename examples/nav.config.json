@@ -41,7 +41,7 @@
       "name": "组件",
       "groups": [
         {
-          "groupName": "Basic",
+          "groupName": "基础",
           "list": [
             {
               "path": "/layout",
@@ -78,7 +78,7 @@
           ]
         },
         {
-          "groupName": "Form",
+          "groupName": "表单",
           "list": [
             {
               "path": "/radio",
@@ -147,7 +147,7 @@
           ]
         },
         {
-          "groupName": "Data",
+          "groupName": "数据",
           "list": [
             {
               "path": "/table",
@@ -200,7 +200,7 @@
           ]
         },
         {
-          "groupName": "Notice",
+          "groupName": "通知",
           "list": [
             {
               "path": "/alert",
@@ -225,7 +225,7 @@
           ]
         },
         {
-          "groupName": "Navigation",
+          "groupName": "导航",
           "list": [
             {
               "path": "/menu",
@@ -254,7 +254,7 @@
           ]
         },
         {
-          "groupName": "Others",
+          "groupName": "其他",
           "list": [
             {
               "path": "/dialog",
@@ -285,6 +285,10 @@
               "title": "Collapse 折叠面板"
             },
             {
+              "path": "/split",
+              "title": "Split 分割面板"
+            },
+            {
               "path": "/timeline",
               "title": "Timeline 时间线"
             },
@@ -311,6 +315,10 @@
             {
               "path": "/drawer",
               "title": "Drawer 抽屉"
+            },
+            {
+              "path": "/fullscreen",
+              "title": "Fullscreen 全屏"
             }
           ]
         }
