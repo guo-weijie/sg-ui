@@ -74,6 +74,10 @@
             {
               "path": "/link",
               "title": "Link 文字链接"
+            },
+            {
+              "path": "/split",
+              "title": "Split 分割面板"
             }
           ]
         },
@@ -283,10 +287,6 @@
             {
               "path": "/collapse",
               "title": "Collapse 折叠面板"
-            },
-            {
-              "path": "/split",
-              "title": "Split 分割面板"
             },
             {
               "path": "/timeline",
