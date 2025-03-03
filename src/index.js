@@ -90,7 +90,6 @@ import Descriptions from '../packages/descriptions/index.js';
 import DescriptionsItem from '../packages/descriptions-item/index.js';
 import Result from '../packages/result/index.js';
 import Split from '../packages/split/index.js';
-import Fullscreen from '../packages/fullscreen/index.js';
 import locale from 'sg-ui/src/locale';
 import CollapseTransition from 'sg-ui/src/transitions/collapse-transition';
 
@@ -180,7 +179,6 @@ const components = [
   DescriptionsItem,
   Result,
   Split,
-  Fullscreen,
   CollapseTransition
 ];
 
@@ -310,6 +308,5 @@ export default {
   Descriptions,
   DescriptionsItem,
   Result,
-  Split,
-  Fullscreen
+  Split
 };

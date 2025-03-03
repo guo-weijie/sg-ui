@@ -16,7 +16,8 @@ import './demo-styles/index.scss';
 import './assets/styles/common.css';
 import './assets/styles/fonts/style.css';
 import icon from './icon.json';
-import iconfomt from './iconfont.json'
+import iconfont from './iconfont.json'
+import icon_yc from './icon_yc.json'
 
 Vue.use(Element);
 Vue.use(VueRouter);
@@ -40,7 +41,8 @@ Vue.mixin({
 });
 
 Vue.prototype.$icon = icon; // Icon 列表页用
-Vue.prototype.$iconfont = iconfomt; // 补充图标
+Vue.prototype.$iconfont = iconfont; // 补充图标
+Vue.prototype.$icon_yc = icon_yc; // 用采图标
 
 const router = new VueRouter({
   mode: 'hash',
