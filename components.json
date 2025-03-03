@@ -88,6 +88,5 @@
   "descriptions": "./packages/descriptions/index.js",
   "descriptions-item": "./packages/descriptions-item/index.js",
   "result": "./packages/result/index.js",
-  "split": "./packages/split/index.js",
-  "fullscreen": "./packages/fullscreen/index.js"
+  "split": "./packages/split/index.js"
 }

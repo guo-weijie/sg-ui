@@ -315,10 +315,6 @@
             {
               "path": "/drawer",
               "title": "Drawer 抽屉"
-            },
-            {
-              "path": "/fullscreen",
-              "title": "Fullscreen 全屏"
             }
           ]
         }
