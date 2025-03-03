@@ -1,0 +1,110 @@
+@import "mixins/mixins";
+@import "common/var";
+
+@include b(input-ip) {
+  position: relative;
+  display: inline-block;
+  border: 1px solid #dcdfe6;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 100%;
+  height: 40px;
+  padding-inline-start: 0px;
+  font-size: $--font-size-base;
+  vertical-align: bottom;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-right: 10px;
+
+  li {
+    display: inline-block;
+    position: relative;
+    width: 25%;
+    height: 100%;
+    margin: 0;
+    list-style-type: none;
+  }
+  .ipInputClass {
+    border: none;
+    background: transparent;
+    color: #666666;
+    font-size: inherit;
+    width: 100%;
+    height: 100%;
+    line-height: 100%;
+    text-align: center;
+  }
+  li div {
+    position: absolute;
+    bottom: 8px;
+    right: 0;
+    border-radius: 50%;
+    background: #505050;
+    width: 2px;
+    height: 2px;
+  }
+  /*只需要3个div*/
+  li:last-child div {
+    display: none;
+  }
+  /*取消掉默认的input focus状态*/
+  input:focus {
+    outline: none;
+  }
+   /*取消掉默认的input focus状态*/
+   & .sg-input__clear {
+    position: absolute;
+    right: -3px;
+    color: $--input-icon-color;
+    font-size: $--input-font-size;
+    cursor: pointer;
+    transition: $--color-transition-base;
+    z-index: 10;
+
+    &:hover {
+      color: $--input-clear-hover-color;
+    }
+  }
+}
+
+@include b(input-ip-on) {
+  border: 1px solid $--color-primary;
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+@include b(input-ip-disabled){
+  background-color: #EEEEEE;
+  border-color: #E2E2E2;
+  color: #CCCCCC;
+  cursor: not-allowed;
+}
+
+@include b(input-ip-medium){
+  height: $--input-medium-height;
+  .ipInputClass {
+    font-size: $--input-medium-font-size;
+  }
+  .sg-input__icon {
+    line-height: $--input-medium-height;
+  }
+}
+
+@include b(input-ip-small){
+  height: $--input-small-height;
+  .ipInputClass {
+    font-size: $--input-small-font-size;
+  }
+  .sg-input__icon {
+    line-height: $--input-small-height;
+  }
+}
+
+@include b(input-ip-mini){
+  height: $--input-mini-height;
+  .ipInputClass {
+    font-size: $--input-mini-font-size;
+  }
+  .sg-input__icon {
+    line-height: $--input-mini-height;
+  }
+}
