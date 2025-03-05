@@ -89,5 +89,6 @@
   "descriptions-item": "./packages/descriptions-item/index.js",
   "result": "./packages/result/index.js",
   "split": "./packages/split/index.js",
-  "input-ip": "./packages/input-ip/index.js"
+  "input-ip": "./packages/input-ip/index.js",
+  "tree-select": "./packages/tree-select/index.js"
 }

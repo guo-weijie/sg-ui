@@ -91,6 +91,7 @@ import DescriptionsItem from '../packages/descriptions-item/index.js';
 import Result from '../packages/result/index.js';
 import Split from '../packages/split/index.js';
 import InputIp from '../packages/input-ip/index.js';
+import TreeSelect from '../packages/tree-select/index.js';
 import locale from 'sg-ui/src/locale';
 import CollapseTransition from 'sg-ui/src/transitions/collapse-transition';
 
@@ -181,6 +182,7 @@ const components = [
   Result,
   Split,
   InputIp,
+  TreeSelect,
   CollapseTransition
 ];
 
@@ -311,5 +313,6 @@ export default {
   DescriptionsItem,
   Result,
   Split,
-  InputIp
+  InputIp,
+  TreeSelect
 };
