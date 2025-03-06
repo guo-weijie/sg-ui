@@ -1,5 +1,51 @@
 ## 更新日志
 
+### 2.15.16
+
+*2025-03-05*
+
+#### 优化
+- Dialog
+  - 迁移 窗口模式时支持拖拽
+  - 新增 全屏/窗口切换事件
+- Icon
+  - 新增 用采图标库
+  - 新增 扩展图标库
+- Split
+  - 迁移 分割面板
+- IpInput
+  - 迁移 ip 输入框
+- TreeSelect
+  - 迁移 树形下拉框
+  - 功能 支持原`vue-treeSelect`全部功能
+  - 文档更新
+- Clamp
+  - 迁移 文字显示
+  - 功能 支持更多`tooltip`属性
+  - 文档更新
+
+#### 移除
+- Fullscreen 全屏
+  - 新一代已安装了相关依赖，且二次封装的组件与原组件相比，功能缺失
+- SvgIcon svg图标
+  - 新一代未使用，且已扩展了 iconfont 图标库
+- Copy 复制
+  - 新一代未使用
+- Space 间距
+  - 新一代未使用
+- InputCron cron表达式输入框
+  - 新一代未使用
+- DateGroupPicker 切换年月日
+  - 新一代未使用
+- CategorySelection 分类选择
+  - 新一代未使用
+- QuarterPicker 季度选择框
+  - 新一代未使用
+- NoData 无数据
+  - 官方已有`Empty 空状态`组件
+- GiantTree 大数据量树
+  - 新一代已基于`zTree`封装，且功能和扩展性更接近于`zTree`
+
 ### 2.15.14
 
 *2023-08-24*
