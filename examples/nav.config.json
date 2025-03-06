@@ -194,6 +194,10 @@
               "title": "Clamp 文字显示"
             },
             {
+              "path": "/number",
+              "title": "Number 滚动数字"
+            },
+            {
               "path": "/skeleton",
               "title": "Skeleton 骨架屏"
             },

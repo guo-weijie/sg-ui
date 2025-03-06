@@ -93,6 +93,7 @@ import Split from '../packages/split/index.js';
 import InputIp from '../packages/input-ip/index.js';
 import TreeSelect from '../packages/tree-select/index.js';
 import Clamp from '../packages/clamp/index.js';
+import Number from '../packages/number/index.js';
 import locale from 'sg-ui/src/locale';
 import CollapseTransition from 'sg-ui/src/transitions/collapse-transition';
 
@@ -185,6 +186,7 @@ const components = [
   InputIp,
   TreeSelect,
   Clamp,
+  Number,
   CollapseTransition
 ];
 
@@ -317,5 +319,6 @@ export default {
   Split,
   InputIp,
   TreeSelect,
-  Clamp
+  Clamp,
+  Number
 };
