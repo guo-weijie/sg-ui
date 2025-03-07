@@ -248,6 +248,10 @@
           "groupName": "导航",
           "list": [
             {
+              "path": "/affix",
+              "title": "Affix 固钉"
+            },
+            {
               "path": "/menu",
               "title": "NavMenu 导航菜单"
             },

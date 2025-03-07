@@ -94,6 +94,7 @@ import InputIp from '../packages/input-ip/index.js';
 import TreeSelect from '../packages/tree-select/index.js';
 import Clamp from '../packages/clamp/index.js';
 import Number from '../packages/number/index.js';
+import Affix from '../packages/affix/index.js';
 import locale from 'sg-ui/src/locale';
 import CollapseTransition from 'sg-ui/src/transitions/collapse-transition';
 
@@ -187,6 +188,7 @@ const components = [
   TreeSelect,
   Clamp,
   Number,
+  Affix,
   CollapseTransition
 ];
 
@@ -320,5 +322,6 @@ export default {
   InputIp,
   TreeSelect,
   Clamp,
-  Number
+  Number,
+  Affix
 };

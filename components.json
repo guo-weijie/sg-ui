@@ -92,5 +92,6 @@
   "input-ip": "./packages/input-ip/index.js",
   "tree-select": "./packages/tree-select/index.js",
   "clamp": "./packages/clamp/index.js",
-  "number": "./packages/number/index.js"
+  "number": "./packages/number/index.js",
+  "affix": "./packages/affix/index.js"
 }
