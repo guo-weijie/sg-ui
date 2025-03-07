@@ -58,6 +58,14 @@
   - 官方已有`Empty 空状态`组件
 - GiantTree 大数据量树
   - 新一代已基于`zTree`封装，且功能和扩展性更接近于`zTree`
+- Comment 评论
+  - 新一代未使用
+- TextEditor 富文本编辑器
+  - 新一代未使用
+- MdEditor markdown编辑器
+  - 新一代未使用
+- JsonEditor json编辑器
+  - 新一代未使用
 
 ### 2.15.14
 
