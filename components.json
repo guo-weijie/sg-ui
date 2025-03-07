@@ -94,5 +94,6 @@
   "clamp": "./packages/clamp/index.js",
   "number": "./packages/number/index.js",
   "affix": "./packages/affix/index.js",
-  "anchor": "./packages/anchor/index.js"
+  "anchor": "./packages/anchor/index.js",
+  "title": "./packages/title/index.js"
 }

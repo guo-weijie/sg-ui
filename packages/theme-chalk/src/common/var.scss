@@ -974,6 +974,20 @@ $--avatar-medium-size: 36px !default;
 /// size|1|Avatar Size|3
 $--avatar-small-size: 28px !default;
 
+/* Title
+-------------------------- */
+$--title-background-color: $--color-white !default;
+$--title-box-shadow: 0 1px 3px rgba($--color-primary, 0.3) !default;
+/// fontSize||Font|1
+$--title-title-font-size: $--font-size-large !default;
+/// fontSize||Font|1
+$--title-content-font-size: 14px !default;
+/// fontLineHeight||LineHeight|2
+$--title-font-line-height: $--font-line-height-primary !default;
+/// padding||Spacing|3
+$--title-padding-primary: 20px !default;
+$--title-icon-margin: 0 16px 0 0;
+
 /* Empty
 -------------------------- */
 $--empty-padding: 40px 0 !default;

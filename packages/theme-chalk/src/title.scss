@@ -1,0 +1,60 @@
+@import 'mixins/mixins';
+@import 'common/var';
+
+@include b(title) {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: $--border-radius-base $--border-radius-base 0 0;
+  padding: 16px 0;
+
+  @include e(border-top) {
+    border-top: $--border-width-base $--border-style-base $--color-primary;
+  }
+
+  @include e(border-bottom) {
+    border-bottom: $--border-width-base $--border-style-base $--color-primary;
+  }
+
+  @include e(bold) {
+    font-weight: bold;
+  }
+
+  @include e(left) {
+    line-height: 1;
+    font-size: $--font-size-medium;
+    .title_icon {
+      margin-right: 8px;
+    }
+  }
+
+  @include e(link) {
+    cursor: pointer;
+  }
+
+  @include e(leftLine) {
+    &::before {
+      content: '';
+      border-left-width: 4px;
+      border-left-style: solid;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+      margin-right: 12px;
+      border-left-color: $--color-primary;
+    }
+  }
+
+  @include e(leftLine-none) {
+    padding-left: 16px;
+  }
+
+  @include e(bold) {
+    font-weight: bold;
+  }
+
+  @include e(right) {
+    flex-grow: 1;
+    text-align: right;
+    padding-right: 16px;
+  }
+}

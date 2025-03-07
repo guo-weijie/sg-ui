@@ -190,6 +190,10 @@
               "title": "Avatar 头像"
             },
             {
+              "path": "/title",
+              "title": "Title 标题"
+            },
+            {
               "path": "/clamp",
               "title": "Clamp 文字显示"
             },

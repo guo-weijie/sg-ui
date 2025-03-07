@@ -96,6 +96,7 @@ import Clamp from '../packages/clamp/index.js';
 import Number from '../packages/number/index.js';
 import Affix from '../packages/affix/index.js';
 import Anchor from '../packages/anchor/index.js';
+import Title from '../packages/title/index.js';
 import locale from 'sg-ui/src/locale';
 import CollapseTransition from 'sg-ui/src/transitions/collapse-transition';
 
@@ -191,6 +192,7 @@ const components = [
   Number,
   Affix,
   Anchor,
+  Title,
   CollapseTransition
 ];
 
@@ -326,5 +328,6 @@ export default {
   Clamp,
   Number,
   Affix,
-  Anchor
+  Anchor,
+  Title
 };
