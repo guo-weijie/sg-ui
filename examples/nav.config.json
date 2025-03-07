@@ -274,6 +274,10 @@
             {
               "path": "/steps",
               "title": "Steps 步骤条"
+            },
+            {
+              "path": "/anchor",
+              "title": "Anchor 导航锚点"
             }
           ]
         },

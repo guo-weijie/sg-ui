@@ -1,0 +1,35 @@
+.sg-anchor {
+    display: inline-block;
+    position: absolute;
+    overflow: hidden;
+    right: 80px;
+}
+
+.sg-anchor .itemClass {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 black;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.sg-anchor .itemClass i{
+    font-size: 30px;
+    margin-top: 6px;
+    color: #009999;
+}
+.sg-anchor .sg-anchor-item .itemClass:hover {
+    background-color: #18B6A4;
+}
+
+.sg-anchor .sg-anchor-item.isActive .itemClass{
+    background-color: #009999;
+}
+
+.sg-anchor .sg-anchor-item .itemClass:hover i,
+.sg-anchor .sg-anchor-item.isActive .itemClass i{
+    color: #fff;
+}
