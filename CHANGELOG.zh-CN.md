@@ -32,6 +32,9 @@
 - Scroll 滚动
 - Draggable 拖拽
 - Watermark 水印
+- 自定义指令
+  - hotkey 热键
+  - clickoutside 点击外部
 
 #### 移除
 - Fullscreen 全屏

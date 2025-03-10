@@ -359,6 +359,24 @@
           ]
         }
       ]
+    },
+    {
+      "name": "指令",
+      "groups": [
+        {
+          "groupName": "第三方指令",
+          "list": [
+            {
+              "path": "/hotkey",
+              "title": "Hotkey 热键"
+            },
+            {
+              "path": "/click-outside",
+              "title": "ClickOutside"
+            }
+          ]
+        }
+      ]
     }
   ],
   "en-US": [

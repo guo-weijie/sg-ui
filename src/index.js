@@ -103,6 +103,10 @@ import Watermark from '../packages/watermark/index.js';
 import locale from 'sg-ui/src/locale';
 import CollapseTransition from 'sg-ui/src/transitions/collapse-transition';
 
+// 第三方指令
+import Hotkey from 'v-hotkey';
+import Clickoutside from 'sg-ui/src/utils/clickoutside';
+
 const components = [
   Pagination,
   Dialog,
@@ -202,7 +206,7 @@ const components = [
   CollapseTransition
 ];
 
-const install = function(Vue, opts = {}) {
+const install = function (Vue, opts = {}) {
   locale.use(opts.locale);
   locale.i18n(opts.i18n);
 
@@ -212,6 +216,11 @@ const install = function(Vue, opts = {}) {
 
   Vue.use(InfiniteScroll);
   Vue.use(Loading.directive);
+
+  // 第三方指令
+  Vue.use(Hotkey);
+
+  Vue.directive('clickoutside', Clickoutside);
 
   Vue.prototype.$ELEMENT = {
     size: opts.size || '',
