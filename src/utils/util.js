@@ -1,6 +1,9 @@
 import Vue from 'vue';
 import { isString, isObject } from 'sg-ui/src/utils/types';
 
+import throttleFuc from 'throttle-debounce/throttle';
+import debounceFuc from 'throttle-debounce/debounce';
+
 const hasOwnProperty = Object.prototype.hasOwnProperty;
 
 export function noop() { };
@@ -243,3 +246,28 @@ export function objToArray(obj) {
 export const isMac = function () {
   return !Vue.prototype.$isServer && /macintosh|mac os x/i.test(navigator.userAgent);
 };
+
+/**
+ * 节流(限制函数的执行频率)
+ * @param delay 延迟的时间
+ * @param noTrailing 在最后一次调用时是否执行 callback，true 不执行，false 执行
+ * @param callback 目标回调函数
+ * @param debounceMode
+ *
+ * dobounceMode: 为 true 时，在被调用时，先执行 callback，在没有被调用时，在指定的延迟之后执行 clear，如果在clear 执行之前继续调用，会重置定时器；为 false 时，在被调用时，不会执行 callback，在指定的延迟之后执行 callback，如果在 callback 执行之前继续调用，会重置定时器
+ */
+export function throttle(delay, noTrailing, callback, debounceMode) {
+  return throttleFuc(delay, noTrailing, callback, debounceMode);
+}
+
+/**
+ * 去抖(限制函数的执行频率)
+ * 限制回掉函数的执行频率，但是不同于 debounce 的是，debounce 能保证在一系列调用的时间内，回调函数只执行一次
+ * @param delay 延迟的时间
+ * @param atBegin
+ * @param callback 目标回调函数
+ * atBegin: 为 true 时，在被调用时，会马上执行 callback，如果在延迟时间之前继续调用，不会执行 callback；为 false 时，在被调用时，不会执行 callback，在延迟时间之后会执行 callback，如果在延迟时间之前继续调用，会重置定时器
+ */
+export function debounce(delay, atBegin, callback) {
+  return debounceFuc(delay, atBegin, callback);
+}

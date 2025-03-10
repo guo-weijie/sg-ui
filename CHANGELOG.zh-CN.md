@@ -31,6 +31,7 @@
   - 文档更新
 - Scroll 滚动
 - Draggable 拖拽
+- Watermark 水印
 
 #### 移除
 - Fullscreen 全屏

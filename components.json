@@ -97,5 +97,6 @@
   "anchor": "./packages/anchor/index.js",
   "title": "./packages/title/index.js",
   "scroll": "./packages/scroll/index.js",
-  "draggable": "./packages/draggable/index.js"
+  "draggable": "./packages/draggable/index.js",
+  "watermark": "./packages/watermark/index.js"
 }
