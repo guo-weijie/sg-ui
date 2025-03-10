@@ -206,7 +206,7 @@ const components = [
   CollapseTransition
 ];
 
-const install = function (Vue, opts = {}) {
+const install = function(Vue, opts = {}) {
   locale.use(opts.locale);
   locale.i18n(opts.i18n);
 
