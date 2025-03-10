@@ -343,6 +343,10 @@
             {
               "path": "/drawer",
               "title": "Drawer 抽屉"
+            },
+            {
+              "path": "/scroll",
+              "title": "Scroll 滚动"
             }
           ]
         }

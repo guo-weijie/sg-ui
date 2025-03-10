@@ -11,31 +11,25 @@
 - Icon
   - 新增 用采图标库
   - 新增 扩展图标库
-- Split
-  - 迁移 分割面板
-- IpInput
-  - 迁移 ip 输入框
-- TreeSelect
-  - 迁移 树形下拉框
+- Split 分割面板
+- IpInput ip 输入框
+- TreeSelect 树形下拉框
   - 功能 支持原`vue-treeSelect`全部功能
   - 文档更新
-- Clamp
-  - 迁移 文字显示
+- Clamp 文字显示
   - 功能 支持更多`tooltip`属性
   - 文档更新
-- Number
-  - 迁移 滚动数字
+- Number 滚动数字
   - 功能 支持原`vue-count-to`全部功能
   - 文档更新
-- Affix
-  - 迁移 固钉
-- Title
-  - 迁移 标题
+- Affix 固钉
+- Title 标题
   - 新增功能
     - 标题可点击
     - 支持更多`tooltip`功能
     - 标题左侧图标可自定义
   - 文档更新
+- Scroll 滚动
 
 #### 移除
 - Fullscreen 全屏
