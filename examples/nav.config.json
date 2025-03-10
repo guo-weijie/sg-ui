@@ -347,6 +347,10 @@
             {
               "path": "/scroll",
               "title": "Scroll 滚动"
+            },
+            {
+              "path": "/draggable",
+              "title": "Draggable 拖拽"
             }
           ]
         }

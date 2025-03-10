@@ -96,5 +96,6 @@
   "affix": "./packages/affix/index.js",
   "anchor": "./packages/anchor/index.js",
   "title": "./packages/title/index.js",
-  "scroll": "./packages/scroll/index.js"
+  "scroll": "./packages/scroll/index.js",
+  "draggable": "./packages/draggable/index.js"
 }

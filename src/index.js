@@ -98,6 +98,7 @@ import Affix from '../packages/affix/index.js';
 import Anchor from '../packages/anchor/index.js';
 import Title from '../packages/title/index.js';
 import Scroll from '../packages/scroll/index.js';
+import Draggable from '../packages/draggable/index.js';
 import locale from 'sg-ui/src/locale';
 import CollapseTransition from 'sg-ui/src/transitions/collapse-transition';
 
@@ -195,6 +196,7 @@ const components = [
   Anchor,
   Title,
   Scroll,
+  Draggable,
   CollapseTransition
 ];
 
@@ -332,5 +334,6 @@ export default {
   Affix,
   Anchor,
   Title,
-  Scroll
+  Scroll,
+  Draggable
 };

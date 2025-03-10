@@ -30,6 +30,7 @@
     - 标题左侧图标可自定义
   - 文档更新
 - Scroll 滚动
+- Draggable 拖拽
 
 #### 移除
 - Fullscreen 全屏

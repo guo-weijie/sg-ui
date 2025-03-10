@@ -1,0 +1,9 @@
+@import "mixins/mixins";
+@import "common/var";
+
+@include b(draggable) {
+  >div{
+    width: 100%;
+    min-height: 30px;
+  }
+}
