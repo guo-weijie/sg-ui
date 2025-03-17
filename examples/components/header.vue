@@ -103,6 +103,10 @@
     vertical-align: sub;
   }
 
+  .nav-logo {
+    height: 60px;
+  }
+
   .nav-logo-small {
     display: none;
   }
@@ -134,18 +138,18 @@
         color: #888;
 
         &:hover {
-          color: #409eff;
+          color: #15b07f;
         }
         &.active {
           font-weight: bold;
-          color: #409eff;
+          color: #15b07f;
         }
       }
     }
 
     a {
       text-decoration: none;
-      color: #1989fa;
+      color: #15b07f;
       opacity: 0.5;
       display: block;
       padding: 0 22px;
@@ -163,7 +167,7 @@
         left: calc(50% - 15px);
         width: 30px;
         height: 2px;
-        background: #409eff;
+        background: #15b07f;
       }
     }
   }
@@ -292,7 +296,8 @@
           <router-link :to="`/${lang}`">
             <!-- logo -->
             <slot>
-              <img src="../assets/images/element-logo.svg" alt="element-logo" class="nav-logo" />
+              <img src="../assets/images/logo.svg" alt="element-logo" class="nav-logo" />
+              SG-UI
               <img src="../assets/images/element-logo-small.svg" alt="element-logo" class="nav-logo-small" />
             </slot>
           </router-link>
@@ -376,9 +381,7 @@ export default {
       langDropdownVisible: true,
       langs: {
         'zh-CN': '中文',
-        'en-US': 'English',
-        es: 'Español',
-        'fr-FR': 'Français'
+        'en-US': 'English'
       }
     };
   },

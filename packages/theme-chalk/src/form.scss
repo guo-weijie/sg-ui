@@ -1,6 +1,6 @@
-@import "mixins/mixins";
-@import "mixins/utils";
-@import "common/var";
+@import 'mixins/mixins';
+@import 'mixins/utils';
+@import 'common/var';
 
 @include b(form) {
   @include m(label-left) {
@@ -36,7 +36,7 @@
   }
 }
 @include b(form-item) {
-  margin-bottom: 22px;
+  margin-bottom: $--base-value;
   @include utils-clearfix;
 
   & .sg-form-item {
@@ -144,7 +144,8 @@
   @include when(error) {
     & .sg-input__inner,
     & .sg-textarea__inner {
-      &, &:focus {
+      &,
+      &:focus {
         border-color: $--color-danger;
       }
     }

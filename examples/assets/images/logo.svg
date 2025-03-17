@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="262px" height="217px" viewBox="0 0 262 217" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>logo1</title>
+    <defs>
+        <linearGradient x1="50%" y1="143.991639%" x2="50%" y2="-17.3491488%" id="linearGradient-1">
+            <stop stop-color="#15b07f" offset="0%"></stop>
+            <stop stop-color="#11A18C" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="143.991639%" x2="50%" y2="-17.3491488%" id="linearGradient-2">
+            <stop stop-color="#15b07f" offset="0%"></stop>
+            <stop stop-color="#1BA590" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="153.117352%" id="linearGradient-3">
+            <stop stop-color="#F5CC02" offset="0%"></stop>
+            <stop stop-color="#EFDE41" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="icon图标" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="画板" transform="translate(-6565.000000, -863.000000)">
+            <g id="logo1" transform="translate(6565.000000, 863.000000)">
+                <path d="M79.016131,35.877916 L131,117 L182.983869,35.877916 C191.172854,34.5656505 199.259963,32.948399 207.233178,31.0381785 L131,150 L54.7652419,31.0377999 C62.7389687,32.9481854 70.8266049,34.5655639 79.016131,35.877916 Z" id="形状结合" fill="url(#linearGradient-1)"></path>
+                <path d="M261.068359,13.0186313 L131,216 L0.933638149,13.0195014 C18.155166,20.5208847 36.1505469,26.5780967 54.7668219,31.0381785 L131,150 L207.234178,31.037939 C225.850817,26.5777075 243.846534,20.5202821 261.068359,13.0186313 Z" id="形状结合" fill="url(#linearGradient-2)"></path>
+                <path d="M157.302001,38.9543452 L131,80 L104.698081,38.9543517 C113.374074,39.6470157 122.145815,40 131,40 C139.854213,40 148.625981,39.6470135 157.302001,38.9543452 Z" id="三角形-2" fill="url(#linearGradient-3)"></path>
+            </g>
+        </g>
+    </g>
+</svg>
