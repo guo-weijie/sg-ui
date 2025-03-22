@@ -12,10 +12,6 @@ lib
 .idea
 .vscode
 examples/sg-ui
-examples/pages/en-US
-examples/pages/zh-CN
-examples/pages/es
-examples/pages/fr-FR
 fe.element/sg-ui
 .npmrc
 coverage
