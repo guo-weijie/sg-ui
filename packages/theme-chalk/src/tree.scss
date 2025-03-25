@@ -1,7 +1,7 @@
-@import "mixins/mixins";
-@import "common/var";
-@import "common/transition";
-@import "checkbox";
+@import 'mixins/mixins';
+@import 'common/var';
+@import 'common/transition';
+@import 'checkbox';
 
 @include b(tree) {
   position: relative;
@@ -38,7 +38,8 @@
 @include b(tree-node) {
   white-space: nowrap;
   outline: none;
-  &:focus { /* focus */
+  &:focus {
+    /* focus */
     > .sg-tree-node__content {
       background-color: $--tree-node-hover-background-color;
     }
@@ -119,5 +120,5 @@
 }
 
 .sg-tree--highlight-current .sg-tree-node.is-current > .sg-tree-node__content {
-  background-color: mix($--color-white, $--color-primary, 92%);
+  background-color: myMix($--color-white, $--color-primary, 92%);
 }
