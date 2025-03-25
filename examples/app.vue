@@ -51,6 +51,10 @@ export default {
     }
   },
 
+  created() {
+    document.documentElement.dataset.theme = 'theme2';
+  },
+
   mounted() {
     localize(this.lang);
   }
