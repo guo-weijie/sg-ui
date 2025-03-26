@@ -33,7 +33,7 @@
       line-height: 40px;
       height: 40px;
       margin: 0;
-      padding: 0;
+      padding-left: 16px;
       text-decoration: none;
       display: block;
       position: relative;
@@ -41,7 +41,8 @@
       font-weight: bold;
 
       &.active {
-        color: #15b07f;
+        color: var(--color-primary);
+        background-color: var(--background-color-base);
       }
     }
 
@@ -59,7 +60,8 @@
 
         &:hover,
         &.active {
-          color: #15b07f;
+          color: var(--color-primary);
+          background-color: var(--background-color-base);
         }
       }
     }

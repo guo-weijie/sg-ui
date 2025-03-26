@@ -2,3 +2,71 @@
 @import 'icon.scss';
 @import 'iconfont.scss';
 @import 'iconfont_yc.scss';
+
+:root[data-theme='default-theme'] {
+  --color-primary: #017572;
+  --color-primary-rgb: 1, 117, 114; // 此变量值为 --color-primary 的 rgb 值
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-success: #13ce66;
+  --color-warning: #ffba00;
+  --color-danger: #ff4949;
+  --color-info: #909399;
+  --color-text-primary: #333333;
+  --color-text-regular: #666666;
+  --color-text-secondary: #999999;
+  --color-text-placeholder: #c9c9c9;
+  --border-color-base: #eeeeee;
+  --border-color-light: #dfe4ed;
+  --border-color-lighter: #e6ebf5;
+  --border-color-extra-light: #f2f2f4;
+  --background-color-base: rgba(var(--color-primary-rgb), 0.06);
+  --icon-color: #666;
+  --disabled-fill-base: #f5f7fa;
+  --checkbox-disabled-input-fill: #edf2fc;
+  --message-background-color: #edf2fc;
+  --cascader-tag-background: #f0f2f5;
+  --datepicker-inner-border-color: #e4e4e4;
+  --datepicker-cell-hover-color: #fff;
+  --calendar-selected-background-color: #f2f8fe;
+  --avatar-font-color: #fff;
+  --avatar-background-color: #c0c4cc;
+  --descriptions-item-bordered-label-background: #fafafa;
+  --skeleton-color: #f2f2f2;
+  --skeleton-to-color: #e6e6e6;
+  --svg-monochrome-grey: #dcdde0;
+}
+
+:root[data-theme='theme2'] {
+  --color-primary: #15b07f;
+  --color-primary-rgb: 21, 176, 127;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-success: #28c65f;
+  --color-warning: #fe971d;
+  --color-danger: #ed4b44;
+  --color-info: #909399;
+  --color-text-primary: #333333;
+  --color-text-regular: #666666;
+  --color-text-secondary: #999999;
+  --color-text-placeholder: #c9c9c9;
+  --border-color-base: #eeeeee;
+  --border-color-light: #dddddd;
+  --border-color-lighter: #d2d2d2;
+  --border-color-extra-light: #f2f2f4;
+  --background-color-base: rgba(var(--color-primary-rgb), 0.06);
+  --icon-color: #666;
+  --disabled-fill-base: #f5f7fa;
+  --checkbox-disabled-input-fill: #edf2fc;
+  --message-background-color: #edf2fc;
+  --cascader-tag-background: #f0f2f5;
+  --datepicker-inner-border-color: #e4e4e4;
+  --datepicker-cell-hover-color: #fff;
+  --calendar-selected-background-color: #f2f8fe;
+  --avatar-font-color: #fff;
+  --avatar-background-color: #c0c4cc;
+  --descriptions-item-bordered-label-background: #fafafa;
+  --skeleton-color: #f2f2f2;
+  --skeleton-to-color: #e6e6e6;
+  --svg-monochrome-grey: #dcdde0;
+}

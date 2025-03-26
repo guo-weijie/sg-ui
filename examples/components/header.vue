@@ -4,7 +4,7 @@
 }
 
 #v3-banner {
-  background-color: #409eff;
+  background-color: var(--color-primary);
   min-height: 30px;
   padding: 5px 60px;
   z-index: 19;
@@ -138,18 +138,18 @@
         color: #888;
 
         &:hover {
-          color: #15b07f;
+          color: var(--color-primary);
         }
         &.active {
           font-weight: bold;
-          color: #15b07f;
+          color: var(--color-primary);
         }
       }
     }
 
     a {
       text-decoration: none;
-      color: #15b07f;
+      color: var(--color-primary);
       opacity: 0.5;
       display: block;
       padding: 0 22px;
@@ -167,7 +167,7 @@
         left: calc(50% - 15px);
         width: 30px;
         height: 2px;
-        background: #15b07f;
+        background: var(--color-primary);
       }
     }
   }
@@ -203,7 +203,7 @@
   .is-active {
     span,
     i {
-      color: #409eff;
+      color: var(--color-primary);
     }
     i {
       transform: rotateZ(180deg) translateY(3px);
@@ -213,9 +213,14 @@
   &:hover {
     span,
     i {
-      color: #409eff;
+      color: var(--color-primary);
     }
   }
+}
+
+.active {
+  color: var(--color-primary);
+  background-color: var(--background-color-base);
 }
 
 .nav-dropdown-list {
@@ -326,21 +331,6 @@
             <div class="nav-gap"></div>
           </li>
 
-          <!-- 版本选择器 -->
-          <li class="nav-item nav-versions" v-show="isComponentPage">
-            <sg-dropdown trigger="click" class="nav-dropdown" :class="{ 'is-active': verDropdownVisible }">
-              <span>
-                {{ version }}
-                <i class="sg-icon-arrow-down sg-icon--right"></i>
-              </span>
-              <sg-dropdown-menu slot="dropdown" class="nav-dropdown-list" @input="handleVerDropdownToggle">
-                <sg-dropdown-item v-for="item in Object.keys(versions)" :key="item" @click.native="switchVersion(item)">
-                  {{ item }}
-                </sg-dropdown-item>
-              </sg-dropdown-menu>
-            </sg-dropdown>
-          </li>
-
           <!-- 语言选择器 -->
           <li class="nav-item lang-item">
             <sg-dropdown trigger="click" class="nav-dropdown nav-lang" :class="{ 'is-active': langDropdownVisible }">
@@ -355,6 +345,26 @@
               </sg-dropdown-menu>
             </sg-dropdown>
           </li>
+
+          <!-- 主题选择器 -->
+          <li class="nav-item lang-item">
+            <sg-dropdown trigger="click" class="nav-dropdown nav-lang" :class="{ 'is-active': themeDropdownVisible }">
+              <span>
+                {{ displayedTheme }}
+                <i class="sg-icon-arrow-down sg-icon--right"></i>
+              </span>
+              <sg-dropdown-menu slot="dropdown" class="nav-dropdown-list" @input="handleThemesChange">
+                <sg-dropdown-item
+                  v-for="(value, key) in themes"
+                  :key="key"
+                  @click.native="switchTheme(key)"
+                  :class="{ active: theme === key }"
+                >
+                  {{ value }}
+                </sg-dropdown-item>
+              </sg-dropdown-menu>
+            </sg-dropdown>
+          </li>
         </ul>
       </div>
     </header>
@@ -364,25 +374,23 @@
 import ThemePicker from './theme-picker.vue';
 import AlgoliaSearch from './search.vue';
 import compoLang from '../i18n/component.json';
-import Element from 'main/index.js';
 import themeLoader from './theme/loader';
-import bus from '../bus';
-import { ACTION_USER_CONFIG_UPDATE } from './theme/constant.js';
-
-const { version } = Element;
 
 export default {
   data() {
     return {
       active: '',
-      versions: [],
-      version,
-      verDropdownVisible: true,
       langDropdownVisible: true,
+      themeDropdownVisible: true,
       langs: {
         'zh-CN': '中文',
         'en-US': 'English'
-      }
+      },
+      themes: {
+        'default-theme': '默认',
+        theme2: '浅绿'
+      },
+      theme: 'theme2'
     };
   },
 
@@ -400,6 +408,9 @@ export default {
     displayedLang() {
       return this.langs[this.lang] || '中文';
     },
+    displayedTheme() {
+      return this.themes[this.theme] || '默认';
+    },
     langConfig() {
       return compoLang.filter((config) => config.lang === this.lang)[0]['header'];
     },
@@ -410,63 +421,23 @@ export default {
       return /^home/.test(this.$route.name);
     }
   },
-  mounted() {
-    const testInnerImg = new Image();
-    testInnerImg.onload = () => {
-      this.$isEle = true;
-      ga('send', 'event', 'DocView', 'Ali', 'Inner');
-    };
-    testInnerImg.onerror = (err) => {
-      ga('send', 'event', 'DocView', 'Ali', 'Outer');
-      console.error(err);
-    };
-    testInnerImg.src = `https://private-alipayobjects.alipay.com/alipay-rmsdeploy-image/rmsportal/VmvVUItLdPNqKlNGuRHi.png?t=${Date.now()}`;
-  },
   methods: {
-    switchVersion(version) {
-      if (version === this.version) return;
-      location.href = `${location.origin}/${this.versions[version]}/${location.hash} `;
-    },
-
     switchLang(targetLang) {
       if (this.lang === targetLang) return;
       localStorage.setItem('ELEMENT_LANGUAGE', targetLang);
       this.$router.push(this.$route.path.replace(this.lang, targetLang));
     },
-
-    handleVerDropdownToggle(visible) {
-      this.verDropdownVisible = visible;
+    switchTheme(theme) {
+      this.theme = theme;
+      document.documentElement.dataset.theme = theme;
     },
 
     handleLangDropdownToggle(visible) {
       this.langDropdownVisible = visible;
+    },
+    handleThemesChange(visible) {
+      this.themeDropdownVisible = visible;
     }
-  },
-
-  created() {
-    const xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = (_) => {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        const versions = JSON.parse(xhr.responseText);
-        this.versions = Object.keys(versions).reduce((prev, next) => {
-          prev[next] = versions[next];
-          return prev;
-        }, {});
-      }
-    };
-    xhr.open('GET', '/versions.json');
-    xhr.send();
-    let primaryLast = '#409EFF';
-    bus.$on(ACTION_USER_CONFIG_UPDATE, (val) => {
-      let primaryColor = val.global['$--color-primary'];
-      if (!primaryColor) primaryColor = '#409EFF';
-      const base64svg = 'data:image/svg+xml;base64,';
-      const imgSet = document.querySelectorAll('h1 img');
-      imgSet.forEach((img) => {
-        img.src = `${base64svg}${window.btoa(window.atob(img.src.replace(base64svg, '')).replace(primaryLast, primaryColor))}`;
-      });
-      primaryLast = primaryColor;
-    });
   }
 };
 </script>
