@@ -7,7 +7,7 @@
     }
   }
   .sg-button + .sg-button {
-    margin-left: 10px;
+    margin-left: 16px;
   }
   .sg-button-group {
     .sg-button + .sg-button {
@@ -15,7 +15,7 @@
     }
 
     & + .sg-button-group {
-      margin-left: 10px;
+      margin-left: 16px;
     }
   }
 }

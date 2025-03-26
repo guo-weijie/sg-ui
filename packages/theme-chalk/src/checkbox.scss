@@ -12,7 +12,7 @@
   display: inline-block;
   white-space: nowrap;
   user-select: none;
-  margin-right: 30px;
+  margin-right: $--base-value * 2;  
 
   @include when(bordered) {
     padding: $--checkbox-bordered-padding;
