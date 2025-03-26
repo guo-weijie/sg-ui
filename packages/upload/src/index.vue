@@ -4,7 +4,7 @@ import Upload from './upload';
 import SgProgress from 'sg-ui/packages/progress';
 import Migrating from 'sg-ui/src/mixins/migrating';
 
-function noop() { }
+function noop() {}
 
 export default {
   name: 'SgUpload',
@@ -124,7 +124,7 @@ export default {
   watch: {
     listType(type) {
       if (type === 'picture-card' || type === 'picture') {
-        this.uploadFiles = this.uploadFiles.map(file => {
+        this.uploadFiles = this.uploadFiles.map((file) => {
           if (!file.url && file.raw) {
             try {
               file.url = URL.createObjectURL(file.raw);
@@ -139,8 +139,8 @@ export default {
     fileList: {
       immediate: true,
       handler(fileList) {
-        this.uploadFiles = fileList.map(item => {
-          item.uid = item.uid || (Date.now() + this.tempIndex++);
+        this.uploadFiles = fileList.map((item) => {
+          item.uid = item.uid || Date.now() + this.tempIndex++;
           item.status = item.status || 'success';
           return item;
         });
@@ -227,7 +227,7 @@ export default {
     getFile(rawFile) {
       let fileList = this.uploadFiles;
       let target;
-      fileList.every(item => {
+      fileList.every((item) => {
         target = rawFile.uid === item.uid ? item : null;
         return !target;
       });
@@ -241,8 +241,8 @@ export default {
     },
     submit() {
       this.uploadFiles
-        .filter(file => file.status === 'ready')
-        .forEach(file => {
+        .filter((file) => file.status === 'ready')
+        .forEach((file) => {
           this.$refs['upload-inner'].upload(file.raw);
         });
     },
@@ -251,14 +251,15 @@ export default {
         props: {
           'default-file-list': 'default-file-list is renamed to file-list.',
           'show-upload-list': 'show-upload-list is renamed to show-file-list.',
-          'thumbnail-mode': 'thumbnail-mode has been deprecated, you can implement the same effect according to this case: http://element.eleme.io/#/zh-CN/component/upload#yong-hu-tou-xiang-shang-chuan'
+          'thumbnail-mode':
+            'thumbnail-mode has been deprecated, you can implement the same effect according to this case: http://element.eleme.io/#/zh-CN/component/upload#yong-hu-tou-xiang-shang-chuan'
         }
       };
     }
   },
 
   beforeDestroy() {
-    this.uploadFiles.forEach(file => {
+    this.uploadFiles.forEach((file) => {
       if (file.url && file.url.indexOf('blob:') === 0) {
         URL.revokeObjectURL(file.url);
       }
@@ -275,16 +276,15 @@ export default {
           listType={this.listType}
           files={this.uploadFiles}
           on-remove={this.handleRemove}
-          handlePreview={this.onPreview}>
-          {
-            (props) => {
-              if (this.$scopedSlots.file) {
-                return this.$scopedSlots.file({
-                  file: props.file
-                });
-              }
+          handlePreview={this.onPreview}
+        >
+          {(props) => {
+            if (this.$scopedSlots.file) {
+              return this.$scopedSlots.file({
+                file: props.file
+              });
             }
-          }
+          }}
         </UploadList>
       );
     }
@@ -324,12 +324,7 @@ export default {
     return (
       <div>
         {this.listType === 'picture-card' ? uploadList : ''}
-        {
-          this.$slots.trigger
-            ? [uploadComponent, this.$slots.default]
-            : uploadComponent
-        }
-        {this.$slots.tip}
+        {this.$slots.trigger ? [uploadComponent, this.$slots.default] : uploadComponent}
         {this.listType !== 'picture-card' ? uploadList : ''}
       </div>
     );
