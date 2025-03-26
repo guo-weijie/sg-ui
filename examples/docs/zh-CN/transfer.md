@@ -31,11 +31,11 @@
 ```
 :::
 
-### 可搜索
+### 可搜索且按钮排列方向为纵向
 
 在数据很多的情况下，可以对数据进行搜索和过滤。
 
-:::demo 设置 `filterable` 为 `true` 即可开启搜索模式。默认情况下，若数据项的 `label` 属性包含搜索关键字，则会在搜索结果中显示。你也可以使用 `filter-method` 定义自己的搜索逻辑。`filter-method` 接收一个方法，当搜索关键字变化时，会将当前的关键字和每个数据项传给该方法。若方法返回 `true`，则会在搜索结果中显示对应的数据项。
+:::demo 设置 `filterable` 为 `true` 即可开启搜索模式。默认情况下，若数据项的 `label` 属性包含搜索关键字，则会在搜索结果中显示。你也可以使用 `filter-method` 定义自己的搜索逻辑。`filter-method` 接收一个方法，当搜索关键字变化时，会将当前的关键字和每个数据项传给该方法。若方法返回 `true`，则会在搜索结果中显示对应的数据项。设置 `buttonDirection` 可以用来自定义两个按钮的排列方式，默认为水平方向，可以通过 `vertical` 即可开启纵向排列方式。
 ```html
 <template>
   <sg-transfer
@@ -43,6 +43,7 @@
     :filter-method="filterMethod"
     filter-placeholder="请输入城市拼音"
     v-model="value"
+    buttonDirection="vertical"
     :data="data">
   </sg-transfer>
 </template>
@@ -78,9 +79,9 @@
 
 ### 可自定义
 
-可以对列表标题文案、按钮文案、数据项的渲染函数、列表底部的勾选状态文案、列表底部的内容区等进行自定义。
+可以对列表标题文案、按钮文案、按钮图标、数据项的渲染函数、列表底部的勾选状态文案、列表底部的内容区等进行自定义。
 
-:::demo 可以使用 `titles`、`button-texts`、`render-content` 和 `format` 属性分别对列表标题文案、按钮文案、数据项的渲染函数和列表顶部的勾选状态文案进行自定义。数据项的渲染还可以使用 `scoped-slot` 进行自定义。对于列表底部的内容区，提供了两个具名 slot：`left-footer` 和 `right-footer`。此外，如果希望某些数据项在初始化时就被勾选，可以使用 `left-default-checked` 和 `right-default-checked` 属性。最后，本例还展示了 `change` 事件的用法。注意：由于 jsfiddle 不支持 JSX 语法，所以使用 `render-content` 自定义数据项的例子在 jsfiddle 中无法运行。但是在实际的项目中，只要正确地配置了相关依赖，就可以正常运行。
+:::demo 可以使用 `titles`、`button-texts`、`button-icons`、`render-content` 和 `format` 属性分别对列表标题文案、按钮文案、按钮图标、数据项的渲染函数和列表顶部的勾选状态文案进行自定义。数据项的渲染还可以使用 `scoped-slot` 进行自定义。对于列表底部的内容区，提供了两个具名 slot：`left-footer` 和 `right-footer`。此外，如果希望某些数据项在初始化时就被勾选，可以使用 `left-default-checked` 和 `right-default-checked` 属性。最后，本例还展示了 `change` 事件的用法。注意：由于 jsfiddle 不支持 JSX 语法，所以使用 `render-content` 自定义数据项的例子在 jsfiddle 中无法运行。但是在实际的项目中，只要正确地配置了相关依赖，就可以正常运行。
 ```html
 <template>
   <p style="text-align: center; margin: 0 0 20px">使用 render-content 自定义数据项</p>
@@ -94,6 +95,7 @@
       :render-content="renderFunc"
       :titles="['Source', 'Target']"
       :button-texts="['到左边', '到右边']"
+      :button-icons="['sg-icon-d-arrow-left', 'sg-icon-d-arrow-right']"
       :format="{
         noChecked: '${total}',
         hasChecked: '${checked}/${total}'
@@ -219,12 +221,13 @@
 | target-order | 右侧列表元素的排序策略：若为 `original`，则保持与数据源相同的顺序；若为 `push`，则新加入的元素排在最后；若为 `unshift`，则新加入的元素排在最前 | string | original / push / unshift | original |
 | titles | 自定义列表标题 | array | — | ['列表 1', '列表 2'] |
 | button-texts | 自定义按钮文案 | array | — | [ ] |
+| button-icons | 自定义按钮图标 | array | — | ['sg-icon-arrow-left','sg-icon-arrow-right' ] |
 | render-content | 自定义数据项渲染函数 | function(h, option) | — | — |
 | format | 列表顶部勾选状态文案 | object{noChecked, hasChecked} | — | { noChecked: '${checked}/${total}', hasChecked: '${checked}/${total}' } |
 | props | 数据源的字段别名 | object{key, label, disabled} | — | — |
 | left-default-checked | 初始状态下左侧列表的已勾选项的 key 数组 | array | — | [ ] |
 | right-default-checked | 初始状态下右侧列表的已勾选项的 key 数组 | array | — | [ ] |
-
+| buttonDirection | 自定义按钮排列方式，横向还是纵向 | string | — | 默认值为horizontal,纵向取值为vertical |
 ### Slot
 | name | 说明 |
 |------|--------|

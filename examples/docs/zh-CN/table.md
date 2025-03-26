@@ -357,7 +357,7 @@
     <sg-table-column
       fixed="right"
       label="操作"
-      width="100">
+      width="160">
       <template slot-scope="scope">
         <sg-button @click="handleClick(scope.row)" type="text" size="small">查看</sg-button>
         <sg-button type="text" size="small">编辑</sg-button>
