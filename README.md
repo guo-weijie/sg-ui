@@ -1,61 +1,33 @@
+基于 element-ui 二次开发的 UI 组件库
 
-<p align="center">
-  <a href="https://travis-ci.org/ElemeFE/element">
-    <img src="https://travis-ci.org/ElemeFE/element.svg?branch=master">
-  </a>
-  <a href="https://coveralls.io/github/ElemeFE/element?branch=master">
-    <img src="https://coveralls.io/repos/github/ElemeFE/element/badge.svg?branch=master">
-  </a>
-  <a href="https://cdnjs.com/libraries/sg-ui">
-    <img src="https://img.shields.io/cdnjs/v/sg-ui.svg">
-  </a>
-  <a href="https://www.npmjs.org/package/sg-ui">
-    <img src="https://img.shields.io/npm/v/sg-ui.svg">
-  </a>
-  <br>
-  <a href="LICENSE">
-    <img src="https://img.shields.io/badge/License-MIT-yellow.svg">
-  </a>
-</p>
-
-> A Vue.js 2.0 UI Toolkit for Web.
-
-## Links
-- Homepage and documentation
-  - [International users](http://element.eleme.io/#/en-US)
-  - [Chinese users](http://element.eleme.io/#/zh-CN)
-  - [Spanish users](http://element.eleme.io/#/es)
-  - [French users](http://element.eleme.io/#/fr-FR)
-- [awesome-element](https://github.com/ElementUI/awesome-element)
+## 访问
+- [在线文档](https://sg-ui.keep-silent.com)
 - [FAQ](./FAQ.md)
-- [Vue.js 3.0 migration](https://github.com/element-plus/element-plus)
-- [Customize theme](http://element.eleme.io/#/en-US/component/custom-theme)
-- [Preview and generate theme online](https://elementui.github.io/theme-chalk-preview)
-- [Element for React](https://github.com/elemefe/element-react)
-- [Element for Angular](https://github.com/ElemeFE/element-angular)
-- [Atom helper](https://github.com/ElemeFE/element-helper)
-- [Visual Studio Code helper](https://github.com/ElemeFE/vscode-element-helper)
-- Starter kit
-  - [element-starter](https://github.com/ElementUI/element-starter)
-  - [element-in-laravel-starter](https://github.com/ElementUI/element-in-laravel-starter)
-- [Design resources](https://github.com/ElementUI/Resources)
-- Gitter
-  - [International users](https://gitter.im/element-en/Lobby)
-  - [Chinese users](https://gitter.im/ElemeFE/element)
 
-## Install
-```shell
-npm install sg-ui -S
-```
+## 安装
 
-## Quick Start
+未发布到 npmjs，目前只支持本地安装：
+
+方法一：
+
+- 1、下载 release 包；
+- 2、将包放在项目根目录；
+- 3、修改`package.json`依赖，新增`"sg-ui": "file:./xxxxx.tgz"`（xxxxx.tgz 为下载的包名）；
+- 4、npm install
+
+方法二：
+- 1、下载 release 包；
+- 2、执行`npm install xxxxxx`（xxxxxx 为 release 包的相对路径或绝对路径）
+
+## 快速开始
 ``` javascript
+// 全量安装
 import Vue from 'vue'
 import Element from 'sg-ui'
 
 Vue.use(Element)
 
-// or
+// 或者按需安装
 import {
   Select,
   Button
@@ -65,60 +37,12 @@ import {
 Vue.component(Select.name, Select)
 Vue.component(Button.name, Button)
 ```
-For more information, please refer to [Quick Start](http://element.eleme.io/#/en-US/component/quickstart) in our documentation.
 
-## Browser Support
-Modern browsers and Internet Explorer 10+.
+## 浏览器支持
+现代浏览器和IE 10+
 
-## Development
-Skip this part if you just want to use Element.
-
-For those who are interested in contributing to Element, please refer to our contributing guide ([中文](https://github.com/ElemeFE/element/blob/master/.github/CONTRIBUTING.zh-CN.md) | [English](https://github.com/ElemeFE/element/blob/master/.github/CONTRIBUTING.en-US.md) | [Español](https://github.com/ElemeFE/element/blob/master/.github/CONTRIBUTING.es.md) | [Français](https://github.com/ElemeFE/element/blob/master/.github/CONTRIBUTING.fr-FR.md)) to see how to run this project.
-
-## Changelog
-Detailed changes for each release are documented in the [release notes](https://github.com/ElemeFE/element/releases).
-
-## FAQ
-We have collected some [frequently asked questions](https://github.com/ElemeFE/element/blob/master/FAQ.md). Before reporting an issue, please search if the FAQ has the answer to your problem.
-
-## Contribution
-Please make sure to read the contributing guide ([中文](https://github.com/ElemeFE/element/blob/master/.github/CONTRIBUTING.zh-CN.md) | [English](https://github.com/ElemeFE/element/blob/master/.github/CONTRIBUTING.en-US.md) | [Español](https://github.com/ElemeFE/element/blob/master/.github/CONTRIBUTING.es.md) | [Français](https://github.com/ElemeFE/element/blob/master/.github/CONTRIBUTING.fr-FR.md)) before making a pull request.
-
-## Special Thanks
-English documentation is brought to you by SwiftGG Translation Team:
-- [raychenfj](https://github.com/raychenfj)
-- [kevin](http://thekevin.cn/)
-- [曾小涛](https://github.com/zengxiaotao)
-- [湾仔王二](https://github.com/wanzaiwanger)
-- [BlooDLine](http://www.ibloodline.com/)
-- [陈铭嘉](https://chenmingjia.github.io/)
-- [千叶知风](http://mpc6.com/)
-- [梁杰](http://numbbbbb.com)
-- [Changing](https://github.com/sunzhuo11)
-- [mmoaay](https://github.com/mmoaay)
-
-Spanish documentation is made possible by these community developers:
-- [adavie1](https://github.com/adavie1)
-- [carmencitaqiu](https://github.com/carmencitaqiu)
-- [coderdiaz](https://github.com/coderdiaz)
-- [fedegar33](https://github.com/fedegar33)
-- [Gonzalo2310](https://github.com/Gonzalo2310)
-- [lesterbx](https://github.com/lesterbx)
-- [ProgramerGuy](https://github.com/ProgramerGuy)
-- [SantiagoGdaR](https://github.com/SantiagoGdaR)
-- [sigfriedCub1990](https://github.com/sigfriedCub1990)
-- [thechosenjuan](https://github.com/thechosenjuan)
-
-French documentation is made possible by these community developers:
-- [smalesys](https://github.com/smalesys)
-- [blombard](https://github.com/blombard)
-
-## Join Discussion Group
-
-Scan the QR code using [Dingtalk App](https://www.dingtalk.com/) to join in discussion group :
-
-<img alt="Join Discusion Group" src="https://user-images.githubusercontent.com/17680888/93177882-0ae92d80-f766-11ea-870d-3fa2d7f06454.png" width="300">
-
+## 修改日志
+[日志](./CHANGELOG.zh-CN.md)
 
 ## LICENSE
 [MIT](LICENSE)
