@@ -305,6 +305,24 @@
   multiple>
   <i class="sg-icon-upload"></i>
   <div class="sg-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+  <div class="sg-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div>
+</sg-upload>
+```
+:::
+
+### 拖拽上传
+
+提示说明文字位于上传区域
+
+:::demo
+```html
+<sg-upload
+  class="upload-demo"
+  drag
+  action="https://jsonplaceholder.typicode.com/posts/"
+  multiple>
+  <i class="sg-icon-upload"></i>
+  <div class="sg-upload__text">将文件拖到此处，或<em>点击上传</em></div>
   <div class="sg-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
 </sg-upload>
 ```
