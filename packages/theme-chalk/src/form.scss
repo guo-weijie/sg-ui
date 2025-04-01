@@ -36,7 +36,7 @@
   }
 }
 @include b(form-item) {
-  margin-bottom: $--base-value;
+  margin-bottom: var(--base-value);
   @include utils-clearfix;
 
   & .sg-form-item {

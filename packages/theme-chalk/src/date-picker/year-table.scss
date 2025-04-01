@@ -1,4 +1,4 @@
-@import "../common/var";
+@import '../common/var';
 
 @include b(year-table) {
   font-size: 12px;
@@ -22,7 +22,7 @@
     }
 
     &.disabled .cell {
-      background-color: $--background-color-base;
+      background-color: $--hover-background-color-base;
       cursor: not-allowed;
       color: $--color-text-placeholder;
 

@@ -220,7 +220,7 @@
 
 .active {
   color: var(--color-primary);
-  background-color: var(--background-color-base);
+  background-color: var(--hover-background-color-base);
 }
 
 .nav-dropdown-list {

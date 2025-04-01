@@ -41,7 +41,7 @@ body {
 }
 
 a {
-  color: #15b07f;
+  color: var(--color-primary);
   text-decoration: none;
 }
 
@@ -76,7 +76,7 @@ textarea {
 
 .main-cnt {
   margin-top: -80px;
-  padding: 80px 0 340px;
+  padding: 80px 0;
   box-sizing: border-box;
   min-height: 100%;
 }
@@ -132,7 +132,7 @@ textarea {
     padding: 8px 16px;
     background-color: #ecf8ff;
     border-radius: 4px;
-    border-left: #15b07f 5px solid;
+    border-left: var(--color-primary) 5px solid;
     margin: 20px 0;
 
     code {

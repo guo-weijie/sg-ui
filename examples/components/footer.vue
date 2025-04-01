@@ -1,13 +1,10 @@
 <template>
   <footer class="footer">
     <div class="container">
-      <div class="footer-main">
-        <h4>{{ langConfig.links }}</h4>
-        <a href="https://github.com/guo-weijie/sg-ui" class="footer-main-link" target="_blank">{{ langConfig.repo }}</a>
-        <a href="https://github.com/guo-weijie/sg-ui/releases" class="footer-main-link" target="_blank">{{
-          langConfig.changelog
-        }}</a>
-      </div>
+      <a href="https://github.com/guo-weijie/sg-ui" class="footer-main-link" target="_blank">{{ langConfig.repo }}</a>
+      <a href="https://github.com/guo-weijie/sg-ui/releases" class="footer-main-link" target="_blank">{{
+        langConfig.changelog
+      }}</a>
     </div>
   </footer>
 </template>
@@ -16,20 +13,15 @@
 .footer {
   background-color: #f7fbfd;
   width: 100%;
-  padding: 40px 150px;
+  padding: var(--base-value);
   box-sizing: border-box;
 
   .container {
     box-sizing: border-box;
     width: auto;
-  }
-
-  .footer-main {
-    font-size: 0;
-    display: inline-block;
-    vertical-align: top;
-    margin-right: 110px;
-
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     h4 {
       font-size: 18px;
       color: #333;

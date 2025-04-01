@@ -3,6 +3,10 @@
 @import 'iconfont.scss';
 @import 'iconfont_yc.scss';
 
+:root {
+  --base-value: 16px; // 内外边距 基础尺寸
+}
+
 :root[data-theme='default-theme'] {
   --color-primary: #017572;
   --color-primary-rgb: 1, 117, 114; // 此变量值为 --color-primary 的 rgb 值
@@ -16,12 +20,14 @@
   --color-text-regular: #666666;
   --color-text-secondary: #999999;
   --color-text-placeholder: #c9c9c9;
-  --border-color-hover: rgba(var(--color-primary-rgb), 0.2);
+  --border-color-hover: rgba(var(--color-primary-rgb), 0.5);
   --border-color-base: #eeeeee;
   --border-color-light: #dfe4ed;
   --border-color-lighter: #e6ebf5;
   --border-color-extra-light: #f2f2f4;
-  --background-color-base: rgba(var(--color-primary-rgb), 0.06);
+  --hover-background-color-base: rgba(var(--color-primary-rgb), 0.06);
+  --section-background-color: #fff;
+  --app-background-color: #eeeeee;
   --icon-color: #666;
   --disabled-fill-base: #f5f7fa;
   --checkbox-disabled-input-fill: #edf2fc;
@@ -52,12 +58,14 @@
   --color-text-regular: #666666;
   --color-text-secondary: #999999;
   --color-text-placeholder: #c9c9c9;
-  --border-color-hover: rgba(var(--color-primary-rgb), 0.2);
+  --border-color-hover: rgba(var(--color-primary-rgb), 0.5);
   --border-color-base: #eeeeee;
   --border-color-light: #dddddd;
   --border-color-lighter: #d2d2d2;
   --border-color-extra-light: #f2f2f4;
-  --background-color-base: rgba(var(--color-primary-rgb), 0.06);
+  --hover-background-color-base: rgba(var(--color-primary-rgb), 0.06);
+  --section-background-color: #fff;
+  --app-background-color: #eeeeee;
   --icon-color: #666;
   --disabled-fill-base: #f5f7fa;
   --checkbox-disabled-input-fill: #edf2fc;
@@ -72,4 +80,52 @@
   --skeleton-color: #f2f2f2;
   --skeleton-to-color: #e6e6e6;
   --svg-monochrome-grey: #dcdde0;
+}
+
+// 自定义滚动条样式
+::-webkit-scrollbar {
+  /* 滚动条整体部分 */
+  width: 12px;
+  margin-right: 2px;
+}
+::-webkit-scrollbar-button {
+  /* 滚动条两端的按钮 */
+  width: 12px;
+  background-color: rgba(0, 0, 0, 0);
+}
+::-webkit-scrollbar:horizontal {
+  height: 12px;
+  margin-bottom: 2px;
+}
+::-webkit-scrollbar-track {
+  /* 外层轨道 */
+  border-radius: 5px;
+}
+::-webkit-scrollbar-track-piece {
+  /*内层轨道，滚动条中间部分 */
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+  /* 滑块 */
+  width: 12px;
+  border-radius: 5px;
+  background: #cbcbcb;
+  cursor: pointer;
+  border-style: dashed;
+  border-color: transparent;
+  border-width: 2px;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-corner {
+  /* 边角 */
+  width: 12px;
+  background-color: rgba(0, 0, 0, 0);
+}
+::-webkit-scrollbar-thumb:hover {
+  /* 鼠标移入滑块 */
+  background: #909090;
+  transition: 0.3s;
+  cursor: pointer;
+  background-clip: border-box;
 }

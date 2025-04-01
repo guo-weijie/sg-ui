@@ -1,8 +1,8 @@
-@import "mixins/mixins";
-@import "checkbox";
-@import "tag";
-@import "tooltip";
-@import "common/var";
+@import 'mixins/mixins';
+@import 'checkbox';
+@import 'tag';
+@import 'tooltip';
+@import 'common/var';
 
 @include b(table) {
   position: relative;
@@ -66,7 +66,7 @@
     background-color: $--color-white;
 
     // 纯属为了增加权重
-    &[class*=cell] {
+    &[class*='cell'] {
       padding: 20px 50px;
     }
 
@@ -112,13 +112,13 @@
 
     &.is-group {
       th.sg-table__cell {
-        background: $--background-color-base;
+        background: $--hover-background-color-base;
       }
     }
   }
 
   .sg-table__cell {
-    padding: $--base-value 0;
+    padding: var(--base-value) 0;
     min-width: 0;
     box-sizing: border-box;
     text-overflow: ellipsis;
@@ -171,7 +171,7 @@
   tr {
     background-color: $--color-white;
 
-    input[type="checkbox"] {
+    input[type='checkbox'] {
       margin: 0;
     }
   }
@@ -195,9 +195,9 @@
       box-sizing: border-box;
       position: relative;
       vertical-align: middle;
-      padding: 0 $--base-value;
-    //   padding-left: 10px;
-    //   padding-right: 10px;
+      padding: 0 var(--base-value);
+      //   padding-left: 10px;
+      //   padding-right: 10px;
       width: 100%;
 
       &.highlight {
@@ -207,7 +207,7 @@
 
     &.required > div::before {
       display: inline-block;
-      content: "";
+      content: '';
       width: 8px;
       height: 8px;
       border-radius: 50%;
@@ -234,7 +234,7 @@
     white-space: normal;
     word-break: break-all;
     line-height: 23px;
-    padding: 0 $--base-value;
+    padding: 0 var(--base-value);
     // padding-left: 10px;
     // padding-right: 10px;
 
@@ -287,7 +287,7 @@
       border-right: $--table-border;
 
       &:first-child .cell {
-        padding-left: $--base-value;
+        padding-left: var(--base-value);
       }
     }
 
@@ -485,10 +485,11 @@
     & .sg-table__body {
       & tr.sg-table__row--striped {
         td.sg-table__cell {
-          background: #FAFAFA;
+          background: #fafafa;
         }
 
-        &.current-row td.sg-table__cell, &.selection-row td.sg-table__cell {
+        &.current-row td.sg-table__cell,
+        &.selection-row td.sg-table__cell {
           background-color: $--table-current-row-background-color;
         }
       }
@@ -497,8 +498,11 @@
 
   @include e(body) {
     tr.hover-row {
-      &, &.sg-table__row--striped {
-        &, &.current-row, &.selection-row {
+      &,
+      &.sg-table__row--striped {
+        &,
+        &.current-row,
+        &.selection-row {
           > td.sg-table__cell {
             background-color: $--table-row-hover-background-color;
           }
@@ -506,7 +510,8 @@
       }
     }
 
-    tr.current-row > td.sg-table__cell, tr.selection-row > td.sg-table__cell {
+    tr.current-row > td.sg-table__cell,
+    tr.selection-row > td.sg-table__cell {
       background-color: $--table-current-row-background-color;
     }
   }
@@ -529,13 +534,13 @@
     & i {
       color: $--color-info;
       font-size: 12px;
-      transform: scale(.75);
+      transform: scale(0.75);
     }
   }
 
   @include m(enable-row-transition) {
     .sg-table__body td.sg-table__cell {
-      transition: background-color .25s ease;
+      transition: background-color 0.25s ease;
     }
   }
 
@@ -553,7 +558,7 @@
     }
   }
 
-  [class*=sg-table__row--level] {
+  [class*='sg-table__row--level'] {
     .sg-table__expand-icon {
       display: inline-block;
       width: 20px;
