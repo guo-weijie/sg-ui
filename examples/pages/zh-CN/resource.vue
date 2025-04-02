@@ -1,4 +1,4 @@
-<style scoped>
+<style scoped lang='scss'>
   .page-resource {
     padding-top: 55px;
     box-sizing: border-box;
@@ -95,7 +95,7 @@
       display: inline-block;
       line-height: 42px;
       font-size: 14px;
-      background-color: #409EFF;
+      background-color: var(--color-primary);
       color: #fff;
       text-align: center;
       border: 0;

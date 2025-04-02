@@ -1,4 +1,4 @@
-<style>
+<style lang='scss'>
   .page-changelog {
     padding-bottom: 100px;
 
@@ -13,23 +13,23 @@
       a {
         display: block;
         padding: 10px 15px;
-        color: #333;
+        color: var(--color-text-primary);
       }
 
       &:hover a {
-        color: #409EFF;
+        color: var(--color-primary);
       }
     }
 
     .heading {
       font-size: 24px;
       margin-bottom: 60px;
-      color: #333;
+      color: var(--color-text-primary);
     }
 
     .timeline {
       padding: 0;
-      padding-bottom: 10px;
+      padding-bottom: var(--base-value);
       position: relative;
       color: #5e6d82;
 
@@ -76,7 +76,7 @@
         list-style: none;
         padding-left: 20px;
         padding-bottom: 5px;
-        color: #333;
+        color: var(--color-text-primary);
         word-break: break-all;
 
         &:before {
@@ -98,7 +98,7 @@
         padding: 15px 30px;
         border-bottom: 1px solid #ddd;
         font-size: 20px;
-        color: #333;
+        color: var(--color-text-primary);
         font-weight: bold;
 
         a {
@@ -106,7 +106,7 @@
           font-size: 20px;
           float: none;
           margin-left: 0;
-          color: #333;
+          color: var(--color-text-primary);
         }
       }
 
@@ -129,7 +129,7 @@
         font-style: normal;
         top: 23px;
         font-size: 16px;
-        color: #666;
+        color: var(--color-text-regular);
       }
     }
   }
@@ -137,9 +137,6 @@
 <template>
   <div class="page-changelog">
     <div class="heading">
-      <sg-button class="fr">
-        <a href="https://github.com/ElemeFE/element/releases" target="_blank">GitHub Releases</a>
-      </sg-button>
       <%= 1 >
     </div>
     <ul class="timeline" ref="timeline">

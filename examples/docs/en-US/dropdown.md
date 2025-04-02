@@ -23,7 +23,7 @@ Hover on the dropdown menu to unfold it for more actions.
 <style>
   .sg-dropdown-link {
     cursor: pointer;
-    color: #409EFF;
+    color: var(--color-primary);;
   }
   .sg-icon-arrow-down {
     font-size: 12px;
@@ -130,7 +130,7 @@ Click the triggering element or hover on it.
 <style>
   .sg-dropdown-link {
     cursor: pointer;
-    color: #409EFF;
+    color: var(--color-primary);;
   }
   .sg-icon-arrow-down {
     font-size: 12px;

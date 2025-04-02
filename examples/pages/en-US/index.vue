@@ -1,4 +1,4 @@
-<style scoped>
+<style scoped lang='scss'>
   .banner {
     text-align: center;
   }
@@ -125,7 +125,7 @@
       height: 53px;
       line-height: 52px;
       font-size: 14px;
-      color: #409EFF;
+      color: var(--color-primary);
       text-align: center;
       border: 0;
       border-top: 1px solid #eaeefb;
@@ -135,15 +135,15 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      background-color: #fff;
+      background-color: var(--section-background-color);
       border-radius: 0 0 5px 5px;
       transition: all .3s;
       text-decoration: none;
       display: block;
 
       &:hover {
-        color: #fff;
-        background: #409EFF;
+        color: var(--section-background-color);
+        background: var(--color-primary);
       }
     }
     &:hover {
