@@ -120,5 +120,8 @@
 }
 
 .sg-tree--highlight-current .sg-tree-node.is-current > .sg-tree-node__content {
-  background-color: myMix($--color-white, $--color-primary, 92%);
+  background-color: mix($--color-white-fallback, $--color-primary-fallback, 92%);
+  @supports (background: color-mix(in srgb, white 50%, transparent)) {
+    background-color: myMix($--color-white, $--color-primary, 92%);
+  }
 }

@@ -5,6 +5,69 @@
 // type|skipAutoTranslation|Category|Order
 // skipAutoTranslation 1
 
+/*
+ * sass 变量
+ * 由于 color-mix 在谷歌v111、火狐v113及以上支持，为了兼容旧版浏览器，写一份 sass 变量，值为静态颜色值，使用 color-mix 函数的地方，先用 sass 的 mix 函数生成一份静态颜色，再使用 color-mix 函数。
+ */
+$--color-primary-fallback: #15b07f;
+$--color-white-fallback: #ffffff;
+$--color-black-fallback: #000000;
+$--color-primary-light-1-fallback: mix($--color-white-fallback, $--color-primary-fallback, 10%);
+$--color-primary-light-2-fallback: mix($--color-white-fallback, $--color-primary-fallback, 20%);
+$--color-primary-light-3-fallback: mix($--color-white-fallback, $--color-primary-fallback, 30%);
+$--color-primary-light-4-fallback: mix($--color-white-fallback, $--color-primary-fallback, 40%);
+$--color-primary-light-5-fallback: mix($--color-white-fallback, $--color-primary-fallback, 50%);
+$--color-primary-light-6-fallback: mix($--color-white-fallback, $--color-primary-fallback, 60%);
+$--color-primary-light-7-fallback: mix($--color-white-fallback, $--color-primary-fallback, 70%);
+$--color-primary-light-8-fallback: mix($--color-white-fallback, $--color-primary-fallback, 80%);
+$--color-primary-light-9-fallback: mix($--color-white-fallback, $--color-primary-fallback, 90%);
+
+$--color-success-fallback: #28c65f;
+$--color-warning-fallback: #fe971d;
+$--color-danger-fallback: #ed4b44;
+$--color-info-fallback: #909399;
+$--color-success-light-fallback: mix($--color-white-fallback, $--color-success-fallback, 80%);
+$--color-warning-light-fallback: mix($--color-white-fallback, $--color-warning-fallback, 80%);
+$--color-danger-light-fallback: mix($--color-white-fallback, $--color-danger-fallback, 80%);
+$--color-info-light-fallback: mix($--color-white-fallback, $--color-info-fallback, 80%);
+$--color-success-lighter-fallback: mix($--color-white-fallback, $--color-success-fallback, 90%);
+$--color-warning-lighter-fallback: mix($--color-white-fallback, $--color-warning-fallback, 90%);
+$--color-danger-lighter-fallback: mix($--color-white-fallback, $--color-danger-fallback, 90%);
+$--color-info-lighter-fallback: mix($--color-white-fallback, $--color-info-fallback, 90%);
+
+$--slider-button-hover-color-fallback: mix($--color-primary-fallback, black, 97%);
+
+$--border-color-base-fallback: #dcdfe6;
+$--button-default-border-color-fallback: $--border-color-base-fallback;
+
+$--link-primary-font-color-fallback: $--color-primary-fallback;
+$--link-danger-font-color-fallback: $--color-danger-fallback;
+$--link-success-font-color-fallback: $--color-success-fallback;
+$--link-warning-font-color-fallback: $--color-warning-fallback;
+$--link-info-font-color-fallback: $--color-info-fallback;
+
+$--tag-primary-color-fallback: $--color-primary-fallback;
+$--tag-info-color-fallback: $--color-info-fallback;
+$--tag-success-color-fallback: $--color-success-fallback;
+$--tag-warning-color-fallback: $--color-warning-fallback;
+$--tag-danger-color-fallback: $--color-danger-fallback;
+
+$--button-primary-font-color-fallback: $--color-white-fallback;
+$--button-primary-background-color-fallback: $--color-primary-fallback;
+$--button-primary-border-color-fallback: $--color-primary-fallback;
+$--button-success-font-color-fallback: $--color-white-fallback;
+$--button-success-background-color-fallback: $--color-success-fallback;
+$--button-success-border-color-fallback: $--color-success-fallback;
+$--button-warning-font-color-fallback: $--color-white-fallback;
+$--button-warning-background-color-fallback: $--color-warning-fallback;
+$--button-warning-border-color-fallback: $--color-warning-fallback;
+$--button-danger-font-color-fallback: $--color-white-fallback;
+$--button-danger-background-color-fallback: $--color-danger-fallback;
+$--button-danger-border-color-fallback: $--color-danger-fallback;
+$--button-info-font-color-fallback: $--color-white-fallback;
+$--button-info-background-color-fallback: $--color-info-fallback;
+$--button-info-border-color-fallback: $--color-info-fallback;
+
 /* Transition
 -------------------------- */
 $--all-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) !default;

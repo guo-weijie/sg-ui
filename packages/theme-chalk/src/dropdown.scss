@@ -32,11 +32,17 @@
       top: $gap;
       bottom: $gap;
       left: 0;
-      background: myMix(white, transparent, 50%);
+      background: mix(white, transparent, 50%);
+      @supports (background: color-mix(in srgb, white 50%, transparent)) {
+        background: myMix(white, transparent, 50%);
+      }
     }
 
     &.sg-button--default::before {
-      background: myMix($--button-default-border-color, transparent, 50%);
+      background: mix($--button-default-border-color-fallback, transparent, 50%);
+      @supports (background: color-mix(in srgb, white 50%, transparent)) {
+        background: myMix($--button-default-border-color, transparent, 50%);
+      }
     }
 
     &:hover {

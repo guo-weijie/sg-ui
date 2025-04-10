@@ -2,11 +2,26 @@
 @import 'common/var';
 
 $typeMap: (
-  primary: $--link-primary-font-color,
-  danger: $--link-danger-font-color,
-  success: $--link-success-font-color,
-  warning: $--link-warning-font-color,
-  info: $--link-info-font-color
+  primary: (
+    fallback: $--link-primary-font-color-fallback,
+    color: $--link-primary-font-color
+  ),
+  danger: (
+    fallback: $--link-danger-font-color-fallback,
+    color: $--link-danger-font-color
+  ),
+  success: (
+    fallback: $--link-success-font-color-fallback,
+    color: $--link-success-font-color
+  ),
+  warning: (
+    fallback: $--link-warning-font-color-fallback,
+    color: $--link-warning-font-color
+  ),
+  info: (
+    fallback: $--link-info-font-color-fallback,
+    color: $--link-info-font-color
+  )
 );
 
 @include b(link) {
@@ -60,19 +75,25 @@ $typeMap: (
 
   @each $type, $primaryColor in $typeMap {
     &.sg-link--#{$type} {
-      color: $primaryColor;
+      color: map-get($primaryColor, color);
       &:hover {
-        color: myMix($primaryColor, $--color-white, 80%);
+        color: mix(map-get($primaryColor, fallback), $--color-white-fallback, 80%);
+        @supports (background: color-mix(in srgb, white 50%, transparent)) {
+          color: myMix(map-get($primaryColor, color), $--color-white, 80%);
+        }
       }
       &:after {
-        border-color: $primaryColor;
+        border-color: map-get($primaryColor, color);
       }
       @include when(disabled) {
-        color: myMix($primaryColor, $--color-white, 50%);
+        color: mix(map-get($primaryColor, fallback), $--color-white-fallback, 50%);
+        @supports (background: color-mix(in srgb, white 50%, transparent)) {
+          color: myMix(map-get($primaryColor, color), $--color-white, 50%);
+        }
       }
       @include when(underline) {
         &:hover:after {
-          border-color: $primaryColor;
+          border-color: map-get($primaryColor, color);
         }
       }
     }

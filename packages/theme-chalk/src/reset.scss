@@ -15,11 +15,17 @@ a {
 
   &:hover,
   &:focus {
-    color: myMix($--color-white, $--color-primary, $--button-hover-tint-percent);
+    color: mix($--color-white-fallback, $--color-primary-fallback, $--button-hover-tint-percent);
+    @supports (background: color-mix(in srgb, white 50%, transparent)) {
+      color: myMix($--color-white, $--color-primary, $--button-hover-tint-percent);
+    }
   }
 
   &:active {
-    color: myMix($--color-black, $--color-primary, $--button-active-shade-percent);
+    color: mix($--color-black-fallback, $--color-primary-fallback, $--button-active-shade-percent);
+    @supports (background: color-mix(in srgb, white 50%, transparent)) {
+      color: myMix($--color-black, $--color-primary, $--button-active-shade-percent);
+    }
   }
 }
 

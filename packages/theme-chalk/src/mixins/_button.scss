@@ -1,8 +1,12 @@
 @import '../common/var';
-@mixin button-plain($color) {
+@mixin button-plain($color, $color-fallback) {
   color: $color;
-  background: myMix($--color-white, $color, 90%);
-  border-color: myMix($--color-white, $color, 60%);
+  background: mix($--color-white-fallback, $color-fallback, 90%);
+  border-color: mix($--color-white-fallback, $color-fallback, 60%);
+  @supports (background: color-mix(in srgb, white 50%, transparent)) {
+    background: myMix($--color-white, $color, 90%);
+    border-color: myMix($--color-white, $color, 60%);
+  }
 
   &:hover,
   &:focus {
@@ -12,8 +16,12 @@
   }
 
   &:active {
-    background: myMix($--color-black, $color, $--button-active-shade-percent);
-    border-color: myMix($--color-black, $color, $--button-active-shade-percent);
+    background: mix($--color-black-fallback, $color-fallback, $--button-active-shade-percent);
+    border-color: mix($--color-black-fallback, $color-fallback, $--button-active-shade-percent);
+    @supports (background: color-mix(in srgb, white 50%, transparent)) {
+      background: myMix($--color-black, $color, $--button-active-shade-percent);
+      border-color: myMix($--color-black, $color, $--button-active-shade-percent);
+    }
     color: $--color-white;
     outline: none;
   }
@@ -23,35 +31,59 @@
     &:hover,
     &:focus,
     &:active {
-      color: myMix($--color-white, $color, 40%);
-      background-color: myMix($--color-white, $color, 90%);
-      border-color: myMix($--color-white, $color, 80%);
+      color: mix($--color-white-fallback, $color-fallback, 40%);
+      background-color: mix($--color-white-fallback, $color-fallback, 90%);
+      border-color: mix($--color-white-fallback, $color-fallback, 80%);
+      @supports (background: color-mix(in srgb, white 50%, transparent)) {
+        color: myMix($--color-white, $color, 40%);
+        background-color: myMix($--color-white, $color, 90%);
+        border-color: myMix($--color-white, $color, 80%);
+      }
     }
   }
 }
 
-@mixin button-variant($color, $background-color, $border-color) {
+@mixin button-variant(
+  $color,
+  $background-color,
+  $border-color,
+  $color-fallback,
+  $background-color-fallback,
+  $border-color-fallback
+) {
   color: $color;
   background-color: $background-color;
   border-color: $border-color;
 
   &:hover,
   &:focus {
-    background: myMix($--color-white, $background-color, $--button-hover-tint-percent);
-    border-color: myMix($--color-white, $border-color, $--button-hover-tint-percent);
+    background: mix($--color-white-fallback, $background-color-fallback, $--button-hover-tint-percent);
+    border-color: mix($--color-white-fallback, $border-color-fallback, $--button-hover-tint-percent);
+    @supports (background: color-mix(in srgb, white 50%, transparent)) {
+      background: myMix($--color-white, $background-color, $--button-hover-tint-percent);
+      border-color: myMix($--color-white, $border-color, $--button-hover-tint-percent);
+    }
     color: $color;
   }
 
   &:active {
-    background: myMix($--color-black, $background-color, $--button-active-shade-percent);
-    border-color: myMix($--color-black, $border-color, $--button-active-shade-percent);
+    background: mix($--color-black-fallback, $background-color-fallback, $--button-active-shade-percent);
+    border-color: mix($--color-black-fallback, $border-color-fallback, $--button-active-shade-percent);
+    @supports (background: color-mix(in srgb, white 50%, transparent)) {
+      background: myMix($--color-black, $background-color, $--button-active-shade-percent);
+      border-color: myMix($--color-black, $border-color, $--button-active-shade-percent);
+    }
     color: $color;
     outline: none;
   }
 
   &.is-active {
-    background: myMix($--color-black, $background-color, $--button-active-shade-percent);
-    border-color: myMix($--color-black, $border-color, $--button-active-shade-percent);
+    background: mix($--color-black-fallback, $background-color-fallback, $--button-active-shade-percent);
+    border-color: mix($--color-black-fallback, $border-color-fallback, $--button-active-shade-percent);
+    @supports (background: color-mix(in srgb, white 50%, transparent)) {
+      background: myMix($--color-black, $background-color, $--button-active-shade-percent);
+      border-color: myMix($--color-black, $border-color, $--button-active-shade-percent);
+    }
     color: $color;
   }
 
@@ -61,13 +93,17 @@
     &:focus,
     &:active {
       color: $--color-white;
-      background-color: myMix($background-color, $--color-white);
-      border-color: myMix($border-color, $--color-white);
+      background-color: mix($background-color-fallback, $--color-white-fallback);
+      border-color: mix($border-color-fallback, $--color-white-fallback);
+      @supports (background: color-mix(in srgb, white 50%, transparent)) {
+        background-color: myMix($background-color, $--color-white);
+        border-color: myMix($border-color, $--color-white);
+      }
     }
   }
 
   &.is-plain {
-    @include button-plain($background-color);
+    @include button-plain($background-color, $background-color-fallback);
   }
 }
 
