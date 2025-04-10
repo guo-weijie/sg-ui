@@ -113,14 +113,14 @@
 ```
 :::
 
-### 带边框表格
+### 无边框表格
 
-:::demo 默认情况下，Table 组件是不具有竖直方向的边框的，如果需要，可以使用`border`属性，它接受一个`Boolean`，设置为`true`即可启用。
+:::demo 默认情况下，Table 组件是具有竖直方向的边框的，如果不需要，可以使用`border`属性，它接受一个`Boolean`，设置为`false`即可关闭。
 ```html
 <template>
   <sg-table
     :data="tableData"
-    border
+    :border="false"
     style="width: 100%">
     <sg-table-column
       prop="date"
@@ -1854,8 +1854,8 @@
 | data | 显示的数据 | array | — | — |
 | height | Table 的高度，默认为自动高度。如果 height 为 number 类型，单位 px；如果 height 为 string 类型，则这个高度会设置为 Table 的 style.height 的值，Table 的高度会受控于外部样式。  | string/number | — | — |
 | max-height | Table 的最大高度。合法的值为数字或者单位为 px 的高度。 | string/number | — | — |
-| stripe | 是否为斑马纹 table | boolean | — | false |
-| border | 是否带有纵向边框 | boolean | — | false |
+| stripe | 是否为斑马纹 table | boolean | — | true |
+| border | 是否带有纵向边框 | boolean | — | true |
 | size | Table 的尺寸 | string | medium / small / mini | — |
 | fit | 列的宽度是否自撑开 | boolean | — | true |
 | show-header | 是否显示表头 | boolean | — | true |

@@ -108,13 +108,20 @@
 
   thead {
     color: $--table-header-font-color;
-    font-weight: 500;
 
-    &.is-group {
-      th.sg-table__cell {
-        background: $--hover-background-color-base;
-      }
+    th {
+      font-weight: 500;
     }
+
+    // th.sg-table__cell {
+    //   background: var(--table-thead-th-cell-background);
+    // }
+
+    // &.is-group {
+    //   th.sg-table__cell {
+    //     background: var(--table-thead-th-cell-background);
+    //   }
+    // }
   }
 
   .sg-table__cell {
@@ -233,7 +240,7 @@
     text-overflow: ellipsis;
     white-space: normal;
     word-break: break-all;
-    line-height: 23px;
+    line-height: 1;
     padding: 0 var(--base-value);
     // padding-left: 10px;
     // padding-right: 10px;
@@ -485,7 +492,7 @@
     & .sg-table__body {
       & tr.sg-table__row--striped {
         td.sg-table__cell {
-          background: #fafafa;
+          background: var(--table-striped-background-color);
         }
 
         &.current-row td.sg-table__cell,

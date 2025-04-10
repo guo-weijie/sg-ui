@@ -705,14 +705,14 @@ $--dialog-padding-primary: var(--base-value);
 $--table-border-color: $--border-color-lighter !default;
 $--table-border: 1px solid $--table-border-color !default;
 /// color||Color|0
-$--table-font-color: $--color-text-regular !default;
+$--table-font-color: $--color-text-primary;
 /// color||Color|0
-$--table-header-font-color: $--color-text-secondary !default;
+$--table-header-font-color: $--color-text-regular;
 /// color||Color|0
 $--table-row-hover-background-color: $--hover-background-color-base;
-$--table-current-row-background-color: $--color-primary-light-9 !default;
+$--table-current-row-background-color: $--hover-background-color-base;
 /// color||Color|0
-$--table-header-background-color: $--color-white !default;
+$--table-header-background-color: var(--table-header-background-color);
 $--table-fixed-box-shadow: -2px 0px 16px rgba(0, 0, 0, 0.16) !default;
 
 /* Pagination

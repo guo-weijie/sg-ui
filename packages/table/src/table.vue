@@ -1,32 +1,61 @@
 <template>
-  <div class="sg-table" :class="[{
-    'sg-table--fit': fit,
-    'sg-table--striped': stripe,
-    'sg-table--border': border || isGroup,
-    'sg-table--hidden': isHidden,
-    'sg-table--group': isGroup,
-    'sg-table--fluid-height': maxHeight,
-    'sg-table--scrollable-x': layout.scrollX,
-    'sg-table--scrollable-y': layout.scrollY,
-    'sg-table--enable-row-hover': !store.states.isComplex,
-    'sg-table--enable-row-transition': (store.states.data || []).length !== 0 && (store.states.data || []).length < 100
-  }, tableSize ? `sg-table--${tableSize}` : '']" @mouseleave="handleMouseLeave($event)">
+  <div
+    class="sg-table"
+    :class="[
+      {
+        'sg-table--fit': fit,
+        'sg-table--striped': stripe,
+        'sg-table--border': border || isGroup,
+        'sg-table--hidden': isHidden,
+        'sg-table--group': isGroup,
+        'sg-table--fluid-height': maxHeight,
+        'sg-table--scrollable-x': layout.scrollX,
+        'sg-table--scrollable-y': layout.scrollY,
+        'sg-table--enable-row-hover': !store.states.isComplex,
+        'sg-table--enable-row-transition':
+          (store.states.data || []).length !== 0 && (store.states.data || []).length < 100
+      },
+      tableSize ? `sg-table--${tableSize}` : ''
+    ]"
+    @mouseleave="handleMouseLeave($event)"
+  >
     <div class="hidden-columns" ref="hiddenColumns">
       <slot></slot>
     </div>
-    <div v-if="showHeader" v-mousewheel="handleHeaderFooterMousewheel" class="sg-table__header-wrapper"
-      ref="headerWrapper">
-      <table-header ref="tableHeader" :store="store" :border="border" :default-sort="defaultSort" :style="{
-        width: layout.bodyWidth ? layout.bodyWidth + 'px' : ''
-      }">
+    <div
+      v-if="showHeader"
+      v-mousewheel="handleHeaderFooterMousewheel"
+      class="sg-table__header-wrapper"
+      ref="headerWrapper"
+    >
+      <table-header
+        ref="tableHeader"
+        :store="store"
+        :border="border"
+        :default-sort="defaultSort"
+        :style="{
+          width: layout.bodyWidth ? layout.bodyWidth + 'px' : ''
+        }"
+      >
       </table-header>
     </div>
-    <div class="sg-table__body-wrapper" ref="bodyWrapper"
-      :class="[layout.scrollX ? `is-scrolling-${scrollPosition}` : 'is-scrolling-none']" :style="[bodyHeight]">
-      <table-body :context="context" :store="store" :stripe="stripe" :row-class-name="rowClassName"
-        :row-style="rowStyle" :highlight="highlightCurrentRow" :style="{
+    <div
+      class="sg-table__body-wrapper"
+      ref="bodyWrapper"
+      :class="[layout.scrollX ? `is-scrolling-${scrollPosition}` : 'is-scrolling-none']"
+      :style="[bodyHeight]"
+    >
+      <table-body
+        :context="context"
+        :store="store"
+        :stripe="stripe"
+        :row-class-name="rowClassName"
+        :row-style="rowStyle"
+        :highlight="highlightCurrentRow"
+        :style="{
           width: bodyWidth
-        }">
+        }"
+      >
       </table-body>
       <div v-if="!data || data.length === 0" class="sg-table__empty-block" ref="emptyBlock" :style="emptyBlockStyle">
         <span class="sg-table__empty-text">
@@ -37,77 +66,165 @@
         <slot name="append"></slot>
       </div>
     </div>
-    <div v-if="showSummary" v-show="data && data.length > 0" v-mousewheel="handleHeaderFooterMousewheel"
-      class="sg-table__footer-wrapper" ref="footerWrapper">
-      <table-footer :store="store" :border="border" :sum-text="sumText || t('el.table.sumText')"
-        :summary-method="summaryMethod" :default-sort="defaultSort" :style="{
+    <div
+      v-if="showSummary"
+      v-show="data && data.length > 0"
+      v-mousewheel="handleHeaderFooterMousewheel"
+      class="sg-table__footer-wrapper"
+      ref="footerWrapper"
+    >
+      <table-footer
+        :store="store"
+        :border="border"
+        :sum-text="sumText || t('el.table.sumText')"
+        :summary-method="summaryMethod"
+        :default-sort="defaultSort"
+        :style="{
           width: layout.bodyWidth ? layout.bodyWidth + 'px' : ''
-        }">
+        }"
+      >
       </table-footer>
     </div>
-    <div v-if="fixedColumns.length > 0" v-mousewheel="handleFixedMousewheel" class="sg-table__fixed" ref="fixedWrapper"
-      :style="[{
-        width: layout.fixedWidth ? layout.fixedWidth + 'px' : ''
-      },
-        fixedHeight]">
+    <div
+      v-if="fixedColumns.length > 0"
+      v-mousewheel="handleFixedMousewheel"
+      class="sg-table__fixed"
+      ref="fixedWrapper"
+      :style="[
+        {
+          width: layout.fixedWidth ? layout.fixedWidth + 'px' : ''
+        },
+        fixedHeight
+      ]"
+    >
       <div v-if="showHeader" class="sg-table__fixed-header-wrapper" ref="fixedHeaderWrapper">
-        <table-header ref="fixedTableHeader" fixed="left" :border="border" :store="store" :style="{
-          width: bodyWidth
-        }"></table-header>
-      </div>
-      <div class="sg-table__fixed-body-wrapper" ref="fixedBodyWrapper" :style="[{
-        top: layout.headerHeight + 'px'
-      },
-        fixedBodyHeight]">
-        <table-body fixed="left" :store="store" :stripe="stripe" :highlight="highlightCurrentRow"
-          :row-class-name="rowClassName" :row-style="rowStyle" :style="{
+        <table-header
+          ref="fixedTableHeader"
+          fixed="left"
+          :border="border"
+          :store="store"
+          :style="{
             width: bodyWidth
-          }">
+          }"
+        ></table-header>
+      </div>
+      <div
+        class="sg-table__fixed-body-wrapper"
+        ref="fixedBodyWrapper"
+        :style="[
+          {
+            top: layout.headerHeight + 'px'
+          },
+          fixedBodyHeight
+        ]"
+      >
+        <table-body
+          fixed="left"
+          :store="store"
+          :stripe="stripe"
+          :highlight="highlightCurrentRow"
+          :row-class-name="rowClassName"
+          :row-style="rowStyle"
+          :style="{
+            width: bodyWidth
+          }"
+        >
         </table-body>
         <div v-if="$slots.append" class="sg-table__append-gutter" :style="{ height: layout.appendHeight + 'px' }"></div>
       </div>
-      <div v-if="showSummary" v-show="data && data.length > 0" class="sg-table__fixed-footer-wrapper"
-        ref="fixedFooterWrapper">
-        <table-footer fixed="left" :border="border" :sum-text="sumText || t('el.table.sumText')"
-          :summary-method="summaryMethod" :store="store" :style="{
+      <div
+        v-if="showSummary"
+        v-show="data && data.length > 0"
+        class="sg-table__fixed-footer-wrapper"
+        ref="fixedFooterWrapper"
+      >
+        <table-footer
+          fixed="left"
+          :border="border"
+          :sum-text="sumText || t('el.table.sumText')"
+          :summary-method="summaryMethod"
+          :store="store"
+          :style="{
             width: bodyWidth
-          }"></table-footer>
+          }"
+        ></table-footer>
       </div>
     </div>
-    <div v-if="rightFixedColumns.length > 0" v-mousewheel="handleFixedMousewheel" class="sg-table__fixed-right"
-      ref="rightFixedWrapper" :style="[{
-        width: layout.rightFixedWidth ? layout.rightFixedWidth + 'px' : '',
-        right: layout.scrollY ? (border ? layout.gutterWidth : (layout.gutterWidth || 0)) + 'px' : ''
-      },
-        fixedHeight]">
+    <div
+      v-if="rightFixedColumns.length > 0"
+      v-mousewheel="handleFixedMousewheel"
+      class="sg-table__fixed-right"
+      ref="rightFixedWrapper"
+      :style="[
+        {
+          width: layout.rightFixedWidth ? layout.rightFixedWidth + 'px' : '',
+          right: layout.scrollY ? (border ? layout.gutterWidth : layout.gutterWidth || 0) + 'px' : ''
+        },
+        fixedHeight
+      ]"
+    >
       <div v-if="showHeader" class="sg-table__fixed-header-wrapper" ref="rightFixedHeaderWrapper">
-        <table-header ref="rightFixedTableHeader" fixed="right" :border="border" :store="store" :style="{
-          width: bodyWidth
-        }"></table-header>
-      </div>
-      <div class="sg-table__fixed-body-wrapper" ref="rightFixedBodyWrapper" :style="[{
-        top: layout.headerHeight + 'px'
-      },
-        fixedBodyHeight]">
-        <table-body fixed="right" :store="store" :stripe="stripe" :row-class-name="rowClassName" :row-style="rowStyle"
-          :highlight="highlightCurrentRow" :style="{
+        <table-header
+          ref="rightFixedTableHeader"
+          fixed="right"
+          :border="border"
+          :store="store"
+          :style="{
             width: bodyWidth
-          }">
+          }"
+        ></table-header>
+      </div>
+      <div
+        class="sg-table__fixed-body-wrapper"
+        ref="rightFixedBodyWrapper"
+        :style="[
+          {
+            top: layout.headerHeight + 'px'
+          },
+          fixedBodyHeight
+        ]"
+      >
+        <table-body
+          fixed="right"
+          :store="store"
+          :stripe="stripe"
+          :row-class-name="rowClassName"
+          :row-style="rowStyle"
+          :highlight="highlightCurrentRow"
+          :style="{
+            width: bodyWidth
+          }"
+        >
         </table-body>
         <div v-if="$slots.append" class="sg-table__append-gutter" :style="{ height: layout.appendHeight + 'px' }"></div>
       </div>
-      <div v-if="showSummary" v-show="data && data.length > 0" class="sg-table__fixed-footer-wrapper"
-        ref="rightFixedFooterWrapper">
-        <table-footer fixed="right" :border="border" :sum-text="sumText || t('el.table.sumText')"
-          :summary-method="summaryMethod" :store="store" :style="{
+      <div
+        v-if="showSummary"
+        v-show="data && data.length > 0"
+        class="sg-table__fixed-footer-wrapper"
+        ref="rightFixedFooterWrapper"
+      >
+        <table-footer
+          fixed="right"
+          :border="border"
+          :sum-text="sumText || t('el.table.sumText')"
+          :summary-method="summaryMethod"
+          :store="store"
+          :style="{
             width: bodyWidth
-          }"></table-footer>
+          }"
+        ></table-footer>
       </div>
     </div>
-    <div v-if="rightFixedColumns.length > 0" class="sg-table__fixed-right-patch" ref="rightFixedPatch" :style="{
-      width: layout.scrollY ? layout.gutterWidth + 'px' : '0',
-      height: layout.headerHeight + 'px'
-    }"></div>
+    <div
+      v-if="rightFixedColumns.length > 0"
+      class="sg-table__fixed-right-patch"
+      ref="rightFixedPatch"
+      :style="{
+        width: layout.scrollY ? layout.gutterWidth + 'px' : '0',
+        height: layout.headerHeight + 'px'
+      }"
+    ></div>
     <div class="sg-table__column-resize-proxy" ref="resizeProxy" v-show="resizeProxyVisible"></div>
   </div>
 </template>
@@ -158,9 +275,15 @@ export default {
       default: true
     },
 
-    stripe: Boolean,
+    stripe: {
+      type: Boolean,
+      default: true
+    },
 
-    border: Boolean,
+    border: {
+      type: Boolean,
+      default: true
+    },
 
     rowKey: [String, Function],
 
@@ -398,7 +521,6 @@ export default {
     toggleAllSelection() {
       this.store.commit('toggleAllSelection');
     }
-
   },
 
   computed: {
@@ -411,10 +533,7 @@ export default {
     },
 
     shouldUpdateHeight() {
-      return this.height ||
-        this.maxHeight ||
-        this.fixedColumns.length > 0 ||
-        this.rightFixedColumns.length > 0;
+      return this.height || this.maxHeight || this.fixedColumns.length > 0 || this.rightFixedColumns.length > 0;
     },
 
     bodyWidth() {
@@ -432,7 +551,7 @@ export default {
         const maxHeight = parseHeight(this.maxHeight);
         if (typeof maxHeight === 'number') {
           return {
-            'max-height': (maxHeight - footerHeight - (this.showHeader ? headerHeight : 0)) + 'px'
+            'max-height': maxHeight - footerHeight - (this.showHeader ? headerHeight : 0) + 'px'
           };
         }
       }
@@ -468,7 +587,7 @@ export default {
           };
         }
         return {
-          bottom: (this.layout.scrollX && this.data.length) ? this.layout.gutterWidth + 'px' : ''
+          bottom: this.layout.scrollX && this.data.length ? this.layout.gutterWidth + 'px' : ''
         };
       } else {
         if (this.showSummary) {
@@ -559,7 +678,7 @@ export default {
     };
 
     // init filters
-    this.store.states.columns.forEach(column => {
+    this.store.states.columns.forEach((column) => {
       if (column.filteredValue && column.filteredValue.length) {
         this.store.commit('filterChange', {
           column,
