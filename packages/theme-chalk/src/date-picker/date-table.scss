@@ -114,7 +114,7 @@
     }
 
     &.disabled div {
-      background-color: $--hover-background-color-base;
+      background-color: var(--date-table-disabled-background);
       opacity: 1;
       cursor: not-allowed;
       color: $--color-text-placeholder;

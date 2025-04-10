@@ -251,7 +251,7 @@ $--checkbox-disabled-border-color: $--border-color-base !default;
 $--checkbox-disabled-input-fill: var(--checkbox-disabled-input-fill);
 $--checkbox-disabled-icon-color: $--color-text-placeholder !default;
 
-$--checkbox-disabled-checked-input-fill: $--border-color-extra-light !default;
+$--checkbox-disabled-checked-input-fill: var(--disabled-input-fill);
 $--checkbox-disabled-checked-input-border-color: $--border-color-base !default;
 $--checkbox-disabled-checked-icon-color: $--color-text-placeholder !default;
 
@@ -314,11 +314,11 @@ $--radio-input-border-color: $--border-color-base !default;
 $--radio-icon-color: $--color-white !default;
 
 $--radio-disabled-input-border-color: $--disabled-border-base !default;
-$--radio-disabled-input-fill: $--disabled-fill-base !default;
-$--radio-disabled-icon-color: $--disabled-fill-base !default;
+$--radio-disabled-input-fill: var(--disabled-input-fill);
+$--radio-disabled-icon-color: var(--disabled-input-fill);
 
 $--radio-disabled-checked-input-border-color: $--disabled-border-base !default;
-$--radio-disabled-checked-input-fill: $--disabled-fill-base !default;
+$--radio-disabled-checked-input-fill: var(--disabled-input-fill);
 $--radio-disabled-checked-icon-color: $--color-text-placeholder !default;
 
 /// color||Color|0
@@ -533,6 +533,7 @@ $--input-disabled-fill: $--disabled-fill-base !default;
 $--input-disabled-border: $--disabled-border-base !default;
 $--input-disabled-color: $--disabled-color-base !default;
 $--input-disabled-placeholder-color: $--color-text-placeholder !default;
+$--input-append_prepend-background: var(--input-append_prepend-background);
 
 /// fontSize||Font|1
 $--input-medium-font-size: 14px !default;
@@ -706,8 +707,8 @@ $--dialog-padding-primary: var(--base-value);
 /* Table
 -------------------------- */
 /// color||Color|0
-$--table-border-color: $--border-color-lighter !default;
-$--table-border: 1px solid $--table-border-color !default;
+$--table-border-color: $--border-color-light;
+$--table-border: 1px solid $--table-border-color;
 /// color||Color|0
 $--table-font-color: $--color-text-primary;
 /// color||Color|0
@@ -887,9 +888,9 @@ $--datepicker-icon-color: $--color-text-primary !default;
 $--datepicker-border-color: $--disabled-border-base !default;
 $--datepicker-inner-border-color: var(--datepicker-inner-border-color);
 /// color||Color|0
-$--datepicker-inrange-background-color: $--border-color-extra-light !default;
+$--datepicker-inrange-background-color: $--hover-background-color-base;
 /// color||Color|0
-$--datepicker-inrange-hover-background-color: $--border-color-extra-light !default;
+$--datepicker-inrange-hover-background-color: $--hover-background-color-base;
 /// color||Color|0
 $--datepicker-active-color: $--color-primary !default;
 /// color||Color|0

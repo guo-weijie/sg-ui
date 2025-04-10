@@ -1,5 +1,5 @@
-@import "mixins/mixins";
-@import "common/var";
+@import 'mixins/mixins';
+@import 'common/var';
 
 @include b(card) {
   border-radius: $--card-border-radius;
@@ -21,7 +21,7 @@
   }
 
   @include e(header) {
-    padding: #{$--card-padding - 2 $--card-padding};
+    padding: $--card-padding;
     border-bottom: 1px solid $--card-border-color;
     box-sizing: border-box;
   }

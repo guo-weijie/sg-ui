@@ -19,7 +19,7 @@
   export default {
     data() {
       return {
-        color1: '#409EFF',
+        color1: '#15b07f',
         color2: null
       }
     }
@@ -38,7 +38,7 @@
   export default {
     data() {
       return {
-        color: 'rgba(19, 206, 102, 0.8)'
+        color: 'rgba(21, 176, 127, 0.8)'
       }
     }
   };
@@ -60,7 +60,7 @@
   export default {
     data() {
       return {
-        color: 'rgba(255, 69, 0, 0.68)',
+        color: 'rgba(21, 176, 127, 0.68)',
         predefineColors: [
           '#ff4500',
           '#ff8c00',
@@ -69,7 +69,7 @@
           '#00ced1',
           '#1e90ff',
           '#c71585',
-          'rgba(255, 69, 0, 0.68)',
+          'rgba(21, 176, 127, 0.68)',
           'rgb(255, 120, 0)',
           'hsv(51, 100, 98)',
           'hsva(120, 40, 94, 0.5)',
@@ -97,7 +97,7 @@
   export default {
     data() {
       return {
-        color: '#409EFF'
+        color: '#15b07f'
       }
     }
   };

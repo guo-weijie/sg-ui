@@ -282,7 +282,7 @@
   }
 
   @include e((append, prepend)) {
-    background-color: $--hover-background-color-base;
+    background-color: $--input-append_prepend-background;
     color: $--color-info;
     vertical-align: middle;
     display: table-cell;

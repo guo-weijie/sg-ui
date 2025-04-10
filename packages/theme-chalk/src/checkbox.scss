@@ -104,13 +104,13 @@
 
     @include when(disabled) {
       .sg-checkbox__inner {
-        background-color: $--checkbox-disabled-input-fill;
-        border-color: $--checkbox-disabled-border-color;
+        background-color: $--checkbox-disabled-checked-input-fill;
+        // border-color: $--checkbox-disabled-border-color;
         cursor: not-allowed;
 
         &::after {
           cursor: not-allowed;
-          border-color: $--checkbox-disabled-icon-color;
+          // border-color: $--checkbox-disabled-icon-color;
         }
 
         & + .sg-checkbox__label {
@@ -123,9 +123,9 @@
           background-color: $--checkbox-disabled-checked-input-fill;
           border-color: $--checkbox-disabled-checked-input-border-color;
 
-          &::after {
-            border-color: $--checkbox-disabled-checked-icon-color;
-          }
+          // &::after {
+          //   border-color: $--checkbox-disabled-checked-icon-color;
+          // }
         }
       }
 
@@ -181,7 +181,8 @@
           transform: scale(0.5);
           left: 0;
           right: 0;
-          top: 5px;
+          top: 4px;
+          border: 1px solid $--checkbox-checked-icon-color;
         }
 
         &::after {
@@ -211,13 +212,13 @@
     &::after {
       box-sizing: content-box;
       content: '';
-      border: 1px solid $--checkbox-checked-icon-color;
+      border: 2px solid $--checkbox-checked-icon-color;
       border-left: 0;
       border-top: 0;
       height: 7px;
       left: 4px;
       position: absolute;
-      top: 1px;
+      top: 0;
       transform: rotate(45deg) scaleY(0);
       width: 3px;
       transition: transform 0.15s ease-in 0.05s;
