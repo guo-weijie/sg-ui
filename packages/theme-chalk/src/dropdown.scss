@@ -98,8 +98,12 @@
     outline: none;
     &:not(.is-disabled):hover,
     &:focus {
-      background-color: $--dropdown-menuItem-hover-fill;
-      color: $--dropdown-menuItem-hover-color;
+      background-color: $--dropdown-menuItem-hover-fill-fallback;
+      color: $--dropdown-menuItem-hover-color-fallback;
+      @supports (background: color-mix(in srgb, white 50%, transparent)) {
+        background-color: $--dropdown-menuItem-hover-fill;
+        color: $--dropdown-menuItem-hover-color;
+      }
     }
 
     i {

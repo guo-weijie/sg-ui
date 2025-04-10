@@ -1,7 +1,7 @@
-@import "mixins/mixins";
-@import "checkbox";
-@import "tag";
-@import "common/var";
+@import 'mixins/mixins';
+@import 'checkbox';
+@import 'tag';
+@import 'common/var';
 
 @include b(table-column) {
   @include m(selection) {
@@ -35,8 +35,12 @@
     font-size: $--font-size-base;
 
     &:hover {
-      background-color: $--dropdown-menuItem-hover-fill;
-      color: $--dropdown-menuItem-hover-color;
+      background-color: $--dropdown-menuItem-hover-fill-fallback;
+      color: $--dropdown-menuItem-hover-color-fallback;
+      @supports (background: color-mix(in srgb, white 50%, transparent)) {
+        background-color: $--dropdown-menuItem-hover-fill;
+        color: $--dropdown-menuItem-hover-color;
+      }
     }
 
     @include when(active) {

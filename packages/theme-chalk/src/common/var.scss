@@ -68,6 +68,10 @@ $--button-info-font-color-fallback: $--color-white-fallback;
 $--button-info-background-color-fallback: $--color-info-fallback;
 $--button-info-border-color-fallback: $--color-info-fallback;
 
+$--dropdown-menuItem-hover-color-fallback: $--color-primary-light-2-fallback;
+$--dropdown-menuItem-hover-fill-fallback: $--color-primary-light-9-fallback;
+$--menu-item-hover-fill-fallback: $--color-primary-light-9-fallback;
+
 /* Transition
 -------------------------- */
 $--all-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) !default;
@@ -805,7 +809,7 @@ $--tree-expand-icon-color: $--color-text-placeholder !default;
 -------------------------- */
 $--dropdown-menu-box-shadow: $--box-shadow-light !default;
 $--dropdown-menuItem-hover-fill: $--color-primary-light-9 !default;
-$--dropdown-menuItem-hover-color: $--link-color !default;
+$--dropdown-menuItem-hover-color: $--color-primary-light-2;
 
 /* Badge
 -------------------------- */

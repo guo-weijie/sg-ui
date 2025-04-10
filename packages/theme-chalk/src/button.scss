@@ -35,8 +35,12 @@
   &:hover,
   &:focus {
     color: $--color-primary;
-    border-color: $--color-primary-light-7;
-    background-color: $--color-primary-light-9;
+    border-color: $--color-primary-light-7-fallback;
+    background-color: $--color-primary-light-9-fallback;
+    @supports (background: color-mix(in srgb, white 50%, transparent)) {
+      border-color: $--color-primary-light-7;
+      background-color: $--color-primary-light-9;
+    }
   }
 
   &:active {
