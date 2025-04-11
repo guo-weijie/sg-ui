@@ -38,13 +38,13 @@ $--color-info-lighter-fallback: mix($--color-white-fallback, $--color-info-fallb
 $--slider-button-hover-color-fallback: mix($--color-primary-fallback, black, 97%);
 
 $--border-color-base-fallback: #dcdfe6;
-$--button-default-border-color-fallback: $--border-color-base-fallback;
 
 $--link-primary-font-color-fallback: $--color-primary-fallback;
 $--link-danger-font-color-fallback: $--color-danger-fallback;
 $--link-success-font-color-fallback: $--color-success-fallback;
 $--link-warning-font-color-fallback: $--color-warning-fallback;
 $--link-info-font-color-fallback: $--color-info-fallback;
+$--link-color-fallback: $--color-primary-light-2-fallback;
 
 $--tag-primary-color-fallback: $--color-primary-fallback;
 $--tag-info-color-fallback: $--color-info-fallback;
@@ -52,6 +52,7 @@ $--tag-success-color-fallback: $--color-success-fallback;
 $--tag-warning-color-fallback: $--color-warning-fallback;
 $--tag-danger-color-fallback: $--color-danger-fallback;
 
+$--button-default-border-color-fallback: $--border-color-base-fallback;
 $--button-primary-font-color-fallback: $--color-white-fallback;
 $--button-primary-background-color-fallback: $--color-primary-fallback;
 $--button-primary-border-color-fallback: $--color-primary-fallback;
@@ -71,6 +72,11 @@ $--button-info-border-color-fallback: $--color-info-fallback;
 $--dropdown-menuItem-hover-color-fallback: $--color-primary-light-2-fallback;
 $--dropdown-menuItem-hover-fill-fallback: $--color-primary-light-9-fallback;
 $--menu-item-hover-fill-fallback: $--color-primary-light-9-fallback;
+
+$--alert-success-color-fallback: $--color-success-lighter-fallback;
+$--alert-warning-color-fallback: $--color-warning-lighter-fallback;
+$--alert-danger-color-fallback: $--color-danger-lighter-fallback;
+$--alert-info-color-fallback: $--color-info-lighter-fallback;
 
 /* Transition
 -------------------------- */
@@ -150,7 +156,7 @@ $--hover-background-color-base: var(--hover-background-color-base);
 
 /* Link
 -------------------------- */
-$--link-color: $--color-primary-light-2 !default;
+$--link-color: $--color-primary-light-2;
 $--link-hover-color: $--color-primary !default;
 
 /* Border
@@ -409,10 +415,10 @@ $--alert-close-font-size: 12px !default;
 /// fontSize||Font|1
 $--alert-close-customed-font-size: 13px !default;
 
-$--alert-success-color: $--color-success-lighter !default;
-$--alert-info-color: $--color-info-lighter !default;
-$--alert-warning-color: $--color-warning-lighter !default;
-$--alert-danger-color: $--color-danger-lighter !default;
+$--alert-success-color: $--color-success-lighter;
+$--alert-info-color: $--color-info-lighter;
+$--alert-warning-color: $--color-warning-lighter;
+$--alert-danger-color: $--color-danger-lighter;
 
 /// height||Other|4
 $--alert-icon-size: 16px !default;
@@ -433,7 +439,7 @@ $--messagebox-content-font-size: $--font-size-base !default;
 $--messagebox-content-color: $--color-text-regular !default;
 /// fontSize||Font|1
 $--messagebox-error-font-size: 12px !default;
-$--msgbox-padding-primary: 15px !default;
+$--msgbox-padding-primary: var(--base-value);
 /// color||Color|0
 $--messagebox-success-color: $--color-success !default;
 /// color||Color|0
@@ -448,7 +454,7 @@ $--messagebox-danger-color: $--color-danger !default;
 $--message-shadow: $--box-shadow-base !default;
 $--message-min-width: 380px !default;
 $--message-background-color: var(--message-background-color);
-$--message-padding: 15px 15px 15px 20px !default;
+$--message-padding: var(--base-value);
 /// color||Color|0
 $--message-close-icon-color: $--color-text-placeholder !default;
 /// height||Other|4

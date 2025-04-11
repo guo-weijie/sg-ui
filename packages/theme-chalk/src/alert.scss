@@ -1,5 +1,5 @@
-@import "mixins/mixins";
-@import "common/var";
+@import 'mixins/mixins';
+@import 'common/var';
 
 @include b(alert) {
   width: 100%;
@@ -13,7 +13,7 @@
   opacity: 1;
   display: flex;
   align-items: center;
-  transition: opacity .2s;
+  transition: opacity 0.2s;
 
   @include when(light) {
     .sg-alert__closebtn {
@@ -36,8 +36,11 @@
 
   @include m(success) {
     &.is-light {
-      background-color: $--alert-success-color;
+      background-color: $--alert-success-color-fallback;
       color: $--color-success;
+      @supports (background: color-mix(in srgb, white 50%, transparent)) {
+        background-color: $--alert-success-color;
+      }
 
       .sg-alert__description {
         color: $--color-success;
@@ -52,8 +55,11 @@
 
   @include m(info) {
     &.is-light {
-      background-color: $--alert-info-color;
+      background-color: $--alert-info-color-fallback;
       color: $--color-info;
+      @supports (background: color-mix(in srgb, white 50%, transparent)) {
+        background-color: $--alert-info-color;
+      }
     }
 
     &.is-dark {
@@ -68,8 +74,11 @@
 
   @include m(warning) {
     &.is-light {
-      background-color: $--alert-warning-color;
+      background-color: $--alert-warning-color-fallback;
       color: $--color-warning;
+      @supports (background: color-mix(in srgb, white 50%, transparent)) {
+        background-color: $--alert-warning-color;
+      }
 
       .sg-alert__description {
         color: $--color-warning;
@@ -84,8 +93,11 @@
 
   @include m(error) {
     &.is-light {
-      background-color: $--alert-danger-color;
+      background-color: $--alert-danger-color-fallback;
       color: $--color-danger;
+      @supports (background: color-mix(in srgb, white 50%, transparent)) {
+        background-color: $--alert-danger-color;
+      }
 
       .sg-alert__description {
         color: $--color-danger;

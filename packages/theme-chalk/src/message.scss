@@ -1,5 +1,5 @@
-@import "mixins/mixins";
-@import "common/var";
+@import 'mixins/mixins';
+@import 'common/var';
 
 @include b(message) {
   min-width: $--message-min-width;
@@ -13,7 +13,10 @@
   top: 20px;
   transform: translateX(-50%);
   background-color: $--message-background-color;
-  transition: opacity 0.3s, transform .4s, top 0.4s;
+  transition:
+    opacity 0.3s,
+    transform 0.4s,
+    top 0.4s;
   overflow: hidden;
   padding: $--message-padding;
   display: flex;
@@ -40,8 +43,12 @@
   }
 
   @include m(success) {
-    background-color: $--color-success-lighter;
-    border-color: $--color-success-light;
+    background-color: $--color-success-lighter-fallback;
+    border-color: $--color-success-light-fallback;
+    @supports (background: color-mix(in srgb, white 50%, transparent)) {
+      background-color: $--color-success-lighter;
+      border-color: $--color-success-light;
+    }
 
     .sg-message__content {
       color: $--message-success-font-color;
@@ -49,8 +56,12 @@
   }
 
   @include m(warning) {
-    background-color: $--color-warning-lighter;
-    border-color: $--color-warning-light;
+    background-color: $--color-warning-lighter-fallback;
+    border-color: $--color-warning-light-fallback;
+    @supports (background: color-mix(in srgb, white 50%, transparent)) {
+      background-color: $--color-warning-lighter;
+      border-color: $--color-warning-light;
+    }
 
     .sg-message__content {
       color: $--message-warning-font-color;
@@ -58,8 +69,12 @@
   }
 
   @include m(error) {
-    background-color: $--color-danger-lighter;
-    border-color: $--color-danger-light;
+    background-color: $--color-danger-lighter-fallback;
+    border-color: $--color-danger-light-fallback;
+    @supports (background: color-mix(in srgb, white 50%, transparent)) {
+      background-color: $--color-danger-lighter;
+      border-color: $--color-danger-light;
+    }
 
     .sg-message__content {
       color: $--message-danger-font-color;
