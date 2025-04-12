@@ -78,7 +78,7 @@
   }
 
   @include m(small) {
-    font-size: 12px;
+    font-size: 14px;
 
     &.is-bordered {
       .sg-descriptions-item__cell {

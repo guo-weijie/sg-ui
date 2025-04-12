@@ -56,6 +56,7 @@
 ```html
 <sg-pagination
   small
+  background
   layout="prev, pager, next"
   :total="50">
 </sg-pagination>

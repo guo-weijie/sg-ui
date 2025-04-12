@@ -91,7 +91,7 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 
 :::demo 设置 `inline` 属性可以让表单域变为行内的表单域
 ```html
-<sg-form :inline="true" :model="formInline" class="demo-form-inline">
+<sg-form :inline="true" :model="formInline" size='small' class="demo-form-inline">
   <sg-form-item label="审批人">
     <sg-input v-model="formInline.user" placeholder="审批人"></sg-input>
   </sg-form-item>

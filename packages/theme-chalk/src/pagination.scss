@@ -100,10 +100,10 @@
     .sg-pager li.btn-quickprev,
     .sg-pager li:last-child {
       border-color: transparent;
-      font-size: 12px;
-      line-height: 22px;
-      height: 22px;
-      min-width: 22px;
+      font-size: 14px;
+      line-height: 32px;
+      height: 32px;
+      min-width: 32px;
     }
 
     .arrow.disabled {
@@ -117,15 +117,15 @@
 
     span:not([class*='suffix']),
     button {
-      height: 22px;
-      line-height: 22px;
+      height: 32px;
+      line-height: 32px;
     }
 
     @include e(editor) {
-      height: 22px;
+      height: 32px;
 
       &.sg-input .sg-input__inner {
-        height: 22px;
+        height: 32px;
       }
     }
   }
@@ -195,14 +195,10 @@
     .btn-next,
     .sg-pager li {
       margin: 0 5px;
-      //   background-color: $--color-info-lighter;
       color: $--color-text-regular;
       min-width: 30px;
       border-radius: 2px;
-      border: 1px solid $--color-info-lighter-fallback;
-      @supports (background: color-mix(in srgb, white 50%, transparent)) {
-        border: 1px solid $--color-info-lighter;
-      }
+      border: 1px solid $--border-color-light;
 
       &.disabled {
         color: $--color-text-placeholder;
@@ -217,11 +213,6 @@
     .btn-prev,
     .btn-next {
       padding: 0;
-      background-color: transparent;
-      border: 1px solid $--color-info-lighter-fallback;
-      @supports (background: color-mix(in srgb, white 50%, transparent)) {
-        border: 1px solid $--color-info-lighter;
-      }
 
       &:disabled {
         color: $--color-text-placeholder;
@@ -243,8 +234,8 @@
       .btn-prev,
       .btn-next,
       .sg-pager li {
-        margin: 0 3px;
-        min-width: 22px;
+        margin: 0 4px;
+        min-width: 32px;
       }
     }
   }

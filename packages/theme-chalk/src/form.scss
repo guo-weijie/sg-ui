@@ -19,8 +19,11 @@
   @include m(inline) {
     & .sg-form-item {
       display: inline-block;
-      margin-right: 10px;
+      margin-right: calc(var(--base-value) * 2);
       vertical-align: top;
+      &:last-of-type {
+        margin-right: 0;
+      }
     }
     & .sg-form-item__label {
       float: none;
@@ -62,9 +65,6 @@
     .sg-form-item__content {
       line-height: 32px;
     }
-    &.sg-form-item {
-      margin-bottom: 18px;
-    }
     .sg-form-item__error {
       padding-top: 2px;
     }
@@ -75,9 +75,6 @@
     }
     .sg-form-item__content {
       line-height: 28px;
-    }
-    &.sg-form-item {
-      margin-bottom: 18px;
     }
     .sg-form-item__error {
       padding-top: 1px;
