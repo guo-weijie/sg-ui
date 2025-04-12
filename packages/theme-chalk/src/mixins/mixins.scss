@@ -6,7 +6,9 @@
 @mixin res($key, $map: $--breakpoints) {
   // 循环断点Map，如果存在则返回
   @if map-has-key($map, $key) {
-    @media only screen and #{inspect(map-get($map, $key))} {
+    $query: inspect(map-get($map, $key));
+    $clean-query: str-slice($query, 2, -2);
+    @media only screen and (#{$clean-query}) {
       @content;
     }
   } @else {
