@@ -121,16 +121,6 @@ export default {
           search: 'Search',
           empty: 'No results',
           index: 'en'
-        },
-        es: {
-          search: 'Buscar',
-          empty: 'No hay datos que coincidan',
-          index: 'es'
-        },
-        'fr-FR': {
-          search: 'Rechercher',
-          empty: 'Aucun résultat',
-          index: 'fr'
         }
       }
     };

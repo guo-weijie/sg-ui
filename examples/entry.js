@@ -19,7 +19,7 @@ import icon from './icon.json';
 import iconfont from './iconfont.json'
 import icon_yc from './icon_yc.json'
 
-Vue.use(Element);
+Vue.use(Element, { size: 'small' });
 Vue.use(VueRouter);
 Vue.component('demo-block', demoBlock);
 Vue.component('main-footer', MainFooter);
