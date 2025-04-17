@@ -157,8 +157,8 @@
     padding: 6px 0;
 
     @include e(item) {
-      line-height: 27px;
-      padding: 0 15px;
+      line-height: 28px;
+      padding: 0 var(--base-value);
       font-size: 14px;
 
       &.sg-dropdown-menu__item--divided {
