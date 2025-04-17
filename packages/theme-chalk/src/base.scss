@@ -5,6 +5,7 @@
 
 :root {
   --base-value: 16px; // 内外边距 基础尺寸
+  --border-radius: 4px; // 边框弧度
 }
 
 :root[data-theme='default-theme'] {

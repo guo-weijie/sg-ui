@@ -166,7 +166,7 @@ $--border-style-base: solid !default;
 $--border-color-hover: var(--border-color-hover);
 $--border-base: $--border-width-base $--border-style-base $--border-color-base !default;
 /// borderRadius|1|Radius|0
-$--border-radius-base: 4px !default;
+$--border-radius-base: var(--border-radius);
 /// borderRadius|1|Radius|0
 $--border-radius-small: 2px !default;
 /// borderRadius|1|Radius|0
