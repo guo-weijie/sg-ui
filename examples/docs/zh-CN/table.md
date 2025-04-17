@@ -830,7 +830,7 @@
 
 选择多行数据时使用 Checkbox。
 
-:::demo 实现多选非常简单: 手动添加一个`sg-table-column`，设`type`属性为`selection`即可；默认情况下若内容过多会折行显示，若需要单行显示可以使用`show-overflow-tooltip`属性，它接受一个`Boolean`，为`true`时多余的内容会在 hover 时以 tooltip 的形式显示出来。
+:::demo 实现多选非常简单: 手动添加一个`sg-table-column`，设`type`属性为`selection`即可；默认情况下若内容过多会折行显示，若需要多行显示可以使用`show-overflow-tooltip`属性，它接受一个`Boolean`，为`false`时多余的内容会在单元格内换行显示。
 ```html
 <template>
   <sg-table
@@ -856,7 +856,7 @@
     <sg-table-column
       prop="address"
       label="地址"
-      show-overflow-tooltip>
+      :show-overflow-tooltip='false'>
     </sg-table-column>
   </sg-table>
   <div style="margin-top: 20px">
@@ -1943,7 +1943,7 @@
 | sort-orders | 数据在排序时所使用排序策略的轮转顺序，仅当 sortable 为 true 时有效。需传入一个数组，随着用户点击表头，该列依次按照数组中元素的顺序进行排序 | array | 数组中的元素需为以下三者之一：`ascending` 表示升序，`descending` 表示降序，`null` 表示还原为原始顺序 | ['ascending', 'descending', null] |
 | resizable | 对应列是否可以通过拖动改变宽度（需要在 sg-table 上设置 border 属性为真） | boolean | — | true |
 | formatter | 用来格式化内容 | Function(row, column, cellValue, index) | — | — |
-| show-overflow-tooltip | 当内容过长被隐藏时显示 tooltip | Boolean | — | false |
+| show-overflow-tooltip | 当内容过长被隐藏时显示 tooltip | Boolean | — | true |
 | align | 对齐方式 | String | left/center/right | left |
 | header-align | 表头对齐方式，若不设置该项，则使用表格的对齐方式 | String | left/center/right | — |
 | class-name | 列的 className | string | — | — |

@@ -34,7 +34,10 @@ export default {
     align: String,
     headerAlign: String,
     showTooltipWhenOverflow: Boolean,
-    showOverflowTooltip: Boolean,
+    showOverflowTooltip: {
+      type: Boolean,
+      default: true
+    },
     fixed: [Boolean, String],
     formatter: Function,
     selectable: Function,
