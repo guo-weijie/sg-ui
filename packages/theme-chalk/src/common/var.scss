@@ -168,7 +168,7 @@ $--border-base: $--border-width-base $--border-style-base $--border-color-base !
 /// borderRadius|1|Radius|0
 $--border-radius-base: var(--border-radius);
 /// borderRadius|1|Radius|0
-$--border-radius-small: 2px !default;
+$--border-radius-small: var(--border-radius);
 /// borderRadius|1|Radius|0
 $--border-radius-circle: 100% !default;
 /// borderRadius|1|Radius|0
@@ -228,7 +228,7 @@ $--index-popper: 2000 !default;
 /* Disable base
 -------------------------- */
 $--disabled-fill-base: var(--disabled-fill-base);
-$--disabled-color-base: $--color-text-placeholder !default;
+$--disabled-color-base: var(--disabled-color);
 $--disabled-border-base: $--border-color-light !default;
 
 /* Icon
@@ -700,7 +700,7 @@ $--switch-button-size: 16px !default;
 /* Dialog
 -------------------------- */
 $--dialog-background-color: $--color-white !default;
-$--dialog-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !default;
+$--dialog-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) !default;
 /// fontSize||Font|1
 $--dialog-title-font-size: $--font-size-large !default;
 /// fontSize||Font|1

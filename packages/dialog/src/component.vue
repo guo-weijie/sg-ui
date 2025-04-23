@@ -118,7 +118,7 @@ export default {
 
     top: {
       type: String,
-      default: '15vh'
+      default: '0'
     },
     beforeClose: Function,
     center: {
