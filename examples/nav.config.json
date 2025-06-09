@@ -142,7 +142,11 @@
             },
             {
               "path": "/tree-select",
-              "title": "TreeSelect 树形下拉框"
+              "title": "TreeSelect 树形下拉框（基于三方）"
+            },
+            {
+              "path": "/select-tree",
+              "title": "SelectTree 树形下拉框（原生）"
             },
             {
               "path": "/form",

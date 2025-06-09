@@ -1,6 +1,6 @@
 ## TreeSelect 树形下拉框
 
-[点我查看官方文档](https://vue-treeselect.js.org/)
+基于`vue-treeselect`的树形下拉框 [查看官方文档](https://vue-treeselect.js.org/)
 
 ### 基本特征
 
@@ -169,7 +169,7 @@
 :::demo
 ```html
 <template>
-  <div :dir="rtl ? 'rtl' : 'ltr'" class="marginBtm">
+  <div class="marginBtm">
     <sg-tree-select
       :multiple="multiple"
       :clearable="clearable"
@@ -191,23 +191,22 @@
    选中值：{{value}}
 
   <p>
-    <label><sg-checkbox type="checkbox" v-model="multiple">Multi-select</sg-checkbox></label>
-    <label><sg-checkbox type="checkbox" v-model="clearable">Clearable</sg-checkbox></label>
-    <label><sg-checkbox type="checkbox" v-model="searchable">Searchable</sg-checkbox></label>
-    <label><sg-checkbox type="checkbox" v-model="disabled">Disabled</sg-checkbox></label>
+    <label><sg-checkbox type="checkbox" v-model="multiple">多选</sg-checkbox></label>
+    <label><sg-checkbox type="checkbox" v-model="clearable">清空</sg-checkbox></label>
+    <label><sg-checkbox type="checkbox" v-model="searchable">可检索</sg-checkbox></label>
+    <label><sg-checkbox type="checkbox" v-model="disabled">禁用</sg-checkbox></label>
   </p>
   <p>
-    <label><sg-checkbox type="checkbox" v-model="openOnClick">Open on click</sg-checkbox></label>
-    <label><sg-checkbox type="checkbox" v-model="openOnFocus">Open on focus</sg-checkbox></label>
+    <label><sg-checkbox type="checkbox" v-model="openOnClick">点击打开</sg-checkbox></label>
+    <label><sg-checkbox type="checkbox" v-model="openOnFocus">聚焦打开</sg-checkbox></label>
   </p>
   <p>
-    <label><sg-checkbox type="checkbox" v-model="clearOnSelect">Clear on select</sg-checkbox></label>
-    <label><sg-checkbox type="checkbox" v-model="closeOnSelect">Close on select</sg-checkbox></label>
+    <label><sg-checkbox type="checkbox" v-model="clearOnSelect">清空检索条件</sg-checkbox></label>
+    <label><sg-checkbox type="checkbox" v-model="closeOnSelect">选择后关闭</sg-checkbox></label>
   </p>
   <p>
-    <label><sg-checkbox type="checkbox" v-model="alwaysOpen">Always open</sg-checkbox></label>
-    <label><sg-checkbox type="checkbox" v-model="appendToBody">Append to body</sg-checkbox></label>
-    <label><sg-checkbox type="checkbox" v-model="rtl">RTL mode</sg-checkbox></label>
+    <label><sg-checkbox type="checkbox" v-model="alwaysOpen">始终显示</sg-checkbox></label>
+    <label><sg-checkbox type="checkbox" v-model="appendToBody">添加到 body 标签</sg-checkbox></label>
   </p>
 </template>
 <script>
@@ -224,7 +223,6 @@
             closeOnSelect: false,
             alwaysOpen: false,
             appendToBody: false,
-            rtl: '',
             options: [ {
                 id: 'fruits',
                 label: 'Fruits',

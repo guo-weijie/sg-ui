@@ -98,5 +98,6 @@
   "title": "./packages/title/index.js",
   "scroll": "./packages/scroll/index.js",
   "draggable": "./packages/draggable/index.js",
-  "watermark": "./packages/watermark/index.js"
+  "watermark": "./packages/watermark/index.js",
+  "select-tree": "./packages/select-tree/index.js"
 }
