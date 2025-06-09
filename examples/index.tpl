@@ -6,8 +6,9 @@
     <link rel="stylesheet" href="./cdn/font_137970_p1tpzmomxp9cnmi.css">
     <link rel='mask-icon' href="./assets/images/element-logo-small.svg" color="#409EFF">
     <link rel="stylesheet" href="./cdn/color-brewer.css">
-    <title>Element - The world's most popular Vue UI framework</title>
-    <meta name="description" content="Element，一套为开发者、设计师和产品经理准备的基于 Vue 2.0 的桌面端组件库" />
+    <title>SG-UI</title>
+    <meta name="description" content="SG-UI，一套为开发者、设计师和产品经理准备的基于 Vue 2.0 的桌面端组件库" />
+    <meta name="keywords" content="SG-UI, Vue, Vue2, UI, 组件库, 桌面端, 桌面端组件库, 前端开发" />
   </head>
   <body>
     <script>
