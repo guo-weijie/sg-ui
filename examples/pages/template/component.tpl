@@ -17,7 +17,7 @@
     }
 
     .page-component__nav {
-      width: 240px;
+      width: 250px;
       position: fixed;
       top: 0;
       bottom: 0;
