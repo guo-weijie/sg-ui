@@ -20,7 +20,7 @@
                 type="button"
                 class="sg-dialog__headerbtn"
                 aria-label="Close"
-                v-if="showClose"
+                v-if="showFullscreen"
                 @click="handleFullscreenStatusChange"
               >
                 <i
@@ -105,6 +105,11 @@ export default {
     showClose: {
       type: Boolean,
       default: true
+    },
+
+    showFullscreen: {
+      type: Boolean,
+      default: false
     },
 
     width: String,

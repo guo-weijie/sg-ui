@@ -23,6 +23,7 @@
     @include e(body) {
       height: 0;
       flex-grow: 1;
+      overflow: auto;
     }
   }
 

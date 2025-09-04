@@ -138,7 +138,8 @@ Dialog 组件的内容可以是任意的，甚至可以是表格或表单，下�
       width="30%"
       title="内层 Dialog"
       :visible.sync="innerVisible"
-      append-to-body>
+      append-to-body
+      showFullscreen>
     </sg-dialog>
     <div slot="footer" class="dialog-footer">
       <sg-button @click="outerVisible = false">取 消</sg-button>
@@ -208,6 +209,7 @@ Dialog 的内容是懒渲染的，即在第一次被打开之前，传入的默�
 | title     | Dialog 的标题，也可通过具名 slot （见下表）传入 | string    | — | — |
 | width     | Dialog 的宽度 | string    | — | 50% |
 | fullscreen     | 是否为全屏 Dialog | boolean    | — | false |
+| showFullscreen | 是否显示全屏按钮 | boolean | — | false |
 | top       | Dialog CSS 中的 margin-top 值 | string | — | 0 |
 | modal     | 是否需要遮罩层   | boolean   | — | true |
 | modal-append-to-body     | 遮罩层是否插入至 body 元素上，若为 false，则遮罩层会插入至 Dialog 的父元素上   | boolean   | — | true |
