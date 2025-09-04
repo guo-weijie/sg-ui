@@ -608,7 +608,6 @@ export default {
         height = `calc(100% - ${this.layout.appendHeight}px)`;
       }
       return {
-        width: this.bodyWidth,
         height
       };
     },

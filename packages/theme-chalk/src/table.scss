@@ -17,6 +17,9 @@
 
   // 数据为空
   @include e(empty-block) {
+    position: sticky;
+    left: 0;
+    top: 0;
     min-height: 60px;
     text-align: center;
     width: 100%;
