@@ -9,11 +9,11 @@
   padding: 16px 0;
 
   @include e(border-top) {
-    border-top: $--border-width-base $--border-style-base $--color-primary;
+    border-top: $--border-width-base $--border-style-base $--border-color-base;
   }
 
   @include e(border-bottom) {
-    border-bottom: $--border-width-base $--border-style-base $--color-primary;
+    border-bottom: $--border-width-base $--border-style-base $--border-color-base;
   }
 
   @include e(bold) {
