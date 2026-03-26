@@ -37,14 +37,3 @@
     </span>
   </li>
 </ul>
-
-### 用采图标集合
-
-<ul class="icon-list">
-  <li v-for="name in $icon_yc" :key="name">
-    <span>
-      <i :class="'icon_yc-' + name"></i>
-      <span class="icon-name">{{'icon_yc-' + name}}</span>
-    </span>
-  </li>
-</ul>

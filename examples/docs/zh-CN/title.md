@@ -24,7 +24,7 @@
 <br>
 
 <sg-card>
-    <sg-title :title="title" iconName='icon_yc-stat-grid-logo' :content="info" border-position="null">
+    <sg-title :title="title" iconName='iconfont-table' :content="info" border-position="null">
         <div>
             <button type="button" class="sg-dialog__headerbtn">
                 <i class="sg-dialog__close sg-icon sg-icon-close"></i>

@@ -7,8 +7,6 @@ var path = require('path');
 var fontFile = fs.readFileSync(path.resolve(__dirname, '../../packages/theme-chalk/src/icon.scss'), 'utf8');
 // 扩展图标
 var fontFile2 = fs.readFileSync(path.resolve(__dirname, '../../packages/theme-chalk/src/iconfont.scss'), 'utf8');
-// 用采图标
-var fontFile3 = fs.readFileSync(path.resolve(__dirname, '../../packages/theme-chalk/src/iconfont_yc.scss'), 'utf8');
 
 function generateIconJson(iconFile, reg, fileName) {
   var nodes = postcss.parse(iconFile).nodes;
@@ -31,4 +29,3 @@ function generateIconJson(iconFile, reg, fileName) {
 
 generateIconJson(fontFile, /\.sg-icon-([^:]+):before/, 'icon')
 generateIconJson(fontFile2, /\.iconfont-([^:]+):before/, 'iconfont')
-generateIconJson(fontFile3, /\.icon_yc-([^:]+):before/, 'icon_yc')
