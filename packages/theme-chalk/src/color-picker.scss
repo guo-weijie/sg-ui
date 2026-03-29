@@ -1,5 +1,4 @@
-@import "mixins/mixins";
-@import "common/var";
+@import 'mixins/mixins';
 
 @include b(color-predefine) {
   display: flex;
@@ -25,7 +24,7 @@
     }
 
     &.selected {
-      box-shadow: 0 0 3px 2px $--color-primary;
+      box-shadow: 0 0 3px 2px var(--color-primary);
     }
 
     > div {
@@ -50,11 +49,7 @@
 
   @include e(bar) {
     position: relative;
-    background: linear-gradient(
-      to right, #f00 0%,
-      #ff0 17%, #0f0 33%,
-      #0ff 50%, #00f 67%,
-      #f0f 83%, #f00 100%);
+    background: linear-gradient(to right, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
     height: 100%;
   }
 
@@ -79,11 +74,7 @@
     padding: 2px 0;
 
     .sg-color-hue-slider__bar {
-      background: linear-gradient(
-        to bottom, #f00 0%,
-        #ff0 17%, #0f0 33%,
-        #0ff 50%, #00f 67%,
-        #f0f 83%, #f00 100%);
+      background: linear-gradient(to bottom, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
     }
 
     .sg-color-hue-slider__thumb {
@@ -109,11 +100,11 @@
   }
 
   @include e('white') {
-    background: linear-gradient(to right, #fff, rgba(255,255,255,0));
+    background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
   }
 
   @include e('black') {
-    background: linear-gradient(to top, #000, rgba(0,0,0,0));
+    background: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
   }
 
   @include e(cursor) {
@@ -123,7 +114,10 @@
       cursor: head;
       width: 4px;
       height: 4px;
-      box-shadow: 0 0 0 1.5px #fff, inset 0 0 1px 1px rgba(0,0,0,0.3), 0 0 1px 2px rgba(0,0,0,0.4);
+      box-shadow:
+        0 0 0 1.5px #fff,
+        inset 0 0 1px 1px rgba(0, 0, 0, 0.3),
+        0 0 1px 2px rgba(0, 0, 0, 0.4);
       border-radius: 50%;
       transform: translate(-2px, -2px);
     }
@@ -139,9 +133,7 @@
 
   @include e(bar) {
     position: relative;
-    background: linear-gradient(
-      to right, rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
     height: 100%;
   }
 
@@ -165,9 +157,7 @@
     height: 180px;
 
     .sg-color-alpha-slider__bar {
-      background: linear-gradient(
-        to bottom, rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 1) 100%);
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
     }
 
     .sg-color-alpha-slider__thumb {
@@ -186,7 +176,7 @@
     margin-bottom: 6px;
 
     &::after {
-      content: "";
+      content: '';
       display: table;
       clear: both;
     }
@@ -201,7 +191,7 @@
     float: left;
     line-height: 26px;
     font-size: 12px;
-    color: $--color-black;
+    color: var(--color-black);
     width: 160px;
   }
 
@@ -221,19 +211,20 @@
       cursor: not-allowed;
     }
     &:hover {
-      color: $--color-primary;
-      border-color: $--color-primary;
+      color: var(--color-primary);
+      border-color: var(--color-primary);
     }
   }
 
   @include e(link-btn) {
     cursor: pointer;
-    color: $--color-primary;
+    color: var(--color-primary);
     text-decoration: none;
     padding: 15px;
     font-size: 12px;
     &:hover {
-      color: tint($--color-primary, $--button-hover-tint-percent);
+      // 使用 CSS 变量直接计算，避免在 color-mix 中嵌套 calc
+      color: color-mix(in srgb, var(--color-primary), white var(--button-hover-tint-percent));
     }
   }
 }
@@ -311,7 +302,7 @@
     left: 1px;
     z-index: 1;
     cursor: not-allowed;
-    background-color: rgba(255, 255, 255, .7);
+    background-color: rgba(255, 255, 255, 0.7);
   }
 
   @include e(trigger) {
@@ -332,7 +323,7 @@
     display: block;
     box-sizing: border-box;
     border: 1px solid #999;
-    border-radius: $--border-radius-small;
+    border-radius: var(--border-radius-small);
     width: 100%;
     height: 100%;
     text-align: center;
@@ -366,7 +357,7 @@
     top: 50%;
     left: 50%;
     transform: translate3d(-50%, -50%, 0);
-    color: $--color-white;
+    color: var(--color-white);
     text-align: center;
     font-size: 12px;
   }
@@ -376,9 +367,9 @@
     z-index: 10;
     padding: 6px;
     box-sizing: content-box;
-    background-color: $--color-white;
-    border: 1px solid $--border-color-lighter;
-    border-radius: $--border-radius-base;
-    box-shadow: $--dropdown-menu-box-shadow;
+    background-color: var(--color-white);
+    border: 1px solid var(--border-color-lighter);
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--dropdown-menu-box-shadow);
   }
 }

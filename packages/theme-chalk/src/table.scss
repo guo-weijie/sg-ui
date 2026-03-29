@@ -2,7 +2,6 @@
 @import 'checkbox';
 @import 'tag';
 @import 'tooltip';
-@import 'common/var';
 
 @include b(table) {
   position: relative;
@@ -11,9 +10,9 @@
   flex: 1;
   width: 100%;
   max-width: 100%;
-  background-color: $--color-white;
+  background-color: var(--color-white);
   font-size: 14px;
-  color: $--table-font-color;
+  color: var(--table-font-color);
 
   // 数据为空
   @include e(empty-block) {
@@ -33,7 +32,7 @@
     // set empty text line height up to contrainer min-height as workaround.
     line-height: 60px;
     width: 50%;
-    color: $--color-text-secondary;
+    color: var(--color-text-secondary);
   }
 
   // 展开行
@@ -66,7 +65,7 @@
   }
 
   @include e(expanded-cell) {
-    background-color: $--color-white;
+    background-color: var(--color-white);
 
     // 纯属为了增加权重
     &[class*='cell'] {
@@ -110,7 +109,7 @@
   }
 
   thead {
-    color: $--table-header-font-color;
+    color: var(--table-header-font-color);
 
     th {
       font-weight: 500;
@@ -179,7 +178,7 @@
   }
 
   tr {
-    background-color: $--color-white;
+    background-color: var(--color-white);
 
     input[type='checkbox'] {
       margin: 0;
@@ -188,7 +187,7 @@
 
   th.sg-table__cell.is-leaf,
   td.sg-table__cell {
-    border-bottom: $--table-border;
+    border-bottom: var(--table-border);
   }
 
   th.sg-table__cell.is-sortable {
@@ -198,7 +197,7 @@
   th.sg-table__cell {
     overflow: hidden;
     user-select: none;
-    background-color: $--table-header-background-color;
+    background-color: var(--table-header-background-color);
 
     > .cell {
       display: inline-block;
@@ -211,7 +210,7 @@
       width: 100%;
 
       &.highlight {
-        color: $--color-primary;
+        color: var(--color-primary);
       }
     }
 
@@ -256,12 +255,12 @@
 
   // 拥有多级表头
   @include m((group, border)) {
-    border: $--table-border;
+    border: var(--table-border);
 
     @include share-rule(border-pseudo) {
       content: '';
       position: absolute;
-      background-color: $--table-border-color;
+      background-color: var(--table-border-color);
       z-index: 1;
     }
 
@@ -294,7 +293,7 @@
     }
 
     .sg-table__cell {
-      border-right: $--table-border;
+      border-right: var(--table-border);
 
       &:first-child .cell {
         padding-left: var(--base-value);
@@ -302,12 +301,12 @@
     }
 
     th.sg-table__cell.gutter:last-of-type {
-      border-bottom: $--table-border;
+      border-bottom: var(--table-border);
       border-bottom-width: 1px;
     }
 
     & th.sg-table__cell {
-      border-bottom: $--table-border;
+      border-bottom: var(--table-border);
     }
   }
 
@@ -321,7 +320,7 @@
     left: 0;
     overflow-x: hidden;
     overflow-y: hidden;
-    box-shadow: $--table-fixed-box-shadow;
+    box-shadow: var(--table-fixed-box-shadow);
 
     &::before {
       content: '';
@@ -330,7 +329,7 @@
       bottom: 0;
       width: 100%;
       height: 1px;
-      background-color: $--border-color-lighter;
+      background-color: var(--border-color-lighter);
       z-index: 4;
     }
   }
@@ -339,8 +338,8 @@
     position: absolute;
     top: -1px;
     right: 0;
-    background-color: $--color-white;
-    border-bottom: $--table-border;
+    background-color: var(--color-white);
+    border-bottom: var(--table-border);
   }
 
   @include e(fixed-right) {
@@ -370,9 +369,9 @@
     z-index: 3;
 
     & tbody td.sg-table__cell {
-      border-top: $--table-border;
-      background-color: $--table-row-hover-background-color;
-      color: $--table-font-color;
+      border-top: var(--table-border);
+      background-color: var(--table-row-hover-background-color);
+      color: var(--table-font-color);
     }
   }
 
@@ -391,7 +390,7 @@
   @include e(footer-wrapper) {
     margin-top: -1px;
     td.sg-table__cell {
-      border-top: $--table-border;
+      border-top: var(--table-border);
     }
   }
 
@@ -404,8 +403,8 @@
     overflow: hidden;
 
     & tbody td.sg-table__cell {
-      background-color: $--table-row-hover-background-color;
-      color: $--table-font-color;
+      background-color: var(--table-row-hover-background-color);
+      color: var(--table-font-color);
     }
   }
 
@@ -435,13 +434,13 @@
     .sg-table--border {
       @include when(scrolling-right) {
         ~ .sg-table__fixed-right {
-          border-left: $--table-border;
+          border-left: var(--table-border);
         }
       }
 
       @include when(scrolling-left) {
         ~ .sg-table__fixed {
-          border-right: $--table-border;
+          border-right: var(--table-border);
         }
       }
     }
@@ -467,22 +466,22 @@
     left: 7px;
 
     &.ascending {
-      border-bottom-color: $--color-text-placeholder;
+      border-bottom-color: var(--color-text-placeholder);
       top: 0px;
     }
 
     &.descending {
-      border-top-color: $--color-text-placeholder;
+      border-top-color: var(--color-text-placeholder);
       bottom: 2px;
     }
   }
 
   .ascending .sort-caret.ascending {
-    border-bottom-color: $--color-primary;
+    border-bottom-color: var(--color-primary);
   }
 
   .descending .sort-caret.descending {
-    border-top-color: $--color-primary;
+    border-top-color: var(--color-primary);
   }
 
   .hidden-columns {
@@ -500,7 +499,7 @@
 
         &.current-row td.sg-table__cell,
         &.selection-row td.sg-table__cell {
-          background-color: $--table-current-row-background-color;
+          background-color: var(--table-current-row-background-color);
         }
       }
     }
@@ -514,7 +513,7 @@
         &.current-row,
         &.selection-row {
           > td.sg-table__cell {
-            background-color: $--table-row-hover-background-color;
+            background-color: var(--table-row-hover-background-color);
           }
         }
       }
@@ -522,7 +521,7 @@
 
     tr.current-row > td.sg-table__cell,
     tr.selection-row > td.sg-table__cell {
-      background-color: $--table-current-row-background-color;
+      background-color: var(--table-current-row-background-color);
     }
   }
 
@@ -532,7 +531,7 @@
     top: 0;
     bottom: 0;
     width: 0;
-    border-left: $--table-border;
+    border-left: var(--table-border);
     z-index: 10;
   }
 
@@ -542,7 +541,7 @@
     cursor: pointer;
 
     & i {
-      color: $--color-info;
+      color: var(--color-info);
       font-size: 12px;
       transform: scale(0.75);
     }
@@ -556,7 +555,7 @@
 
   @include m(enable-row-hover) {
     .sg-table__body tr:hover > td.sg-table__cell {
-      background-color: $--table-row-hover-background-color;
+      background-color: var(--table-row-hover-background-color);
     }
   }
 

@@ -1,5 +1,4 @@
 @import 'mixins/mixins';
-@import 'common/var';
 
 @include b(tabs) {
   @include e(header) {
@@ -12,7 +11,7 @@
     bottom: 0;
     left: 0;
     height: 2px;
-    background-color: $--color-primary;
+    background-color: var(--color-primary);
     z-index: 1;
     transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
     list-style: none;
@@ -36,7 +35,7 @@
     }
 
     &:hover {
-      color: $--color-primary;
+      color: var(--color-primary);
     }
   }
   @include e(nav-wrap) {
@@ -51,8 +50,8 @@
       bottom: 0;
       width: 100%;
       height: 2px;
-      background-color: $--border-color-light;
-      z-index: $--index-normal;
+      background-color: var(--border-color-light);
+      z-index: var(--index-normal);
     }
 
     @include when(scrollable) {
@@ -68,7 +67,7 @@
     cursor: pointer;
     line-height: 44px;
     font-size: 12px;
-    color: $--color-text-secondary;
+    color: var(--color-text-secondary);
   }
   @include e(nav-next) {
     right: 0;
@@ -81,7 +80,7 @@
     position: relative;
     transition: transform 0.3s;
     float: left;
-    z-index: #{$--index-normal + 1};
+    z-index: calc(var(--index-normal) + 1);
 
     @include when(stretch) {
       min-width: 100%;
@@ -101,7 +100,7 @@
     list-style: none;
     font-size: 14px;
     font-weight: 500;
-    color: $--color-text-primary;
+    color: var(--color-text-primary);
     position: relative;
 
     &:focus,
@@ -110,7 +109,7 @@
     }
 
     &:focus.is-active.is-focus:not(:active) {
-      box-shadow: 0 0 2px 2px $--color-primary inset;
+      box-shadow: 0 0 2px 2px var(--color-primary) inset;
       border-radius: 3px;
     }
 
@@ -125,22 +124,22 @@
       }
 
       &:hover {
-        background-color: $--color-text-placeholder;
-        color: $--color-white;
+        background-color: var(--color-text-placeholder);
+        color: var(--color-white);
       }
     }
 
     @include when(active) {
-      color: $--color-primary;
+      color: var(--color-primary);
     }
 
     &:hover {
-      color: $--color-primary;
+      color: var(--color-primary);
       cursor: pointer;
     }
 
     @include when(disabled) {
-      color: $--disabled-color-base;
+      color: var(--disabled-color-base);
       cursor: default;
     }
   }
@@ -150,13 +149,13 @@
   }
   @include m(card) {
     > .sg-tabs__header {
-      border-bottom: 1px solid $--border-color-light;
+      border-bottom: 1px solid var(--border-color-light);
     }
     > .sg-tabs__header .sg-tabs__nav-wrap::after {
       content: none;
     }
     > .sg-tabs__header .sg-tabs__nav {
-      border: 1px solid $--border-color-light;
+      border: 1px solid var(--border-color-light);
       border-bottom: none;
       border-radius: 4px 4px 0 0;
       box-sizing: border-box;
@@ -178,7 +177,7 @@
     }
     > .sg-tabs__header .sg-tabs__item {
       border-bottom: 1px solid transparent;
-      border-left: 1px solid $--border-color-light;
+      border-left: 1px solid var(--border-color-light);
       transition:
         color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
         padding 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -196,7 +195,7 @@
         }
       }
       &.is-active {
-        border-bottom-color: $--color-white;
+        border-bottom-color: var(--color-white);
 
         &.is-closable {
           padding-left: 20px;
@@ -210,8 +209,8 @@
     }
   }
   @include m(border-card) {
-    background: $--color-white;
-    border: 1px solid $--border-color-base;
+    background: var(--color-white);
+    border: 1px solid var(--border-color-base);
     box-shadow:
       0 2px 4px 0 rgba(0, 0, 0, 0.12),
       0 0 6px 0 rgba(0, 0, 0, 0.04);
@@ -220,8 +219,8 @@
       padding: 15px;
     }
     > .sg-tabs__header {
-      background-color: $--hover-background-color-base;
-      border-bottom: 1px solid $--border-color-light;
+      background-color: var(--background-color-base);
+      border-bottom: 1px solid var(--border-color-light);
       margin: 0;
     }
     > .sg-tabs__header .sg-tabs__nav-wrap::after {
@@ -231,7 +230,7 @@
       transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
       border: 1px solid transparent;
       margin-top: -1px;
-      color: $--color-text-secondary;
+      color: var(--color-text-secondary);
 
       &:first-child {
         margin-left: -1px;
@@ -242,16 +241,16 @@
       }
 
       &.is-active {
-        color: $--color-primary;
-        background-color: $--color-white;
-        border-right-color: $--border-color-base;
-        border-left-color: $--border-color-base;
+        color: var(--color-primary);
+        background-color: var(--color-white);
+        border-right-color: var(--border-color-base);
+        border-left-color: var(--border-color-base);
       }
       &:not(.is-disabled):hover {
-        color: $--color-primary;
+        color: var(--color-primary);
       }
       &.is-disabled {
-        color: $--disabled-color-base;
+        color: var(--disabled-color-base);
       }
     }
 
@@ -291,7 +290,7 @@
     &.sg-tabs--border-card {
       .sg-tabs__header.is-bottom {
         border-bottom: 0;
-        border-top: 1px solid $--border-color-base;
+        border-top: 1px solid var(--border-color-base);
       }
       .sg-tabs__nav-wrap.is-bottom {
         margin-top: -1px;
@@ -397,17 +396,17 @@
       }
       .sg-tabs__item.is-left {
         border-left: none;
-        border-right: 1px solid $--border-color-light;
+        border-right: 1px solid var(--border-color-light);
         border-bottom: none;
-        border-top: 1px solid $--border-color-light;
+        border-top: 1px solid var(--border-color-light);
         text-align: left;
       }
       .sg-tabs__item.is-left:first-child {
-        border-right: 1px solid $--border-color-light;
+        border-right: 1px solid var(--border-color-light);
         border-top: none;
       }
       .sg-tabs__item.is-left.is-active {
-        border: 1px solid $--border-color-light;
+        border: 1px solid var(--border-color-light);
         border-right-color: #fff;
         border-left: none;
         border-bottom: none;
@@ -422,7 +421,7 @@
 
       .sg-tabs__nav {
         border-radius: 4px 0 0 4px;
-        border-bottom: 1px solid $--border-color-light;
+        border-bottom: 1px solid var(--border-color-light);
         border-right: none;
       }
 
@@ -472,14 +471,14 @@
       }
       .sg-tabs__item.is-right {
         border-bottom: none;
-        border-top: 1px solid $--border-color-light;
+        border-top: 1px solid var(--border-color-light);
       }
       .sg-tabs__item.is-right:first-child {
-        border-left: 1px solid $--border-color-light;
+        border-left: 1px solid var(--border-color-light);
         border-top: none;
       }
       .sg-tabs__item.is-right.is-active {
-        border: 1px solid $--border-color-light;
+        border: 1px solid var(--border-color-light);
         border-left-color: #fff;
         border-right: none;
         border-bottom: none;
@@ -494,7 +493,7 @@
 
       .sg-tabs__nav {
         border-radius: 0 4px 4px 0;
-        border-bottom: 1px solid $--border-color-light;
+        border-bottom: 1px solid var(--border-color-light);
         border-left: none;
       }
     }

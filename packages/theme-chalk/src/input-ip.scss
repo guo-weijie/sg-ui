@@ -1,23 +1,28 @@
-@import "mixins/mixins";
-@import "common/var";
+@import 'mixins/mixins';
 
 @include b(input-ip) {
   position: relative;
   display: inline-block;
-  border: 1px solid #dcdfe6;
+  border: var(--input-border);
   box-sizing: border-box;
-  border-radius: 4px;
+  border-radius: var(--input-border-radius);
   width: 100%;
-  height: 40px;
+  height: var(--input-height);
+  line-height: var(--input-height);
   padding-inline-start: 0px;
-  font-size: $--font-size-base;
+  font-size: var(--font-size-base);
   vertical-align: bottom;
   margin-top: 0;
   margin-bottom: 0;
   padding-right: 10px;
 
+  .sg-input__icon {
+    line-height: var(--input-height);
+  }
+
   li {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     position: relative;
     width: 25%;
     height: 100%;
@@ -27,84 +32,86 @@
   .ipInputClass {
     border: none;
     background: transparent;
-    color: #666666;
-    font-size: inherit;
+    color: var(--input-font-color);
     width: 100%;
     height: 100%;
-    line-height: 100%;
     text-align: center;
+    font-size: inherit;
   }
   li div {
     position: absolute;
     bottom: 8px;
     right: 0;
     border-radius: 50%;
-    background: #505050;
+    background: var(--color-text-secondary);
     width: 2px;
     height: 2px;
   }
-  /*只需要3个div*/
+  /*只需要 3 个 div*/
   li:last-child div {
     display: none;
   }
-  /*取消掉默认的input focus状态*/
+  /*取消掉默认的 input focus 状态*/
   input:focus {
     outline: none;
   }
-   /*取消掉默认的input focus状态*/
-   & .sg-input__clear {
+  /*取消掉默认的 input focus 状态*/
+  & .sg-input__clear {
     position: absolute;
     right: -3px;
-    color: $--input-icon-color;
-    font-size: $--input-font-size;
+    color: var(--input-icon-color);
+    font-size: var(--input-font-size);
     cursor: pointer;
-    transition: $--color-transition-base;
+    transition: var(--color-transition-base);
     z-index: 10;
 
     &:hover {
-      color: $--input-clear-hover-color;
+      color: var(--input-clear-hover-color);
     }
   }
 }
 
 @include b(input-ip-on) {
-  border: 1px solid $--color-primary;
-  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  border-color: var(--input-focus-border);
+  transition: var(--border-transition-base);
 }
 
-@include b(input-ip-disabled){
-  background-color: #EEEEEE;
-  border-color: #E2E2E2;
-  color: #CCCCCC;
+@include b(input-ip-disabled) {
+  background-color: var(--input-disabled-fill);
+  border-color: var(--input-disabled-border);
+  color: var(--input-disabled-color);
   cursor: not-allowed;
 }
 
-@include b(input-ip-medium){
-  height: $--input-medium-height;
+@include b(input-ip-medium) {
+  height: var(--input-medium-height);
+  line-height: var(--input-medium-height);
   .ipInputClass {
-    font-size: $--input-medium-font-size;
+    font-size: var(--input-medium-font-size);
   }
   .sg-input__icon {
-    line-height: $--input-medium-height;
+    line-height: var(--input-medium-height);
   }
 }
 
-@include b(input-ip-small){
-  height: $--input-small-height;
+@include b(input-ip-small) {
+  height: var(--input-small-height);
+  line-height: var(--input-small-height);
   .ipInputClass {
-    font-size: $--input-small-font-size;
+    font-size: var(--input-small-font-size);
   }
   .sg-input__icon {
-    line-height: $--input-small-height;
+    line-height: var(--input-small-height);
   }
 }
 
-@include b(input-ip-mini){
-  height: $--input-mini-height;
+@include b(input-ip-mini) {
+  height: var(--input-mini-height);
+  line-height: var(--input-mini-height);
   .ipInputClass {
-    font-size: $--input-mini-font-size;
+    font-size: var(--input-mini-font-size);
   }
   .sg-input__icon {
-    line-height: $--input-mini-height;
+    line-height: var(--input-mini-height);
   }
 }

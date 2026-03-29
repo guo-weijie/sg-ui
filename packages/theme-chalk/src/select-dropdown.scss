@@ -1,14 +1,14 @@
-@import "mixins/mixins";
-@import "common/var";
-@import "./popper";
+@import 'mixins/mixins';
+
+@import './popper';
 
 @include b(select-dropdown) {
   position: absolute;
-  z-index: #{$--index-top + 1};
-  border: $--select-dropdown-border;
-  border-radius: $--border-radius-base;
-  background-color: $--select-dropdown-background;
-  box-shadow: $--select-dropdown-shadow;
+  z-index: calc(var(--index-top) + 1);
+  border: var(--select-dropdown-border);
+  border-radius: var(--border-radius-base);
+  background-color: var(--select-dropdown-background);
+  box-shadow: var(--select-dropdown-shadow);
   box-sizing: border-box;
   margin: 5px 0;
 
@@ -17,18 +17,18 @@
       padding-right: 40px;
     }
     & .sg-select-dropdown__item.selected {
-      color: $--select-option-selected-font-color;
-      background-color: $--select-dropdown-background;
+      color: var(--select-option-selected-font-color);
+      background-color: var(--select-dropdown-background);
 
       &.hover {
-        background-color: $--select-option-hover-background;
+        background-color: var(--select-option-hover-background);
       }
 
       &::after {
         position: absolute;
         right: 20px;
         font-family: 'element-icons';
-        content: "\e6da";
+        content: '\e6da';
         font-size: 12px;
         font-weight: bold;
         -webkit-font-smoothing: antialiased;
@@ -37,26 +37,26 @@
     }
   }
 
-  .sg-scrollbar.is-empty .sg-select-dropdown__list{
+  .sg-scrollbar.is-empty .sg-select-dropdown__list {
     padding: 0;
   }
 }
 
 @include b(select-dropdown__empty) {
-  padding: $--select-dropdown-empty-padding;
+  padding: var(--select-dropdown-empty-padding);
   margin: 0;
   text-align: center;
-  color: $--select-dropdown-empty-color;
-  font-size: $--select-font-size;
+  color: var(--select-dropdown-empty-color);
+  font-size: var(--select-font-size);
 }
 
 @include b(select-dropdown__wrap) {
-  max-height: $--select-dropdown-max-height;
+  max-height: var(--select-dropdown-max-height);
 }
 
 @include b(select-dropdown__list) {
   list-style: none;
-  padding: $--select-dropdown-padding;
+  padding: var(--select-dropdown-padding);
   margin: 0;
   box-sizing: border-box;
 }

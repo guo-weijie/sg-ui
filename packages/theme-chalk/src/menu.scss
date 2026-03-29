@@ -1,13 +1,13 @@
 @import 'mixins/mixins';
 @import 'mixins/utils';
-@import 'common/var';
+
 @import 'common/transition';
 
 @mixin menu-item {
   height: 56px;
   line-height: 56px;
-  font-size: $--menu-item-font-size;
-  color: $--menu-item-font-color;
+  font-size: var(--menu-item-font-size);
+  color: var(--menu-item-font-color);
   padding: 0 20px;
   list-style: none;
   cursor: pointer;
@@ -24,16 +24,13 @@
   }
 
   i {
-    color: $--color-text-secondary;
+    color: var(--color-text-secondary);
   }
 
   &:hover,
   &:focus {
     outline: none;
-    background-color: $--menu-item-hover-fill-fallback;
-    @supports (background: color-mix(in srgb, white 50%, transparent)) {
-      background-color: $--menu-item-hover-fill;
-    }
+    background-color: var(--menu-item-hover-fill);
   }
 
   @include when(disabled) {
@@ -49,7 +46,7 @@
   position: relative;
   margin: 0;
   padding-left: 0;
-  background-color: $--menu-background-color;
+  background-color: var(--menu-background-color);
   @include utils-clearfix;
   &.sg-menu--horizontal {
     border-bottom: solid 1px #e6e6e6;
@@ -63,7 +60,7 @@
       line-height: 60px;
       margin: 0;
       border-bottom: 2px solid transparent;
-      color: $--color-text-secondary;
+      color: var(--color-text-secondary);
 
       a,
       a:hover {
@@ -82,14 +79,14 @@
       &:hover {
         outline: none;
         .sg-submenu__title {
-          color: $--color-text-primary;
+          color: var(--color-text-primary);
         }
       }
 
       &.is-active {
         .sg-submenu__title {
-          border-bottom: 2px solid $--color-primary;
-          color: $--color-text-primary;
+          border-bottom: 2px solid var(--color-primary);
+          color: var(--color-text-primary);
         }
       }
 
@@ -97,7 +94,7 @@
         height: 60px;
         line-height: 60px;
         border-bottom: 2px solid transparent;
-        color: $--color-text-secondary;
+        color: var(--color-text-secondary);
 
         &:hover {
           background-color: #fff;
@@ -113,26 +110,26 @@
     & .sg-menu {
       & .sg-menu-item,
       & .sg-submenu__title {
-        background-color: $--color-white;
+        background-color: var(--color-white);
         float: none;
         height: 36px;
         line-height: 36px;
         padding: 0 10px;
-        color: $--color-text-secondary;
+        color: var(--color-text-secondary);
       }
       & .sg-menu-item.is-active,
       & .sg-submenu.is-active > .sg-submenu__title {
-        color: $--color-text-primary;
+        color: var(--color-text-primary);
       }
     }
     & .sg-menu-item:not(.is-disabled):hover,
     & .sg-menu-item:not(.is-disabled):focus {
       outline: none;
-      color: $--color-text-primary;
+      color: var(--color-text-primary);
     }
     & > .sg-menu-item.is-active {
-      border-bottom: 2px solid $--color-primary;
-      color: $--color-text-primary;
+      border-bottom: 2px solid var(--color-primary);
+      color: var(--color-text-primary);
     }
   }
   @include m(collapse) {
@@ -174,9 +171,9 @@
         top: 0;
         left: 100%;
         z-index: 10;
-        border: 1px solid $--border-color-light;
-        border-radius: $--border-radius-small;
-        box-shadow: $--box-shadow-light;
+        border: 1px solid var(--border-color-light);
+        border-radius: var(--border-radius-small);
+        box-shadow: var(--box-shadow-light);
       }
 
       &.is-opened {
@@ -191,8 +188,8 @@
     min-width: 200px;
     border: none;
     padding: 5px 0;
-    border-radius: $--border-radius-small;
-    box-shadow: $--box-shadow-light;
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--box-shadow-light);
 
     &-bottom-start {
       margin-top: 5px;
@@ -214,7 +211,7 @@
     vertical-align: middle;
   }
   @include when(active) {
-    color: $--color-primary;
+    color: var(--color-primary);
     i {
       color: inherit;
     }
@@ -230,10 +227,7 @@
     @include menu-item;
 
     &:hover {
-      background-color: $--menu-item-hover-fill-fallback;
-      @supports (background: color-mix(in srgb, white 50%, transparent)) {
-        background-color: $--menu-item-hover-fill;
-      }
+      background-color: var(--menu-item-hover-fill);
     }
   }
   & .sg-menu {
@@ -255,7 +249,7 @@
   }
   @include when(active) {
     .sg-submenu__title {
-      border-bottom-color: $--color-primary;
+      border-bottom-color: var(--color-primary);
     }
   }
   @include when(opened) {
@@ -288,7 +282,7 @@
     padding: 7px 0 7px 20px;
     line-height: normal;
     font-size: 12px;
-    color: $--color-text-secondary;
+    color: var(--color-text-secondary);
   }
 }
 

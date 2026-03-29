@@ -1,7 +1,6 @@
-@import "./common/var.scss";
-@import "./mixins/mixins.scss";
+@import './mixins/mixins.scss';
 
-[class*="sg-col-"] {
+[class*='sg-col-'] {
   float: left;
   box-sizing: border-box;
 }
@@ -10,23 +9,222 @@
   display: none;
 }
 
+// 预计算百分比值，减少重复计算
 @for $i from 0 through 24 {
   .sg-col-#{$i} {
-    width: (1 / 24 * $i * 100) * 1%;
+    @if $i == 0 {
+      width: 0%;
+    } @else if $i == 1 {
+      width: 4.1666666667%;
+    } @else if $i == 2 {
+      width: 8.3333333333%;
+    } @else if $i == 3 {
+      width: 12.5%;
+    } @else if $i == 4 {
+      width: 16.6666666667%;
+    } @else if $i == 5 {
+      width: 20.8333333333%;
+    } @else if $i == 6 {
+      width: 25%;
+    } @else if $i == 7 {
+      width: 29.1666666667%;
+    } @else if $i == 8 {
+      width: 33.3333333333%;
+    } @else if $i == 9 {
+      width: 37.5%;
+    } @else if $i == 10 {
+      width: 41.6666666667%;
+    } @else if $i == 11 {
+      width: 45.8333333333%;
+    } @else if $i == 12 {
+      width: 50%;
+    } @else if $i == 13 {
+      width: 54.1666666667%;
+    } @else if $i == 14 {
+      width: 58.3333333333%;
+    } @else if $i == 15 {
+      width: 62.5%;
+    } @else if $i == 16 {
+      width: 66.6666666667%;
+    } @else if $i == 17 {
+      width: 70.8333333333%;
+    } @else if $i == 18 {
+      width: 75%;
+    } @else if $i == 19 {
+      width: 79.1666666667%;
+    } @else if $i == 20 {
+      width: 83.3333333333%;
+    } @else if $i == 21 {
+      width: 87.5%;
+    } @else if $i == 22 {
+      width: 91.6666666667%;
+    } @else if $i == 23 {
+      width: 95.8333333333%;
+    } @else if $i == 24 {
+      width: 100%;
+    }
   }
 
   .sg-col-offset-#{$i} {
-    margin-left: (1 / 24 * $i * 100) * 1%;
+    @if $i == 0 {
+      margin-left: 0%;
+    } @else if $i == 1 {
+      margin-left: 4.1666666667%;
+    } @else if $i == 2 {
+      margin-left: 8.3333333333%;
+    } @else if $i == 3 {
+      margin-left: 12.5%;
+    } @else if $i == 4 {
+      margin-left: 16.6666666667%;
+    } @else if $i == 5 {
+      margin-left: 20.8333333333%;
+    } @else if $i == 6 {
+      margin-left: 25%;
+    } @else if $i == 7 {
+      margin-left: 29.1666666667%;
+    } @else if $i == 8 {
+      margin-left: 33.3333333333%;
+    } @else if $i == 9 {
+      margin-left: 37.5%;
+    } @else if $i == 10 {
+      margin-left: 41.6666666667%;
+    } @else if $i == 11 {
+      margin-left: 45.8333333333%;
+    } @else if $i == 12 {
+      margin-left: 50%;
+    } @else if $i == 13 {
+      margin-left: 54.1666666667%;
+    } @else if $i == 14 {
+      margin-left: 58.3333333333%;
+    } @else if $i == 15 {
+      margin-left: 62.5%;
+    } @else if $i == 16 {
+      margin-left: 66.6666666667%;
+    } @else if $i == 17 {
+      margin-left: 70.8333333333%;
+    } @else if $i == 18 {
+      margin-left: 75%;
+    } @else if $i == 19 {
+      margin-left: 79.1666666667%;
+    } @else if $i == 20 {
+      margin-left: 83.3333333333%;
+    } @else if $i == 21 {
+      margin-left: 87.5%;
+    } @else if $i == 22 {
+      margin-left: 91.6666666667%;
+    } @else if $i == 23 {
+      margin-left: 95.8333333333%;
+    } @else if $i == 24 {
+      margin-left: 100%;
+    }
   }
 
   .sg-col-pull-#{$i} {
-    position: relative;
-    right: (1 / 24 * $i * 100) * 1%;
+    @if $i == 0 {
+      right: 0%;
+    } @else if $i == 1 {
+      right: 4.1666666667%;
+    } @else if $i == 2 {
+      right: 8.3333333333%;
+    } @else if $i == 3 {
+      right: 12.5%;
+    } @else if $i == 4 {
+      right: 16.6666666667%;
+    } @else if $i == 5 {
+      right: 20.8333333333%;
+    } @else if $i == 6 {
+      right: 25%;
+    } @else if $i == 7 {
+      right: 29.1666666667%;
+    } @else if $i == 8 {
+      right: 33.3333333333%;
+    } @else if $i == 9 {
+      right: 37.5%;
+    } @else if $i == 10 {
+      right: 41.6666666667%;
+    } @else if $i == 11 {
+      right: 45.8333333333%;
+    } @else if $i == 12 {
+      right: 50%;
+    } @else if $i == 13 {
+      right: 54.1666666667%;
+    } @else if $i == 14 {
+      right: 58.3333333333%;
+    } @else if $i == 15 {
+      right: 62.5%;
+    } @else if $i == 16 {
+      right: 66.6666666667%;
+    } @else if $i == 17 {
+      right: 70.8333333333%;
+    } @else if $i == 18 {
+      right: 75%;
+    } @else if $i == 19 {
+      right: 79.1666666667%;
+    } @else if $i == 20 {
+      right: 83.3333333333%;
+    } @else if $i == 21 {
+      right: 87.5%;
+    } @else if $i == 22 {
+      right: 91.6666666667%;
+    } @else if $i == 23 {
+      right: 95.8333333333%;
+    } @else if $i == 24 {
+      right: 100%;
+    }
   }
 
   .sg-col-push-#{$i} {
-    position: relative;
-    left: (1 / 24 * $i * 100) * 1%;
+    @if $i == 0 {
+      left: 0%;
+    } @else if $i == 1 {
+      left: 4.1666666667%;
+    } @else if $i == 2 {
+      left: 8.3333333333%;
+    } @else if $i == 3 {
+      left: 12.5%;
+    } @else if $i == 4 {
+      left: 16.6666666667%;
+    } @else if $i == 5 {
+      left: 20.8333333333%;
+    } @else if $i == 6 {
+      left: 25%;
+    } @else if $i == 7 {
+      left: 29.1666666667%;
+    } @else if $i == 8 {
+      left: 33.3333333333%;
+    } @else if $i == 9 {
+      left: 37.5%;
+    } @else if $i == 10 {
+      left: 41.6666666667%;
+    } @else if $i == 11 {
+      left: 45.8333333333%;
+    } @else if $i == 12 {
+      left: 50%;
+    } @else if $i == 13 {
+      left: 54.1666666667%;
+    } @else if $i == 14 {
+      left: 58.3333333333%;
+    } @else if $i == 15 {
+      left: 62.5%;
+    } @else if $i == 16 {
+      left: 66.6666666667%;
+    } @else if $i == 17 {
+      left: 70.8333333333%;
+    } @else if $i == 18 {
+      left: 75%;
+    } @else if $i == 19 {
+      left: 79.1666666667%;
+    } @else if $i == 20 {
+      left: 83.3333333333%;
+    } @else if $i == 21 {
+      left: 87.5%;
+    } @else if $i == 22 {
+      left: 91.6666666667%;
+    } @else if $i == 23 {
+      left: 95.8333333333%;
+    } @else if $i == 24 {
+      left: 100%;
+    }
   }
 }
 
@@ -36,21 +234,21 @@
   }
   @for $i from 0 through 24 {
     .sg-col-xs-#{$i} {
-      width: (1 / 24 * $i * 100) * 1%;
+      width: percentage($i / 24);
     }
 
     .sg-col-xs-offset-#{$i} {
-      margin-left: (1 / 24 * $i * 100) * 1%;
+      margin-left: percentage($i / 24);
     }
 
     .sg-col-xs-pull-#{$i} {
       position: relative;
-      right: (1 / 24 * $i * 100) * 1%;
+      right: percentage($i / 24);
     }
 
     .sg-col-xs-push-#{$i} {
       position: relative;
-      left: (1 / 24 * $i * 100) * 1%;
+      left: percentage($i / 24);
     }
   }
 }
@@ -61,21 +259,21 @@
   }
   @for $i from 0 through 24 {
     .sg-col-sm-#{$i} {
-      width: (1 / 24 * $i * 100) * 1%;
+      width: percentage($i / 24);
     }
 
     .sg-col-sm-offset-#{$i} {
-      margin-left: (1 / 24 * $i * 100) * 1%;
+      margin-left: percentage($i / 24);
     }
 
     .sg-col-sm-pull-#{$i} {
       position: relative;
-      right: (1 / 24 * $i * 100) * 1%;
+      right: percentage($i / 24);
     }
 
     .sg-col-sm-push-#{$i} {
       position: relative;
-      left: (1 / 24 * $i * 100) * 1%;
+      left: percentage($i / 24);
     }
   }
 }
@@ -86,21 +284,21 @@
   }
   @for $i from 0 through 24 {
     .sg-col-md-#{$i} {
-      width: (1 / 24 * $i * 100) * 1%;
+      width: percentage($i / 24);
     }
 
     .sg-col-md-offset-#{$i} {
-      margin-left: (1 / 24 * $i * 100) * 1%;
+      margin-left: percentage($i / 24);
     }
 
     .sg-col-md-pull-#{$i} {
       position: relative;
-      right: (1 / 24 * $i * 100) * 1%;
+      right: percentage($i / 24);
     }
 
     .sg-col-md-push-#{$i} {
       position: relative;
-      left: (1 / 24 * $i * 100) * 1%;
+      left: percentage($i / 24);
     }
   }
 }
@@ -111,21 +309,21 @@
   }
   @for $i from 0 through 24 {
     .sg-col-lg-#{$i} {
-      width: (1 / 24 * $i * 100) * 1%;
+      width: percentage($i / 24);
     }
 
     .sg-col-lg-offset-#{$i} {
-      margin-left: (1 / 24 * $i * 100) * 1%;
+      margin-left: percentage($i / 24);
     }
 
     .sg-col-lg-pull-#{$i} {
       position: relative;
-      right: (1 / 24 * $i * 100) * 1%;
+      right: percentage($i / 24);
     }
 
     .sg-col-lg-push-#{$i} {
       position: relative;
-      left: (1 / 24 * $i * 100) * 1%;
+      left: percentage($i / 24);
     }
   }
 }
@@ -136,21 +334,21 @@
   }
   @for $i from 0 through 24 {
     .sg-col-xl-#{$i} {
-      width: (1 / 24 * $i * 100) * 1%;
+      width: percentage($i / 24);
     }
 
     .sg-col-xl-offset-#{$i} {
-      margin-left: (1 / 24 * $i * 100) * 1%;
+      margin-left: percentage($i / 24);
     }
 
     .sg-col-xl-pull-#{$i} {
       position: relative;
-      right: (1 / 24 * $i * 100) * 1%;
+      right: percentage($i / 24);
     }
 
     .sg-col-xl-push-#{$i} {
       position: relative;
-      left: (1 / 24 * $i * 100) * 1%;
+      left: percentage($i / 24);
     }
   }
 }

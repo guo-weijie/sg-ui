@@ -1,27 +1,27 @@
 @import 'mixins/mixins';
-@import 'common/var';
+
 @import 'descriptions-item';
 
 @include b(descriptions) {
   box-sizing: border-box;
-  font-size: $--font-size-base;
-  color: $--color-text-primary;
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
 
   @include e(header) {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: $--descriptions-header-margin-bottom;
+    margin-bottom: var(--descriptions-header-margin-bottom);
 
     @include e(title) {
-      font-size: $--descriptions-title-font-size;
+      font-size: var(--descriptions-title-font-size);
       font-weight: bold;
     }
   }
 
   @include e(body) {
-    color: $--color-text-regular;
-    background-color: $--color-white;
+    color: var(--color-text-regular);
+    background-color: var(--color-white);
 
     .sg-descriptions__table {
       border-collapse: collapse;
@@ -52,7 +52,7 @@
   .is-bordered {
     table-layout: auto;
     .sg-descriptions-item__cell {
-      border: $--descriptions-table-border;
+      border: var(--descriptions-table-border);
       padding: 12px 10px;
     }
   }

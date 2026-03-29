@@ -1,146 +1,90 @@
 @import 'mixins/mixins';
-@import 'common/var';
 
 @mixin genTheme($backgroundColorWeight, $borderColorWeight, $fontColorWeight, $hoverColorWeight) {
-  background-color: mix($--tag-primary-color-fallback, $--color-white-fallback, $backgroundColorWeight);
-  border-color: mix($--tag-primary-color-fallback, $--color-white-fallback, $borderColorWeight);
-  color: mix($--tag-primary-color-fallback, $--color-white-fallback, $fontColorWeight);
-  @supports (background: color-mix(in srgb, white 50%, transparent)) {
-    background-color: myMix($--tag-primary-color, $--color-white, $backgroundColorWeight);
-    border-color: myMix($--tag-primary-color, $--color-white, $borderColorWeight);
-    color: myMix($--tag-primary-color, $--color-white, $fontColorWeight);
-  }
+  background-color: color-mix(in srgb, var(--tag-primary-color) $backgroundColorWeight, var(--color-white));
+  border-color: color-mix(in srgb, var(--tag-primary-color) $borderColorWeight, var(--color-white));
+  color: var(--tag-primary-color);
 
   @include when(hit) {
-    border-color: $--tag-primary-color;
+    border-color: var(--tag-primary-color);
   }
 
   .sg-tag__close {
-    color: mix($--tag-primary-color-fallback, $--color-white-fallback, $fontColorWeight);
-    @supports (background: color-mix(in srgb, white 50%, transparent)) {
-      color: myMix($--tag-primary-color, $--color-white, $fontColorWeight);
-    }
+    color: var(--tag-primary-color);
     &:hover {
-      color: $--color-white;
-      background-color: mix($--tag-primary-color-fallback, $--color-white-fallback, $hoverColorWeight);
-      @supports (background: color-mix(in srgb, white 50%, transparent)) {
-        background-color: myMix($--tag-primary-color, $--color-white, $hoverColorWeight);
-      }
+      color: var(--color-white);
+      background-color: color-mix(in srgb, var(--tag-primary-color) $hoverColorWeight, var(--color-white));
     }
   }
 
   &.sg-tag--info {
-    background-color: mix($--tag-info-color-fallback, $--color-white-fallback, $backgroundColorWeight);
-    border-color: mix($--tag-info-color-fallback, $--color-white-fallback, $borderColorWeight);
-    color: mix($--tag-info-color-fallback, $--color-white-fallback, $fontColorWeight);
-    @supports (background: color-mix(in srgb, white 50%, transparent)) {
-      background-color: myMix($--tag-info-color, $--color-white, $backgroundColorWeight);
-      border-color: myMix($--tag-info-color, $--color-white, $borderColorWeight);
-      color: myMix($--tag-info-color, $--color-white, $fontColorWeight);
-    }
+    background-color: color-mix(in srgb, var(--tag-info-color) $backgroundColorWeight, var(--color-white));
+    border-color: color-mix(in srgb, var(--tag-info-color) $borderColorWeight, var(--color-white));
+    color: var(--tag-info-color);
 
     @include when(hit) {
-      border-color: $--tag-info-color;
+      border-color: var(--tag-info-color);
     }
 
     .sg-tag__close {
-      color: mix($--tag-info-color-fallback, $--color-white-fallback, $fontColorWeight);
-      @supports (background: color-mix(in srgb, white 50%, transparent)) {
-        color: myMix($--tag-info-color, $--color-white, $fontColorWeight);
-      }
+      color: var(--tag-info-color);
       &:hover {
-        color: $--color-white;
-        background-color: mix($--tag-info-color-fallback, $--color-white-fallback, $hoverColorWeight);
-        @supports (background: color-mix(in srgb, white 50%, transparent)) {
-          background-color: myMix($--tag-info-color, $--color-white, $hoverColorWeight);
-        }
+        color: var(--color-white);
+        background-color: color-mix(in srgb, var(--tag-info-color) $hoverColorWeight, var(--color-white));
       }
     }
   }
 
   &.sg-tag--success {
-    background-color: mix($--tag-success-color-fallback, $--color-white-fallback, $backgroundColorWeight);
-    border-color: mix($--tag-success-color-fallback, $--color-white-fallback, $borderColorWeight);
-    color: mix($--tag-success-color-fallback, $--color-white-fallback, $fontColorWeight);
-    @supports (background: color-mix(in srgb, white 50%, transparent)) {
-      background-color: myMix($--tag-success-color, $--color-white, $backgroundColorWeight);
-      border-color: myMix($--tag-success-color, $--color-white, $borderColorWeight);
-      color: myMix($--tag-success-color, $--color-white, $fontColorWeight);
-    }
+    background-color: color-mix(in srgb, var(--tag-success-color) $backgroundColorWeight, var(--color-white));
+    border-color: color-mix(in srgb, var(--tag-success-color) $borderColorWeight, var(--color-white));
+    color: var(--tag-success-color);
 
     @include when(hit) {
-      border-color: $--tag-success-color;
+      border-color: var(--tag-success-color);
     }
 
     .sg-tag__close {
-      color: mix($--tag-success-color-fallback, $--color-white-fallback, $fontColorWeight);
-      @supports (background: color-mix(in srgb, white 50%, transparent)) {
-        color: myMix($--tag-success-color, $--color-white, $fontColorWeight);
-      }
+      color: var(--tag-success-color);
       &:hover {
-        color: $--color-white;
-        background-color: mix($--tag-success-color-fallback, $--color-white-fallback, $hoverColorWeight);
-        @supports (background: color-mix(in srgb, white 50%, transparent)) {
-          background-color: myMix($--tag-success-color, $--color-white, $hoverColorWeight);
-        }
+        color: var(--color-white);
+        background-color: color-mix(in srgb, var(--tag-success-color) $hoverColorWeight, var(--color-white));
       }
     }
   }
 
   &.sg-tag--warning {
-    background-color: mix($--tag-warning-color-fallback, $--color-white-fallback, $backgroundColorWeight);
-    border-color: mix($--tag-warning-color-fallback, $--color-white-fallback, $borderColorWeight);
-    color: mix($--tag-warning-color-fallback, $--color-white-fallback, $fontColorWeight);
-    @supports (background: color-mix(in srgb, white 50%, transparent)) {
-      background-color: myMix($--tag-warning-color, $--color-white, $backgroundColorWeight);
-      border-color: myMix($--tag-warning-color, $--color-white, $borderColorWeight);
-      color: myMix($--tag-warning-color, $--color-white, $fontColorWeight);
-    }
+    background-color: color-mix(in srgb, var(--tag-warning-color) $backgroundColorWeight, var(--color-white));
+    border-color: color-mix(in srgb, var(--tag-warning-color) $borderColorWeight, var(--color-white));
+    color: var(--tag-warning-color);
 
     @include when(hit) {
-      border-color: $--tag-warning-color;
+      border-color: var(--tag-warning-color);
     }
 
     .sg-tag__close {
-      color: mix($--tag-warning-color-fallback, $--color-white-fallback, $fontColorWeight);
-      @supports (background: color-mix(in srgb, white 50%, transparent)) {
-        color: myMix($--tag-warning-color, $--color-white, $fontColorWeight);
-      }
+      color: var(--tag-warning-color);
       &:hover {
-        color: $--color-white;
-        background-color: mix($--tag-warning-color-fallback, $--color-white-fallback, $hoverColorWeight);
-        @supports (background: color-mix(in srgb, white 50%, transparent)) {
-          background-color: myMix($--tag-warning-color, $--color-white, $hoverColorWeight);
-        }
+        color: var(--color-white);
+        background-color: color-mix(in srgb, var(--tag-warning-color) $hoverColorWeight, var(--color-white));
       }
     }
   }
 
   &.sg-tag--danger {
-    background-color: mix($--tag-danger-color-fallback, $--color-white-fallback, $backgroundColorWeight);
-    border-color: mix($--tag-danger-color-fallback, $--color-white-fallback, $borderColorWeight);
-    color: mix($--tag-danger-color-fallback, $--color-white-fallback, $fontColorWeight);
-    @supports (background: color-mix(in srgb, white 50%, transparent)) {
-      background-color: myMix($--tag-danger-color, $--color-white, $backgroundColorWeight);
-      border-color: myMix($--tag-danger-color, $--color-white, $borderColorWeight);
-      color: myMix($--tag-danger-color, $--color-white, $fontColorWeight);
-    }
+    background-color: color-mix(in srgb, var(--tag-danger-color) $backgroundColorWeight, var(--color-white));
+    border-color: color-mix(in srgb, var(--tag-danger-color) $borderColorWeight, var(--color-white));
+    color: var(--tag-danger-color);
 
     @include when(hit) {
-      border-color: $--tag-danger-color;
+      border-color: var(--tag-danger-color);
     }
 
     .sg-tag__close {
-      color: mix($--tag-danger-color-fallback, $--color-white-fallback, $fontColorWeight);
-      @supports (background: color-mix(in srgb, white 50%, transparent)) {
-        color: myMix($--tag-danger-color, $--color-white, $fontColorWeight);
-      }
+      color: var(--tag-danger-color);
       &:hover {
-        color: $--color-white;
-        background-color: mix($--tag-danger-color-fallback, $--color-white-fallback, $hoverColorWeight);
-        @supports (background: color-mix(in srgb, white 50%, transparent)) {
-          background-color: myMix($--tag-danger-color, $--color-white, $hoverColorWeight);
-        }
+        color: var(--color-white);
+        background-color: color-mix(in srgb, var(--tag-danger-color) $hoverColorWeight, var(--color-white));
       }
     }
   }
@@ -150,13 +94,13 @@
   @include genTheme(10%, 20%, 100%, 100%);
   display: inline-block;
   height: 32px;
-  padding: $--tag-padding;
+  padding: var(--tag-padding);
   line-height: 30px;
-  font-size: $--tag-font-size;
-  color: $--tag-primary-color;
+  font-size: var(--tag-font-size);
+  color: var(--tag-primary-color);
   border-width: 1px;
   border-style: solid;
-  border-radius: $--tag-border-radius;
+  border-radius: var(--tag-border-radius);
   box-sizing: border-box;
   white-space: nowrap;
 
@@ -197,7 +141,7 @@
 
   @include m(small) {
     height: 32px;
-    padding: $--tag-padding;
+    padding: var(--tag-padding);
     line-height: 30px;
 
     .sg-icon-close {

@@ -1,5 +1,4 @@
 @import 'mixins/mixins';
-@import 'common/var';
 
 @include b(scrollbar) {
   overflow: hidden;
@@ -34,11 +33,11 @@
     height: 0;
     cursor: pointer;
     border-radius: inherit;
-    background-color: $--scrollbar-background-color;
+    background-color: var(--scrollbar-background-color);
     transition: 0.3s background-color;
 
     &:hover {
-      background-color: $--scrollbar-hover-background-color;
+      background-color: var(--scrollbar-hover-background-color);
     }
   }
 

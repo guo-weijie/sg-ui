@@ -1,5 +1,4 @@
 @import 'mixins/mixins';
-@import 'common/var';
 
 @include b(tree-select) {
   height: 32px;
@@ -25,28 +24,28 @@
 
   .vue-treeselect--open .vue-treeselect__control {
     outline: none;
-    // border-color: $--input-focus-border!important;
+    // border-color: var(--input-focus-border)!important;
   }
 
   .vue-treeselect__checkbox {
-    border-color: $--color-primary;
+    border-color: var(--color-primary);
   }
   .vue-treeselect__option--highlight .vue-treeselect__checkbox--checked {
-    background-color: $--color-primary;
-    border-color: $--color-primary;
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
   }
 
   .vue-treeselect__checkbox--checked {
-    background-color: $--color-primary;
-    border-color: $--color-primary;
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
   }
   .vue-treeselect__option--highlight .vue-treeselect__checkbox--indeterminate,
   .vue-treeselect__checkbox--indeterminate {
-    background: $--color-primary;
+    background: var(--color-primary);
   }
 
   .vue-treeselect__multi-value-item {
-    background: $--color-primary;
+    background: var(--color-primary);
     color: #fff;
   }
 
@@ -62,7 +61,7 @@
   .vue-treeselect__input-container > input,
   .vue-treeselect__menu,
   .vue-treeselect__multi-value-item {
-    font-size: $--tree-select-font-size-primary;
+    font-size: var(--tree-select-font-size-primary);
   }
   .multipleTags {
     overflow: hidden;
@@ -78,7 +77,7 @@
   .vue-treeselect__input-container > input,
   .vue-treeselect__menu,
   .vue-treeselect__multi-value-item {
-    font-size: $--tree-select-font-size-medium;
+    font-size: var(--tree-select-font-size-medium);
   }
   .multipleTags {
     overflow: hidden;
@@ -94,7 +93,7 @@
   .vue-treeselect__input-container > input,
   .vue-treeselect__menu,
   .vue-treeselect__multi-value-item {
-    font-size: $--tree-select-font-size-small;
+    font-size: var(--tree-select-font-size-small);
   }
   .multipleTags {
     overflow: hidden;
@@ -110,7 +109,7 @@
   .vue-treeselect__input-container > input,
   .vue-treeselect__menu,
   .vue-treeselect__multi-value-item {
-    font-size: $--tree-select-font-size-mini;
+    font-size: var(--tree-select-font-size-mini);
   }
   .multipleTags {
     overflow: hidden;

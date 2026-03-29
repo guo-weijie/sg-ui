@@ -41,10 +41,3 @@
 @function hitAllSpecialNestRule($selector) {
   @return containsModifier($selector) or containWhenFlag($selector) or containPseudoClass($selector);
 }
-
-/**
- * 把 sass 的 mix 函数转为 css3 原生的 color 函数
- */
-@function myMix($color1, $color2, $weight: 50%) {
-  @return color-mix(in sRGB, $color1 $weight, $color2);
-}

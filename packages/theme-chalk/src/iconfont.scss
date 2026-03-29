@@ -1,13 +1,11 @@
-@import 'common/var';
-
 @font-face {
   font-family: 'iconfont'; /* Project id 4841030 */
   src:
-    url('#{$--font-path}/iconfont.woff2') format('woff2'),
-    url('#{$--font-path}/iconfont.woff') format('woff'),
-    url('#{$--font-path}/iconfont.ttf') format('truetype');
+    url('fonts/iconfont.woff2') format('woff2'),
+    url('fonts/iconfont.woff') format('woff'),
+    url('fonts/iconfont.ttf') format('truetype');
   font-weight: normal;
-  font-display: $--font-display;
+  font-display: var(--font-display);
   font-style: normal;
 }
 

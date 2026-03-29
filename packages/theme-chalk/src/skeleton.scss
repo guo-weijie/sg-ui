@@ -1,13 +1,13 @@
 @import 'mixins/mixins';
-@import 'common/var';
-@import "./skeleton-item.scss";
+
+@import './skeleton-item.scss';
 
 @mixin skeleton-color() {
   background: linear-gradient(
     90deg,
-    $--skeleton-color 25%,
-    $--skeleton-to-color 37%,
-    $--skeleton-color 63%
+    var(--skeleton-color) 25%,
+    var(--skeleton-to-color) 37%,
+    var(--skeleton-color) 63%
   );
   background-size: 400% 100%;
   animation: #{$namespace}-skeleton-loading 1.4s ease infinite;
@@ -28,7 +28,7 @@
     @include e($unit) {
       height: 16px;
       margin-top: 16px;
-      background: $--skeleton-color;
+      background: var(--skeleton-color);
     }
   }
 

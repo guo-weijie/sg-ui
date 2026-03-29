@@ -1,13 +1,13 @@
 @import 'mixins/mixins';
-@import 'common/var';
+
 @import 'button';
 @import './popper';
 
 @include b(dropdown) {
   display: inline-block;
   position: relative;
-  color: $--color-text-regular;
-  font-size: $--font-size-base;
+  color: var(--color-text-regular);
+  font-size: var(--font-size-base);
 
   .sg-button-group {
     display: block;
@@ -32,17 +32,11 @@
       top: $gap;
       bottom: $gap;
       left: 0;
-      background: mix(white, transparent, 50%);
-      @supports (background: color-mix(in srgb, white 50%, transparent)) {
-        background: myMix(white, transparent, 50%);
-      }
+      background: color-mix(in srgb, white, transparent 50%);
     }
 
     &.sg-button--default::before {
-      background: mix($--button-default-border-color-fallback, transparent, 50%);
-      @supports (background: color-mix(in srgb, white 50%, transparent)) {
-        background: myMix($--button-default-border-color, transparent, 50%);
-      }
+      background: color-mix(in srgb, var(--button-default-border-color), transparent 50%);
     }
 
     &:hover {
@@ -71,7 +65,7 @@
 
   [disabled] {
     cursor: not-allowed;
-    color: $--font-color-disabled-base;
+    color: var(--font-color-disabled-base);
   }
 }
 
@@ -82,28 +76,24 @@
   z-index: 10;
   padding: 10px 0;
   margin: 5px 0;
-  background-color: $--color-white;
-  border: 1px solid $--border-color-lighter;
-  border-radius: $--border-radius-base;
-  box-shadow: $--dropdown-menu-box-shadow;
+  background-color: var(--color-white);
+  border: 1px solid var(--border-color-lighter);
+  border-radius: var(--border-radius-base);
+  box-shadow: var(--dropdown-menu-box-shadow);
 
   @include e(item) {
     list-style: none;
     line-height: 36px;
     padding: 0 20px;
     margin: 0;
-    font-size: $--font-size-base;
-    color: $--color-text-regular;
+    font-size: var(--font-size-base);
+    color: var(--color-text-regular);
     cursor: pointer;
     outline: none;
     &:not(.is-disabled):hover,
     &:focus {
-      background-color: $--dropdown-menuItem-hover-fill-fallback;
-      color: $--dropdown-menuItem-hover-color-fallback;
-      @supports (background: color-mix(in srgb, white 50%, transparent)) {
-        background-color: $--dropdown-menuItem-hover-fill;
-        color: $--dropdown-menuItem-hover-color;
-      }
+      background-color: var(--dropdown-menuItem-hover-fill);
+      color: var(--dropdown-menuItem-hover-color);
     }
 
     i {
@@ -115,20 +105,20 @@
 
       position: relative;
       margin-top: $divided-offset;
-      border-top: 1px solid $--border-color-lighter;
+      border-top: 1px solid var(--border-color-lighter);
 
       &:before {
         content: '';
         height: $divided-offset;
         display: block;
         margin: 0 -20px;
-        background-color: $--color-white;
+        background-color: var(--color-white);
       }
     }
 
     @include when(disabled) {
       cursor: default;
-      color: $--font-color-disabled-base;
+      color: var(--font-color-disabled-base);
       pointer-events: none;
     }
   }

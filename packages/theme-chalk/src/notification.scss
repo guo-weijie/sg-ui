@@ -1,17 +1,22 @@
-@import "mixins/mixins";
-@import "common/var";
+@import 'mixins/mixins';
 
 @include b(notification) {
   display: flex;
-  width: $--notification-width;
-  padding: $--notification-padding;
-  border-radius: $--notification-radius;
+  width: var(--notification-width);
+  padding: var(--notification-padding);
+  border-radius: var(--notification-radius);
   box-sizing: border-box;
-  border: 1px solid $--notification-border-color;
+  border: 1px solid var(--notification-border-color);
   position: fixed;
-  background-color: $--color-white;
-  box-shadow: $--notification-shadow;
-  transition: opacity .3s, transform .3s, left .3s, right .3s, top 0.4s, bottom .3s;
+  background-color: var(--color-white);
+  box-shadow: var(--notification-shadow);
+  transition:
+    opacity 0.3s,
+    transform 0.3s,
+    left 0.3s,
+    right 0.3s,
+    top 0.4s,
+    bottom 0.3s;
   overflow: hidden;
 
   &.right {
@@ -23,22 +28,22 @@
   }
 
   @include e(group) {
-    margin-left: $--notification-group-margin-left;
-    margin-right: $--notification-group-margin-right;
+    margin-left: var(--notification-group-margin-left);
+    margin-right: var(--notification-group-margin-right);
   }
 
   @include e(title) {
     font-weight: bold;
-    font-size: $--notification-title-font-size;
-    color: $--notification-title-color;
+    font-size: var(--notification-title-font-size);
+    color: var(--notification-title-color);
     margin: 0;
   }
 
   @include e(content) {
-    font-size: $--notification-content-font-size;
+    font-size: var(--notification-content-font-size);
     line-height: 21px;
     margin: 6px 0 0 0;
-    color: $--notification-content-color;
+    color: var(--notification-content-color);
     text-align: justify;
 
     p {
@@ -47,9 +52,9 @@
   }
 
   @include e(icon) {
-    height: $--notification-icon-size;
-    width: $--notification-icon-size;
-    font-size: $--notification-icon-size;
+    height: var(--notification-icon-size);
+    width: var(--notification-icon-size);
+    font-size: var(--notification-icon-size);
   }
 
   @include e(closeBtn) {
@@ -57,28 +62,28 @@
     top: 18px;
     right: 15px;
     cursor: pointer;
-    color: $--notification-close-color;
-    font-size: $--notification-close-font-size;
+    color: var(--notification-close-color);
+    font-size: var(--notification-close-font-size);
 
     &:hover {
-      color: $--notification-close-hover-color;
+      color: var(--notification-close-hover-color);
     }
   }
 
   .sg-icon-success {
-    color: $--notification-success-icon-color;
+    color: var(--notification-success-icon-color);
   }
 
   .sg-icon-error {
-    color: $--notification-danger-icon-color;
+    color: var(--notification-danger-icon-color);
   }
 
   .sg-icon-info {
-    color: $--notification-info-icon-color;
+    color: var(--notification-info-icon-color);
   }
 
   .sg-icon-warning {
-    color: $--notification-warning-icon-color;
+    color: var(--notification-warning-icon-color);
   }
 }
 

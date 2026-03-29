@@ -1,32 +1,31 @@
 @import 'mixins/mixins';
-@import 'common/var';
 
 @include b(card) {
-  border-radius: $--card-border-radius;
-  border: 1px solid $--card-border-color;
-  background-color: $--color-white;
+  border-radius: var(--card-border-radius);
+  border: 1px solid var(--card-border-color);
+  background-color: var(--color-white);
   overflow: hidden;
-  color: $--color-text-primary;
+  color: var(--color-text-primary);
   transition: 0.3s;
 
   @include when(always-shadow) {
-    box-shadow: $--box-shadow-light;
+    box-shadow: var(--box-shadow-light);
   }
 
   @include when(hover-shadow) {
     &:hover,
     &:focus {
-      box-shadow: $--box-shadow-light;
+      box-shadow: var(--box-shadow-light);
     }
   }
 
   @include e(header) {
-    padding: $--card-padding;
-    border-bottom: 1px solid $--card-border-color;
+    padding: var(--card-padding);
+    border-bottom: 1px solid var(--card-border-color);
     box-sizing: border-box;
   }
 
   @include e(body) {
-    padding: $--card-padding;
+    padding: var(--card-padding);
   }
 }

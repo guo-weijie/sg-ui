@@ -1,8 +1,7 @@
-@import "mixins/mixins";
-@import "common/var";
+@import 'mixins/mixins';
 
 @include b(anchor) {
-    .sg-anchor-item {
-        cursor: pointer;
-    }
+  .sg-anchor-item {
+    cursor: pointer;
+  }
 }

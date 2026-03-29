@@ -1,13 +1,13 @@
 @import 'mixins/mixins';
 @import 'mixins/utils';
-@import 'common/var';
+
 @import 'input';
 @import 'button';
 @import 'checkbox';
 @import 'checkbox-group';
 
 @include b(transfer) {
-  font-size: $--font-size-base;
+  font-size: var(--font-size-base);
 
   @include e(buttons) {
     display: inline-block;
@@ -19,23 +19,23 @@
     margin: 0 auto;
     padding: 10px !important;
     border-radius: 50%;
-    color: $--color-white;
-    background-color: $--color-primary;
+    color: var(--color-white);
+    background-color: var(--color-primary);
     font-size: 0;
 
     @include when(with-texts) {
-      border-radius: $--border-radius-base;
+      border-radius: var(--border-radius-base);
     }
 
     @include when(disabled) {
-      border: $--border-base;
-      background-color: $--hover-background-color-base;
-      color: $--color-text-placeholder;
+      border: var(--border-base);
+      background-color: var(--background-color-base);
+      color: var(--color-text-placeholder);
 
       &:hover {
-        border: $--border-base;
-        background-color: $--hover-background-color-base;
-        color: $--color-text-placeholder;
+        border: var(--border-base);
+        background-color: var(--background-color-base);
+        color: var(--color-text-placeholder);
       }
     }
 
@@ -75,22 +75,22 @@
 }
 
 @include b(transfer-panel) {
-  border: 1px solid $--transfer-border-color;
-  border-radius: $--transfer-border-radius;
+  border: 1px solid var(--transfer-border-color);
+  border-radius: var(--transfer-border-radius);
   overflow: hidden;
-  background: $--color-white;
+  background: var(--color-white);
   display: inline-block;
   vertical-align: middle;
-  width: $--transfer-panel-width;
+  width: var(--transfer-panel-width);
   max-height: 100%;
   box-sizing: border-box;
   position: relative;
 
   @include e(body) {
-    height: $--transfer-panel-body-height;
+    height: var(--transfer-panel-body-height);
 
     @include when(with-footer) {
-      padding-bottom: $--transfer-panel-footer-height;
+      padding-bottom: var(--transfer-panel-footer-height);
     }
   }
 
@@ -98,19 +98,19 @@
     margin: 0;
     padding: 6px 0;
     list-style: none;
-    height: $--transfer-panel-body-height;
+    height: var(--transfer-panel-body-height);
     overflow: auto;
     box-sizing: border-box;
 
     @include when(filterable) {
-      height: #{$--transfer-panel-body-height - $--transfer-filter-height - 20px};
+      height: calc(var(--transfer-panel-body-height) - var(--transfer-filter-height) - 20px);
       padding-top: 0;
     }
   }
 
   @include e(item) {
-    height: $--transfer-item-height;
-    line-height: $--transfer-item-height;
+    height: var(--transfer-item-height);
+    line-height: var(--transfer-item-height);
     padding-left: 15px;
     display: block !important;
 
@@ -119,11 +119,11 @@
     }
 
     &.sg-checkbox {
-      color: $--color-text-regular;
+      color: var(--color-text-regular);
     }
 
     &:hover {
-      color: $--color-primary;
+      color: var(--color-primary);
     }
 
     &.sg-checkbox .sg-checkbox__label {
@@ -132,7 +132,7 @@
       display: block;
       box-sizing: border-box;
       padding-left: 24px;
-      line-height: $--transfer-item-height;
+      line-height: var(--transfer-item-height);
     }
 
     .sg-checkbox__input {
@@ -149,12 +149,12 @@
     width: auto;
 
     .sg-input__inner {
-      height: $--transfer-filter-height;
+      height: var(--transfer-filter-height);
       width: 100%;
       font-size: 12px;
       display: inline-block;
       box-sizing: border-box;
-      border-radius: #{$--transfer-filter-height / 2};
+      border-radius: calc(var(--transfer-filter-height) / 2);
       padding-right: 10px;
       padding-left: 30px;
     }
@@ -169,14 +169,14 @@
   }
 
   .sg-transfer-panel__header {
-    height: $--transfer-panel-header-height;
-    line-height: $--transfer-panel-header-height;
-    background: $--transfer-panel-header-background-color;
+    height: var(--transfer-panel-header-height);
+    line-height: var(--transfer-panel-header-height);
+    background: var(--transfer-panel-header-background-color);
     margin: 0;
     padding-left: 15px;
-    border-bottom: 1px solid $--transfer-border-color;
+    border-bottom: 1px solid var(--transfer-border-color);
     box-sizing: border-box;
-    color: $--color-black;
+    color: var(--color-black);
 
     .sg-checkbox {
       display: block;
@@ -184,13 +184,13 @@
 
       .sg-checkbox__label {
         font-size: 16px;
-        color: $--color-text-primary;
+        color: var(--color-text-primary);
         font-weight: normal;
 
         span {
           position: absolute;
           right: 15px;
-          color: $--color-text-secondary;
+          color: var(--color-text-secondary);
           font-size: 12px;
           font-weight: normal;
         }
@@ -199,30 +199,30 @@
   }
 
   .sg-transfer-panel__footer {
-    height: $--transfer-panel-footer-height;
-    background: $--color-white;
+    height: var(--transfer-panel-footer-height);
+    background: var(--color-white);
     margin: 0;
     padding: 0;
-    border-top: 1px solid $--transfer-border-color;
+    border-top: 1px solid var(--transfer-border-color);
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    z-index: $--index-normal;
+    z-index: var(--index-normal);
     @include utils-vertical-center;
 
     .sg-checkbox {
       padding-left: 20px;
-      color: $--color-text-regular;
+      color: var(--color-text-regular);
     }
   }
 
   .sg-transfer-panel__empty {
     margin: 0;
-    height: $--transfer-item-height;
-    line-height: $--transfer-item-height;
+    height: var(--transfer-item-height);
+    line-height: var(--transfer-item-height);
     padding: 6px 15px 0;
-    color: $--color-text-secondary;
+    color: var(--color-text-secondary);
     text-align: center;
   }
 

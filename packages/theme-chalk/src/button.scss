@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import 'common/var';
 @import 'mixins/button';
 @import 'mixins/mixins';
 @import 'mixins/utils';
@@ -9,49 +8,39 @@
   line-height: 1;
   white-space: nowrap;
   cursor: pointer;
-  background: $--button-default-background-color;
-  border: $--border-base;
-  border-color: $--button-default-border-color;
-  color: $--button-default-font-color;
+  background: var(--button-default-background-color);
+  border: var(--border-base);
+  border-color: var(--button-default-border-color);
+  color: var(--button-default-font-color);
   -webkit-appearance: none;
   text-align: center;
   box-sizing: border-box;
   outline: none;
   margin: 0;
   transition: 0.1s;
-  font-weight: $--button-font-weight;
+  font-weight: var(--button-font-weight);
   @include utils-user-select(none);
   & + & {
     margin-left: var(--base-value);
   }
 
   @include button-size(
-    $--button-padding-vertical,
-    $--button-padding-horizontal,
-    $--button-font-size,
-    $--button-border-radius
+    var(--button-padding-vertical),
+    var(--button-padding-horizontal),
+    var(--button-font-size),
+    var(--button-border-radius)
   );
 
   &:hover,
   &:focus {
-    color: $--color-primary;
-    border-color: $--color-primary-light-7-fallback;
-    background-color: $--color-primary-light-9-fallback;
-    @supports (background: color-mix(in srgb, white 50%, transparent)) {
-      border-color: $--color-primary-light-7;
-      background-color: $--color-primary-light-9;
-    }
+    color: var(--color-primary);
+    border-color: var(--color-primary-light-7);
+    background-color: var(--color-primary-light-9);
   }
 
   &:active {
-    color: mix($--color-black-fallback, $--color-primary-fallback, $--button-active-shade-percent);
-    @supports (background: color-mix(in srgb, white 50%, transparent)) {
-      color: myMix($--color-black, $--color-primary, $--button-active-shade-percent);
-    }
-    border-color: mix($--color-black-fallback, $--color-primary-fallback, $--button-active-shade-percent);
-    @supports (background: color-mix(in srgb, white 50%, transparent)) {
-      border-color: myMix($--color-black, $--color-primary, $--button-active-shade-percent);
-    }
+    color: color-mix(in srgb, var(--color-black) var(--button-active-shade-percent), var(--color-primary));
+    border-color: color-mix(in srgb, var(--color-black) var(--button-active-shade-percent), var(--color-primary));
     outline: none;
   }
 
@@ -68,45 +57,33 @@
   @include when(plain) {
     &:hover,
     &:focus {
-      background: $--color-white;
-      border-color: $--color-primary;
-      color: $--color-primary;
+      background: var(--color-white);
+      border-color: var(--color-primary);
+      color: var(--color-primary);
     }
 
     &:active {
-      background: $--color-white;
-      color: mix($--color-black-fallback, $--color-primary-fallback, $--button-active-shade-percent);
-      @supports (background: color-mix(in srgb, white 50%, transparent)) {
-        color: myMix($--color-black, $--color-primary, $--button-active-shade-percent);
-      }
-      border-color: mix($--color-black-fallback, $--color-primary-fallback, $--button-active-shade-percent);
-      @supports (background: color-mix(in srgb, white 50%, transparent)) {
-        border-color: myMix($--color-black, $--color-primary, $--button-active-shade-percent);
-      }
+      background: var(--color-white);
+      color: color-mix(in srgb, var(--color-black) var(--button-active-shade-percent), var(--color-primary));
+      border-color: color-mix(in srgb, var(--color-black) var(--button-active-shade-percent), var(--color-primary));
       outline: none;
     }
   }
 
   @include when(active) {
-    color: mix($--color-black-fallback, $--color-primary-fallback, $--button-active-shade-percent);
-    @supports (background: color-mix(in srgb, white 50%, transparent)) {
-      color: myMix($--color-black, $--color-primary, $--button-active-shade-percent);
-    }
-    border-color: mix($--color-black-fallback, $--color-primary-fallback, $--button-active-shade-percent);
-    @supports (background: color-mix(in srgb, white 50%, transparent)) {
-      border-color: myMix($--color-black, $--color-primary, $--button-active-shade-percent);
-    }
+    color: color-mix(in srgb, var(--color-black) var(--button-active-shade-percent), var(--color-primary));
+    border-color: color-mix(in srgb, var(--color-black) var(--button-active-shade-percent), var(--color-primary));
   }
 
   @include when(disabled) {
     &,
     &:hover,
     &:focus {
-      color: $--button-disabled-font-color;
+      color: var(--button-disabled-font-color);
       cursor: not-allowed;
       background-image: none;
-      background-color: $--button-disabled-background-color;
-      border-color: $--button-disabled-border-color;
+      background-color: var(--button-disabled-background-color);
+      border-color: var(--button-disabled-border-color);
     }
 
     &.sg-button--text {
@@ -117,9 +94,9 @@
       &,
       &:hover,
       &:focus {
-        background-color: $--color-white;
-        border-color: $--button-disabled-border-color;
-        color: $--button-disabled-font-color;
+        background-color: var(--color-white);
+        border-color: var(--button-disabled-border-color);
+        color: var(--button-disabled-font-color);
       }
     }
   }
@@ -146,111 +123,90 @@
   }
   @include when(circle) {
     border-radius: 50%;
-    padding: $--button-padding-vertical;
+    padding: var(--button-padding-vertical);
   }
   @include m(primary) {
     @include button-variant(
-      $--button-primary-font-color,
-      $--button-primary-background-color,
-      $--button-primary-border-color,
-      $--button-primary-font-color-fallback,
-      $--button-primary-background-color-fallback,
-      $--button-primary-border-color-fallback
+      var(--button-primary-font-color),
+      var(--button-primary-background-color),
+      var(--button-primary-border-color)
     );
   }
   @include m(success) {
     @include button-variant(
-      $--button-success-font-color,
-      $--button-success-background-color,
-      $--button-success-border-color,
-      $--button-success-font-color-fallback,
-      $--button-success-background-color-fallback,
-      $--button-success-border-color-fallback
+      var(--button-success-font-color),
+      var(--button-success-background-color),
+      var(--button-success-border-color)
     );
   }
   @include m(warning) {
     @include button-variant(
-      $--button-warning-font-color,
-      $--button-warning-background-color,
-      $--button-warning-border-color,
-      $--button-warning-font-color-fallback,
-      $--button-warning-background-color-fallback,
-      $--button-warning-border-color-fallback
+      var(--button-warning-font-color),
+      var(--button-warning-background-color),
+      var(--button-warning-border-color)
     );
   }
   @include m(danger) {
     @include button-variant(
-      $--button-danger-font-color,
-      $--button-danger-background-color,
-      $--button-danger-border-color,
-      $--button-danger-font-color-fallback,
-      $--button-danger-background-color-fallback,
-      $--button-danger-border-color-fallback
+      var(--button-danger-font-color),
+      var(--button-danger-background-color),
+      var(--button-danger-border-color)
     );
   }
   @include m(info) {
     @include button-variant(
-      $--button-info-font-color,
-      $--button-info-background-color,
-      $--button-info-border-color,
-      $--button-info-font-color-fallback,
-      $--button-info-background-color-fallback,
-      $--button-info-border-color-fallback
+      var(--button-info-font-color),
+      var(--button-info-background-color),
+      var(--button-info-border-color)
     );
   }
   @include m(medium) {
     @include button-size(
-      $--button-medium-padding-vertical,
-      $--button-medium-padding-horizontal,
-      $--button-medium-font-size,
-      $--button-medium-border-radius
+      var(--button-medium-padding-vertical),
+      var(--button-medium-padding-horizontal),
+      var(--button-medium-font-size),
+      var(--button-medium-border-radius)
     );
     @include when(circle) {
-      padding: $--button-medium-padding-vertical;
+      padding: var(--button-medium-padding-vertical);
     }
   }
   @include m(small) {
     @include button-size(
-      $--button-small-padding-vertical,
-      $--button-small-padding-horizontal,
-      $--button-small-font-size,
-      $--button-small-border-radius
+      var(--button-small-padding-vertical),
+      var(--button-small-padding-horizontal),
+      var(--button-small-font-size),
+      var(--border-radius)
     );
     @include when(circle) {
-      padding: $--button-small-padding-vertical;
+      padding: var(--button-small-padding-vertical);
     }
   }
   @include m(mini) {
     @include button-size(
-      $--button-mini-padding-vertical,
-      $--button-mini-padding-horizontal,
-      $--button-mini-font-size,
-      $--button-mini-border-radius
+      var(--button-mini-padding-vertical),
+      var(--button-mini-padding-horizontal),
+      var(--button-mini-font-size),
+      var(--button-mini-border-radius)
     );
     @include when(circle) {
-      padding: $--button-mini-padding-vertical;
+      padding: var(--button-mini-padding-vertical);
     }
   }
   @include m(text) {
     border-color: transparent;
-    color: $--color-primary;
+    color: var(--color-primary);
     background: transparent;
     padding: 0;
 
     &:hover,
     &:focus {
-      color: mix($--color-white-fallback, $--color-primary-fallback, $--button-hover-tint-percent);
-      @supports (background: color-mix(in srgb, white 50%, transparent)) {
-        color: myMix($--color-white, $--color-primary, $--button-hover-tint-percent);
-      }
+      color: color-mix(in srgb, var(--color-white) var(--button-hover-tint-percent), var(--color-primary));
       border-color: transparent;
       background-color: transparent;
     }
     &:active {
-      color: mix($--color-black-fallback, $--color-primary-fallback, $--button-active-shade-percent);
-      @supports (background: color-mix(in srgb, white 50%, transparent)) {
-        color: myMix($--color-black, $--color-primary, $--button-active-shade-percent);
-      }
+      color: color-mix(in srgb, var(--color-black) var(--button-active-shade-percent), var(--color-primary));
       border-color: transparent;
       background-color: transparent;
     }
@@ -286,10 +242,10 @@
       border-bottom-left-radius: 0;
     }
     &:first-child:last-child {
-      border-top-right-radius: $--button-border-radius;
-      border-bottom-right-radius: $--button-border-radius;
-      border-top-left-radius: $--button-border-radius;
-      border-bottom-left-radius: $--button-border-radius;
+      border-top-right-radius: var(--button-border-radius);
+      border-bottom-right-radius: var(--button-border-radius);
+      border-top-left-radius: var(--button-border-radius);
+      border-bottom-left-radius: var(--button-border-radius);
 
       &.is-round {
         border-radius: 20px;
@@ -323,21 +279,21 @@
     & > .sg-button {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
-      border-left-color: rgba($--color-white, 0.5);
+      border-left-color: rgba(var(--color-white-rgb), 0.5);
     }
   }
 
   @each $type in (primary, success, warning, danger, info) {
     .sg-button--#{$type} {
       &:first-child {
-        border-right-color: rgba($--color-white, 0.5);
+        border-right-color: rgba(var(--color-white-rgb), 0.5);
       }
       &:last-child {
-        border-left-color: rgba($--color-white, 0.5);
+        border-left-color: rgba(var(--color-white-rgb), 0.5);
       }
       &:not(:first-child):not(:last-child) {
-        border-left-color: rgba($--color-white, 0.5);
-        border-right-color: rgba($--color-white, 0.5);
+        border-left-color: rgba(var(--color-white-rgb), 0.5);
+        border-right-color: rgba(var(--color-white-rgb), 0.5);
       }
     }
   }

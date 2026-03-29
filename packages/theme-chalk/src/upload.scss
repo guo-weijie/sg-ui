@@ -1,6 +1,5 @@
 @import 'mixins/mixins';
 @import 'progress';
-@import 'common/var';
 
 @include b(upload) {
   display: inline-block;
@@ -13,7 +12,7 @@
 
   @include e(tip) {
     font-size: 12px;
-    color: $--color-text-regular;
+    color: var(--color-text-regular);
     margin-top: 7px;
   }
 
@@ -44,16 +43,16 @@
     }
 
     &:hover {
-      border-color: $--color-primary;
-      color: $--color-primary;
+      border-color: var(--color-primary);
+      color: var(--color-primary);
     }
   }
   &:focus {
-    border-color: $--color-primary;
-    color: $--color-primary;
+    border-color: var(--color-primary);
+    color: var(--color-primary);
 
     .sg-upload-dragger {
-      border-color: $--color-primary;
+      border-color: var(--color-primary);
     }
   }
 }
@@ -72,7 +71,7 @@
 
   .sg-icon-upload {
     font-size: 67px;
-    color: $--color-text-placeholder;
+    color: var(--color-text-placeholder);
     margin: 40px 0 16px;
     line-height: 50px;
   }
@@ -82,29 +81,29 @@
   }
 
   ~ .sg-upload__files {
-    border-top: $--border-base;
+    border-top: var(--border-base);
     margin-top: 7px;
     padding-top: 5px;
   }
 
   .sg-upload__text {
-    color: $--color-text-regular;
+    color: var(--color-text-regular);
     font-size: 14px;
     text-align: center;
 
     em {
-      color: $--color-primary;
+      color: var(--color-primary);
       font-style: normal;
     }
   }
 
   &:hover {
-    border-color: $--color-primary;
+    border-color: var(--color-primary);
   }
 
   @include when(dragover) {
     background-color: rgba(32, 159, 255, 0.06);
-    border: 2px dashed $--color-primary;
+    border: 2px dashed var(--color-primary);
   }
 }
 
@@ -116,7 +115,7 @@
   @include e(item) {
     transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
     font-size: 14px;
-    color: $--color-text-regular;
+    color: var(--color-text-regular);
     line-height: 1.8;
     margin-top: 5px;
     position: relative;
@@ -146,7 +145,7 @@
     }
 
     & .sg-icon-upload-success {
-      color: $--color-success;
+      color: var(--color-success);
     }
 
     .sg-icon-close {
@@ -156,7 +155,7 @@
       right: 5px;
       cursor: pointer;
       opacity: 0.75;
-      color: $--color-text-regular;
+      color: var(--color-text-regular);
       //transform: scale(.7);
 
       &:hover {
@@ -172,11 +171,11 @@
       font-size: 12px;
       cursor: pointer;
       opacity: 1;
-      color: $--color-primary;
+      color: var(--color-primary);
     }
 
     &:hover {
-      background-color: $--hover-background-color-base;
+      background-color: var(--background-color-base);
 
       .sg-icon-close {
         display: inline-block;
@@ -194,7 +193,7 @@
 
       .sg-upload-list__item-name:hover,
       .sg-upload-list__item-name:focus {
-        color: $--link-hover-color;
+        color: var(--link-hover-color);
         cursor: pointer;
       }
 
@@ -230,7 +229,7 @@
   }
 
   @include e(item-name) {
-    color: $--color-text-regular;
+    color: var(--color-text-regular);
     display: block;
     margin-right: 40px;
     overflow: hidden;
@@ -242,7 +241,7 @@
     [class^='sg-icon'] {
       height: 100%;
       margin-right: 7px;
-      color: $--color-text-secondary;
+      color: var(--color-text-secondary);
       line-height: inherit;
     }
   }
@@ -260,11 +259,11 @@
     right: 10px;
     top: 0;
     font-size: 12px;
-    color: $--color-text-regular;
+    color: var(--color-text-regular);
     display: none;
 
     &:hover {
-      color: $--color-primary;
+      color: var(--color-primary);
     }
   }
 
@@ -286,7 +285,7 @@
 
       .sg-icon-check,
       .sg-icon-circle-check {
-        color: $--color-white;
+        color: var(--color-white);
       }
 
       .sg-icon-close {
@@ -400,7 +399,7 @@
 
       .sg-icon-check,
       .sg-icon-circle-check {
-        color: $--color-white;
+        color: var(--color-white);
       }
 
       &:hover {
@@ -436,7 +435,7 @@
       position: relative;
       z-index: 1;
       margin-left: -80px;
-      background-color: $--color-white;
+      background-color: var(--color-white);
     }
 
     .sg-upload-list__item-name {
@@ -543,11 +542,11 @@
 
     .btn {
       display: inline-block;
-      color: $--color-white;
+      color: var(--color-white);
       font-size: 14px;
       cursor: pointer;
       vertical-align: middle;
-      transition: $--md-fade-transition;
+      transition: var(--md-fade-transition);
       margin-top: 60px;
 
       i {
@@ -572,7 +571,7 @@
       }
 
       i {
-        color: $--color-white;
+        color: var(--color-white);
         display: block;
         font-size: 24px;
         line-height: inherit;
@@ -585,7 +584,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: $--color-white;
+    background-color: var(--color-white);
     height: 36px;
     width: 100%;
     overflow: hidden;
@@ -597,7 +596,7 @@
     margin: 0;
     line-height: 36px;
     font-size: 14px;
-    color: $--color-text-primary;
+    color: var(--color-text-primary);
   }
 
   + .sg-upload__inner {

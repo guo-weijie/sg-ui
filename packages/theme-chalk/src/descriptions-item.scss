@@ -1,9 +1,8 @@
 @import 'mixins/mixins';
-@import 'common/var';
 
 @include b(descriptions-item) {
   vertical-align: top;
-  
+
   @include e(container) {
     display: flex;
 
@@ -27,8 +26,8 @@
     }
     &.is-bordered-label {
       font-weight: bold;
-      color: $--color-text-secondary;
-      background: $--descriptions-item-bordered-label-background;
+      color: var(--color-text-secondary);
+      background: var(--descriptions-item-bordered-label-background);
     }
     &:not(.is-bordered-label) {
       margin-right: 10px;

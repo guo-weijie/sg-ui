@@ -1,24 +1,23 @@
 @import 'mixins/mixins';
-@import 'common/var';
 
 @include b(message) {
-  min-width: $--message-min-width;
+  min-width: var(--message-min-width);
   box-sizing: border-box;
-  border-radius: $--border-radius-base;
-  border-width: $--border-width-base;
-  border-style: $--border-style-base;
-  border-color: $--border-color-lighter;
+  border-radius: var(--border-radius-base);
+  border-width: var(--border-width-base);
+  border-style: var(--border-style-base);
+  border-color: var(--border-color-lighter);
   position: fixed;
   left: 50%;
   top: 20px;
   transform: translateX(-50%);
-  background-color: $--message-background-color;
+  background-color: var(--message-background-color);
   transition:
     opacity 0.3s,
     transform 0.4s,
     top 0.4s;
   overflow: hidden;
-  padding: $--message-padding;
+  padding: var(--message-padding);
   display: flex;
   align-items: center;
 
@@ -38,46 +37,34 @@
 
   @include m(info) {
     .sg-message__content {
-      color: $--message-info-font-color;
+      color: var(--message-info-font-color);
     }
   }
 
   @include m(success) {
-    background-color: $--color-success-lighter-fallback;
-    border-color: $--color-success-light-fallback;
-    @supports (background: color-mix(in srgb, white 50%, transparent)) {
-      background-color: $--color-success-lighter;
-      border-color: $--color-success-light;
-    }
+    background-color: var(--color-success-lighter);
+    border-color: var(--color-success-light);
 
     .sg-message__content {
-      color: $--message-success-font-color;
+      color: var(--message-success-font-color);
     }
   }
 
   @include m(warning) {
-    background-color: $--color-warning-lighter-fallback;
-    border-color: $--color-warning-light-fallback;
-    @supports (background: color-mix(in srgb, white 50%, transparent)) {
-      background-color: $--color-warning-lighter;
-      border-color: $--color-warning-light;
-    }
+    background-color: var(--color-warning-lighter);
+    border-color: var(--color-warning-light);
 
     .sg-message__content {
-      color: $--message-warning-font-color;
+      color: var(--message-warning-font-color);
     }
   }
 
   @include m(error) {
-    background-color: $--color-danger-lighter-fallback;
-    border-color: $--color-danger-light-fallback;
-    @supports (background: color-mix(in srgb, white 50%, transparent)) {
-      background-color: $--color-danger-lighter;
-      border-color: $--color-danger-light;
-    }
+    background-color: var(--color-danger-lighter);
+    border-color: var(--color-danger-light);
 
     .sg-message__content {
-      color: $--message-danger-font-color;
+      color: var(--message-danger-font-color);
     }
   }
 
@@ -100,31 +87,31 @@
     right: 15px;
     transform: translateY(-50%);
     cursor: pointer;
-    color: $--message-close-icon-color;
-    font-size: $--message-close-size;
+    color: var(--message-close-icon-color);
+    font-size: var(--message-close-size);
 
     &:focus {
       outline-width: 0;
     }
     &:hover {
-      color: $--message-close-hover-color;
+      color: var(--message-close-hover-color);
     }
   }
 
   & .sg-icon-success {
-    color: $--message-success-font-color;
+    color: var(--message-success-font-color);
   }
 
   & .sg-icon-error {
-    color: $--message-danger-font-color;
+    color: var(--message-danger-font-color);
   }
 
   & .sg-icon-info {
-    color: $--message-info-font-color;
+    color: var(--message-info-font-color);
   }
 
   & .sg-icon-warning {
-    color: $--message-warning-font-color;
+    color: var(--message-warning-font-color);
   }
 }
 

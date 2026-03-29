@@ -33,7 +33,6 @@
       line-height: 40px;
       height: 40px;
       margin: 0;
-      padding-left: 16px;
       text-decoration: none;
       display: block;
       position: relative;
@@ -42,7 +41,7 @@
 
       &.active {
         color: var(--color-primary);
-        background-color: var(--hover-background-color-base);
+        background-color: var(--background-color-hover);
       }
     }
 
@@ -57,11 +56,12 @@
         white-space: nowrap;
         text-overflow: ellipsis;
         font-weight: normal;
+        padding-left: var(--base-value);
 
         &:hover,
         &.active {
           color: var(--color-primary);
-          background-color: var(--hover-background-color-base);
+          background-color: var(--background-color-hover);
         }
       }
     }

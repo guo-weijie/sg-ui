@@ -1,8 +1,7 @@
-@import "mixins/mixins";
-@import "common/var";
+@import 'mixins/mixins';
 
 @include b(draggable) {
-  >div{
+  > div {
     width: 100%;
     min-height: 30px;
   }

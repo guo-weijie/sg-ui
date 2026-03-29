@@ -1,5 +1,4 @@
 @import 'mixins/mixins';
-@import 'common/var';
 
 %size {
   width: 100%;
@@ -26,7 +25,7 @@
 
   @include e(placeholder) {
     @extend %size;
-    background: $--hover-background-color-base;
+    background: var(--background-color-base);
   }
 
   @include e(error) {
@@ -35,8 +34,8 @@
     justify-content: center;
     align-items: center;
     font-size: 14px;
-    background: $--hover-background-color-base;
-    color: $--color-text-placeholder;
+    background: var(--background-color-base);
+    color: var(--color-text-placeholder);
     vertical-align: middle;
   }
 

@@ -1,5 +1,4 @@
-@import "mixins/mixins";
-@import "common/var";
+@import 'mixins/mixins';
 
 @include b(step) {
   position: relative;
@@ -27,28 +26,28 @@
     width: 100%;
 
     @include when(process) {
-      color: $--color-text-primary;
-      border-color: $--color-text-primary;
+      color: var(--color-text-primary);
+      border-color: var(--color-text-primary);
     }
 
     @include when(wait) {
-      color: $--color-text-placeholder;
-      border-color: $--color-text-placeholder;
+      color: var(--color-text-placeholder);
+      border-color: var(--color-text-placeholder);
     }
 
     @include when(success) {
-      color: $--color-success;
-      border-color: $--color-success;
+      color: var(--color-success);
+      border-color: var(--color-success);
     }
 
     @include when(error) {
-      color: $--color-danger;
-      border-color: $--color-danger;
+      color: var(--color-danger);
+      border-color: var(--color-danger);
     }
 
     @include when(finish) {
-      color: $--color-primary;
-      border-color: $--color-primary;
+      color: var(--color-primary);
+      border-color: var(--color-primary);
     }
   }
 
@@ -62,8 +61,8 @@
     height: 24px;
     font-size: 14px;
     box-sizing: border-box;
-    background: $--color-white;
-    transition: .15s ease-out;
+    background: var(--color-white);
+    transition: 0.15s ease-out;
 
     @include when(text) {
       border-radius: 50%;
@@ -84,7 +83,7 @@
     line-height: 1;
     color: inherit;
 
-    &[class*=sg-icon]:not(.is-status) {
+    &[class*='sg-icon']:not(.is-status) {
       font-size: 25px;
       font-weight: normal;
     }
@@ -98,7 +97,7 @@
   @include e(line) {
     position: absolute;
     border-color: inherit;
-    background-color: $--color-text-placeholder;
+    background-color: var(--color-text-placeholder);
   }
 
   @include e(line-inner) {
@@ -106,7 +105,7 @@
     border-width: 1px;
     border-style: solid;
     border-color: inherit;
-    transition: .15s ease-out;
+    transition: 0.15s ease-out;
     box-sizing: border-box;
     width: 0;
     height: 0;
@@ -123,23 +122,23 @@
 
     @include when(process) {
       font-weight: bold;
-      color: $--color-text-primary;
+      color: var(--color-text-primary);
     }
 
     @include when(wait) {
-      color: $--color-text-placeholder;
+      color: var(--color-text-placeholder);
     }
 
     @include when(success) {
-      color: $--color-success;
+      color: var(--color-success);
     }
 
     @include when(error) {
-      color: $--color-danger;
+      color: var(--color-danger);
     }
 
     @include when(finish) {
-      color: $--color-primary;
+      color: var(--color-primary);
     }
   }
 
@@ -151,23 +150,23 @@
     font-weight: normal;
 
     @include when(process) {
-      color: $--color-text-primary;
+      color: var(--color-text-primary);
     }
 
     @include when(wait) {
-      color: $--color-text-placeholder;
+      color: var(--color-text-placeholder);
     }
 
     @include when(success) {
-      color: $--color-success;
+      color: var(--color-success);
     }
 
     @include when(error) {
-      color: $--color-danger;
+      color: var(--color-danger);
     }
 
     @include when(finish) {
-      color: $--color-primary;
+      color: var(--color-primary);
     }
   }
 
@@ -215,7 +214,6 @@
   }
 
   @include when(center) {
-
     @include e(head) {
       text-align: center;
     }
@@ -253,12 +251,12 @@
     }
 
     @include e(icon-inner) {
-      &[class*=sg-icon]:not(.is-status) {
+      &[class*='sg-icon']:not(.is-status) {
         font-size: 18px;
       }
 
       &.is-status {
-        transform: scale(.8) translateY(1px);
+        transform: scale(0.8) translateY(1px);
       }
     }
 
@@ -294,7 +292,7 @@
         position: absolute;
         height: 15px;
         width: 1px;
-        background: $--color-text-placeholder;
+        background: var(--color-text-placeholder);
       }
 
       &::before {

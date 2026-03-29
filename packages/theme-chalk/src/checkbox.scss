@@ -1,12 +1,11 @@
-@import 'common/var';
 @import 'mixins/mixins';
 @import 'mixins/_button';
 @import 'mixins/utils';
 
 @include b(checkbox) {
-  color: $--checkbox-font-color;
-  font-weight: $--checkbox-font-weight;
-  font-size: $--font-size-base;
+  color: var(--checkbox-font-color);
+  font-weight: var(--checkbox-font-weight);
+  font-size: var(--font-size-base);
   position: relative;
   cursor: pointer;
   display: inline-block;
@@ -15,19 +14,19 @@
   margin-right: calc(var(--base-value) * 2);
 
   @include when(bordered) {
-    padding: $--checkbox-bordered-padding;
-    border-radius: $--border-radius-base;
-    border: $--border-base;
+    padding: var(--checkbox-bordered-padding);
+    border-radius: var(--border-radius-base);
+    border: var(--border-base);
     box-sizing: border-box;
     line-height: normal;
-    height: $--checkbox-bordered-height;
+    height: var(--checkbox-bordered-height);
 
     &.is-checked {
-      border-color: $--color-primary;
+      border-color: var(--color-primary);
     }
 
     &.is-disabled {
-      border-color: $--border-color-lighter;
+      border-color: var(--border-color-lighter);
       cursor: not-allowed;
     }
 
@@ -36,34 +35,34 @@
     }
 
     &.sg-checkbox--medium {
-      padding: $--checkbox-bordered-medium-padding;
-      border-radius: $--button-medium-border-radius;
-      height: $--checkbox-bordered-medium-height;
+      padding: var(--checkbox-bordered-medium-padding);
+      border-radius: var(--button-medium-border-radius);
+      height: var(--checkbox-bordered-medium-height);
 
       .sg-checkbox__label {
         line-height: 17px;
-        font-size: $--button-medium-font-size;
+        font-size: var(--button-medium-font-size);
       }
 
       .sg-checkbox__inner {
-        height: $--checkbox-bordered-medium-input-height;
-        width: $--checkbox-bordered-medium-input-width;
+        height: var(--checkbox-bordered-medium-input-height);
+        width: var(--checkbox-bordered-medium-input-width);
       }
     }
 
     &.sg-checkbox--small {
-      padding: $--checkbox-bordered-small-padding;
-      border-radius: $--button-small-border-radius;
-      height: $--checkbox-bordered-small-height;
+      padding: var(--checkbox-bordered-small-padding);
+      border-radius: var(--button-small-border-radius);
+      height: var(--checkbox-bordered-small-height);
 
       .sg-checkbox__label {
         line-height: 15px;
-        font-size: $--button-small-font-size;
+        font-size: var(--button-small-font-size);
       }
 
       .sg-checkbox__inner {
-        height: $--checkbox-bordered-small-input-height;
-        width: $--checkbox-bordered-small-input-width;
+        height: var(--checkbox-bordered-small-input-height);
+        width: var(--checkbox-bordered-small-input-width);
 
         &::after {
           height: 6px;
@@ -73,18 +72,18 @@
     }
 
     &.sg-checkbox--mini {
-      padding: $--checkbox-bordered-mini-padding;
-      border-radius: $--button-mini-border-radius;
-      height: $--checkbox-bordered-mini-height;
+      padding: var(--checkbox-bordered-mini-padding);
+      border-radius: var(--button-mini-border-radius);
+      height: var(--checkbox-bordered-mini-height);
 
       .sg-checkbox__label {
         line-height: 12px;
-        font-size: $--button-mini-font-size;
+        font-size: var(--button-mini-font-size);
       }
 
       .sg-checkbox__inner {
-        height: $--checkbox-bordered-mini-input-height;
-        width: $--checkbox-bordered-mini-input-width;
+        height: var(--checkbox-bordered-mini-input-height);
+        width: var(--checkbox-bordered-mini-input-width);
         &::after {
           height: 6px;
           width: 2px;
@@ -104,13 +103,13 @@
 
     @include when(disabled) {
       .sg-checkbox__inner {
-        background-color: $--checkbox-disabled-checked-input-fill;
-        // border-color: $--checkbox-disabled-border-color;
+        background-color: var(--checkbox-disabled-checked-input-fill);
+        // border-color: var(--checkbox-disabled-border-color);
         cursor: not-allowed;
 
         &::after {
           cursor: not-allowed;
-          // border-color: $--checkbox-disabled-icon-color;
+          // border-color: var(--checkbox-disabled-icon-color);
         }
 
         & + .sg-checkbox__label {
@@ -120,37 +119,37 @@
 
       &.is-checked {
         .sg-checkbox__inner {
-          background-color: $--checkbox-disabled-checked-input-fill;
-          border-color: $--checkbox-disabled-checked-input-border-color;
+          background-color: var(--checkbox-disabled-checked-input-fill);
+          border-color: var(--checkbox-disabled-checked-input-border-color);
 
           // &::after {
-          //   border-color: $--checkbox-disabled-checked-icon-color;
+          //   border-color: var(--checkbox-disabled-checked-icon-color);
           // }
         }
       }
 
       &.is-indeterminate {
         .sg-checkbox__inner {
-          background-color: $--checkbox-disabled-checked-input-fill;
-          border-color: $--checkbox-disabled-checked-input-border-color;
+          background-color: var(--checkbox-disabled-checked-input-fill);
+          border-color: var(--checkbox-disabled-checked-input-border-color);
 
           &::before {
-            background-color: $--checkbox-disabled-checked-icon-color;
-            border-color: $--checkbox-disabled-checked-icon-color;
+            background-color: var(--checkbox-disabled-checked-icon-color);
+            border-color: var(--checkbox-disabled-checked-icon-color);
           }
         }
       }
 
       & + span.sg-checkbox__label {
-        color: $--disabled-color-base;
+        color: var(--disabled-color-base);
         cursor: not-allowed;
       }
     }
 
     @include when(checked) {
       .sg-checkbox__inner {
-        background-color: $--checkbox-checked-background-color;
-        border-color: $--checkbox-checked-input-border-color;
+        background-color: var(--checkbox-checked-background-color);
+        border-color: var(--checkbox-checked-input-border-color);
 
         &::after {
           transform: rotate(45deg) scaleY(1);
@@ -158,31 +157,31 @@
       }
 
       & + .sg-checkbox__label {
-        color: $--checkbox-checked-font-color;
+        color: var(--checkbox-checked-font-color);
       }
     }
     @include when(focus) {
-      /*focus时 视觉上区分*/
+      /*focus 时 视觉上区分*/
       .sg-checkbox__inner {
-        border-color: $--checkbox-input-border-color-hover;
+        border-color: var(--checkbox-input-border-color-hover);
       }
     }
     @include when(indeterminate) {
       .sg-checkbox__inner {
-        background-color: $--checkbox-checked-background-color;
-        border-color: $--checkbox-checked-input-border-color;
+        background-color: var(--checkbox-checked-background-color);
+        border-color: var(--checkbox-checked-input-border-color);
 
         &::before {
           content: '';
           position: absolute;
           display: block;
-          background-color: $--checkbox-checked-icon-color;
+          background-color: var(--checkbox-checked-icon-color);
           height: 2px;
           transform: scale(0.5);
           left: 0;
           right: 0;
           top: 4px;
-          border: 1px solid $--checkbox-checked-icon-color;
+          border: 1px solid var(--checkbox-checked-icon-color);
         }
 
         &::after {
@@ -194,25 +193,25 @@
   @include e(inner) {
     display: inline-block;
     position: relative;
-    border: $--checkbox-input-border;
-    border-radius: $--checkbox-border-radius;
+    border: var(--checkbox-input-border);
+    border-radius: var(--checkbox-border-radius);
     box-sizing: border-box;
-    width: $--checkbox-input-width;
-    height: $--checkbox-input-height;
-    background-color: $--checkbox-background-color;
-    z-index: $--index-normal;
+    width: var(--checkbox-input-width);
+    height: var(--checkbox-input-height);
+    background-color: var(--checkbox-background-color);
+    z-index: var(--index-normal);
     transition:
       border-color 0.25s cubic-bezier(0.71, -0.46, 0.29, 1.46),
       background-color 0.25s cubic-bezier(0.71, -0.46, 0.29, 1.46);
 
     &:hover {
-      border-color: $--checkbox-input-border-color-hover;
+      border-color: var(--checkbox-input-border-color-hover);
     }
 
     &::after {
       box-sizing: content-box;
       content: '';
-      border: 2px solid $--checkbox-checked-icon-color;
+      border: 2px solid var(--checkbox-checked-icon-color);
       border-left: 0;
       border-top: 0;
       height: 7px;
@@ -240,7 +239,7 @@
     display: inline-block;
     padding-left: 10px;
     line-height: 19px;
-    font-size: $--checkbox-font-size;
+    font-size: var(--checkbox-font-size);
   }
 
   &:last-of-type {
@@ -255,27 +254,27 @@
   @include e(inner) {
     display: inline-block;
     line-height: 1;
-    font-weight: $--checkbox-font-weight;
+    font-weight: var(--checkbox-font-weight);
     white-space: nowrap;
     vertical-align: middle;
     cursor: pointer;
-    background: $--button-default-background-color;
-    border: $--border-base;
+    background: var(--button-default-background-color);
+    border: var(--border-base);
     border-left: 0;
-    color: $--button-default-font-color;
+    color: var(--button-default-font-color);
     -webkit-appearance: none;
     text-align: center;
     box-sizing: border-box;
     outline: none;
     margin: 0;
     position: relative;
-    transition: $--all-transition;
+    transition: var(--all-transition);
     @include utils-user-select(none);
 
-    @include button-size($--button-padding-vertical, $--button-padding-horizontal, $--button-font-size, 0);
+    @include button-size(var(--button-padding-vertical), var(--button-padding-horizontal), var(--button-font-size), 0);
 
     &:hover {
-      color: $--color-primary;
+      color: var(--color-primary);
     }
 
     & [class*='sg-icon-'] {
@@ -297,58 +296,55 @@
 
   &.is-checked {
     & .sg-checkbox-button__inner {
-      color: $--checkbox-button-checked-font-color;
-      background-color: $--checkbox-button-checked-background-color;
-      border-color: $--checkbox-button-checked-border-color;
-      box-shadow: -1px 0 0 0 $--color-primary-light-4-fallback;
-      @supports (background: color-mix(in srgb, white 50%, transparent)) {
-        box-shadow: -1px 0 0 0 $--color-primary-light-4;
-      }
+      color: var(--checkbox-button-checked-font-color);
+      background-color: var(--checkbox-button-checked-background-color);
+      border-color: var(--checkbox-button-checked-border-color);
+      box-shadow: -1px 0 0 0 var(--color-primary-light-4);
     }
     &:first-child .sg-checkbox-button__inner {
-      border-left-color: $--checkbox-button-checked-border-color;
+      border-left-color: var(--checkbox-button-checked-border-color);
     }
   }
 
   &.is-disabled {
     & .sg-checkbox-button__inner {
-      color: $--button-disabled-font-color;
+      color: var(--button-disabled-font-color);
       cursor: not-allowed;
       background-image: none;
-      background-color: $--button-disabled-background-color;
-      border-color: $--button-disabled-border-color;
+      background-color: var(--button-disabled-background-color);
+      border-color: var(--button-disabled-border-color);
       box-shadow: none;
     }
     &:first-child .sg-checkbox-button__inner {
-      border-left-color: $--button-disabled-border-color;
+      border-left-color: var(--button-disabled-border-color);
     }
   }
 
   &:first-child {
     .sg-checkbox-button__inner {
-      border-left: $--border-base;
-      border-radius: $--border-radius-base 0 0 $--border-radius-base;
+      border-left: var(--border-base);
+      border-radius: var(--border-radius-base) 0 0 var(--border-radius-base);
       box-shadow: none !important;
     }
   }
 
   &.is-focus {
     & .sg-checkbox-button__inner {
-      border-color: $--checkbox-button-checked-border-color;
+      border-color: var(--checkbox-button-checked-border-color);
     }
   }
 
   &:last-child {
     .sg-checkbox-button__inner {
-      border-radius: 0 $--border-radius-base $--border-radius-base 0;
+      border-radius: 0 var(--border-radius-base) var(--border-radius-base) 0;
     }
   }
   @include m(medium) {
     .sg-checkbox-button__inner {
       @include button-size(
-        $--button-medium-padding-vertical,
-        $--button-medium-padding-horizontal,
-        $--button-medium-font-size,
+        var(--button-medium-padding-vertical),
+        var(--button-medium-padding-horizontal),
+        var(--button-medium-font-size),
         0
       );
     }
@@ -356,9 +352,9 @@
   @include m(small) {
     .sg-checkbox-button__inner {
       @include button-size(
-        $--button-small-padding-vertical,
-        $--button-small-padding-horizontal,
-        $--button-small-font-size,
+        var(--button-small-padding-vertical),
+        var(--button-small-padding-horizontal),
+        var(--button-small-font-size),
         0
       );
     }
@@ -366,9 +362,9 @@
   @include m(mini) {
     .sg-checkbox-button__inner {
       @include button-size(
-        $--button-mini-padding-vertical,
-        $--button-mini-padding-horizontal,
-        $--button-mini-font-size,
+        var(--button-mini-padding-vertical),
+        var(--button-mini-padding-horizontal),
+        var(--button-mini-font-size),
         0
       );
     }

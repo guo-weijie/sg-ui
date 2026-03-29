@@ -1,14 +1,14 @@
 @import 'mixins/mixins';
 @import 'mixins/utils';
-@import 'common/var';
+
 @import 'common/popup';
 
 @include b(dialog) {
   position: relative;
   // margin: 0 auto;
-  background: $--dialog-background-color;
-  border-radius: $--border-radius-small;
-  box-shadow: $--dialog-box-shadow;
+  background: var(--dialog-background-color);
+  border-radius: var(--border-radius-small);
+  box-shadow: var(--dialog-box-shadow);
   box-sizing: border-box;
   width: 50%;
 
@@ -41,7 +41,7 @@
   }
 
   @include e(header) {
-    padding: $--dialog-padding-primary;
+    padding: var(--dialog-padding-primary);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -53,36 +53,36 @@
     border: none;
     outline: none;
     cursor: pointer;
-    font-size: $--message-close-size;
+    font-size: var(--message-close-size);
     margin-left: 16px;
 
     .sg-dialog__rightBtn {
-      color: $--color-info;
+      color: var(--color-info);
     }
 
     &:focus,
     &:hover {
       .sg-dialog__close {
-        color: $--color-primary;
+        color: var(--color-primary);
       }
     }
   }
 
   @include e(title) {
-    line-height: $--dialog-font-line-height;
-    font-size: $--dialog-title-font-size;
-    color: $--color-text-primary;
+    line-height: var(--dialog-font-line-height);
+    font-size: var(--dialog-title-font-size);
+    color: var(--color-text-primary);
   }
 
   @include e(body) {
-    padding: $--dialog-padding-primary;
-    color: $--color-text-regular;
-    font-size: $--dialog-content-font-size;
+    padding: var(--dialog-padding-primary);
+    color: var(--color-text-regular);
+    font-size: var(--dialog-content-font-size);
     word-break: break-all;
   }
 
   @include e(footer) {
-    padding: $--dialog-padding-primary;
+    padding: var(--dialog-padding-primary);
     text-align: right;
     box-sizing: border-box;
   }
@@ -93,7 +93,7 @@
 
     @include e(body) {
       text-align: initial;
-      padding: $--dialog-padding-primary;
+      padding: var(--dialog-padding-primary);
     }
 
     @include e(footer) {

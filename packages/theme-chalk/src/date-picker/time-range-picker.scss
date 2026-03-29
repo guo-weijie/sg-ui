@@ -1,5 +1,3 @@
-@import "../common/var";
-
 @include b(time-range-picker) {
   width: 354px;
   overflow: visible;
@@ -25,7 +23,7 @@
   }
 
   @include e(body) {
-    border-radius:2px;
-    border: 1px solid $--datepicker-border-color;
+    border-radius: 2px;
+    border: 1px solid var(--datepicker-border-color);
   }
 }

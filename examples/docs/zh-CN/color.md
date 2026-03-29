@@ -2,34 +2,18 @@
   import bus from '../../bus';
   import { tintColor } from '../../color.js';
   import { ACTION_USER_CONFIG_UPDATE } from '../../components/theme/constant.js';
-  const varMap = {
-    'primary': '$--color-primary',
-    'success': '$--color-success',
-    'warning': '$--color-warning',
-    'danger': '$--color-danger',
-    'info': '$--color-info',
-    'white': '$--color-white',
-    'black': '$--color-black',
-    'textPrimary': '$--color-text-primary',
-    'textRegular': '$--color-text-regular',
-    'textSecondary': '$--color-text-secondary',
-    'textPlaceholder': '$--color-text-placeholder',
-    'borderBase': '$--border-color-base',
-    'borderLight': '$--border-color-light',
-    'borderLighter': '$--border-color-lighter',
-    'borderExtraLight': '$--border-color-extra-light'
-  };
+  
   const original = {
-    primary: '#409EFF',
-    success: '#67C23A',
-    warning: '#E6A23C',
-    danger: '#F56C6C',
+    primary: '#15b07f',
+    success: '#28c65f',
+    warning: '#fe971d',
+    danger: '#ed4b44',
     info: '#909399',
     white: '#FFFFFF',
     black: '#000000',
-    textPrimary: '#303133',
-    textRegular: '#606266',
-    textSecondary: '#909399',
+    textPrimary: '#333333',
+    textRegular: '#666666',
+    textSecondary: '#999999',
     textPlaceholder: '#C0C4CC',
     borderBase: '#DCDFE6',
     borderLight: '#E4E7ED',
@@ -56,33 +40,16 @@
     data() {
       return {
         global: {},
-        primary: '',
-        success: '',
-        warning: '',
-        danger: '',
-        info: '',
-        white: '',
-        black: '',
-        textPrimary: '',
-        textRegular: '',
-        textSecondary: '',
-        textPlaceholder: '',
-        borderBase: '',
-        borderLight: '',
-        borderLighter: '',
-        borderExtraLight: ''
+        ...original
       }
     },
     watch: {
       global: {
         immediate: true,
         handler(value) {
+          // 使用 original 中的默认值
           Object.keys(original).forEach((o) => {
-            if (value[varMap[o]]) {
-              this[o] = value[varMap[o]]
-            } else {
-              this[o] = original[o]
-            }
+            this[o] = value[o] || original[o];
           });
         }
       }
@@ -92,16 +59,16 @@
 
 ## Color 色彩
 
-Element 为了避免视觉传达差异，使用一套特定的调色板来规定颜色，为你所搭建的产品提供一致的外观视觉感受。
+SG-UI 为了避免视觉传达差异，使用一套特定的调色板来规定颜色，为你所搭建的产品提供一致的外观视觉感受。
 
 ### 主色
 
-Element 主要品牌颜色是鲜艳、友好的蓝色。
+SG-UI 主要品牌颜色是轻快的国网绿。
 
 <sg-row :gutter="12">
   <sg-col :span="10" :xs="{span: 12}">
     <div class="demo-color-box" :style="{ background: primary }">Brand Color
-      <div class="value">#409EFF</div>
+      <div class="value">#15b07f</div>
       <div class="bg-color-sub" :style="{ background: tintColor(primary, 0.9) }">
         <div
           class="bg-blue-sub-item"
@@ -122,7 +89,7 @@ Element 主要品牌颜色是鲜艳、友好的蓝色。
   <sg-col :span="6" :xs="{span: 12}">
     <div class="demo-color-box"
     :style="{ background: success }"
-    >Success<div class="value">#67C23A</div>
+    >Success<div class="value">#28c65f</div>
       <div 
         class="bg-color-sub"
       >
@@ -139,7 +106,7 @@ Element 主要品牌颜色是鲜艳、友好的蓝色。
   <sg-col :span="6" :xs="{span: 12}">
     <div class="demo-color-box"
     :style="{ background: warning }"
-    >Warning<div class="value">#E6A23C</div>
+    >Warning<div class="value">#fe971d</div>
       <div 
           class="bg-color-sub"
         >
@@ -156,7 +123,7 @@ Element 主要品牌颜色是鲜艳、友好的蓝色。
   <sg-col :span="6" :xs="{span: 12}">
     <div class="demo-color-box"
     :style="{ background: danger }"
-    >Danger<div class="value">#F56C6C</div>
+    >Danger<div class="value">#ed4b44</div>
       <div 
           class="bg-color-sub"
         >

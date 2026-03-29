@@ -1,6 +1,6 @@
-@import "../mixins/mixins";
-@import "../common/var";
-@import "../common/transition";
+@import '../mixins/mixins';
+
+@import '../common/transition';
 
 @include b(date-editor) {
   position: relative;
@@ -47,7 +47,7 @@
   .sg-range__icon {
     font-size: 14px;
     margin-left: -5px;
-    color: $--color-text-placeholder;
+    color: var(--color-text-placeholder);
     float: left;
     line-height: 32px;
   }
@@ -62,11 +62,11 @@
     padding: 0;
     width: 39%;
     text-align: center;
-    font-size: $--font-size-base;
-    color: $--color-text-regular;
+    font-size: var(--font-size-base);
+    color: var(--color-text-regular);
 
     &::placeholder {
-      color: $--color-text-placeholder;
+      color: var(--color-text-placeholder);
     }
   }
 
@@ -79,12 +79,12 @@
     line-height: 32px;
     font-size: 14px;
     width: 5%;
-    color: $--color-text-primary;
+    color: var(--color-text-primary);
   }
 
   .sg-range__close-icon {
     font-size: 14px;
-    color: $--color-text-placeholder;
+    color: var(--color-text-placeholder);
     width: 25px;
     display: inline-block;
     float: right;
@@ -104,25 +104,25 @@
   }
 
   @include when(active) {
-    border-color: $--color-primary;
+    border-color: var(--color-primary);
 
     &:hover {
-      border-color: $--color-primary;
+      border-color: var(--color-primary);
     }
   }
 
   @include m(medium) {
     &.sg-input__inner {
-      height: $--input-medium-height;
+      height: var(--input-medium-height);
     }
 
     .sg-range-separator {
       line-height: 28px;
-      font-size: $--input-medium-font-size;
+      font-size: var(--input-medium-font-size);
     }
 
     .sg-range-input {
-      font-size: $--input-medium-font-size;
+      font-size: var(--input-medium-font-size);
     }
 
     .sg-range__icon,
@@ -133,16 +133,16 @@
 
   @include m(small) {
     &.sg-input__inner {
-      height: $--input-small-height;
+      height: var(--input-small-height);
     }
 
     .sg-range-separator {
       line-height: 24px;
-      font-size: $--input-small-font-size;
+      font-size: var(--input-small-font-size);
     }
 
     .sg-range-input {
-      font-size: $--input-small-font-size;
+      font-size: var(--input-small-font-size);
     }
 
     .sg-range__icon,
@@ -153,16 +153,16 @@
 
   @include m(mini) {
     &.sg-input__inner {
-      height: $--input-mini-height;
+      height: var(--input-mini-height);
     }
 
     .sg-range-separator {
       line-height: 20px;
-      font-size: $--input-mini-font-size;
+      font-size: var(--input-mini-font-size);
     }
 
     .sg-range-input {
-      font-size: $--input-mini-font-size;
+      font-size: var(--input-mini-font-size);
     }
 
     .sg-range__icon,
@@ -172,26 +172,27 @@
   }
 
   @include when(disabled) {
-    background-color: $--input-disabled-fill;
-    border-color: $--input-disabled-border;
-    color: $--input-disabled-color;
+    background-color: var(--input-disabled-fill);
+    border-color: var(--input-disabled-border);
+    color: var(--input-disabled-color);
     cursor: not-allowed;
 
-    &:hover, &:focus {
-      border-color: $--input-disabled-border;
+    &:hover,
+    &:focus {
+      border-color: var(--input-disabled-border);
     }
 
     input {
-      background-color: $--input-disabled-fill;
-      color: $--input-disabled-color;
+      background-color: var(--input-disabled-fill);
+      color: var(--input-disabled-color);
       cursor: not-allowed;
       &::placeholder {
-        color: $--input-disabled-placeholder-color;
+        color: var(--input-disabled-placeholder-color);
       }
     }
 
     .sg-range-separator {
-      color: $--input-disabled-color;
+      color: var(--input-disabled-color);
     }
   }
 }

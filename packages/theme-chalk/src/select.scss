@@ -1,25 +1,24 @@
-@import "mixins/mixins";
-@import "mixins/utils";
-@import "common/var";
-@import "select-dropdown";
-@import "input";
-@import "tag";
-@import "option";
-@import "option-group";
-@import "scrollbar";
+@import 'mixins/mixins';
+@import 'mixins/utils';
+
+@import 'select-dropdown';
+@import 'input';
+@import 'tag';
+@import 'option';
+@import 'option-group';
+@import 'scrollbar';
 
 @include b(select) {
   display: inline-block;
   position: relative;
 
-  .sg-select__tags
-    >span {
-      display: contents;
-    }
+  .sg-select__tags > span {
+    display: contents;
+  }
 
   &:hover {
     .sg-input__inner {
-      border-color: $--select-border-color-hover;
+      border-color: var(--select-border-color-hover);
     }
   }
 
@@ -28,15 +27,15 @@
     padding-right: 35px;
 
     &:focus {
-      border-color: $--select-input-focus-border-color;
+      border-color: var(--select-input-focus-border-color);
     }
   }
 
   .sg-input {
     & .sg-select__caret {
-      color: $--select-input-color;
-      font-size: $--select-input-font-size;
-      transition: transform .3s;
+      color: var(--select-input-color);
+      font-size: var(--select-input-font-size);
+      transition: transform 0.3s;
       transform: rotateZ(180deg);
       cursor: pointer;
 
@@ -45,15 +44,15 @@
       }
 
       @include when(show-close) {
-        font-size: $--select-font-size;
+        font-size: var(--select-font-size);
         text-align: center;
         transform: rotateZ(180deg);
-        border-radius: $--border-radius-circle;
-        color: $--select-input-color;
-        transition: $--color-transition-base;
+        border-radius: var(--border-radius-circle);
+        color: var(--select-input-color);
+        transition: var(--color-transition-base);
 
         &:hover {
-          color: $--select-close-hover-color;
+          color: var(--select-close-hover-color);
         }
       }
     }
@@ -63,13 +62,13 @@
         cursor: not-allowed;
 
         &:hover {
-          border-color: $--select-disabled-border;
+          border-color: var(--select-disabled-border);
         }
       }
     }
 
     &.is-focus .sg-input__inner {
-      border-color: $--select-input-focus-border-color;
+      border-color: var(--select-input-focus-border-color);
     }
   }
 
@@ -82,8 +81,8 @@
     outline: none;
     padding: 0;
     margin-left: 15px;
-    color: $--select-multiple-input-color;
-    font-size: $--select-font-size;
+    color: var(--select-multiple-input-color);
+    font-size: var(--select-font-size);
     appearance: none;
     height: 28px;
     background-color: transparent;
@@ -96,14 +95,14 @@
     cursor: pointer;
     position: absolute;
     top: 8px;
-    z-index: $--index-top;
+    z-index: var(--index-top);
     right: 25px;
-    color: $--select-input-color;
+    color: var(--select-input-color);
     line-height: 18px;
-    font-size: $--select-input-font-size;
+    font-size: var(--select-input-font-size);
 
     &:hover {
-      color: $--select-close-hover-color;
+      color: var(--select-close-hover-color);
     }
   }
 
@@ -111,7 +110,7 @@
     position: absolute;
     line-height: normal;
     white-space: normal;
-    z-index: $--index-normal;
+    z-index: var(--index-normal);
     top: 50%;
     transform: translateY(-50%);
     display: flex;
@@ -134,18 +133,18 @@
     align-items: center;
 
     &__close.sg-icon-close {
-      background-color: $--color-text-placeholder;
+      background-color: var(--color-text-placeholder);
       top: 0;
-      color: $--color-white;
+      color: var(--color-white);
       flex-shrink: 0;
 
       &:hover {
-        background-color: $--color-text-secondary;
+        background-color: var(--color-text-secondary);
       }
 
       &::before {
         display: block;
-        transform: translate(0, .5px);
+        transform: translate(0, 0.5px);
       }
     }
   }

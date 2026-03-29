@@ -1,7 +1,6 @@
 @import 'mixins/mixins';
 @import 'checkbox';
 @import 'tag';
-@import 'common/var';
 
 @include b(table-column) {
   @include m(selection) {
@@ -13,10 +12,10 @@
 }
 
 @include b(table-filter) {
-  border: solid 1px $--border-color-lighter;
+  border: solid 1px var(--border-color-lighter);
   border-radius: 2px;
-  background-color: $--color-white;
-  box-shadow: $--dropdown-menu-box-shadow;
+  background-color: var(--color-white);
+  box-shadow: var(--dropdown-menu-box-shadow);
   box-sizing: border-box;
   margin: 2px 0;
 
@@ -32,20 +31,16 @@
     line-height: 36px;
     padding: 0 10px;
     cursor: pointer;
-    font-size: $--font-size-base;
+    font-size: var(--font-size-base);
 
     &:hover {
-      background-color: $--dropdown-menuItem-hover-fill-fallback;
-      color: $--dropdown-menuItem-hover-color-fallback;
-      @supports (background: color-mix(in srgb, white 50%, transparent)) {
-        background-color: $--dropdown-menuItem-hover-fill;
-        color: $--dropdown-menuItem-hover-color;
-      }
+      background-color: var(--dropdown-menuItem-hover-fill);
+      color: var(--dropdown-menuItem-hover-color);
     }
 
     @include when(active) {
-      background-color: $--color-primary;
-      color: $--color-white;
+      background-color: var(--color-primary);
+      color: var(--color-white);
     }
   }
 
@@ -54,19 +49,19 @@
   }
 
   @include e(bottom) {
-    border-top: 1px solid $--border-color-lighter;
+    border-top: 1px solid var(--border-color-lighter);
     padding: 8px;
 
     button {
       background: transparent;
       border: none;
-      color: $--color-text-regular;
+      color: var(--color-text-regular);
       cursor: pointer;
-      font-size: $--font-size-small;
+      font-size: var(--font-size-small);
       padding: 0 3px;
 
       &:hover {
-        color: $--color-primary;
+        color: var(--color-primary);
       }
 
       &:focus {
@@ -74,7 +69,7 @@
       }
 
       &.is-disabled {
-        color: $--disabled-color-base;
+        color: var(--disabled-color-base);
         cursor: not-allowed;
       }
     }

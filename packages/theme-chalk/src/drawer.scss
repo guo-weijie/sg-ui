@@ -1,5 +1,4 @@
-@import "mixins/mixins";
-@import "common/var";
+@import 'mixins/mixins';
 
 @keyframes sg-drawer-fade-in {
   0% {
@@ -11,10 +10,8 @@
 }
 
 @mixin drawer-animation($direction) {
-
   @keyframes #{$direction}-drawer-in {
     0% {
-
       @if $direction == ltr {
         transform: translate(-100%, 0px);
       }
@@ -58,7 +55,7 @@
       }
 
       @if $direction == rtl {
-        transform: translate(0px, 0px);;
+        transform: translate(0px, 0px);
       }
 
       @if $direction == ttb {
@@ -92,13 +89,13 @@
 
 @mixin animation-in($direction) {
   .sg-drawer__open &.#{$direction} {
-    animation: #{$direction}-drawer-in .3s 1ms;
+    animation: #{$direction}-drawer-in 0.3s 1ms;
   }
 }
 
 @mixin animation-out($direction) {
   &.#{$direction} {
-    animation: #{$direction}-drawer-out .3s;
+    animation: #{$direction}-drawer-out 0.3s;
   }
 }
 
@@ -112,12 +109,13 @@ $directions: rtl, ltr, ttb, btt;
 @include b(drawer) {
   position: absolute;
   box-sizing: border-box;
-  background-color: $--dialog-background-color;
+  background-color: var(--dialog-background-color);
   display: flex;
   flex-direction: column;
-  box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2),
-  0 16px 24px 2px rgba(0, 0, 0, 0.14),
-  0 6px 30px 5px rgba(0, 0, 0, 0.12);
+  box-shadow:
+    0 8px 10px -5px rgba(0, 0, 0, 0.2),
+    0 16px 24px 2px rgba(0, 0, 0, 0.14),
+    0 6px 30px 5px rgba(0, 0, 0, 0.12);
   overflow: hidden;
   outline: 0;
 
@@ -141,7 +139,7 @@ $directions: rtl, ltr, ttb, btt;
     color: rgb(114, 118, 123);
     display: flex;
     margin-bottom: 32px;
-    padding: $--dialog-padding-primary;
+    padding: var(--dialog-padding-primary);
     padding-bottom: 0;
     & > :first-child {
       flex: 1;
@@ -158,7 +156,7 @@ $directions: rtl, ltr, ttb, btt;
   &__close-btn {
     border: none;
     cursor: pointer;
-    font-size: $--font-size-extra-large;
+    font-size: var(--font-size-extra-large);
     color: inherit;
     background-color: transparent;
   }
@@ -171,13 +169,15 @@ $directions: rtl, ltr, ttb, btt;
     }
   }
 
-  &.ltr, &.rtl {
+  &.ltr,
+  &.rtl {
     height: 100%;
     top: 0;
     bottom: 0;
   }
 
-  &.ttb, &.btt {
+  &.ttb,
+  &.btt {
     width: 100%;
     left: 0;
     right: 0;
@@ -211,9 +211,9 @@ $directions: rtl, ltr, ttb, btt;
 }
 
 .sg-drawer-fade-enter-active {
-  animation: sg-drawer-fade-in .3s;
+  animation: sg-drawer-fade-in 0.3s;
 }
 
 .sg-drawer-fade-leave-active {
-  animation: sg-drawer-fade-in .3s reverse;
+  animation: sg-drawer-fade-in 0.3s reverse;
 }

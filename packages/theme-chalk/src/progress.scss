@@ -1,14 +1,13 @@
-@import "mixins/mixins";
-@import "mixins/utils";
-@import "common/var";
+@import 'mixins/mixins';
+@import 'mixins/utils';
 
 @include b(progress) {
   position: relative;
   line-height: 1;
 
   @include e(text) {
-    font-size:14px;
-    color: $--color-text-regular;
+    font-size: 14px;
+    color: var(--color-text-regular);
     display: inline-block;
     vertical-align: middle;
     margin-left: 10px;
@@ -20,7 +19,7 @@
     }
   }
 
-  @include m((circle,dashboard)) {
+  @include m((circle, dashboard)) {
     display: inline-block;
 
     .sg-progress__text {
@@ -38,7 +37,6 @@
       }
     }
   }
-
 
   @include m(without-text) {
     .sg-progress__text {
@@ -61,31 +59,31 @@
 
   @include when(success) {
     .sg-progress-bar__inner {
-      background-color: $--color-success;
+      background-color: var(--color-success);
     }
 
     .sg-progress__text {
-      color: $--color-success;
+      color: var(--color-success);
     }
   }
 
   @include when(warning) {
     .sg-progress-bar__inner {
-      background-color: $--color-warning;
+      background-color: var(--color-warning);
     }
 
     .sg-progress__text {
-      color: $--color-warning;
+      color: var(--color-warning);
     }
   }
 
   @include when(exception) {
     .sg-progress-bar__inner {
-      background-color: $--color-danger;
+      background-color: var(--color-danger);
     }
 
     .sg-progress__text {
-      color: $--color-danger;
+      color: var(--color-danger);
     }
   }
 }
@@ -101,7 +99,7 @@
   @include e(outer) {
     height: 6px;
     border-radius: 100px;
-    background-color: $--border-color-lighter;
+    background-color: var(--border-color-lighter);
     overflow: hidden;
     position: relative;
     vertical-align: middle;
@@ -111,7 +109,7 @@
     left: 0;
     top: 0;
     height: 100%;
-    background-color: $--color-primary;
+    background-color: var(--color-primary);
     text-align: right;
     border-radius: 100px;
     line-height: 1;
@@ -124,7 +122,7 @@
   @include e(innerText) {
     display: inline-block;
     vertical-align: middle;
-    color: $--color-white;
+    color: var(--color-white);
     font-size: 12px;
     margin: 0 5px;
   }

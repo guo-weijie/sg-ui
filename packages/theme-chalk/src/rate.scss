@@ -1,11 +1,11 @@
-@import "mixins/mixins";
-@import "common/var";
+@import 'mixins/mixins';
 
 @include b(rate) {
-  height: $--rate-height;
+  height: var(--rate-height);
   line-height: 1;
 
-  &:focus, &:active {
+  &:focus,
+  &:active {
     outline-width: 0;
   }
 
@@ -19,10 +19,10 @@
   @include e(icon) {
     position: relative;
     display: inline-block;
-    font-size: $--rate-icon-size;
-    margin-right: $--rate-icon-margin;
-    color: $--rate-icon-color;
-    transition: .3s;
+    font-size: var(--rate-icon-size);
+    margin-right: var(--rate-icon-margin);
+    color: var(--rate-icon-color);
+    transition: 0.3s;
     &.hover {
       transform: scale(1.15);
     }
@@ -43,7 +43,7 @@
   }
 
   @include e(text) {
-    font-size: $--rate-font-size;
+    font-size: var(--rate-font-size);
     vertical-align: middle;
   }
 }
