@@ -1,0 +1,54 @@
+// 自定义滚动条样式
+::-webkit-scrollbar {
+  /* 滚动条整体部分 */
+  width: 12px;
+  margin-right: 2px;
+}
+
+::-webkit-scrollbar-button {
+  /* 滚动条两端的按钮 */
+  width: 12px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 12px;
+  margin-bottom: 2px;
+}
+
+::-webkit-scrollbar-track {
+  /* 外层轨道 */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track-piece {
+  /* 内层轨道，滚动条中间部分 */
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  /* 滑块 */
+  width: 12px;
+  border-radius: 5px;
+  background: #cbcbcb;
+  cursor: pointer;
+  border-style: dashed;
+  border-color: transparent;
+  border-width: 2px;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  /* 鼠标移入滑块 */
+  background: #909090;
+  transition: 0.3s;
+  cursor: pointer;
+  background-clip: border-box;
+}
+
+::-webkit-scrollbar-corner {
+  /* 边角 */
+  width: 12px;
+  background-color: rgba(0, 0, 0, 0);
+}

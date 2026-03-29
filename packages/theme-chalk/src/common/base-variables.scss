@@ -1,0 +1,43 @@
+// 基础变量 - 所有主题共享的尺寸和通用变量
+:root {
+  --base-value: 16px; // 内外边距 基础尺寸
+  --border-radius: 4px; // 边框弧度
+  --dialog-padding-primary: var(--base-value);
+
+  /* Transition */
+  --all-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  --fade-transition: opacity 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  --fade-linear-transition: opacity 200ms linear;
+  --md-fade-transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1), opacity 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  --border-transition-base: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  --color-transition-base: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  /* Typography - 字体相关尺寸 */
+  --font-display: 'auto';
+  --font-size-extra-large: 20px;
+  --font-size-large: 18px;
+  --font-size-medium: 16px;
+  --font-size-base: 14px;
+  --font-size-small: 13px;
+  --font-size-extra-small: 12px;
+  --font-weight-primary: 500;
+  --font-weight-secondary: 100;
+  --font-line-height-primary: 24px;
+  --font-line-height-secondary: 16px;
+
+  /* Size - 基础尺寸 */
+  --size-base: 14px;
+
+  /* Border - 边框相关尺寸 */
+  --border-width-base: 1px;
+  --border-style-base: solid;
+  --border-radius-base: 4px;
+  --border-radius-small: 2px;
+  --border-radius-circle: 100%;
+  --border-radius-zero: 0;
+
+  /* Z-index */
+  --index-normal: 1;
+  --index-top: 1000;
+  --index-popper: 2000;
+}
