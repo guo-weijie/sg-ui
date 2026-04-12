@@ -1,12 +1,12 @@
 .demo-tree {
   .leaf {
     width: 20px;
-    background: #ddd;
+    background: var(--border-color-base);
   }
 
   .folder {
     width: 20px;
-    background: #888;
+    background: var(--color-text-regular);
   }
 
   .buttons {
@@ -27,7 +27,7 @@
     padding: 8px 24px 24px;
 
     &:first-child {
-      border-right: solid 1px #eff2f6;
+      border-right: solid 1px var(--border-color-light);
     }
 
     > p {

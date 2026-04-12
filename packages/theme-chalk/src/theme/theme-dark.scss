@@ -1,81 +1,90 @@
-﻿:root,:root[data-theme='theme2'] {
-  --color-primary: #15b07f;
-  --color-primary-rgb: 21, 176, 127;
+:root[data-theme='dark'] {
+  // 主色调 - 科技蓝紫色（降低亮度）
+  --color-primary: #00bcd4;
+  --color-primary-rgb: 0, 188, 212;
   --color-white: #ffffff;
-  --color-black: #000000;
-  --color-primary-light-1: color-mix(in srgb, var(--color-white), var(--color-primary) 90%);
-  --color-primary-light-2: color-mix(in srgb, var(--color-white), var(--color-primary) 80%);
-  --color-primary-light-3: color-mix(in srgb, var(--color-white), var(--color-primary) 70%);
-  --color-primary-light-4: color-mix(in srgb, var(--color-white), var(--color-primary) 60%);
-  --color-primary-light-5: color-mix(in srgb, var(--color-white), var(--color-primary) 50%);
-  --color-primary-light-6: color-mix(in srgb, var(--color-white), var(--color-primary) 40%);
-  --color-primary-light-7: color-mix(in srgb, var(--color-white), var(--color-primary) 30%);
-  --color-primary-light-8: color-mix(in srgb, var(--color-white), var(--color-primary) 20%);
-  --color-primary-light-9: color-mix(in srgb, var(--color-white), var(--color-primary) 10%);
+  --color-black: #0a0a0f;
+  
+  // 主题色渐变 - 科技感浅色
+  --color-primary-light-1: color-mix(in srgb, var(--color-black), var(--color-primary) 90%);
+  --color-primary-light-2: color-mix(in srgb, var(--color-black), var(--color-primary) 80%);
+  --color-primary-light-3: color-mix(in srgb, var(--color-black), var(--color-primary) 70%);
+  --color-primary-light-4: color-mix(in srgb, var(--color-black), var(--color-primary) 60%);
+  --color-primary-light-5: color-mix(in srgb, var(--color-black), var(--color-primary) 50%);
+  --color-primary-light-6: color-mix(in srgb, var(--color-black), var(--color-primary) 40%);
+  --color-primary-light-7: color-mix(in srgb, var(--color-black), var(--color-primary) 30%);
+  --color-primary-light-8: color-mix(in srgb, var(--color-black), var(--color-primary) 20%);
+  --color-primary-light-9: color-mix(in srgb, var(--color-black), var(--color-primary) 10%);
 
-  --color-success: #28c65f;
-  --color-warning: #fe971d;
-  --color-danger: #ed4b44;
-  --color-info: #909399;
+  // 功能色 - 柔和霓虹风格
+  --color-success: #00e676;
+  --color-warning: #ffc107;
+  --color-danger: #ff5252;
+  --color-info: #535c68;
+  
+  // 功能色浅色版本
+  --color-success-light: color-mix(in srgb, var(--color-black), var(--color-success) 20%);
+  --color-warning-light: color-mix(in srgb, var(--color-black), var(--color-warning) 20%);
+  --color-danger-light: color-mix(in srgb, var(--color-black), var(--color-danger) 20%);
+  --color-info-light: color-mix(in srgb, var(--color-white), var(--color-info) 30%);
+  
+  // 功能色更浅版本
+  --color-success-lighter: color-mix(in srgb, var(--color-black), var(--color-success) 10%);
+  --color-warning-lighter: color-mix(in srgb, var(--color-black), var(--color-warning) 10%);
+  --color-danger-lighter: color-mix(in srgb, var(--color-black), var(--color-danger) 10%);
+  --color-info-lighter: color-mix(in srgb, var(--color-black), var(--color-info) 10%);
 
-  --color-success-light: color-mix(in srgb, var(--color-white), var(--color-success) 20%);
-  --color-warning-light: color-mix(in srgb, var(--color-white), var(--color-warning) 20%);
-  --color-danger-light: color-mix(in srgb, var(--color-white), var(--color-danger) 20%);
-  --color-info-light: color-mix(in srgb, var(--color-white), var(--color-info) 60%);
+  // 文字颜色 - 高对比度
+  --color-text-primary: #ffffff;
+  --color-text-regular: #e0e0e0;
+  --color-text-secondary: #a0a0a0;
+  --color-text-placeholder: #666666;
 
-  --color-success-lighter: color-mix(in srgb, var(--color-white), var(--color-success) 10%);
-  --color-warning-lighter: color-mix(in srgb, var(--color-white), var(--color-warning) 10%);
-  --color-danger-lighter: color-mix(in srgb, var(--color-white), var(--color-danger) 10%);
-  --color-info-lighter: color-mix(in srgb, var(--color-white), var(--color-info) 10%);
+  // 边框颜色 - 暗色系（增强层次）
+  --border-color-base: #3a3a4a;
+  --border-color-light: #2a2a3a;
+  --border-color-lighter: #1f1f2e;
+  --border-color-extra-light: #151520;
 
-  --color-text-primary: #333333;
-  --color-text-regular: #666666;
-  --color-text-secondary: #999999;
-  --color-text-placeholder: #c9c9c9;
-
-  /* Border */
-  --border-color-base: #d2d2d2;
-  --border-color-light: #dddddd;
-  --border-color-lighter: #f2f2f2;
-  --border-color-extra-light: #f7f7f7;
-
-  /* Background */
-  --background-color-page: var(--color-white);
-  --background-color-base: #f5f7fa;
+  // 背景颜色 - 深空黑
+  --background-color-page: var(--color-black);
+  --background-color-base: #0f0f15;
   --background-color-hover: rgba(var(--color-primary-rgb), 0.15);
 
-  /* Tag Mix Base - 用于标签颜色混合的基础色 */
-  --tag-mix-base: var(--color-white);
+  // Tag Mix Base - 用于标签颜色混合的基础色（深色模式使用黑色）
+  --tag-mix-base: var(--color-black);
 
-  /* Link */
+  // 链接颜色
   --link-color: var(--color-primary-light-2);
   --link-hover-color: var(--color-primary);
 
-  /* Border */
+  // 边框基础
+  --border-width-base: 1px;
+  --border-style-base: solid;
   --border-color-hover: rgba(var(--color-primary-rgb), 0.5);
   --border-base: var(--border-width-base) var(--border-style-base) var(--border-color-base);
 
-  /* Box-shadow */
-  --box-shadow-base: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
-  --box-shadow-dark: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.12);
-  --box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  // 阴影 - 发光效果（优化 light 级别可见度）
+  --box-shadow-base: 0 0 20px rgba(0, 240, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.3);
+  --box-shadow-dark: 0 0 30px rgba(0, 240, 255, 0.2), 0 4px 12px rgba(0, 0, 0, 0.4);
+  --box-shadow-light: 0 0 12px rgba(0, 240, 255, 0.15), 0 2px 8px rgba(0, 0, 0, 0.3);
 
   /* Fill */
-  --fill-base: var(--color-white);
+  --fill-base: #1a1a28;
 
   /* Typography */
-  --font-color-disabled-base: #bbb;
+  --font-color-disabled-base: #555;
 
   /* Disable base */
   --disabled-fill-base: var(--background-color-base);
   --disabled-color-base: var(--color-text-placeholder);
   --disabled-border-base: var(--border-color-light);
 
-  /* Loading */
-  --loading-mask-background: rgba(255, 255, 255, 0.9);
+  // Loading
+  --loading-mask-background: rgba(10, 10, 15, 0.8);
 
   /* Icon */
-  --icon-color: #666;
+  --icon-color: #a0a0a0;
   --icon-color-base: var(--color-info);
 
   /* Checkbox */
@@ -85,12 +94,12 @@
   --checkbox-input-height: 14px;
   --checkbox-input-width: 14px;
   --checkbox-border-radius: var(--border-radius-small);
-  --checkbox-background-color: var(--color-white);
+  --checkbox-background-color: transparent;
   --checkbox-input-border: var(--border-base);
   --checkbox-disabled-border-color: var(--border-color-base);
-  --checkbox-disabled-input-fill: #edf2fc;
+  --checkbox-disabled-input-fill: #1a1a28;
   --checkbox-disabled-icon-color: var(--color-text-placeholder);
-  --checkbox-disabled-checked-input-fill: var(--border-color-extra-light);
+  --checkbox-disabled-checked-input-fill: #283143d6;
   --checkbox-disabled-checked-input-border-color: var(--border-color-base);
   --checkbox-disabled-checked-icon-color: var(--color-text-placeholder);
   --checkbox-checked-font-color: var(--color-primary);
@@ -113,7 +122,7 @@
   --checkbox-bordered-mini-input-width: 12px;
   --checkbox-bordered-mini-height: 28px;
   --checkbox-button-checked-background-color: var(--color-primary);
-  --checkbox-button-checked-font-color: var(--color-white);
+  --checkbox-button-checked-font-color: var(--color-black);
   --checkbox-button-checked-border-color: var(--color-primary);
 
   /* Radio */
@@ -123,7 +132,7 @@
   --radio-input-height: 14px;
   --radio-input-width: 14px;
   --radio-input-border-radius: var(--border-radius-circle);
-  --radio-input-background-color: var(--color-white);
+  --radio-input-background-color: transparent;
   --radio-input-border: var(--border-base);
   --radio-input-border-color: var(--border-color-base);
   --radio-icon-color: var(--color-white);
@@ -135,7 +144,7 @@
   --radio-disabled-checked-icon-color: var(--color-text-placeholder);
   --radio-checked-font-color: var(--color-primary);
   --radio-checked-input-border-color: var(--color-primary);
-  --radio-checked-input-background-color: var(--color-white);
+  --radio-checked-input-background-color: transparent;
   --radio-checked-icon-color: var(--color-primary);
   --radio-input-border-color-hover: var(--border-color-hover);
   --radio-bordered-height: 40px;
@@ -154,7 +163,7 @@
   --radio-bordered-mini-height: 28px;
   --radio-button-font-size: var(--font-size-base);
   --radio-button-checked-background-color: var(--color-primary);
-  --radio-button-checked-font-color: var(--color-white);
+  --radio-button-checked-font-color: var(--color-black);
   --radio-button-checked-border-color: var(--color-primary);
   --radio-button-disabled-checked-fill: var(--border-color-extra-light);
 
@@ -177,9 +186,9 @@
   --select-group-color: var(--color-info);
   --select-group-height: 30px;
   --select-group-font-size: 12px;
-  --select-dropdown-background: var(--color-white);
+  --select-dropdown-background: #1a1a28;
   --select-dropdown-shadow: var(--box-shadow-light);
-  --select-dropdown-empty-color: #999;
+  --select-dropdown-empty-color: #666;
   --select-dropdown-max-height: 274px;
   --select-dropdown-padding: 6px 0;
   --select-dropdown-empty-padding: 10px 0;
@@ -216,13 +225,13 @@
   /* Message */
   --message-shadow: var(--box-shadow-base);
   --message-min-width: 380px;
-  --message-background-color: #edf2fc;
+  --message-background-color: #1a1a28;
   --message-padding: 15px 15px 15px 20px;
   --message-close-icon-color: var(--color-text-placeholder);
   --message-close-size: 16px;
   --message-close-hover-color: var(--color-text-secondary);
   --message-success-font-color: var(--color-success);
-  --message-info-font-color: var(--color-info);
+  --message-info-font-color: var(--color-text-regular);
   --message-warning-font-color: var(--color-warning);
   --message-danger-font-color: var(--color-danger);
 
@@ -255,8 +264,8 @@
   --input-border-color: var(--border-color-base);
   --input-border-radius: var(--border-radius-base);
   --input-border-color-hover: var(--border-color-hover);
-  --input-background-color: var(--color-white);
-  --input-fill-disabled: var(--disabled-fill-base);
+  --input-background-color: #0f0f15;
+  --input-fill-disabled: #1a1a28;
   --input-color-disabled: var(--font-color-disabled-base);
   --input-icon-color: var(--color-text-placeholder);
   --input-placeholder-color: var(--color-text-placeholder);
@@ -264,7 +273,7 @@
   --input-hover-border: var(--border-color-hover);
   --input-clear-hover-color: var(--color-text-secondary);
   --input-focus-border: var(--color-primary);
-  --input-focus-fill: var(--color-white);
+  --input-focus-fill: #0f0f15;
   --input-disabled-fill: var(--disabled-fill-base);
   --input-disabled-border: var(--disabled-border-base);
   --input-disabled-color: var(--disabled-color-base);
@@ -287,9 +296,9 @@
   --cascader-node-background-hover: var(--background-color-hover);
   --cascader-node-color-disabled: var(--color-text-placeholder);
   --cascader-color-empty: var(--color-text-placeholder);
-  --cascader-tag-background: #f0f2f5;
+  --cascader-tag-background: #1a1a28;
 
-  /* Group */
+  /* Group Option */
   --group-option-flex: 0 0 (1/5) * 100%;
   --group-option-offset-bottom: 12px;
   --group-option-fill-hover: rgba(var(--color-black), 0.06);
@@ -299,12 +308,12 @@
 
   /* Tab */
   --tab-font-size: var(--font-size-base);
-  --tab-border-line: 1px solid #e4e4e4;
+  --tab-border-line: 1px solid #2a2a3a;
   --tab-header-color-active: var(--color-text-secondary);
   --tab-header-color-hover: var(--color-text-regular);
   --tab-header-color: var(--color-text-regular);
-  --tab-header-fill-active: rgba(var(--color-black), 0.06);
-  --tab-header-fill-hover: rgba(var(--color-black), 0.06);
+  --tab-header-fill-active: rgba(var(--color-primary-rgb), 0.1);
+  --tab-header-fill-hover: rgba(var(--color-primary-rgb), 0.05);
   --tab-vertical-header-width: 90px;
   --tab-vertical-header-count-color: var(--color-white);
   --tab-vertical-header-count-fill: var(--color-text-secondary);
@@ -328,20 +337,21 @@
   --button-mini-padding-vertical: 7px;
   --button-mini-padding-horizontal: 15px;
   --button-default-font-color: var(--color-text-regular);
-  --button-default-background-color: var(--color-white);
+  --button-default-background-color: transparent;
   --button-default-border-color: var(--border-color-base);
   --button-disabled-font-color: var(--color-text-placeholder);
-  --button-disabled-background-color: var(--color-white);
+  --button-disabled-background-color: transparent;
   --button-disabled-border-color: var(--border-color-lighter);
-  --button-group-border-color: rgba(255, 255, 255, 0.5);
+  // Button Group Border - 按钮组分隔线颜色（深色模式使用半透明黑色）
+  --button-group-border-color: rgba(0, 0, 0, 0.3);
   --button-primary-border-color: var(--color-primary);
-  --button-primary-font-color: var(--color-white);
+  --button-primary-font-color: var(--color-black);
   --button-primary-background-color: var(--color-primary);
   --button-success-border-color: var(--color-success);
-  --button-success-font-color: var(--color-white);
+  --button-success-font-color: var(--color-black);
   --button-success-background-color: var(--color-success);
   --button-warning-border-color: var(--color-warning);
-  --button-warning-font-color: var(--color-white);
+  --button-warning-font-color: var(--color-black);
   --button-warning-background-color: var(--color-warning);
   --button-danger-border-color: var(--color-danger);
   --button-danger-font-color: var(--color-white);
@@ -352,7 +362,7 @@
   --button-hover-tint-percent: 20%;
   --button-active-shade-percent: 10%;
 
-  /* cascader */
+  /* Cascader */
   --cascader-height: 200px;
 
   /* Switch */
@@ -365,8 +375,8 @@
   --switch-button-size: 16px;
 
   /* Dialog */
-  --dialog-background-color: var(--color-white);
-  --dialog-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --dialog-background-color: #1a1a28;
+  --dialog-box-shadow: 0 0 30px rgba(0, 240, 255, 0.15), 0 4px 12px rgba(0, 0, 0, 0.5);
   --dialog-title-font-size: var(--font-size-large);
   --dialog-content-font-size: 14px;
   --dialog-font-line-height: var(--font-line-height-primary);
@@ -376,30 +386,30 @@
   --table-border: 1px solid var(--table-border-color);
   --table-font-color: var(--color-text-regular);
   --table-header-font-color: var(--color-text-regular);
-  --table-row-hover-background-color: var(--background-color-hover);
-  --table-current-row-background-color: var(--color-primary-light-8);
-  --table-header-background-color: #f0f0f0;
-  --table-striped-background-color: #f7f7f7;
-  --table-fixed-box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
+  --table-row-hover-background-color: rgba(var(--color-primary-rgb), 0.7);
+  --table-current-row-background-color: rgba(var(--color-primary-rgb), 0.4);
+  --table-header-background-color: #0f0f15;
+  --table-striped-background-color: #222239;
+  --table-fixed-box-shadow: 0 0 10px rgba(0, 240, 255, 0.05);
 
   /* Pagination */
   --pagination-font-size: 13px;
-  --pagination-background-color: var(--color-white);
+  --pagination-background-color: transparent;
   --pagination-font-color: var(--color-text-primary);
   --pagination-border-radius: 3px;
   --pagination-button-color: var(--color-text-primary);
   --pagination-button-width: 35.5px;
   --pagination-button-height: 28px;
   --pagination-button-disabled-color: var(--color-text-placeholder);
-  --pagination-button-disabled-background-color: var(--color-white);
+  --pagination-button-disabled-background-color: transparent;
   --pagination-hover-color: var(--color-primary);
 
   /* Popup */
   --popup-modal-background-color: var(--color-black);
-  --popup-modal-opacity: 0.5;
+  --popup-modal-opacity: 0.7;
 
   /* Popover */
-  --popover-background-color: var(--color-white);
+  --popover-background-color: #1a1a28;
   --popover-font-size: var(--font-size-base);
   --popover-border-color: var(--border-color-lighter);
   --popover-arrow-size: 6px;
@@ -409,10 +419,10 @@
   --popover-title-font-color: var(--color-text-primary);
 
   /* Tooltip */
-  --tooltip-fill: var(--color-text-primary);
+  --tooltip-fill: var(--border-color-base);
   --tooltip-color: var(--color-white);
   --tooltip-font-size: 12px;
-  --tooltip-border-color: var(--color-text-primary);
+  --tooltip-border-color: var(--border-color-base);
   --tooltip-arrow-size: 6px;
   --tooltip-padding: 10px;
 
@@ -434,7 +444,7 @@
 
   /* Dropdown */
   --dropdown-menu-box-shadow: var(--box-shadow-light);
-  --dropdown-menuItem-hover-fill: var(--color-primary-light-9);
+  --dropdown-menuItem-hover-fill: rgba(var(--color-primary-rgb), 0.1);
   --dropdown-menuItem-hover-color: var(--link-color);
 
   /* Badge */
@@ -445,14 +455,14 @@
   --badge-size: 18px;
 
   /* Card */
-  --card-border-color: var(--border-color-lighter);
+  --card-border-color: var(--border-color-light);
   --card-border-radius: 4px;
   --card-padding: var(--base-value);
 
   /* Slider */
   --slider-main-background-color: var(--color-primary);
   --slider-runway-background-color: var(--border-color-light);
-  --slider-button-hover-color: color-mix(in srgb, var(--color-primary), black 97%);
+  --slider-button-hover-color: color-mix(in srgb, var(--color-primary), white 97%);
   --slider-stop-background-color: var(--background-color-base);
   --slider-disable-color: var(--color-text-placeholder);
   --slider-margin: 16px 0;
@@ -469,9 +479,9 @@
 
   /* Menu */
   --menu-item-font-size: var(--font-size-base);
-  --menu-item-font-color: var(--color-text-primary);
-  --menu-background-color: var(--color-white);
-  --menu-item-hover-fill: var(--color-primary-light-9);
+  --menu-item-font-color: var(--color-text-regular);
+  --menu-background-color: #0f0f15;
+  --menu-item-hover-fill: var(--background-color-hover);
 
   /* Rate */
   --rate-height: 20px;
@@ -486,12 +496,12 @@
   --datepicker-header-font-color: var(--color-text-regular);
   --datepicker-icon-color: var(--color-text-primary);
   --datepicker-border-color: var(--disabled-border-base);
-  --datepicker-inner-border-color: #e4e4e4;
+  --datepicker-inner-border-color: #2a2a3a;
   --datepicker-inrange-background-color: var(--background-color-hover);
   --datepicker-inrange-hover-background-color: var(--background-color-hover);
   --datepicker-active-color: var(--color-primary);
   --datepicker-hover-font-color: var(--color-primary);
-  --datepicker-cell-hover-color: #fff;
+  --datepicker-cell-hover-color: #1a1a28;
   --datepicker-disabled-color: var(--color-text-placeholder);
 
   /* Loading */
@@ -505,8 +515,8 @@
   /* Carousel */
   --carousel-arrow-font-size: 12px;
   --carousel-arrow-size: 36px;
-  --carousel-arrow-background: rgba(31, 45, 61, 0.11);
-  --carousel-arrow-hover-background: rgba(31, 45, 61, 0.23);
+  --carousel-arrow-background: rgba(0, 240, 255, 0.11);
+  --carousel-arrow-hover-background: rgba(0, 240, 255, 0.23);
   --carousel-indicator-width: 30px;
   --carousel-indicator-height: 2px;
   --carousel-indicator-padding-horizontal: 4px;
@@ -514,12 +524,12 @@
   --carousel-indicator-out-color: var(--border-color-hover);
 
   /* Collapse */
-  --collapse-border-color: var(--border-color-lighter);
+  --collapse-border-color: var(--border-color-light);
   --collapse-header-height: 48px;
-  --collapse-header-background-color: var(--color-white);
+  --collapse-header-background-color: #0f0f15;
   --collapse-header-font-color: var(--color-text-primary);
   --collapse-header-font-size: 13px;
-  --collapse-content-background-color: var(--color-white);
+  --collapse-content-background-color: #0f0f15;
   --collapse-content-font-size: 13px;
   --collapse-content-font-color: var(--color-text-primary);
 
@@ -534,14 +544,10 @@
   --transfer-item-height: 30px;
   --transfer-filter-height: 32px;
 
-  /* Header */
-  --header-padding: 0 20px;
-
-  /* Footer */
-  --footer-padding: 0 20px;
-
-  /* Main */
-  --main-padding: 20px;
+  /* Layout */
+  --header-padding: 0 var(--base-value);
+  --footer-padding: 0 var(--base-value);
+  --main-padding: var(--base-value);
 
   /* Timeline */
   --timeline-node-size-normal: 12px;
@@ -549,7 +555,7 @@
   --timeline-node-color: var(--border-color-light);
 
   /* Backtop */
-  --backtop-background-color: var(--color-white);
+  --backtop-background-color: #1a1a28;
   --backtop-font-color: var(--color-primary);
   --backtop-hover-background-color: var(--background-color-hover);
 
@@ -567,7 +573,7 @@
 
   /* Calendar */
   --calendar-border: var(--table-border);
-  --calendar-selected-background-color: #f2f8fe;
+  --calendar-selected-background-color: rgba(var(--color-primary-rgb), 0.1);
   --calendar-cell-width: 85px;
 
   /* Form */
@@ -575,7 +581,7 @@
 
   /* Avatar */
   --avatar-font-color: #fff;
-  --avatar-background-color: #c0c4cc;
+  --avatar-background-color: #2a2a3a;
   --avatar-text-font-size: 14px;
   --avatar-icon-font-size: 18px;
   --avatar-border-radius: var(--border-radius-base);
@@ -593,14 +599,14 @@
   --descriptions-header-margin-bottom: 20px;
   --descriptions-title-font-size: 16px;
   --descriptions-table-border: 1px solid var(--border-color-lighter);
-  --descriptions-item-bordered-label-background: #fafafa;
+  --descriptions-item-bordered-label-background: #0f0f15;
 
-  /* Skeleton  */
-  --skeleton-color: #f2f2f2;
-  --skeleton-to-color: #e6e6e6;
+  /* Skeleton */
+  --skeleton-color: #1a1a28;
+  --skeleton-to-color: #2a2a3a;
 
-  /* Svg */
-  --svg-monochrome-grey: #dcdde0;
+  /* SVG Monochrome Grey */
+  --svg-monochrome-grey: #2a2a3a;
 
   /* Result */
   --result-padding: 40px 30px;
@@ -614,7 +620,7 @@
   --result-warning-color: var(--color-warning);
   --result-danger-color: var(--color-danger);
 
-  /* 下拉框树 */
+  /* TreeSelect */
   --tree-select-font-size-primary: var(--font-size-medium);
   --tree-select-font-size-medium: var(--font-size-base);
   --tree-select-font-size-small: var(--font-size-small);

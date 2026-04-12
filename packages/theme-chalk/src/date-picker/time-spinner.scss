@@ -27,7 +27,7 @@
       }
 
       .sg-time-spinner__item:hover:not(.disabled):not(.active) {
-        background: var(--color-white);
+        background: var(--background-color-hover);
         cursor: default;
       }
     }

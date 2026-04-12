@@ -14,7 +14,7 @@
 <style lang="scss">
 .footer-nav {
   padding: 40px 0;
-  color: #333;
+  color: var(--color-text-primary);
   font-size: 14px;
 
   &::after {
@@ -25,7 +25,7 @@
 
   & i {
     transition: 0.3s;
-    color: #999;
+    color: var(--color-info-light);
     vertical-align: baseline;
   }
 }

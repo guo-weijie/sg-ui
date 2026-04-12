@@ -20,26 +20,25 @@
       <transition name="text-slide">
         <span v-show="hovering">{{ controlText }}</span>
       </transition>
-      <sg-tooltip effect="dark" :content="langConfig['tooltip-text']" placement="right">
-        <transition name="text-slide">
+      <transition name="text-slide">
           <sg-button v-show="hovering || isExpanded" size="small" type="text" class="control-button"
             @click.stop="goCodepen">
             {{ langConfig['button-text'] }}
           </sg-button>
         </transition>
-      </sg-tooltip>
     </div>
   </div>
 </template>
 
 <style lang="scss">
 .demo-block {
-  border: solid 1px #ebebeb;
+  color: var(--color-text-regular);
+  border: solid 1px var(--border-color-base);
   border-radius: 3px;
-  transition: .2s;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
 
   &.hover {
-    box-shadow: 0 0 8px 0 rgba(232, 237, 250, .6), 0 2px 4px 0 rgba(232, 237, 250, .5);
+    box-shadow: var(--box-shadow-dark);
   }
 
   code {
@@ -55,8 +54,8 @@
   }
 
   .meta {
-    background-color: #fafafa;
-    border-top: solid 1px #eaeefb;
+    background-color: var(--background-color-base);
+    border-top: solid 1px var(--border-color-base);
     overflow: hidden;
     height: 0;
     transition: height .2s;
@@ -65,14 +64,14 @@
   .description {
     padding: 20px;
     box-sizing: border-box;
-    border: solid 1px #ebebeb;
+    border: solid 1px var(--border-color-base);
     border-radius: 3px;
     font-size: 14px;
     line-height: 22px;
-    color: #666;
+    color: var(--color-text-regular);
     word-break: break-word;
     margin: 10px;
-    background-color: #fff;
+    background-color: var(--background-color-base);
 
     p {
       margin: 0;
@@ -80,8 +79,8 @@
     }
 
     code {
-      color: #5e6d82;
-      background-color: #e6effb;
+      color: var(--color-info);
+      background-color: var(--background-color-base);
       margin: 0 4px;
       display: inline-block;
       padding: 1px 5px;
@@ -110,15 +109,15 @@
   }
 
   .demo-block-control {
-    border-top: solid 1px #eaeefb;
+    border-top: solid 1px var(--border-color-base);
     height: 44px;
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: var(--background-color-page);
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
     text-align: center;
     margin-top: -1px;
-    color: #d3dce6;
+    color: var(--color-primary);
     cursor: pointer;
     position: relative;
 
@@ -148,8 +147,8 @@
     }
 
     &:hover {
-      color: #409EFF;
-      background-color: #f9fafc;
+      color: var(--color-primary);
+      background-color: var(--background-color-hover);
     }
 
     & .text-slide-enter,

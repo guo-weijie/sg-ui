@@ -4,21 +4,32 @@
   height: 32px;
   .vue-treeselect__control {
     border-radius: 4px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color-base);
     box-sizing: border-box;
     padding: 0 15px;
     transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
     width: 100%;
     height: 32px;
+    background-color: var(--background-color-base);
+    &:hover{
+      border-color: var(--color-primary) !important;
+    }
+  }
+
+  .vue-treeselect__menu{
+    border: 1px solid var(--border-color-base);
+  }
+  .vue-treeselect--open-below .vue-treeselect__menu{
+    border-top-color: var(--border-color-base);
   }
 
   .vue-treeselect--focused .vue-treeselect__control {
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color-base);
     box-shadow: none;
   }
 
   .vue-treeselect__value-container {
-    color: #666666 !important;
+    color: var(--color-text-regular) !important;
     height: 30px;
   }
 
@@ -29,6 +40,10 @@
 
   .vue-treeselect__checkbox {
     border-color: var(--color-primary);
+  }
+  .vue-treeselect__option--highlight{
+    color: var(--color-primary);
+    background-color: var(--background-color-hover);
   }
   .vue-treeselect__option--highlight .vue-treeselect__checkbox--checked {
     background-color: var(--color-primary);
@@ -46,15 +61,20 @@
 
   .vue-treeselect__multi-value-item {
     background: var(--color-primary);
-    color: #fff;
+    color: var(--color-text-primary);
+  }
+
+  .vue-treeselect__single-value{
+    color: var(--color-text-primary);
   }
 
   .vue-treeselect__value-remove {
-    color: #fff;
+    color: var(--color-text-primary);
+    border-left: 1px solid var(--border-color-base);
   }
 
   .vue-treeselect--single .vue-treeselect__option--selected {
-    background: #ddd;
+    background: var(--background-color-hover);
   }
 
   .vue-treeselect__multi-value,
@@ -62,6 +82,8 @@
   .vue-treeselect__menu,
   .vue-treeselect__multi-value-item {
     font-size: var(--tree-select-font-size-primary);
+    background-color: var(--background-color-base);
+    color: var(--color-text-regular);
   }
   .multipleTags {
     overflow: hidden;

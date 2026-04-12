@@ -31,14 +31,14 @@
       padding: 0;
       padding-bottom: var(--base-value);
       position: relative;
-      color: #5e6d82;
+      color: var(--color-info);
 
       > li {
         position: relative;
         padding-bottom: 15px;
         list-style: none;
         line-height: 1.8;
-        border: 1px solid #ddd;
+        border: 1px solid var(--border-color-base);
         border-radius: 4px;
 
         &:not(:last-child) {
@@ -56,14 +56,14 @@
 
           li {
             padding-left: 0;
-            color: #555;
+            color: var(--color-text-regular);
             word-break: normal;
           }
 
           li::before {
             content: '';
-            circle: 4px #fff;
-            border: solid 1px #333;
+            circle: 4px var(--color-white);
+            border: solid 1px var(--border-color-base);
             margin-right: -12px;
             display: inline-block;
             vertical-align: middle;
@@ -76,12 +76,12 @@
         list-style: none;
         padding-left: 20px;
         padding-bottom: 5px;
-        color: var(--color-text-primary);
+        color: var(--color-text-regular);
         word-break: break-all;
 
         &:before {
           content: '';
-          circle: 6px #333;
+          circle: 6px var(--border-color-base);
           transform: translateX(-20px);
           display: inline-block;
           vertical-align: middle;
@@ -96,7 +96,7 @@
       h3 {
         margin:0;
         padding: 15px 30px;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid var(--border-color-base);
         font-size: 20px;
         color: var(--color-text-primary);
         font-weight: bold;

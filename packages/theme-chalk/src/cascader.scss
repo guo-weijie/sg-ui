@@ -175,6 +175,7 @@
     border: none;
     outline: none;
     box-sizing: border-box;
+    background-color: var(--background-color-base);
 
     &::placeholder {
       color: var(--color-text-placeholder);

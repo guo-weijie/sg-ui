@@ -32,7 +32,7 @@
       top: $gap;
       bottom: $gap;
       left: 0;
-      background: color-mix(in srgb, white, transparent 50%);
+      background: var(--button-group-border-color);
     }
 
     &.sg-button--default::before {
@@ -76,7 +76,7 @@
   z-index: 10;
   padding: 10px 0;
   margin: 5px 0;
-  background-color: var(--color-white);
+  background-color: var(--background-color-base);
   border: 1px solid var(--border-color-lighter);
   border-radius: var(--border-radius-base);
   box-shadow: var(--dropdown-menu-box-shadow);
@@ -112,7 +112,7 @@
         height: $divided-offset;
         display: block;
         margin: 0 -20px;
-        background-color: var(--color-white);
+        background-color: var(--background-color-base);
       }
     }
 

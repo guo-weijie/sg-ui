@@ -25,7 +25,7 @@
 <style>
   .sg-dropdown-link {
     cursor: pointer;
-    color: #409EFF;
+    color: var(--color-primary);
   }
   .sg-icon-arrow-down {
     font-size: 12px;
@@ -131,14 +131,14 @@
 <style>
   .sg-dropdown-link {
     cursor: pointer;
-    color: #409EFF;
+    color: var(--color-primary);
   }
   .sg-icon-arrow-down {
     font-size: 12px;
   }
   .demonstration {
     display: block;
-    color: #8492a6;
+    color: var(--color-text-regular);
     font-size: 14px;
     margin-bottom: 20px;
   }
@@ -168,7 +168,7 @@
 <style>
   .sg-dropdown-link {
     cursor: pointer;
-    color: #409EFF;
+    color: var(--color-primary);
   }
   .sg-icon-arrow-down {
     font-size: 12px;
@@ -199,7 +199,7 @@
 <style>
   .sg-dropdown-link {
     cursor: pointer;
-    color: #409EFF;
+    color: var(--color-primary);
   }
   .sg-icon-arrow-down {
     font-size: 12px;

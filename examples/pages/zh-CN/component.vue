@@ -62,7 +62,7 @@
         table {
           border-collapse: collapse;
           width: 100%;
-          background-color: #fff;
+          background-color: transparent;
           font-size: 14px;
           margin-bottom: 45px;
           line-height: 1.5em;
@@ -72,7 +72,7 @@
           }
 
           td, th {
-            border-bottom: 1px solid #dcdfe6;
+            border-bottom: 1px solid var(--border-color-base);
             padding: 15px;
             max-width: 250px;
           }
@@ -80,12 +80,12 @@
           th {
             text-align: left;
             white-space: nowrap;
-            color: #909399;
+            color: var(--color-text-regular);
             font-weight: normal;
           }
 
           td {
-            color: #606266;
+            color: var(--color-text-regular);
           }
 
           th:first-child, td:first-child {
@@ -97,7 +97,7 @@
           margin: 10px 0;
           padding: 0 0 0 20px;
           font-size: 14px;
-          color: #5e6d82;
+          color: var(--color-text-regular);
           line-height: 2em;
         }
       }

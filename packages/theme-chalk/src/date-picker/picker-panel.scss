@@ -2,7 +2,7 @@
   color: var(--color-text-regular);
   border: 1px solid var(--datepicker-border-color);
   box-shadow: var(--box-shadow-light);
-  background: var(--color-white);
+  background: var(--background-color-base);
   border-radius: var(--border-radius-base);
   line-height: 30px;
   margin: 5px 0;
@@ -24,7 +24,7 @@
     border-top: 1px solid var(--datepicker-inner-border-color);
     padding: 4px;
     text-align: right;
-    background-color: var(--color-white);
+    background-color: var(--background-color-base);
     position: relative;
     font-size: 0;
   }
@@ -47,14 +47,14 @@
     }
 
     &.active {
-      background-color: #e6f1fe;
+      background-color: var(--background-color-hover);
       color: var(--datepicker-active-color);
     }
   }
 
   @include e(btn) {
-    border: 1px solid #dcdcdc;
-    color: #333;
+    border: 1px solid var(--border-color-base);
+    color: var(--color-text-regular);
     line-height: 24px;
     border-radius: 2px;
     padding: 0 20px;
@@ -64,7 +64,7 @@
     font-size: 12px;
 
     &[disabled] {
-      color: #cccccc;
+      color: var(--color-text-placeholder);
       cursor: not-allowed;
     }
   }
@@ -105,7 +105,7 @@
   border-right: 1px solid var(--datepicker-inner-border-color);
   box-sizing: border-box;
   padding-top: 6px;
-  background-color: var(--color-white);
+  background-color: var(--background-color-base);
   overflow: auto;
 }
 

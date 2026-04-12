@@ -10,7 +10,7 @@
   flex: 1;
   width: 100%;
   max-width: 100%;
-  background-color: var(--color-white);
+  background-color: var(--background-color-base);
   font-size: 14px;
   color: var(--table-font-color);
 
@@ -46,7 +46,7 @@
   @include e(expand-icon) {
     position: relative;
     cursor: pointer;
-    color: #666;
+    color: var(--color-text-secondary);
     font-size: 12px;
     transition: transform 0.2s ease-in-out;
     height: 20px;
@@ -65,7 +65,7 @@
   }
 
   @include e(expanded-cell) {
-    background-color: var(--color-white);
+    background-color: var(--background-color-base);
 
     // 纯属为了增加权重
     &[class*='cell'] {
@@ -73,7 +73,7 @@
     }
 
     &:hover {
-      background-color: transparent !important;
+      background-color: var(--background-color-base) !important;
     }
   }
 
@@ -178,7 +178,7 @@
   }
 
   tr {
-    background-color: var(--color-white);
+    background-color: var(--background-color-base);
 
     input[type='checkbox'] {
       margin: 0;
@@ -338,7 +338,7 @@
     position: absolute;
     top: -1px;
     right: 0;
-    background-color: var(--color-white);
+    background-color: var(--background-color-base);
     border-bottom: var(--table-border);
   }
 
@@ -541,7 +541,7 @@
     cursor: pointer;
 
     & i {
-      color: var(--color-info);
+      color: var(--color-text-secondary);
       font-size: 12px;
       transform: scale(0.75);
     }

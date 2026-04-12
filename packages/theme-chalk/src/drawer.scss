@@ -136,7 +136,7 @@ $directions: rtl, ltr, ttb, btt;
 
   &__header {
     align-items: center;
-    color: rgb(114, 118, 123);
+    color: var(--color-text-regular);
     display: flex;
     margin-bottom: 32px;
     padding: var(--dialog-padding-primary);

@@ -14,14 +14,14 @@
       h4 {
         margin: 20px 0 16px;
         font-size: 16px;
-        color: #1f2f3d;
+        color: var(--color-text-primary);
         line-height: 1;
       }
       
       p {
         margin: 0;
         font-size: 14px;
-        color: #99a9bf;
+        color: var(--color-info-light);
         line-height: 1;
       }
     }
@@ -56,13 +56,13 @@
   }
   p {
     font-size: 14px;
-    color: #5e6d82;
+    color: var(--color-info);
   }
   .card {
     height: 394px;
     width: 100%;
-    background:#ffffff;
-    border:1px solid #eaeefb;
+    background: var(--background-color-base);
+    border:1px solid var(--border-color-base);
     border-radius:5px;
     box-sizing: border-box;
     text-align: center;
@@ -77,13 +77,13 @@
     h3 {
       margin: 0 0 10px;
       font-size: 18px;
-      color: #1f2f3d;
+      color: var(--color-text-primary);
       font-weight: normal;
       height: 22px;
     }
     p {
       font-size: 14px;
-      color: #99a9bf;
+      color: var(--color-info-light);
       padding: 0 30px;
       margin: 0;
       word-break: break-all;
@@ -96,7 +96,7 @@
       line-height: 42px;
       font-size: 14px;
       background-color: var(--color-primary);
-      color: #fff;
+      color: var(--color-white);
       text-align: center;
       border: 0;
       padding: 0;

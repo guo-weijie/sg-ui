@@ -11,10 +11,11 @@
 
 <style lang="scss">
 .footer {
-  background-color: #f7fbfd;
+  background-color: var(--background-color-page);
   width: 100%;
   padding: var(--base-value);
   box-sizing: border-box;
+  border-top: 1px solid var(--border-color-base);
 
   .container {
     box-sizing: border-box;
@@ -24,7 +25,7 @@
     align-items: center;
     h4 {
       font-size: 18px;
-      color: #333;
+      color: var(--color-text-primary);
       line-height: 1;
       margin: 0 0 15px 0;
     }
@@ -34,10 +35,10 @@
       margin: 0;
       line-height: 2;
       font-size: 14px;
-      color: #666;
+      color: var(--color-text-regular);
 
       &:hover {
-        color: #333;
+        color: var(--color-text-primary);
       }
     }
   }

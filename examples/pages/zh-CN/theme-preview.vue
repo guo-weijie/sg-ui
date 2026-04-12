@@ -15,8 +15,8 @@
     width: 25%;
     .editor {
       overflow: hidden;
-      background: #f5f7fa;
-      border: 1px solid #ebeef5;
+      background: var(--background-color-base);
+      border: 1px solid var(--border-color-base);
       border-radius: 5px;
       margin-bottom: 20px;
       &.fixed {

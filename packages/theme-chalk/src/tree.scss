@@ -6,7 +6,7 @@
 @include b(tree) {
   position: relative;
   cursor: default;
-  background: var(--color-white);
+  background: var(--background-color-base);
   color: var(--tree-font-color);
 
   @include e(empty-block) {
@@ -120,5 +120,5 @@
 }
 
 .sg-tree--highlight-current .sg-tree-node.is-current > .sg-tree-node__content {
-  background-color: color-mix(in srgb, var(--color-white), var(--color-primary) 8%);
+  background-color: color-mix(in srgb, var(--background-color-base) 50%, var(--color-primary));
 }

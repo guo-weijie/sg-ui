@@ -95,11 +95,11 @@
       },
       defineBackColor: {
         type: [String, Array, Function],
-        default: '#ebeef5'
+        default: 'var(--border-color-lighter)'
       },
       textColor: {
         type: [String, Array, Function],
-        default: '#606266'
+        default: 'var(--color-text-regular)'
       },
       format: Function
     },
@@ -160,16 +160,16 @@
         } else {
           switch (this.status) {
             case 'success':
-              ret = '#13ce66';
+              ret = 'var(--color-success)';
               break;
             case 'exception':
-              ret = '#ff4949';
+              ret = 'var(--color-danger)';
               break;
             case 'warning':
-              ret = '#e6a23c';
+              ret = 'var(--color-warning)';
               break;
             default:
-              ret = '#20a0ff';
+              ret = 'var(--color-primary)';
           }
         }
         return ret;

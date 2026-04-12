@@ -1,5 +1,5 @@
 .demo-icon .source > div > i {
-  color: #606266;
+  color: var(--color-text-regular);
   margin: 0 20px;
   font-size: 1.5em;
   vertical-align: middle;
@@ -13,7 +13,7 @@
   overflow: hidden;
   list-style: none;
   padding: 0 !important;
-  border: solid 1px #eaeefb;
+  border: solid 1px var(--border-color-base);
   border-radius: 4px;
 }
 .icon-list li {
@@ -22,10 +22,10 @@
   text-align: center;
   height: 120px;
   line-height: 120px;
-  color: #666;
+  color: var(--color-text-regular);
   font-size: 13px;
-  border-right: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  border-right: 1px solid var(--border-color-light);
+  border-bottom: 1px solid var(--border-color-light);
   margin-right: -1px;
   margin-bottom: -1px;
 
@@ -41,7 +41,7 @@
     line-height: normal;
     vertical-align: middle;
     font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', SimSun, sans-serif;
-    color: #99a9bf;
+    color: var(--color-info-light);
     transition: color 0.15s linear;
   }
 
@@ -49,7 +49,7 @@
     display: block;
     font-size: 32px;
     margin-bottom: 15px;
-    color: #606266;
+    color: var(--color-text-regular);
     transition: color 0.15s linear;
   }
 

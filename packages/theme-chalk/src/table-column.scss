@@ -14,7 +14,7 @@
 @include b(table-filter) {
   border: solid 1px var(--border-color-lighter);
   border-radius: 2px;
-  background-color: var(--color-white);
+  background-color: var(--background-color-base);
   box-shadow: var(--dropdown-menu-box-shadow);
   box-sizing: border-box;
   margin: 2px 0;

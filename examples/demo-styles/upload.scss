@@ -1,5 +1,5 @@
 .upload-tip {
-  color: #8492a6;
+    color: var(--color-info);
   font-size: 12px;
   margin-top: 7px;
 }
@@ -11,7 +11,7 @@
   }
   .avatar-uploader {
     .sg-upload {
-      border: 1px dashed #d9d9d9;
+      border: 1px dashed var(--border-color-base);
       border-radius: 6px;
       cursor: pointer;
       position: relative;
@@ -24,7 +24,7 @@
     }
     .avatar-uploader-icon {
       font-size: 28px;
-      color: #8c939d;
+        color: var(--color-text-regular);
       width: 178px;
       height: 178px;
       line-height: 178px;

@@ -137,7 +137,7 @@ Click the triggering element or hover on it.
   }
   .demonstration {
     display: block;
-    color: #8492a6;
+    color: var(--color-text-regular);
     font-size: 14px;
     margin-bottom: 20px;
   }
@@ -167,7 +167,7 @@ Use `hide-on-click` to define if menu closes on clicking.
 <style>
   .sg-dropdown-link {
     cursor: pointer;
-    color: #409EFF;
+    color: var(--color-primary);
   }
   .sg-icon-arrow-down {
     font-size: 12px;
@@ -198,7 +198,7 @@ Clicking each dropdown item fires an event whose parameter is assigned by each i
 <style>
   .sg-dropdown-link {
     cursor: pointer;
-    color: #409EFF;
+    color: var(--color-primary);
   }
   .sg-icon-arrow-down {
     font-size: 12px;

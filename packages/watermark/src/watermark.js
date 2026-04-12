@@ -18,7 +18,7 @@ export default {
     },
     color: {
       type: String,
-      default: 'rgba(0, 0, 0, .15)'
+      default: 'rgba(128, 128, 128, 0.3)'
     },
     fontSize: {
       type: String,

@@ -27,12 +27,12 @@
 
     @include when(process) {
       color: var(--color-text-primary);
-      border-color: var(--color-text-primary);
+      border-color: var(--border-color-base);
     }
 
     @include when(wait) {
       color: var(--color-text-placeholder);
-      border-color: var(--color-text-placeholder);
+      border-color: var(--border-color-light);
     }
 
     @include when(success) {
@@ -61,7 +61,7 @@
     height: 24px;
     font-size: 14px;
     box-sizing: border-box;
-    background: var(--color-white);
+    background: var(--background-color-base);
     transition: 0.15s ease-out;
 
     @include when(text) {
@@ -97,7 +97,7 @@
   @include e(line) {
     position: absolute;
     border-color: inherit;
-    background-color: var(--color-text-placeholder);
+    background-color: var(--border-color-base);
   }
 
   @include e(line-inner) {

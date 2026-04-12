@@ -9,9 +9,9 @@
     align-items: center;
     justify-content: center;
     height: 50px;
-    background: #e8f3fe;
+    background: var(--background-color-hover);
     margin: 10px;
-    color: color-mix(in srgb, #1989fa, white 20%);
+    color: color-mix(in srgb, var(--color-primary), var(--color-white) 20%);
     & + .list-item {
       margin-top: 10px
     }
@@ -34,8 +34,8 @@
     align-items: center;
     justify-content: center;
     height: 50px;
-    background: #fff6f6;
-    color: #ff8484;
+    background: var(--background-color-hover);
+      color: var(--color-danger);
     & + .list-item {
       margin-top: 10px
     }

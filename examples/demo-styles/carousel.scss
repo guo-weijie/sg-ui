@@ -1,7 +1,7 @@
 .demo-carousel .block {
   padding: 30px;
   text-align: center;
-  border-right: solid 1px #eff2f6;
+  border-right: solid 1px var(--border-color-light);
   display: inline-block;
   width: 49%;
   box-sizing: border-box;
@@ -12,7 +12,7 @@
 
 .demo-carousel .demonstration {
   display: block;
-  color: #8492a6;
+  color: var(--color-text-regular);
   font-size: 14px;
   margin-bottom: 20px;
 }
@@ -23,7 +23,7 @@
 
 .demo-carousel .sg-carousel__item {
   h3 {
-    color: #fff;
+    color: var(--color-white);
     font-size: 18px;
     line-height: 300px;
     margin: 0;
@@ -37,10 +37,10 @@
     }
   }
   &:nth-child(2n) {
-    background-color: #99a9bf;
+    background-color: var(--color-primary-light-5);
   }
   &:nth-child(2n + 1) {
-    background-color: #d3dce6;
+    background-color: var(--color-primary-light-7);
   }
 }
 

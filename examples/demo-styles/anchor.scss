@@ -9,7 +9,7 @@
     width: 40px;
     height: 40px;
     text-align: center;
-    background: #fff;
+    background: var(--background-color-base);
     border-radius: 4px;
     box-shadow: 0 0 black;
     display: inline-block;
@@ -19,17 +19,17 @@
 .sg-anchor .itemClass i{
     font-size: 30px;
     margin-top: 6px;
-    color: #009999;
+    color: var(--color-primary);
 }
 .sg-anchor .sg-anchor-item .itemClass:hover {
-    background-color: #18B6A4;
+    background-color: var(--color-primary-light-2);
 }
 
 .sg-anchor .sg-anchor-item.isActive .itemClass{
-    background-color: #009999;
+    background-color: var(--color-primary);
 }
 
 .sg-anchor .sg-anchor-item .itemClass:hover i,
 .sg-anchor .sg-anchor-item.isActive .itemClass i{
-    color: #fff;
+    color: var(--color-white);
 }

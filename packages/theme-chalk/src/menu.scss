@@ -41,7 +41,7 @@
 }
 
 @include b(menu) {
-  border-right: solid 1px #e6e6e6;
+  border-right: solid 1px var(--border-color-lighter);
   list-style: none;
   position: relative;
   margin: 0;
@@ -49,7 +49,7 @@
   background-color: var(--menu-background-color);
   @include utils-clearfix;
   &.sg-menu--horizontal {
-    border-bottom: solid 1px #e6e6e6;
+    border-bottom: solid 1px var(--border-color-lighter);
   }
 
   @include m(horizontal) {
@@ -69,7 +69,7 @@
 
       &:not(.is-disabled):hover,
       &:not(.is-disabled):focus {
-        background-color: #fff;
+        background-color: var(--background-color-page);
       }
     }
     & > .sg-submenu {
@@ -97,7 +97,7 @@
         color: var(--color-text-secondary);
 
         &:hover {
-          background-color: #fff;
+          background-color: var(--background-color-page);
         }
       }
       & .sg-submenu__icon-arrow {
@@ -110,7 +110,7 @@
     & .sg-menu {
       & .sg-menu-item,
       & .sg-submenu__title {
-        background-color: var(--color-white);
+        background-color: var(--background-color-base);
         float: none;
         height: 36px;
         line-height: 36px;

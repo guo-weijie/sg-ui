@@ -1,7 +1,7 @@
 @mixin button-plain($color) {
   color: $color;
-  background: color-mix(in srgb, var(--color-white) 90%, $color);
-  border-color: color-mix(in srgb, var(--color-white) 60%, $color);
+  background: color-mix(in srgb, var(--background-color-base) 90%, $color);
+  border-color: color-mix(in srgb, var(--border-color-base) 60%, $color);
 
   &:hover,
   &:focus {
@@ -11,8 +11,8 @@
   }
 
   &:active {
-    background: color-mix(in srgb, var(--color-black) var(--button-active-shade-percent), $color);
-    border-color: color-mix(in srgb, var(--color-black) var(--button-active-shade-percent), $color);
+    background: color-mix(in srgb, var(--background-color-base) var(--button-active-shade-percent), $color);
+    border-color: color-mix(in srgb, var(--border-color-base) var(--button-active-shade-percent), $color);
     color: var(--color-white);
     outline: none;
   }
@@ -22,9 +22,9 @@
     &:hover,
     &:focus,
     &:active {
-      color: color-mix(in srgb, var(--color-white) 40%, $color);
-      background-color: color-mix(in srgb, var(--color-white) 90%, $color);
-      border-color: color-mix(in srgb, var(--color-white) 80%, $color);
+      color: color-mix(in srgb, var(--background-color-base) 40%, $color);
+      background-color: color-mix(in srgb, var(--background-color-base) 90%, $color);
+      border-color: color-mix(in srgb, var(--background-color-base) 80%, $color);
     }
   }
 }
@@ -64,8 +64,8 @@
     &:focus,
     &:active {
       color: var(--color-white);
-      background-color: color-mix(in srgb, $background-color, var(--color-white));
-      border-color: color-mix(in srgb, $border-color, var(--color-white));
+      background-color: color-mix(in srgb, $background-color, var(--background-color-base));
+      border-color: color-mix(in srgb, $border-color, var(--border-color-base));
     }
   }
 

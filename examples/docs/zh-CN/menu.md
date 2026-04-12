@@ -24,7 +24,7 @@
     </sg-submenu>
   </sg-submenu>
   <sg-menu-item index="3" disabled>消息中心</sg-menu-item>
-  <sg-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></sg-menu-item>
+  <sg-menu-item index="4"><a href="https://www.keep-silent.com" target="_blank">订单管理</a></sg-menu-item>
 </sg-menu>
 <div class="line"></div>
 <sg-menu
@@ -49,7 +49,7 @@
     </sg-submenu>
   </sg-submenu>
   <sg-menu-item index="3" disabled>消息中心</sg-menu-item>
-  <sg-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></sg-menu-item>
+  <sg-menu-item index="4"><a href="https://www.keep-silent.com" target="_blank">订单管理</a></sg-menu-item>
 </sg-menu>
 
 <script>

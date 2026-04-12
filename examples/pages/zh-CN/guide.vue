@@ -14,12 +14,12 @@
         font-size: 22px;
         font-weight: normal;
         margin: 0 0 30px;
-        color: #1f2d3d;
+        color: var(--color-text-primary);
       }
       p {
         line-height: 1.6;
         font-size: 14px;
-        color: #5e6d82;
+        color: var(--color-info);
       }
       ul {
         margin-bottom: 50px;
@@ -28,7 +28,7 @@
       li {
         font-size: 14px;
         margin-bottom: 10px;
-        color: #99a9bf;
+        color: var(--color-info-light);
         list-style: none;
 
         &:before {
@@ -38,12 +38,12 @@
           height: 4px;
           border-radius: 50%;
           vertical-align: middle;
-          background-color: #5e6d82;
+          background-color: var(--color-info);
           margin-right: 5px;
         }
 
         strong {
-          color: #5e6d82;
+          color: var(--color-info);
           font-weight: 400;
         }
       }

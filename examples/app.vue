@@ -42,7 +42,10 @@ export default {
   },
 
   created() {
-    document.documentElement.dataset.theme = 'theme2';
+    // 从 localStorage 恢复用户主题偏好，如果没有则使用默认主题
+    const savedTheme = localStorage.getItem('user-theme-preference');
+    const theme = savedTheme || 'default-theme';
+    document.documentElement.setAttribute('data-theme', theme);
   },
 
   mounted() {

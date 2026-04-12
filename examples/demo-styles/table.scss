@@ -3,7 +3,7 @@
 }
 
 .sg-table .success-row {
-  background: #f0f9eb;
+  background: var(--background-color-hover);
 }
 
 .demo-table .name-wrapper {
@@ -13,7 +13,7 @@
 .demo-table .demo-table-expand {
   label {
     width: 90px;
-    color: #99a9bf;
+    color: var(--color-text-regular);
   }
   .sg-form-item {
     margin-right: 0;

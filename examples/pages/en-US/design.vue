@@ -3,7 +3,7 @@
     margin: 30px 0 70px;
   }
   .card {
-    background: #fbfcfd;
+    background: var(--background-color-base);
     height: 204px;
     text-align: center;
     
@@ -14,13 +14,13 @@
     }
     h4 {
       font-size: 18px;
-      color: #1f2d3d;
+      color: var(--color-text-primary);
       font-weight: normal;
       margin: 0;
     }
     span {
       font-size: 14px;
-      color: #99a9bf;
+      color: var(--color-info-light);
     }
   }
 </style>

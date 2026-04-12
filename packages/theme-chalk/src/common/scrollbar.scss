@@ -31,7 +31,7 @@
   /* 滑块 */
   width: 12px;
   border-radius: 5px;
-  background: #cbcbcb;
+  background: var(--border-color-base);
   cursor: pointer;
   border-style: dashed;
   border-color: transparent;
@@ -41,7 +41,7 @@
 
 ::-webkit-scrollbar-thumb:hover {
   /* 鼠标移入滑块 */
-  background: #909090;
+  background: var(--color-text-secondary);
   transition: 0.3s;
   cursor: pointer;
   background-clip: border-box;

@@ -4,7 +4,7 @@
 
 ```html
 
-<div style="width: 200px; height: 200px; background: #2dc26b"
+<div style="width: 200px; height: 200px; background: var(--color-primary)"
      v-clickoutside="clickoutside"
      @click="click">点击div内部和外部有不同效果哦</div>
 <script>

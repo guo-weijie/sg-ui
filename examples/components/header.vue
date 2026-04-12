@@ -10,18 +10,18 @@
   z-index: 19;
   box-sizing: border-box;
   text-align: center;
-  color: #eee;
+  color: var(--color-text-regular);
 }
 
 #v3-banner a {
-  color: #fff;
+  color: var(--color-white);
   font-weight: bold;
 }
 
 .header {
   height: 80px;
-  background-color: #fff;
-  color: #fff;
+  background-color: var(--background-color-page);
+  color: var(--color-text-primary);
   top: 0;
   left: 0;
   width: 100%;
@@ -32,11 +32,11 @@
   .container {
     height: 100%;
     box-sizing: border-box;
-    border-bottom: 1px solid #dcdfe6;
+    border-bottom: 1px solid var(--border-color-base);
   }
 
   .nav-lang-spe {
-    color: #888;
+    color: var(--color-text-regular);
   }
 
   h1 {
@@ -46,7 +46,7 @@
     font-weight: normal;
 
     a {
-      color: #333;
+      color: var(--color-text-primary);
       text-decoration: none;
       display: block;
     }
@@ -94,7 +94,7 @@
       top: calc(50% - 8px);
       width: 1px;
       height: 16px;
-      background: #ebebeb;
+      background: var(--border-color-base);
     }
   }
 
@@ -135,7 +135,7 @@
         cursor: pointer;
         display: inline-block;
         height: 100%;
-        color: #888;
+        color: var(--color-text-regular);
 
         &:hover {
           color: var(--color-primary);
@@ -182,7 +182,7 @@
     display: block;
     width: 100%;
     font-size: 16px;
-    color: #888;
+    color: var(--color-text-regular);
     line-height: 40px;
     transition: 0.2s;
     padding-bottom: 6px;
@@ -196,7 +196,7 @@
   i {
     transition: 0.2s;
     font-size: 12px;
-    color: #979797;
+    color: var(--color-info);
     transform: translateY(-2px);
   }
 
@@ -388,13 +388,23 @@ export default {
       },
       themes: {
         'default-theme': '默认',
-        theme2: '浅绿'
+        theme2: '浅绿',
+        dark: '深色'
       },
-      theme: 'theme2'
+      theme: 'default-theme'
     };
   },
 
   mixins: [themeLoader],
+
+  mounted() {
+    // 从 localStorage 恢复用户主题偏好
+    const savedTheme = localStorage.getItem('user-theme-preference');
+    if (savedTheme && this.themes[savedTheme]) {
+      this.theme = savedTheme;
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+  },
 
   components: {
     ThemePicker,
@@ -429,7 +439,9 @@ export default {
     },
     switchTheme(theme) {
       this.theme = theme;
-      document.documentElement.dataset.theme = theme;
+      document.documentElement.setAttribute('data-theme', theme);
+      // 保存用户偏好
+      localStorage.setItem('user-theme-preference', theme);
     },
 
     handleLangDropdownToggle(visible) {

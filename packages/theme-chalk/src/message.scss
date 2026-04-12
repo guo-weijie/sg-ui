@@ -1,6 +1,7 @@
 @import 'mixins/mixins';
 
 @include b(message) {
+  color: var(--color-text-regular);
   min-width: var(--message-min-width);
   box-sizing: border-box;
   border-radius: var(--border-radius-base);

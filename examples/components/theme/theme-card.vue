@@ -382,7 +382,7 @@ export default {
       return this.theme.global['$--border-color-base'] || '#DCDFE6';
     },
     textSecondaryColor() {
-      return this.theme.global['$--color-text-secondary'] || '#909399';
+      return this.theme.global['$--color-text-regular'] || '#909399';
     },
     isOfficial() {
       return this.type === 'official';

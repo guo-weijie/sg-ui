@@ -17,7 +17,7 @@
     }
     img {
       padding: 15px;
-      background-color: #F9FAFC;
+      background-color: var(--background-color-base);
       width: 100%;
       margin-bottom: 15px;
       cursor: pointer;
@@ -51,8 +51,8 @@
     right: 0;
     left: 0;
     bottom: 0;
-    background-color: #373737;
-    background-color: rgba(55, 55, 55, 0.6);
+    background-color: var(--color-black);
+    opacity: .6;
     height: 100%;
     z-index: 1000;
   }

@@ -27,8 +27,8 @@
 
   /* 照片墙模式 */
   @include m(picture-card) {
-    background-color: #fbfdff;
-    border: 1px dashed #c0ccda;
+    background-color: var(--background-color-base);
+    border: 1px dashed var(--border-color-base);
     border-radius: 6px;
     box-sizing: border-box;
     width: 148px;
@@ -39,7 +39,7 @@
 
     i {
       font-size: 28px;
-      color: #8c939d;
+      color: var(--color-text-secondary);
     }
 
     &:hover {
@@ -58,8 +58,8 @@
 }
 
 @include b(upload-dragger) {
-  background-color: #f7f7f7;
-  border: 1px dashed #d9d9d9;
+  background-color: var(--background-color-base);
+  border: 1px dashed var(--border-color-base);
   border-radius: 6px;
   box-sizing: border-box;
   width: 360px;
@@ -274,8 +274,8 @@
 
     .sg-upload-list__item {
       overflow: hidden;
-      background-color: #fff;
-      border: 1px solid #c0ccda;
+      background-color: var(--background-color-page);
+      border: 1px solid var(--border-color-base);
       border-radius: 6px;
       box-sizing: border-box;
       width: 148px;
@@ -317,7 +317,7 @@
       top: -6px;
       width: 40px;
       height: 24px;
-      background: #13ce66;
+      background: var(--color-success);
       text-align: center;
       transform: rotate(45deg);
       box-shadow: 0 0 1pc 1px rgba(0, 0, 0, 0.2);
@@ -337,7 +337,7 @@
       top: 0;
       cursor: default;
       text-align: center;
-      color: #fff;
+      color: var(--color-white);
       opacity: 0;
       font-size: 20px;
       background-color: rgba(0, 0, 0, 0.5);
@@ -389,8 +389,8 @@
     .sg-upload-list__item {
       overflow: hidden;
       z-index: 0;
-      background-color: #fff;
-      border: 1px solid #c0ccda;
+      background-color: var(--background-color-page);
+      border: 1px solid var(--border-color-base);
       border-radius: 6px;
       box-sizing: border-box;
       margin-top: 10px;
@@ -457,10 +457,10 @@
       top: -7px;
       width: 46px;
       height: 26px;
-      background: #13ce66;
+      background: var(--color-success);
       text-align: center;
       transform: rotate(45deg);
-      box-shadow: 0 1px 1px #ccc;
+      box-shadow: 0 1px 1px var(--border-color-light);
 
       i {
         font-size: 12px;
@@ -499,7 +499,7 @@
     top: -6px;
     width: 40px;
     height: 24px;
-    background: #13ce66;
+    background: var(--color-success);
     text-align: center;
     transform: rotate(45deg);
     box-shadow: 0 0 1pc 1px rgba(0, 0, 0, 0.2);
@@ -508,7 +508,7 @@
       font-size: 12px;
       margin-top: 11px;
       transform: rotate(-45deg);
-      color: #fff;
+      color: var(--color-white);
     }
   }
 

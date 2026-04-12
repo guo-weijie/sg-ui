@@ -128,6 +128,7 @@
     @include when(active) {
       button {
         opacity: 1;
+        background-color: var(--background-color-hover);
       }
     }
   }
@@ -137,7 +138,7 @@
     opacity: 0.48;
     width: var(--carousel-indicator-width);
     height: var(--carousel-indicator-height);
-    background-color: var(--color-white);
+    background-color: var(--background-color-base);
     border: none;
     outline: none;
     padding: 0;

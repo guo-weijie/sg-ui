@@ -12,7 +12,7 @@
     'black': '$--color-black',
     'textPrimary': '$--color-text-primary',
     'textRegular': '$--color-text-regular',
-    'textSecondary': '$--color-text-secondary',
+    'textSecondary': '$--color-text-regular',
     'textPlaceholder': '$--color-text-placeholder',
     'borderBase': '$--border-color-base',
     'borderLight': '$--border-color-light',

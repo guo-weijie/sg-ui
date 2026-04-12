@@ -9,13 +9,13 @@
       font-size: 34px;
       margin: 0;
       line-height: 48px;
-      color: #555;
+      color: var(--color-text-primary);
     }
 
     p {
       font-size: 18px;
       line-height: 28px;
-      color: #888;
+      color: var(--color-text-regular);
       margin: 10px 0 5px;
     }
   }
@@ -43,7 +43,7 @@
     p {
       margin: 0;
       line-height: 1.8;
-      color: #999;
+      color: var(--color-text-regular);
       font-size: 14px;
     }
   }
@@ -56,7 +56,7 @@
     }
     .jumbotron-red {
       transition: height .1s;
-      background: #FFF;
+      background: var(--background-color-base);
       position: absolute;
       left: 0;
       top:0;
@@ -97,8 +97,8 @@
   .card {
     height: 430px;
     width: 100%;
-    background:#ffffff;
-    border:1px solid #eaeefb;
+    background: var(--background-color-base);
+    border:1px solid var(--border-color-base);
     border-radius:5px;
     box-sizing: border-box;
     text-align: center;
@@ -112,12 +112,12 @@
     h3 {
       margin: 0;
       font-size: 18px;
-      color: #1f2f3d;
+      color: var(--color-text-primary);
       font-weight: normal;
     }
     p {
       font-size: 14px;
-      color: #99a9bf;
+      color: var(--color-info-light);
       padding: 0 25px;
       line-height: 20px;
     }
@@ -128,21 +128,21 @@
       color: var(--color-primary);
       text-align: center;
       border: 0;
-      border-top: 1px solid #eaeefb;
+      border-top: 1px solid var(--border-color-base);
       padding: 0;
       cursor: pointer;
       width: 100%;
       position: absolute;
       bottom: 0;
       left: 0;
-      background-color: var(--section-background-color);
+      background-color: var(--background-color-page);
       border-radius: 0 0 5px 5px;
       transition: all .3s;
       text-decoration: none;
       display: block;
 
       &:hover {
-        color: var(--section-background-color);
+        color: var(--background-color-page);
         background: var(--color-primary);
       }
     }
@@ -225,7 +225,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      color: #FFF;
+      color: var(--color-white);
       text-align: center;
       font-weight: bold;
       font-size: 20px;
@@ -251,7 +251,7 @@
       right: 0;
       top: 0;
       bottom: 0;
-      background: #000;
+      background: var(--color-black);
       opacity: .5;
     }
     .intro-banner {
@@ -276,7 +276,7 @@
           margin: 0;
           font-size: 48px;
           font-weight: bold;
-          color: #FFF;
+          color: var(--color-white);
         }
       }
     }

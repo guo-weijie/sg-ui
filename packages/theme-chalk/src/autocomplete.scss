@@ -15,7 +15,7 @@
   border-radius: var(--border-radius-base);
   border: 1px solid var(--border-color-light);
   box-sizing: border-box;
-  background-color: var(--color-white);
+  background-color: var(--background-color-base);
 
   @include e(wrap) {
     max-height: 280px;

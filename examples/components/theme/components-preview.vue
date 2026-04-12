@@ -300,7 +300,7 @@
         </sg-submenu>
         <sg-menu-item index="3" disabled>Info</sg-menu-item>
         <sg-menu-item index="4">
-          <a href="https://www.ele.me" target="_blank">Orders</a>
+          <a href="https://www.keep-silent.com" target="_blank">Orders</a>
         </sg-menu-item>
       </sg-menu>
       <sg-menu default-active="2" class="demo-line">

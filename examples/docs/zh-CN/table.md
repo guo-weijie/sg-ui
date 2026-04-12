@@ -197,11 +197,11 @@
 
 <style>
   .sg-table .warning-row {
-    background: oldlace;
+    background: var(--color-warning-light-9);
   }
 
   .sg-table .success-row {
-    background: #f0f9eb;
+    background: var(--color-success-light-9);
   }
 </style>
 
@@ -1222,7 +1222,7 @@
   }
   .demo-table-expand label {
     width: 90px;
-    color: #99a9bf;
+    color: var(--color-text-regular);
   }
   .demo-table-expand .sg-form-item {
     margin-right: 0;

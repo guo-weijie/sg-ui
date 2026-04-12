@@ -3,7 +3,7 @@
 @include b(card) {
   border-radius: var(--card-border-radius);
   border: 1px solid var(--card-border-color);
-  background-color: var(--color-white);
+  background-color: var(--background-color-base);
   overflow: hidden;
   color: var(--color-text-primary);
   transition: 0.3s;

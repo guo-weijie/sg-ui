@@ -13,7 +13,7 @@
 @include b(loading-mask) {
   position: absolute;
   z-index: 2000;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: var(--loading-mask-background);
   margin: 0;
   top: 0;
   right: 0;

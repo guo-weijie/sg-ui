@@ -23,7 +23,7 @@ Top bar NavMenu can be used in a variety of scenarios.
     </sg-submenu>
   </sg-submenu>
   <sg-menu-item index="3" disabled>Info</sg-menu-item>
-  <sg-menu-item index="4"><a href="https://www.ele.me" target="_blank">Orders</a></sg-menu-item>
+  <sg-menu-item index="4"><a href="https://www.keep-silent.com" target="_blank">Orders</a></sg-menu-item>
 </sg-menu>
 <div class="line"></div>
 <sg-menu
@@ -48,7 +48,7 @@ Top bar NavMenu can be used in a variety of scenarios.
     </sg-submenu>
   </sg-submenu>
   <sg-menu-item index="3" disabled>Info</sg-menu-item>
-  <sg-menu-item index="4"><a href="https://www.ele.me" target="_blank">Orders</a></sg-menu-item>
+  <sg-menu-item index="4"><a href="https://www.keep-silent.com" target="_blank">Orders</a></sg-menu-item>
 </sg-menu>
 
 <script>

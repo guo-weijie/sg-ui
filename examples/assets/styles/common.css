@@ -46,9 +46,9 @@ a {
 }
 
 code {
-  background-color: #f9fafc;
+  background-color: var(--background-color-base);
   padding: 0 4px;
-  border: 1px solid #eaeefb;
+  border: 1px solid var(--border-color-base);
   border-radius: 4px;
 }
 
@@ -67,8 +67,8 @@ textarea {
   font-family: Menlo, Monaco, Consolas, Courier, monospace;
   font-size: 12px;
   padding: 18px 24px;
-  background-color: #fafafa;
-  border: solid 1px #eaeefb;
+  background-color: var(--background-color-base);
+  border: solid 1px var(--border-color-base);
   margin-bottom: 25px;
   border-radius: 4px;
   -webkit-font-smoothing: auto;
@@ -79,6 +79,7 @@ textarea {
   padding: 80px 0;
   box-sizing: border-box;
   min-height: 100%;
+  background-color: var(--background-color-page);
 }
 
 .container,
@@ -93,7 +94,7 @@ textarea {
 
   h2 {
     font-size: 28px;
-    color: #1f2d3d;
+    color: var(--color-text-regular);
     margin: 0;
   }
   h3 {
@@ -104,7 +105,7 @@ textarea {
   h4,
   h5 {
     font-weight: normal;
-    color: #1f2f3d;
+    color: var(--color-text-regular);
 
     &:hover a {
       opacity: 0.4;
@@ -124,33 +125,33 @@ textarea {
 
   p {
     font-size: 14px;
-    color: #5e6d82;
+    color: var(--color-text-regular);
     line-height: 1.5em;
   }
 
   .tip {
     padding: 8px 16px;
-    background-color: #ecf8ff;
+    background-color: var(--background-color-hover);
     border-radius: 4px;
     border-left: var(--color-primary) 5px solid;
     margin: 20px 0;
 
     code {
-      background-color: rgba(255, 255, 255, 0.7);
-      color: #445368;
+      background-color: var(--background-color-base);
+      color: var(--color-text-regular);
     }
   }
 
   .warning {
     padding: 8px 16px;
-    background-color: #fff6f7;
+    background-color: var(--background-color-base);
     border-radius: 4px;
-    border-left: #fe6c6f 5px solid;
+    border-left: var(--color-danger) 5px solid;
     margin: 20px 0;
 
     code {
-      background-color: rgba(255, 255, 255, 0.7);
-      color: #445368;
+      background-color: var(--background-color-base);
+      color: var(--color-info);
     }
   }
 }

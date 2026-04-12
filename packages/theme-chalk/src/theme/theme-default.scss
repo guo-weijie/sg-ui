@@ -21,7 +21,7 @@
   --color-success-light: color-mix(in srgb, var(--color-white), var(--color-success) 20%);
   --color-warning-light: color-mix(in srgb, var(--color-white), var(--color-warning) 20%);
   --color-danger-light: color-mix(in srgb, var(--color-white), var(--color-danger) 20%);
-  --color-info-light: color-mix(in srgb, var(--color-white), var(--color-info) 20%);
+  --color-info-light: color-mix(in srgb, var(--color-white), var(--color-info) 60%);
 
   --color-success-lighter: color-mix(in srgb, var(--color-white), var(--color-success) 10%);
   --color-warning-lighter: color-mix(in srgb, var(--color-white), var(--color-warning) 10%);
@@ -40,8 +40,12 @@
   --border-color-extra-light: #f7f7f7;
 
   /* Background */
+  --background-color-page: var(--color-white);
   --background-color-base: #f5f7fa;
   --background-color-hover: rgba(var(--color-primary-rgb), 0.15);
+
+  /* Tag Mix Base - 用于标签颜色混合的基础色 */
+  --tag-mix-base: var(--color-white);
 
   /* Link */
   --link-color: var(--color-primary-light-2);
@@ -66,6 +70,9 @@
   --disabled-fill-base: var(--background-color-base);
   --disabled-color-base: var(--color-text-placeholder);
   --disabled-border-base: var(--border-color-light);
+
+  /* Loading */
+  --loading-mask-background: rgba(255, 255, 255, 0.9);
 
   /* Icon */
   --icon-color: #666;
@@ -326,6 +333,7 @@
   --button-disabled-font-color: var(--color-text-placeholder);
   --button-disabled-background-color: var(--color-white);
   --button-disabled-border-color: var(--border-color-lighter);
+  --button-group-border-color: rgba(255, 255, 255, 0.5);
   --button-primary-border-color: var(--color-primary);
   --button-primary-font-color: var(--color-white);
   --button-primary-background-color: var(--color-primary);
@@ -369,7 +377,7 @@
   --table-font-color: var(--color-text-regular);
   --table-header-font-color: var(--color-text-regular);
   --table-row-hover-background-color: var(--background-color-hover);
-  --table-current-row-background-color: var(--color-primary-light-9);
+  --table-current-row-background-color: var(--color-primary-light-8);
   --table-header-background-color: #f0f0f0;
   --table-striped-background-color: #f7f7f7;
   --table-fixed-box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
@@ -409,6 +417,7 @@
   --tooltip-padding: 10px;
 
   /* Tag */
+  --tag-color: var(--color-text-regular);
   --tag-info-color: var(--color-info);
   --tag-primary-color: var(--color-primary);
   --tag-success-color: var(--color-success);
@@ -444,7 +453,7 @@
   --slider-main-background-color: var(--color-primary);
   --slider-runway-background-color: var(--border-color-light);
   --slider-button-hover-color: color-mix(in srgb, var(--color-primary), black 97%);
-  --slider-stop-background-color: var(--color-white);
+  --slider-stop-background-color: var(--background-color-base);
   --slider-disable-color: var(--color-text-placeholder);
   --slider-margin: 16px 0;
   --slider-border-radius: 3px;
@@ -483,6 +492,7 @@
   --datepicker-active-color: var(--color-primary);
   --datepicker-hover-font-color: var(--color-primary);
   --datepicker-cell-hover-color: #fff;
+  --datepicker-disabled-color: var(--color-text-placeholder);
 
   /* Loading */
   --loading-spinner-size: 42px;

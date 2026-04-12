@@ -25,12 +25,14 @@
 }
 
 .time-select-item.disabled {
-  color: var(--datepicker-border-color);
-  cursor: not-allowed;
+  color: var(--datepicker-disabled-color);
+  cursor: not-allowed !important;
+  background-color: transparent !important;
+  font-weight: normal !important;
 }
 
 .time-select-item:hover {
-  background-color: var(--background-color-base);
+  background-color: var(--background-color-hover);
   font-weight: bold;
   cursor: pointer;
 }

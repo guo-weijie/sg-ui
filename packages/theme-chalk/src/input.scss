@@ -38,7 +38,7 @@
 
   & .sg-input__count {
     color: var(--color-info);
-    background: var(--color-white);
+    background: var(--background-color-base);
     position: absolute;
     font-size: 12px;
     bottom: 5px;
@@ -95,7 +95,7 @@
     font-size: 12px;
 
     .sg-input__count-inner {
-      background: var(--color-white);
+      background: var(--background-color-base);
       line-height: initial;
       display: inline-block;
       padding: 0 5px;
