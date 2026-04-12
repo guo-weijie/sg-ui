@@ -10,12 +10,12 @@ Ported by Fabrício Tavares de Oliveira
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  background: #fff;
+  background: var(--background-color-page);
 }
 
 .hljs,
 .hljs-subst {
-  color: #000;
+  color: var(--color-text-primary);
 }
 
 .hljs-string,
@@ -29,7 +29,7 @@ Ported by Fabrício Tavares de Oliveira
 
 .hljs-comment,
 .hljs-quote {
-  color: #636363;
+  color: var(--color-text-regular);
 }
 
 .hljs-number,
