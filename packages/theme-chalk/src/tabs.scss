@@ -209,7 +209,7 @@
     }
   }
   @include m(border-card) {
-    background: var(--background-color-base);
+    background: var(--background-color-page);
     border: 1px solid var(--border-color-base);
     box-shadow:
       0 2px 4px 0 rgba(0, 0, 0, 0.12),
@@ -242,7 +242,7 @@
 
       &.is-active {
         color: var(--color-primary);
-        background-color: var(--background-color-base);
+        background-color: var(--background-color-page);
         border-right-color: var(--border-color-base);
         border-left-color: var(--border-color-base);
       }

@@ -151,7 +151,7 @@ textarea {
 
     code {
       background-color: var(--background-color-base);
-      color: var(--color-info);
+      color: var(--color-text-secondary);
     }
   }
 }

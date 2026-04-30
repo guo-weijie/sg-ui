@@ -21,7 +21,7 @@
 
   @include e(body) {
     color: var(--color-text-regular);
-    background-color: var(--background-color-base);
+    background-color: var(--background-color-page);
 
     .sg-descriptions__table {
       border-collapse: collapse;

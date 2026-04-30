@@ -281,7 +281,7 @@
   }
 
   @include e((append, prepend)) {
-    background-color: var(--input-append_prepend-background);
+    background-color: var(--input-append-prepend-background-color);
     color: var(--color-info);
     vertical-align: middle;
     display: table-cell;

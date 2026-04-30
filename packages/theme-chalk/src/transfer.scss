@@ -78,7 +78,7 @@
   border: 1px solid var(--transfer-border-color);
   border-radius: var(--transfer-border-radius);
   overflow: hidden;
-  background: var(--background-color-base);
+  background: var(--background-color-page);
   display: inline-block;
   vertical-align: middle;
   width: var(--transfer-panel-width);
@@ -88,7 +88,7 @@
 
   @include e(body) {
     height: var(--transfer-panel-body-height);
-    background-color: var(--background-color-base);
+    background-color: var(--background-color-page);
 
     @include when(with-footer) {
       padding-bottom: var(--transfer-panel-footer-height);

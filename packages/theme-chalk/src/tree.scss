@@ -6,7 +6,7 @@
 @include b(tree) {
   position: relative;
   cursor: default;
-  background: var(--background-color-base);
+  background: var(--background-color-page);
   color: var(--tree-font-color);
 
   @include e(empty-block) {

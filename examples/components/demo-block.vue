@@ -20,12 +20,6 @@
       <transition name="text-slide">
         <span v-show="hovering">{{ controlText }}</span>
       </transition>
-      <transition name="text-slide">
-          <sg-button v-show="hovering || isExpanded" size="small" type="text" class="control-button"
-            @click.stop="goCodepen">
-            {{ langConfig['button-text'] }}
-          </sg-button>
-        </transition>
     </div>
   </div>
 </template>
@@ -71,7 +65,7 @@
     color: var(--color-text-regular);
     word-break: break-word;
     margin: 10px;
-    background-color: var(--background-color-base);
+    background-color: var(--background-color-page);
 
     p {
       margin: 0;

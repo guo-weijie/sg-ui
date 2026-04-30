@@ -10,7 +10,7 @@
   flex: 1;
   width: 100%;
   max-width: 100%;
-  background-color: var(--background-color-base);
+  background-color: var(--background-color-page);
   font-size: 14px;
   color: var(--table-font-color);
 
@@ -178,7 +178,7 @@
   }
 
   tr {
-    background-color: var(--background-color-base);
+    background-color: var(--background-color-page);
 
     input[type='checkbox'] {
       margin: 0;

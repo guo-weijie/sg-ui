@@ -10,7 +10,7 @@
     transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
     width: 100%;
     height: 32px;
-    background-color: var(--background-color-base);
+    background-color: var(--background-color-page);
     &:hover{
       border-color: var(--color-primary) !important;
     }
@@ -60,8 +60,8 @@
   }
 
   .vue-treeselect__multi-value-item {
-    background: var(--color-primary);
-    color: var(--color-text-primary);
+    background-color: var(--color-primary) !important;
+    color: var(--tree-select-multi-value-item-color) !important;
   }
 
   .vue-treeselect__single-value{
@@ -82,7 +82,7 @@
   .vue-treeselect__menu,
   .vue-treeselect__multi-value-item {
     font-size: var(--tree-select-font-size-primary);
-    background-color: var(--background-color-base);
+    background-color: var(--background-color-page);
     color: var(--color-text-regular);
   }
   .multipleTags {
@@ -91,6 +91,13 @@
   .multipleTags .vue-treeselect__multi-value {
     white-space: nowrap;
     overflow: hidden;
+  }
+
+  .vue-treeselect--disabled{
+    .vue-treeselect__control{
+      background-color: var(--background-color-disabled);
+      cursor: not-allowed;
+    }
   }
 }
 

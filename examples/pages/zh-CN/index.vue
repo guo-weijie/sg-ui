@@ -56,7 +56,7 @@
     }
     .jumbotron-red {
       transition: height .1s;
-      background: var(--background-color-base);
+      background: var(--background-color-page);
       position: absolute;
       left: 0;
       top:0;
@@ -97,7 +97,7 @@
   .card {
     height: 430px;
     width: 100%;
-    background: var(--background-color-base);
+    background: var(--background-color-page);
     border:1px solid var(--border-color-base);
     border-radius:5px;
     box-sizing: border-box;

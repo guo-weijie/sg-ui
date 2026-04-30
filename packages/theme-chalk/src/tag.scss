@@ -18,8 +18,8 @@
   }
 
   &.sg-tag--info {
-    background-color: color-mix(in srgb, var(--tag-mix-base) $backgroundColorWeight, var(--tag-info-color));
-    border-color: color-mix(in srgb, var(--tag-mix-base) $borderColorWeight, var(--tag-info-color));
+    background-color: var(--tag-info-background-color);
+    border-color: var(--tag-info-background-color);
     color: var(--tag-color);
 
     @include when(hit) {

@@ -48,8 +48,10 @@
 
   // 背景颜色 - 深空黑
   --background-color-page: var(--color-black);
-  --background-color-base: #0f0f15;
+  --background-color-base: #121223;
   --background-color-hover: rgba(var(--color-primary-rgb), 0.15);
+  --background-color-disabled: #1f2229;
+  
 
   // Tag Mix Base - 用于标签颜色混合的基础色（深色模式使用黑色）
   --tag-mix-base: var(--color-black);
@@ -76,7 +78,7 @@
   --font-color-disabled-base: #555;
 
   /* Disable base */
-  --disabled-fill-base: var(--background-color-base);
+  --disabled-fill-base: #1f2229;
   --disabled-color-base: var(--color-text-placeholder);
   --disabled-border-base: var(--border-color-light);
 
@@ -274,6 +276,7 @@
   --input-clear-hover-color: var(--color-text-secondary);
   --input-focus-border: var(--color-primary);
   --input-focus-fill: #0f0f15;
+  --input-append-prepend-background-color: #1a1a28;
   --input-disabled-fill: var(--disabled-fill-base);
   --input-disabled-border: var(--disabled-border-base);
   --input-disabled-color: var(--disabled-color-base);
@@ -429,6 +432,7 @@
   /* Tag */
   --tag-color: var(--color-text-regular);
   --tag-info-color: var(--color-info);
+  --tag-info-background-color: #202121;
   --tag-primary-color: var(--color-primary);
   --tag-success-color: var(--color-success);
   --tag-warning-color: var(--color-warning);
@@ -625,4 +629,5 @@
   --tree-select-font-size-medium: var(--font-size-base);
   --tree-select-font-size-small: var(--font-size-small);
   --tree-select-font-size-mini: var(--font-size-extra-small);
+  --tree-select-multi-value-item-color: #333;
 }

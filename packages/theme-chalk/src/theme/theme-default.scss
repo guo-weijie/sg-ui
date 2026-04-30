@@ -43,6 +43,8 @@
   --background-color-page: var(--color-white);
   --background-color-base: #f5f7fa;
   --background-color-hover: rgba(var(--color-primary-rgb), 0.15);
+  --background-color-disabled: #ebeef5;
+  
 
   /* Tag Mix Base - 用于标签颜色混合的基础色 */
   --tag-mix-base: var(--color-white);
@@ -265,6 +267,7 @@
   --input-clear-hover-color: var(--color-text-secondary);
   --input-focus-border: var(--color-primary);
   --input-focus-fill: var(--color-white);
+  --input-append-prepend-background-color: #f5f7fa;
   --input-disabled-fill: var(--disabled-fill-base);
   --input-disabled-border: var(--disabled-border-base);
   --input-disabled-color: var(--disabled-color-base);
@@ -419,6 +422,7 @@
   /* Tag */
   --tag-color: var(--color-text-regular);
   --tag-info-color: var(--color-info);
+  --tag-info-background-color: #f4f4f5;
   --tag-primary-color: var(--color-primary);
   --tag-success-color: var(--color-success);
   --tag-warning-color: var(--color-warning);
@@ -567,7 +571,7 @@
 
   /* Calendar */
   --calendar-border: var(--table-border);
-  --calendar-selected-background-color: #f2f8fe;
+  --calendar-selected-background-color: rgba(var(--color-primary-rgb), 0.1);;
   --calendar-cell-width: 85px;
 
   /* Form */
@@ -619,4 +623,5 @@
   --tree-select-font-size-medium: var(--font-size-base);
   --tree-select-font-size-small: var(--font-size-small);
   --tree-select-font-size-mini: var(--font-size-extra-small);
+  --tree-select-multi-value-item-color: #ffffff;
 }
