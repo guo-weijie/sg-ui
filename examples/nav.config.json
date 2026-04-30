@@ -162,6 +162,10 @@
               "title": "Table 表格"
             },
             {
+              "path": "/newTable",
+              "title": "NewTable 新表格"
+            },
+            {
               "path": "/tag",
               "title": "Tag 标签"
             },
