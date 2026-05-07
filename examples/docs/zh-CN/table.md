@@ -57,16 +57,16 @@
 ```
 :::
 
-### 带斑马纹表格
+### 不带斑马纹表格
 
 使用带斑马纹的表格，可以更容易区分出不同行的数据。
 
-:::demo `stripe`属性可以创建带斑马纹的表格。它接受一个`Boolean`，默认为`false`，设置为`true`即为启用。
+:::demo `stripe`属性可以创建带斑马纹的表格。它接受一个`Boolean`，默认为`true`，设置为`false`即可关闭。
 ```html
 <template>
   <sg-table
     :data="tableData"
-    stripe
+    :stripe='false'
     style="width: 100%">
     <sg-table-column
       prop="date"
