@@ -25,7 +25,6 @@ import OptionGroup from '../packages/option-group/index.js';
 import Button from '../packages/button/index.js';
 import ButtonGroup from '../packages/button-group/index.js';
 import Table from '../packages/table/index.js';
-import NewTable from '../packages/newTable/index.js';
 import TableColumn from '../packages/table-column/index.js';
 import DatePicker from '../packages/date-picker/index.js';
 import TimeSelect from '../packages/time-select/index.js';
@@ -102,6 +101,7 @@ import Scroll from '../packages/scroll/index.js';
 import Draggable from '../packages/draggable/index.js';
 import Watermark from '../packages/watermark/index.js';
 import SelectTree from '../packages/select-tree/index.js';
+import NewTable from '../packages/new-table/index.js';
 import locale from 'sg-ui/src/locale';
 import CollapseTransition from 'sg-ui/src/transitions/collapse-transition';
 
@@ -135,7 +135,6 @@ const components = [
   Button,
   ButtonGroup,
   Table,
-  NewTable,
   TableColumn,
   DatePicker,
   TimeSelect,
@@ -207,10 +206,11 @@ const components = [
   Draggable,
   Watermark,
   SelectTree,
+  NewTable,
   CollapseTransition
 ];
 
-const install = function (Vue, opts = {}) {
+const install = function(Vue, opts = {}) {
   locale.use(opts.locale);
   locale.i18n(opts.i18n);
 
@@ -278,7 +278,6 @@ export default {
   Button,
   ButtonGroup,
   Table,
-  NewTable,
   TableColumn,
   DatePicker,
   TimeSelect,
@@ -353,5 +352,6 @@ export default {
   Scroll,
   Draggable,
   Watermark,
-  SelectTree
+  SelectTree,
+  NewTable
 };

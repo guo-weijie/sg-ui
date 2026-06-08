@@ -430,6 +430,12 @@
   --tag-font-size: 12px;
   --tag-border-radius: 4px;
   --tag-padding: 0 10px;
+  --tag-dark-text-color: var(--color-white);
+  --tag-info-dark-background-color: color-mix(in srgb, var(--color-info) 100%, var(--color-black));
+  --tag-primary-dark-background-color: color-mix(in srgb, var(--color-primary) 100%, var(--color-black));
+  --tag-success-dark-background-color: color-mix(in srgb, var(--color-success) 100%, var(--color-black));
+  --tag-warning-dark-background-color: color-mix(in srgb, var(--color-warning) 100%, var(--color-black));
+  --tag-danger-dark-background-color: color-mix(in srgb, var(--color-danger) 100%, var(--color-black));
 
   /* Tree */
   --tree-node-hover-background-color: var(--background-color-hover);

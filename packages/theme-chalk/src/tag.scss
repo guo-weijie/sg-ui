@@ -1,92 +1,76 @@
 @import 'mixins/mixins';
 
-@mixin genTheme($backgroundColorWeight, $borderColorWeight, $fontColorWeight, $hoverColorWeight) {
-  background-color: color-mix(in srgb, var(--tag-primary-color) $backgroundColorWeight, var(--tag-mix-base));
-  border-color: color-mix(in srgb, var(--tag-primary-color) $borderColorWeight, var(--tag-mix-base));
-  color: var(--tag-primary-color);
+@mixin genTagType($type, $bg, $border, $color, $border-color, $hoverColorWeight) {
+  background-color: $bg;
+  border-color: $border;
+  color: $color;
 
   @include when(hit) {
-    border-color: var(--tag-primary-color);
+    border-color: $border-color;
   }
 
   .sg-tag__close {
-    color: var(--tag-primary-color);
+    color: $color;
+
     &:hover {
       color: var(--color-white);
-      background-color: color-mix(in srgb, var(--tag-primary-color) $hoverColorWeight, var(--tag-mix-base));
+      background-color: color-mix(in srgb, $border-color $hoverColorWeight, var(--tag-mix-base));
     }
   }
+}
+
+@mixin genTheme($backgroundColorWeight, $borderColorWeight, $fontColorWeight, $hoverColorWeight) {
+  @include genTagType(
+    'default',
+    color-mix(in srgb, var(--tag-primary-color) $backgroundColorWeight, var(--tag-mix-base)),
+    color-mix(in srgb, var(--tag-primary-color) $borderColorWeight, var(--tag-mix-base)),
+    var(--tag-primary-color),
+    var(--tag-primary-color),
+    $hoverColorWeight
+  );
 
   &.sg-tag--info {
-    background-color: var(--tag-info-background-color);
-    border-color: var(--tag-info-background-color);
-    color: var(--tag-color);
-
-    @include when(hit) {
-      border-color: var(--tag-info-color);
-    }
-
-    .sg-tag__close {
-      color: var(--tag-color);
-      &:hover {
-        color: var(--color-white);
-        background-color: color-mix(in srgb, var(--tag-info-color) $hoverColorWeight, var(--tag-mix-base));
-      }
-    }
+    @include genTagType(
+      'info',
+      var(--tag-info-background-color),
+      var(--tag-info-background-color),
+      var(--tag-color),
+      var(--tag-info-color),
+      $hoverColorWeight
+    );
   }
 
   &.sg-tag--success {
-    background-color: color-mix(in srgb, var(--tag-success-color) $backgroundColorWeight, var(--tag-mix-base));
-    border-color: color-mix(in srgb, var(--tag-success-color) $borderColorWeight, var(--tag-mix-base));
-    color: var(--tag-success-color);
-
-    @include when(hit) {
-      border-color: var(--tag-success-color);
-    }
-
-    .sg-tag__close {
-      color: var(--tag-success-color);
-      &:hover {
-        color: var(--color-white);
-        background-color: color-mix(in srgb, var(--tag-success-color) $hoverColorWeight, var(--tag-mix-base));
-      }
-    }
+    @include genTagType(
+      'success',
+      color-mix(in srgb, var(--tag-success-color) $backgroundColorWeight, var(--tag-mix-base)),
+      color-mix(in srgb, var(--tag-success-color) $borderColorWeight, var(--tag-mix-base)),
+      var(--tag-success-color),
+      var(--tag-success-color),
+      $hoverColorWeight
+    );
   }
 
   &.sg-tag--warning {
-    background-color: color-mix(in srgb, var(--tag-warning-color) $backgroundColorWeight, var(--tag-mix-base));
-    border-color: color-mix(in srgb, var(--tag-warning-color) $borderColorWeight, var(--tag-mix-base));
-    color: var(--tag-warning-color);
-
-    @include when(hit) {
-      border-color: var(--tag-warning-color);
-    }
-
-    .sg-tag__close {
-      color: var(--tag-warning-color);
-      &:hover {
-        color: var(--color-white);
-        background-color: color-mix(in srgb, var(--tag-warning-color) $hoverColorWeight, var(--tag-mix-base));
-      }
-    }
+    @include genTagType(
+      'warning',
+      color-mix(in srgb, var(--tag-warning-color) $backgroundColorWeight, var(--tag-mix-base)),
+      color-mix(in srgb, var(--tag-warning-color) $borderColorWeight, var(--tag-mix-base)),
+      var(--tag-warning-color),
+      var(--tag-warning-color),
+      $hoverColorWeight
+    );
   }
 
   &.sg-tag--danger {
-    background-color: color-mix(in srgb, var(--tag-danger-color) $backgroundColorWeight, var(--tag-mix-base));
-    border-color: color-mix(in srgb, var(--tag-danger-color) $borderColorWeight, var(--tag-mix-base));
-    color: var(--tag-danger-color);
-
-    @include when(hit) {
-      border-color: var(--tag-danger-color);
-    }
-
-    .sg-tag__close {
-      color: var(--tag-danger-color);
-      &:hover {
-        color: var(--color-white);
-        background-color: color-mix(in srgb, var(--tag-danger-color) $hoverColorWeight, var(--tag-mix-base));
-      }
-    }
+    @include genTagType(
+      'danger',
+      color-mix(in srgb, var(--tag-danger-color) $backgroundColorWeight, var(--tag-mix-base)),
+      color-mix(in srgb, var(--tag-danger-color) $borderColorWeight, var(--tag-mix-base)),
+      var(--tag-danger-color),
+      var(--tag-danger-color),
+      $hoverColorWeight
+    );
   }
 }
 
@@ -122,8 +106,59 @@
     }
   }
 
+  $dark-types: (
+    'primary': (dark-bg: --tag-primary-dark-background-color, color: --tag-primary-color),
+    'info':    (dark-bg: --tag-info-dark-background-color,    color: --tag-info-color),
+    'success': (dark-bg: --tag-success-dark-background-color, color: --tag-success-color),
+    'warning': (dark-bg: --tag-warning-dark-background-color, color: --tag-warning-color),
+    'danger':  (dark-bg: --tag-danger-dark-background-color,  color: --tag-danger-color)
+  );
+
   @include m(dark) {
     @include genTheme(100%, 100%, 0, 80%);
+
+    @each $type, $vars in $dark-types {
+      $dark-bg: map-get($vars, dark-bg);
+      $border-color: map-get($vars, color);
+
+      @if $type == 'primary' {
+        background-color: var(#{$dark-bg});
+        border-color: var(#{$dark-bg});
+        color: var(--tag-dark-text-color);
+
+        @include when(hit) {
+          border-color: var(#{$border-color});
+        }
+
+        .sg-tag__close {
+          color: var(--tag-dark-text-color);
+
+          &:hover {
+            color: var(--color-white);
+            background-color: color-mix(in srgb, var(#{$border-color}) 80%, var(--tag-mix-base));
+          }
+        }
+      } @else {
+        &.sg-tag--#{$type} {
+          background-color: var(#{$dark-bg});
+          border-color: var(#{$dark-bg});
+          color: var(--tag-dark-text-color);
+
+          @include when(hit) {
+            border-color: var(#{$border-color});
+          }
+
+          .sg-tag__close {
+            color: var(--tag-dark-text-color);
+
+            &:hover {
+              color: var(--color-white);
+              background-color: color-mix(in srgb, var(#{$border-color}) 80%, var(--tag-mix-base));
+            }
+          }
+        }
+      }
+    }
   }
 
   @include m(plain) {
