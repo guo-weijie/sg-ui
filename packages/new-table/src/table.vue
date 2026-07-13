@@ -138,7 +138,8 @@ export default {
         item[this.autoWidthType] = calculateColumnWidth(
           this.data,
           item.label,
-          item.prop
+          item.prop,
+          item
         );
       }
 

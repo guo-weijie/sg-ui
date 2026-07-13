@@ -18,9 +18,9 @@ export const cellStarts = {
     order: ''
   },
   index: {
-    width: 48,
-    minWidth: 48,
-    realWidth: 48,
+    width: 65,
+    minWidth: 65,
+    realWidth: 65,
     order: ''
   }
 };
