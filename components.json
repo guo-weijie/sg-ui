@@ -100,5 +100,5 @@
   "draggable": "./packages/draggable/index.js",
   "watermark": "./packages/watermark/index.js",
   "select-tree": "./packages/select-tree/index.js",
-  "new-table": "./packages/newTable/index.js"
+  "new-table": "./packages/new-table/index.js"
 }
