@@ -3,12 +3,7 @@ import { post, get } from './ajax';
 
 const { version } = Element;
 
-const hostList = {
-  local: 'http://localhost:3008/',
-  production: 'https://element-api.ele.me/element/theme/'
-};
-
-const host = hostList[process.env.FAAS_ENV] || hostList.production;
+const host = 'https://element-api.ele.me/element/theme/';
 
 export const getVars = () => {
   return get(`${host}getVariable?version=${version}`);
