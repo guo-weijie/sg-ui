@@ -102,6 +102,7 @@ import Draggable from '../packages/draggable/index.js';
 import Watermark from '../packages/watermark/index.js';
 import SelectTree from '../packages/select-tree/index.js';
 import NewTable from '../packages/new-table/index.js';
+import HierarchicalSelector from '../packages/hierarchical-selector/index.js';
 import locale from 'sg-ui/src/locale';
 import CollapseTransition from 'sg-ui/src/transitions/collapse-transition';
 
@@ -207,6 +208,7 @@ const components = [
   Watermark,
   SelectTree,
   NewTable,
+  HierarchicalSelector,
   CollapseTransition
 ];
 
@@ -353,5 +355,6 @@ export default {
   Draggable,
   Watermark,
   SelectTree,
-  NewTable
+  NewTable,
+  HierarchicalSelector
 };

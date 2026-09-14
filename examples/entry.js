@@ -17,6 +17,7 @@ import './assets/styles/common.css';
 import './assets/styles/fonts/style.css';
 import icon from './icon.json';
 import iconfont from './iconfont.json'
+import * as jiangsuArea from './assets/jiangsu-area-data.js'
 
 Vue.use(Element, { size: 'small' });
 Vue.use(VueRouter);
@@ -41,6 +42,7 @@ Vue.mixin({
 
 Vue.prototype.$icon = icon; // Icon 列表页用
 Vue.prototype.$iconfont = iconfont; // 补充图标
+Vue.prototype.$jiangsuArea = jiangsuArea; // 层级选择器演示用的江苏省行政区划数据
 
 const router = new VueRouter({
   mode: 'hash',

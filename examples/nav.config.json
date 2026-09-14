@@ -149,6 +149,10 @@
               "title": "SelectTree 树形下拉框（原生）"
             },
             {
+              "path": "/hierarchical-selector",
+              "title": "HierarchicalSelector 多级联动选择器"
+            },
+            {
               "path": "/form",
               "title": "Form 表单"
             }
@@ -479,6 +483,10 @@
             {
               "path": "/select",
               "title": "Select"
+            },
+            {
+              "path": "/hierarchical-selector",
+              "title": "HierarchicalSelector"
             },
             {
               "path": "/cascader",
