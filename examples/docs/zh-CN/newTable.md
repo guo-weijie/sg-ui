@@ -215,8 +215,8 @@ export default {
   data() {
     return {
       columns: [
-        { type: 'selection', width: 55 },
-        { type: 'index', label: '序号', width: 60 },
+        { type: 'selection' },
+        { type: 'index', label: '序号' },
         { prop: 'name', label: '姓名' },
         { prop: 'age', label: '年龄' },
         { prop: 'phone', label: '联系电话' },

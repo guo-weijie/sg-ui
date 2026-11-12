@@ -36,7 +36,7 @@ export default {
     showTooltipWhenOverflow: Boolean,
     showOverflowTooltip: {
       type: Boolean,
-      default: true
+      default: false
     },
     fixed: [Boolean, String],
     formatter: Function,

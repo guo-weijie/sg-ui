@@ -5,8 +5,9 @@
 @include b(table-column) {
   @include m(selection) {
     .cell {
-      padding-left: 14px;
-      padding-right: 14px;
+      text-align: center;
+      padding-left: var(--base-value);
+      padding-right: var(--base-value);
     }
   }
 }
